@@ -161,7 +161,7 @@ svg { display: block; max-width: 100%; height: auto; }
 /* Timetable */
 .timetable {
   display: grid;
-  grid-template-columns: repeat(8,1fr);
+  grid-template-columns: repeat(9,1fr);
   border: 1px solid var(--bd);
 }
 .tt-item {
@@ -201,32 +201,10 @@ svg { display: block; max-width: 100%; height: auto; }
 }
 
 /* ── 세로 호흡 — 한 개념과 다음 개념 사이 큰 여백 ── */
-.breath-sm { height: 36px; }
 .breath { height: 64px; }
 .breath-lg { height: 96px; }
 
 /* Objective box */
-.obj-box {
-  background: var(--bg);
-  border-left: 3px solid var(--p);
-  padding: 24px 28px; margin: 8px 0 0;
-}
-.obj-box h4 {
-  font-size: 12px; color: var(--p);
-  text-transform: uppercase; letter-spacing: .5px;
-  margin-bottom: 12px; font-weight: 700;
-}
-.obj-box li {
-  font-size: 14px; color: var(--dk);
-  padding: 6px 0 6px 18px;
-  position: relative; list-style: none;
-  line-height: 1.7;
-}
-.obj-box li::before {
-  content: '●'; position: absolute; left: 0;
-  color: var(--p); font-size: 9px; top: 13px;
-}
-.obj-box li b { color: var(--bk); font-weight: 700; }
 
 /* Heading in module body */
 .h-lead {
@@ -252,9 +230,6 @@ svg { display: block; max-width: 100%; height: auto; }
   border: 1px solid var(--bd);
   border-radius: 6px;
 }
-.visual.dark { background: var(--bk); border-color: var(--bk); }
-.visual.soft { background: var(--bg-2); }
-.visual.bordered-strong { border: 2px solid var(--bd); }
 .visual-caption {
   margin-top: 14px;
   font-size: 13px;
@@ -438,18 +413,8 @@ svg { display: block; max-width: 100%; height: auto; }
   font-size: 12.5px; line-height: 1.7;
 }
 
-/* Part header */
-.part-header {
-  background: linear-gradient(135deg, #FFF3E6 0%, #FCF7F2 100%);
-  border-left: 4px solid var(--p);
-  padding: 22px 28px;
-  margin: 0;
-}
-.part-header h3 { font-size: 19px; font-weight: 700; color: var(--bk); }
-.part-header p { font-size: 14px; color: var(--md); margin-top: 6px; }
-
-/* Tip / Note / Warn boxes */
-.tip-box, .note-box, .warn-box {
+/* Tip / Warn / Info boxes */
+.tip-box, .warn-box {
   padding: 18px 24px;
   margin: 0;
   font-size: 14px;
@@ -458,10 +423,23 @@ svg { display: block; max-width: 100%; height: auto; }
 }
 .tip-box { background: #FFF8E1; border-left: 3px solid #FFB300; color: #6D4C00; }
 .tip-box strong { color: #E65100; }
-.note-box { background: var(--bg); color: var(--md); }
-.note-box strong { color: var(--dk); }
 .warn-box { background: var(--r-bg); border-left: 3px solid #E53935; color: #7A1E1E; }
 .warn-box strong { color: #B71C1C; }
+.info-box {
+  background: #FFF8F2;
+  border: 1px solid #FFD9B3;
+  border-left: 3px solid var(--p);
+  padding: 18px 24px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--dk);
+  border-radius: 4px;
+}
+.info-box strong { color: var(--p); }
+.info-box b { color: var(--bk); }
+.info-box ul { margin: 10px 0 0; padding-left: 18px; }
+.info-box li { margin-bottom: 6px; }
 
 /* Prompt block */
 .prompt-block {
@@ -500,7 +478,6 @@ svg { display: block; max-width: 100%; height: auto; }
 }
 .prompt-body .hl { color: #FFD369; }
 .prompt-body .hl2 { color: #80D8FF; }
-.prompt-body .mute { color: #888; }
 
 /* Info grid */
 .info-grid {
@@ -519,41 +496,6 @@ svg { display: block; max-width: 100%; height: auto; }
 .info-card h5 em { font-style: normal; color: var(--p); font-size: 11px; margin-right: 6px; letter-spacing: .5px; }
 .info-card p { font-size: 13.5px; color: var(--md); line-height: 1.7; }
 .info-card p b { color: var(--bk); }
-
-/* 2x2 중앙정렬 변형 */
-.info-grid-2x2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  max-width: 760px;
-  margin: 0 auto;
-}
-.info-grid-2x2 .info-card {
-  text-align: center;
-  padding: 32px 28px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.info-grid-2x2 .info-card h5 {
-  margin-bottom: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-}
-.info-grid-2x2 .info-card h5 em {
-  margin: 0;
-  font-size: 10px;
-  letter-spacing: 1.2px;
-  padding: 3px 10px;
-  background: var(--p-soft);
-  border-radius: 999px;
-}
-.info-grid-2x2 .info-card p { text-align: center; max-width: 280px; }
-@media (max-width: 680px) {
-  .info-grid-2x2 { grid-template-columns: 1fr; max-width: 100%; }
-}
 
 /* Comparison table */
 .comp-table {
@@ -575,29 +517,6 @@ svg { display: block; max-width: 100%; height: auto; }
   background: var(--p-soft); color: var(--p);
   padding: 1px 5px; border-radius: 3px;
   font-size: 12px;
-}
-
-/* Self-check */
-.selfcheck {
-  background: var(--bg-2);
-  border: 1px dashed var(--bd);
-  padding: 22px 26px; margin: 0;
-  border-radius: 4px;
-  font-size: 13.5px; color: var(--dk);
-}
-.selfcheck h5 {
-  font-size: 12px; color: var(--p);
-  font-weight: 700; text-transform: uppercase;
-  letter-spacing: .5px; margin-bottom: 14px;
-}
-.selfcheck li {
-  list-style: none;
-  padding: 6px 0 6px 26px;
-  position: relative; line-height: 1.7;
-}
-.selfcheck li::before {
-  content: '☐'; position: absolute; left: 0;
-  color: var(--md); font-size: 14px;
 }
 
 /* Resource card */
@@ -735,36 +654,6 @@ svg { display: block; max-width: 100%; height: auto; }
 .mock-row li b { color: var(--bk); }
 .mock-row .src { color: var(--lt); font-size: 11.5px; }
 
-/* Slide deck (PPT preview) */
-.deck {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  margin: 0;
-}
-.slide-card {
-  background: var(--w);
-  border: 1px solid var(--bd);
-  border-top: 3px solid var(--p);
-  border-radius: 4px;
-  padding: 16px;
-  font-size: 12px;
-}
-.slide-no { font-size: 10px; font-weight: 700; color: var(--p); letter-spacing: .8px; margin-bottom: 6px; }
-.slide-card h6 { font-size: 13px; font-weight: 700; color: var(--bk); margin-bottom: 10px; line-height: 1.4; }
-.slide-card ul { padding: 0; list-style: none; margin: 0 0 12px; }
-.slide-card li { font-size: 11.5px; color: var(--dk); padding: 2px 0 2px 12px; position: relative; line-height: 1.5; }
-.slide-card li::before { content: '•'; position: absolute; left: 0; color: var(--p); }
-.slide-card li .src { color: var(--lt); font-size: 10px; }
-.slide-note {
-  background: var(--bg); padding: 8px 10px;
-  font-size: 11px; color: var(--md);
-  border-left: 2px solid var(--p);
-  border-radius: 0 3px 3px 0;
-  line-height: 1.55;
-}
-.slide-note b { color: var(--bk); display: block; font-size: 9.5px; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 2px; }
-
 /* Markdown output preview */
 .md-output {
   background: #141822;
@@ -798,7 +687,6 @@ svg { display: block; max-width: 100%; height: auto; }
 .md-output .ln { color: #CCC; padding-left: 14px; position: relative; }
 .md-output .ln::before { content: '-'; position: absolute; left: 0; color: #888; }
 .md-output .ln em { font-style: normal; color: #888; font-size: 11px; margin-left: 4px; }
-.md-output .ln .note { color: #FFD369; font-size: 11px; margin-left: 4px; }
 .md-output .ai-add {
   display: inline-block;
   background: rgba(243, 111, 33, .22);
@@ -816,52 +704,9 @@ svg { display: block; max-width: 100%; height: auto; }
   padding: 0 4px;
   border-radius: 2px;
 }
-.md-output.project-prompt::before { content: '📄 생성된 마스터 프롬프트'; }
-
-/* 마크다운 위계 트리 */
-.md-tree {
-  font-family: 'Consolas', 'Courier New', monospace;
-  margin: 0;
-}
-.md-tree-item {
-  padding: 11px 16px;
-  margin: 4px 0;
-  border-left: 3px solid var(--p);
-  background: var(--bg-2);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 13.5px;
-  transition: background 0.2s;
-}
-.md-tree-item:hover { background: #FFF8F2; }
-.md-tree-item .md-tree-syntax { color: var(--p); font-weight: 700; }
-.md-tree-item .md-tree-text {
-  font-family: 'Paperlogy', sans-serif;
-  font-weight: 700;
-  color: var(--bk);
-}
-.md-tree-item .md-tree-label {
-  font-size: 11px;
-  color: var(--lt);
-  font-family: 'Paperlogy', sans-serif;
-  font-weight: 600;
-  letter-spacing: .5px;
-  white-space: nowrap;
-  margin-left: 12px;
-}
-.md-tree-item.lv1 { background: #FFF3E6; }
-.md-tree-item.lv1 .md-tree-text { font-size: 18px; }
-.md-tree-item.lv2 { margin-left: 32px; }
-.md-tree-item.lv2 .md-tree-text { font-size: 15px; }
-.md-tree-item.lv3 { margin-left: 64px; }
-.md-tree-item.lv3 .md-tree-text { font-size: 14px; color: var(--dk); }
-.md-tree-item.lv4 {
-  margin-left: 96px;
-  border-left-color: var(--lt);
-  background: #FAFAFA;
-}
-.md-tree-item.lv4 .md-tree-text { font-size: 13px; color: var(--dk); font-weight: 400; }
+.md-output.project-prompt::before { content: '📄 생성된 마스터프롬프트'; }
+.md-output.report::before { content: '📄 섹션 1 작성 결과'; }
+.md-output .strong { color: #FFD369; font-weight: 700; }
 
 /* 페이지 이동 — 다음 페이지 CTA */
 .page-nav-bottom {
@@ -968,187 +813,6 @@ svg { display: block; max-width: 100%; height: auto; }
   .next-page-btn { min-width: 0; width: 100%; }
 }
 
-/* 채팅 시뮬레이션 (자산화 PART 07) */
-.chat-mock {
-  background: #F5F5F5;
-  border: 1px solid var(--bd);
-  border-radius: 12px;
-  padding: 28px 32px;
-  margin: 0;
-}
-.chat-history {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 8px;
-  opacity: 0.5;
-  filter: grayscale(0.3);
-}
-.chat-msg {
-  display: flex;
-  gap: 10px;
-  max-width: 78%;
-  font-size: 13px;
-}
-.chat-msg.user {
-  align-self: flex-end;
-  flex-direction: row-reverse;
-}
-.chat-msg.ai { align-self: flex-start; }
-.chat-bubble {
-  background: var(--w);
-  border: 1px solid var(--bd);
-  border-radius: 12px;
-  padding: 10px 14px;
-  color: var(--dk);
-  line-height: 1.6;
-}
-.chat-msg.user .chat-bubble {
-  background: #DDE7F0;
-  border-color: #C0D0E0;
-  border-radius: 12px 12px 4px 12px;
-}
-.chat-msg.ai .chat-bubble {
-  background: var(--w);
-  border-radius: 12px 12px 12px 4px;
-}
-.chat-avatar {
-  width: 30px; height: 30px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--w);
-}
-.chat-msg.user .chat-avatar { background: #2D5878; }
-.chat-msg.ai .chat-avatar { background: var(--bk); }
-.chat-divider {
-  text-align: center;
-  font-size: 11px;
-  color: var(--lt);
-  letter-spacing: .8px;
-  padding: 18px 0 14px;
-  position: relative;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-.chat-divider::before,
-.chat-divider::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 28%;
-  height: 1px;
-  background: var(--bd);
-}
-.chat-divider::before { left: 0; }
-.chat-divider::after { right: 0; }
-.chat-final { display: flex; flex-direction: column; gap: 14px; }
-.chat-final .chat-msg { max-width: 85%; }
-.chat-final .chat-msg.user .chat-bubble {
-  background: linear-gradient(135deg, #FFF3E6, #FFE0CC);
-  border: 1.5px solid var(--p);
-  font-size: 14px;
-  color: var(--bk);
-  box-shadow: 0 4px 14px rgba(243,111,33,.18);
-}
-.chat-final .chat-msg.ai .chat-bubble {
-  background: linear-gradient(180deg, #1E1815 0%, #221A16 100%);
-  border-color: #1A1A1A;
-  color: #E0DDD9;
-  padding: 18px 22px;
-  font-size: 13px;
-  box-shadow: 0 8px 24px rgba(0,0,0,.15);
-}
-.extracted-title {
-  color: #FF8B45;
-  font-size: 11px;
-  font-weight: 700;
-  margin-bottom: 12px;
-  letter-spacing: 1px;
-  border-bottom: 1px solid rgba(255,255,255,.15);
-  padding-bottom: 8px;
-}
-.extracted-h1 {
-  color: var(--w);
-  font-weight: 700;
-  font-size: 14px;
-  margin: 4px 0 10px;
-  font-family: 'Consolas', monospace;
-}
-.extracted-h2 {
-  color: #FFB089;
-  font-weight: 700;
-  font-size: 12.5px;
-  margin: 12px 0 4px;
-  font-family: 'Consolas', monospace;
-}
-.extracted-ln {
-  font-size: 12px;
-  color: #C8C5C1;
-  padding-left: 14px;
-  position: relative;
-  margin: 3px 0;
-  line-height: 1.6;
-  font-family: 'Consolas', monospace;
-}
-.extracted-ln::before {
-  content: "-";
-  position: absolute;
-  left: 0;
-  color: #888;
-}
-
-/* 단계 흐름 (3-step horizontal) */
-.step-flow {
-  display: grid;
-  grid-template-columns: 1fr 32px 1fr 32px 1fr;
-  gap: 0;
-  align-items: stretch;
-}
-.step-card {
-  background: var(--w);
-  border: 1px solid var(--bd);
-  border-top: 3px solid var(--p);
-  border-radius: 6px;
-  padding: 22px 22px 20px;
-  display: flex;
-  flex-direction: column;
-}
-.step-card .step-num {
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--p);
-  letter-spacing: 1.2px;
-  margin-bottom: 10px;
-}
-.step-card h4 {
-  font-size: 14.5px;
-  font-weight: 700;
-  color: var(--bk);
-  margin-bottom: 10px;
-  line-height: 1.4;
-}
-.step-card p {
-  font-size: 12.5px;
-  color: var(--md);
-  line-height: 1.65;
-  margin: 0;
-}
-.step-arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  color: var(--lt);
-  font-weight: 300;
-}
-@media (max-width: 900px) {
-  .step-flow { grid-template-columns: 1fr; gap: 12px; }
-  .step-arrow { display: none; }
-}
-
 /* GPTs 사이드바 미리보기 */
 .gpts-showcase {
   display: grid;
@@ -1253,151 +917,6 @@ svg { display: block; max-width: 100%; height: auto; }
   .gpts-list { max-width: 360px; margin: 0 auto; }
 }
 
-/* 실제 문서 렌더링 미리보기 (다크 페이퍼) */
-.doc-preview {
-  background: linear-gradient(180deg, #1E1815 0%, #221A16 100%);
-  border-radius: 8px;
-  padding: 50px 54px;
-  color: #E0DDD9;
-  border: 1px solid #2A211C;
-  box-shadow: 0 20px 40px rgba(0,0,0,.18);
-  margin: 0;
-  position: relative;
-}
-.doc-preview::before {
-  content: '📄 실제 문서 렌더링 결과';
-  position: absolute;
-  top: -10px; left: 22px;
-  background: var(--bk);
-  color: #FF8B45;
-  font-size: 10px;
-  font-weight: 700;
-  padding: 4px 12px;
-  letter-spacing: .5px;
-  border-radius: 3px;
-  font-family: 'Paperlogy', sans-serif;
-}
-.doc-preview .doc-cat {
-  color: #FF8B45;
-  font-size: 12px;
-  font-weight: 700;
-  margin-bottom: 14px;
-  letter-spacing: .5px;
-}
-.doc-preview .doc-h1 {
-  color: #FFFFFF;
-  font-size: 38px;
-  font-weight: 700;
-  letter-spacing: -.015em;
-  margin: 0 0 36px;
-  line-height: 1.2;
-}
-.doc-preview .doc-summary {
-  background: rgba(243, 111, 33, .10);
-  border: 1px solid rgba(243, 111, 33, .35);
-  padding: 20px 24px;
-  border-radius: 5px;
-  margin: 0 0 36px;
-}
-.doc-preview .doc-summary-label {
-  color: #FF8B45;
-  font-size: 12px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  letter-spacing: .3px;
-}
-.doc-preview .doc-summary p {
-  color: #D5D2CE;
-  font-size: 14px;
-  line-height: 1.75;
-  margin: 0;
-}
-.doc-preview .doc-h2 {
-  font-size: 22px;
-  font-weight: 700;
-  color: #FFFFFF;
-  margin: 28px 0 16px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(255,255,255,.15);
-}
-.doc-preview .doc-h2 .doc-num {
-  color: #FF8B45;
-  margin-right: 6px;
-}
-.doc-preview .doc-body {
-  color: #C8C5C1;
-  font-size: 14px;
-  line-height: 1.75;
-  margin: 0 0 12px;
-}
-.doc-preview .doc-h3 {
-  color: #FFFFFF;
-  font-size: 15px;
-  font-weight: 700;
-  margin: 18px 0 12px;
-}
-.doc-preview .doc-list {
-  list-style: none;
-  padding: 0 0 0 8px;
-  margin: 0 0 16px;
-}
-.doc-preview .doc-list li {
-  position: relative;
-  padding: 6px 0 6px 20px;
-  color: #C8C5C1;
-  font-size: 13.5px;
-  line-height: 1.65;
-}
-.doc-preview .doc-list li::before {
-  content: "·";
-  color: #FF8B45;
-  position: absolute;
-  left: 0;
-  font-size: 22px;
-  line-height: 1;
-  top: 7px;
-  font-weight: 900;
-}
-@media (max-width: 680px) {
-  .doc-preview { padding: 32px 26px; }
-  .doc-preview .doc-h1 { font-size: 26px; }
-  .doc-preview .doc-h2 { font-size: 18px; }
-}
-
-/* 출처 신뢰도 스케일 */
-.trust-scale { display: grid; gap: 10px; margin: 0; }
-.trust-row {
-  display: grid;
-  grid-template-columns: 60px 220px 1fr 240px;
-  align-items: center;
-  gap: 16px;
-  padding: 14px 18px;
-  border-radius: 4px;
-}
-.trust-stars { font-size: 18px; font-weight: 700; letter-spacing: 1px; }
-.trust-name { font-weight: 700; color: var(--bk); font-size: 14px; }
-.trust-bar-wrap {
-  height: 14px;
-  background: rgba(0,0,0,.06);
-  border-radius: 2px;
-  position: relative;
-}
-.trust-bar { height: 100%; border-radius: 2px; }
-.trust-eg { font-size: 12.5px; color: var(--md); }
-.trust-row.high { background: #E8F5E9; }
-.trust-row.high .trust-stars { color: var(--g); }
-.trust-row.high .trust-bar { background: var(--g); width: 95%; }
-.trust-row.mid { background: #FFF8E1; }
-.trust-row.mid .trust-stars { color: #F57F17; }
-.trust-row.mid .trust-bar { background: #F57F17; width: 60%; }
-.trust-row.low { background: #FFEBEE; }
-.trust-row.low .trust-stars { color: var(--r); }
-.trust-row.low .trust-bar { background: var(--r); width: 25%; }
-@media (max-width: 900px) {
-  .trust-row { grid-template-columns: 60px 1fr; gap: 8px; }
-  .trust-bar-wrap, .trust-eg { grid-column: 1 / -1; }
-}
-
 /* 인라인 코드 */
 p code, li code, td code {
   background: #FFF3E6;
@@ -1446,9 +965,8 @@ p code, li code, td code {
   .hero h1 { font-size: 36px; }
   .module { padding: 60px 40px; }
   .timetable { grid-template-columns: repeat(4, 1fr); }
-  .timetable .tt-item:nth-child(4) { border-right: none; }
+  .timetable .tt-item:nth-child(4n) { border-right: none; }
   .timetable .tt-item:nth-child(n+5) { border-top: 1px solid var(--bd); }
-  .deck { grid-template-columns: repeat(2, 1fr); }
   .formula-grid {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 14px;
@@ -1480,7 +998,6 @@ p code, li code, td code {
   .resource, .sample { grid-template-columns: 48px 1fr; row-gap: 14px; }
   .resource-icon, .sample-icon { width: 48px; height: 48px; }
   .resource-btn, .sample-btn { grid-column: 1 / -1; justify-self: stretch; text-align: center; }
-  .deck { grid-template-columns: 1fr; }
   .mock-doc { padding: 22px 24px; }
   .mock-doc-head { flex-direction: column; gap: 8px; }
   .spotlight { padding: 36px 24px; }
@@ -1523,8 +1040,8 @@ p code, li code, td code {
     <a href="#p1-trial" class="sub">&#8226; 평범한 입력의 한계</a>
     <a href="#p2" class="nav-head">PART 02 · 프롬프트 기본</a>
     <a href="#p2-formula" class="sub">&#8226; 3요소 공식</a>
-    <a href="#p2-context" class="sub">&#8226; 회의록·퓨샷 결합</a>
-    <a href="#p2-compare" class="sub">&#8226; Before / After 라이브</a>
+    <a href="#p2-context" class="sub">&#8226; Before / After 라이브</a>
+    <a href="#p2-compare" class="sub">&#8226; 회의록·퓨샷 결합</a>
     <a href="#p3" class="nav-head">PART 03 · 심층리서치</a>
     <a href="#p3-deep" class="sub">&#8226; Deep Research 활성화</a>
     <a href="#p3-find" class="sub">&#8226; 후보 거래처 발굴</a>
@@ -1538,7 +1055,7 @@ p code, li code, td code {
     <a href="#p5-request" class="sub">&#8226; AI에 마스터프롬프트 요청</a>
     <a href="#p5-result" class="sub">&#8226; AI 보강 + 완성본</a>
     <a href="#p6" class="nav-head">PART 06 · 보고서 작성</a>
-    <a href="#p6-cot" class="sub">&#8226; 한 섹션씩 호출 (CoT)</a>
+    <a href="#p6-cot" class="sub">&#8226; 한 섹션씩 호출</a>
     <a href="#p6-write" class="sub">&#8226; 7섹션 채우기</a>
     <a href="#p7" class="nav-head">PART 07 · 내 스타일 마스터</a>
     <a href="#p7-extract" class="sub">&#8226; 채팅 안 내 스타일</a>
@@ -1578,14 +1095,14 @@ p code, li code, td code {
 </section>
 
 <!-- TIMETABLE -->
-<div class="timetable" id="timetable" style="grid-template-columns: repeat(9,1fr);">
+<div class="timetable" id="timetable">
   <div class="tt-item"><div class="tt-time">PART 00</div><div class="tt-title">케이스 정렬</div><div class="tt-data">김대리 미션 · 미리보기</div></div>
   <div class="tt-item"><div class="tt-time">PART 01</div><div class="tt-title">첫 시도</div><div class="tt-data">한계 체감</div></div>
   <div class="tt-item"><div class="tt-time">PART 02</div><div class="tt-title">프롬프트 기본</div><div class="tt-data">3요소 공식</div></div>
-  <div class="tt-item"><div class="tt-time">PART 03</div><div class="tt-title">심층리서치</div><div class="tt-data">Deep Research + 환각박물관</div></div>
+  <div class="tt-item"><div class="tt-time">PART 03</div><div class="tt-title">심층리서치</div><div class="tt-data">Deep Research + 환각 사례</div></div>
   <div class="tt-item"><div class="tt-time">PART 04</div><div class="tt-title">자료 통합</div><div class="tt-data">마크다운 = 입력 장치</div></div>
   <div class="tt-item"><div class="tt-time">PART 05</div><div class="tt-title">마스터프롬프트</div><div class="tt-data">AI 요청 + AI 보강</div></div>
-  <div class="tt-item"><div class="tt-time">PART 06</div><div class="tt-title">보고서 작성</div><div class="tt-data">CoT 한 섹션씩</div></div>
+  <div class="tt-item"><div class="tt-time">PART 06</div><div class="tt-title">보고서 작성</div><div class="tt-data">한 섹션씩 호출</div></div>
   <div class="tt-item"><div class="tt-time">PART 07</div><div class="tt-title">내 스타일 마스터</div><div class="tt-data">스타일 추출·재사용</div></div>
   <div class="tt-item"><div class="tt-time">PART 08</div><div class="tt-title">GPTs 자산화</div><div class="tt-data">한 줄 호출로 재사용</div></div>
 </div>
@@ -1644,7 +1161,7 @@ p code, li code, td code {
         <text x="120" y="30" font-family="Paperlogy" font-size="11" font-weight="700" fill="#FFE0CC" text-anchor="middle" letter-spacing="1">YOUR WORK</text>
         <text x="120" y="60" font-family="Paperlogy" font-size="22" font-weight="700" fill="#FFF" text-anchor="middle">프롬프트</text>
         <text x="120" y="86" font-family="Paperlogy" font-size="22" font-weight="700" fill="#FFF" text-anchor="middle">엔지니어링</text>
-        <text x="120" y="108" font-family="Paperlogy" font-size="12" fill="#FFE0CC" text-anchor="middle">8 PART · 한 케이스 완주</text>
+        <text x="120" y="108" font-family="Paperlogy" font-size="12" fill="#FFE0CC" text-anchor="middle">PART 00~08 · 한 케이스 완주</text>
       </g>
       <!-- 화살표 -->
       <line x1="550" y1="160" x2="600" y2="160" stroke="#999" stroke-width="2"/>
@@ -1669,7 +1186,7 @@ p code, li code, td code {
 
   <!-- ▶ 산출물 미리보기 -->
   <h3 class="h-lead" id="p0-preview">0-2. 강의 끝나면 이렇게 나옵니다 &mdash; 산출물 미리보기</h3>
-  <p class="p-lead">강의를 끝까지 따라오면, 다음 7섹션이 채워진 보고서를 손에 들고 자리로 돌아갑니다. <b>지금 양식이 머리에 들어오지 않아도 괜찮습니다</b> &mdash; 8개 PART를 거치면서 각 섹션이 어떻게 채워지는지 직접 만들어봅니다.</p>
+  <p class="p-lead">강의를 끝까지 따라오면, 다음 7섹션이 채워진 보고서를 손에 들고 자리로 돌아갑니다. <b>지금 양식이 머리에 들어오지 않아도 괜찮습니다</b> &mdash; 남은 8개 PART(01~08)를 거치면서 각 섹션이 어떻게 채워지는지 직접 만들어봅니다.</p>
 
   <div class="info-grid">
     <div class="info-card">
@@ -1703,14 +1220,8 @@ p code, li code, td code {
     </div>
     <div class="info-card">
       <h5><em>CONSTRAINT</em>외부 AI 입력 금지</h5>
-      <p>회사 매출 수치·기존 거래처명·내부 KPI는 외부 AI에 입력하지 않습니다. <b>회의록은 비식별 학습용 가상 자료</b>이며, 후보 거래처는 공개 자료 기반으로 발굴합니다.</p>
+      <p>회사 매출 수치·기존 거래처명·내부 KPI는 외부 AI에 입력하지 않습니다. <b>회의록은 비식별 학습용 가상 자료</b>이며, 후보 거래처는 공개 자료 기반으로 발굴합니다. 실제 업무 적용 시에는 <b>회사 보안 정책과 계정 유형(개인용/기업용)</b>을 먼저 확인합니다.</p>
     </div>
-  </div>
-
-  <div class="breath"></div>
-
-  <div class="warn-box">
-    <strong>오늘의 보안 전제.</strong> 회사 특성상 사업장·매출·거래처 정보는 외부 AI 서비스에 입력하지 않습니다. 오늘 케이스는 비식별·가상 데이터만으로 진행하며, 실제 업무 적용 시에는 반드시 회사 보안 정책과 계정 유형(개인용 / 기업용)을 먼저 확인합니다.
   </div>
 </section>
 
@@ -1727,10 +1238,11 @@ p code, li code, td code {
 
   <div class="breath-lg"></div>
 
-  <p class="p-lead" id="p1-trial">김대리는 박본부장 지시를 받고 자리에 돌아왔습니다. 평소처럼 ChatGPT 창을 열고 한 줄로 물어봅니다. <b>좋은 프롬프트를 먼저 보여드리지 않습니다</b> &mdash; 왜 그게 필요한지 체감하려면, 평범한 시도가 어디서 막히는지 직접 봐야 합니다.</p>
+  <h3 class="h-lead" id="p1-trial">1-1. 평범한 입력의 한계 &mdash; 김대리의 첫 시도</h3>
+  <p class="p-lead">김대리는 박본부장 지시를 받고 자리에 돌아왔습니다. 평소처럼 ChatGPT 창을 열고 한 줄로 물어봅니다. <b>좋은 프롬프트를 먼저 보여드리지 않습니다</b> &mdash; 왜 그게 필요한지 체감하려면, 평범한 시도가 어디서 막히는지 직접 봐야 합니다. 여러분도 지금 ChatGPT를 열고 <b>이 한 줄을 그대로 입력</b>해 보세요 &mdash; 결과 창을 닫지 말고 띄워두면, PART 02에서 3요소를 적용했을 때 <b>내 화면에서 직접 Before / After</b>를 비교할 수 있습니다.</p>
 
   <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 1 &mdash; 김대리의 첫 시도 (막연한 한 줄)</span></div>
+    <div class="prompt-header"><span class="prompt-label">PROMPT 1 &mdash; 김대리의 첫 시도 (막연한 한 줄)</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
 <div class="prompt-body">신규 거래처 발굴 전략 보고서 작성해줘.</div>
   </div>
 
@@ -1764,47 +1276,6 @@ p code, li code, td code {
         <p>후보 거래처가 누구인지, 매출·산업·강점이 무엇인지 AI는 모릅니다. 외부 리서치 없이는 <b>"~를 잘 분석해야 합니다"같은 일반론</b>만 나옵니다.</p>
       </div>
     </div>
-  </div>
-
-  <div class="breath"></div>
-
-  <!-- ▶ 평범한 입력 = 평범한 출력 시각화 -->
-  <div class="visual soft">
-    <div class="visual-title">평범한 입력 → AI 추측 → 평범한 출력</div>
-    <svg viewBox="0 0 880 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="평범한 입력 다이어그램">
-      <!-- 입력 -->
-      <g transform="translate(20,80)">
-        <rect width="160" height="80" rx="4" fill="#FFF" stroke="#E5E5E5"/>
-        <text x="80" y="28" font-family="Paperlogy" font-size="10" font-weight="700" fill="#999" text-anchor="middle" letter-spacing="1">USER INPUT</text>
-        <text x="80" y="54" font-family="Consolas, monospace" font-size="12" fill="#333" text-anchor="middle">"보고서 써줘"</text>
-        <text x="80" y="70" font-family="Paperlogy" font-size="10" fill="#999" text-anchor="middle">한 통짜 줄글</text>
-      </g>
-      <!-- 화살표 -->
-      <line x1="190" y1="120" x2="225" y2="120" stroke="#CCC" stroke-width="2"/>
-      <polygon points="225,120 217,115 217,125" fill="#CCC"/>
-      <!-- AI 박스 (추측 가득) -->
-      <g transform="translate(240,60)">
-        <rect width="240" height="120" rx="4" fill="#FFF8E1" stroke="#FFB300"/>
-        <text x="120" y="26" font-family="Paperlogy" font-size="10" font-weight="700" fill="#E65100" text-anchor="middle" letter-spacing="1">AI ASSUMES EVERYTHING</text>
-        <text x="20" y="50" font-family="Paperlogy" font-size="11" fill="#6D4C00">▸ 누가 보고받는지 모름</text>
-        <text x="20" y="68" font-family="Paperlogy" font-size="11" fill="#6D4C00">▸ 어떤 산업·회사인지 모름</text>
-        <text x="20" y="86" font-family="Paperlogy" font-size="11" fill="#6D4C00">▸ 어떤 양식인지 모름</text>
-        <text x="20" y="104" font-family="Paperlogy" font-size="11" fill="#6D4C00">▸ 후보 거래처 누구인지 모름</text>
-      </g>
-      <!-- 화살표 -->
-      <line x1="490" y1="120" x2="525" y2="120" stroke="#CCC" stroke-width="2"/>
-      <polygon points="525,120 517,115 517,125" fill="#CCC"/>
-      <!-- 결과 (평범) -->
-      <g transform="translate(540,60)">
-        <rect width="320" height="120" rx="4" fill="#FFF" stroke="#E53935" stroke-width="1.5"/>
-        <text x="160" y="26" font-family="Paperlogy" font-size="10" font-weight="700" fill="#B71C1C" text-anchor="middle" letter-spacing="1">PLAUSIBLE BUT UNUSABLE</text>
-        <text x="20" y="50" font-family="Paperlogy" font-size="12" fill="#7A1E1E">• "시장 분석 → 잠재 고객 발굴"</text>
-        <text x="20" y="68" font-family="Paperlogy" font-size="12" fill="#7A1E1E">• "자사 강점 분석" 같은 일반론</text>
-        <text x="20" y="86" font-family="Paperlogy" font-size="12" fill="#7A1E1E">• 후보 거래처 0곳</text>
-        <text x="20" y="104" font-family="Paperlogy" font-size="12" fill="#7A1E1E">• 박본부장에게 가져가면 반려 확정</text>
-      </g>
-    </svg>
-    <div class="visual-caption">AI가 부족한 게 아닙니다. 우리가 <b>판단 기준을 안 줘서</b> AI가 모두 추측한 것입니다.</div>
   </div>
 
   <div class="breath-lg"></div>
@@ -1865,6 +1336,13 @@ p code, li code, td code {
       </div>
     </div>
     <div class="visual-caption" style="margin-top:22px;">맥락이 빠지면 결과가 가장 크게 흔들립니다. <b>실무에서 가장 자주 빠뜨리는 층이 맥락</b>입니다 &mdash; 회의록·KPI·제약을 빠뜨리지 마세요.</div>
+  </div>
+
+  <div class="breath"></div>
+
+  <div class="visual">
+    <img src="교안_자료/장표_3요소_입력창.png" alt="3요소가 ChatGPT 입력창에 실제로 배치된 모습" style="width:100%; border-radius:6px; display:block;">
+    <div class="visual-caption">세 요소는 이론이 아니라 <b>입력창 안에 이렇게 배치</b>됩니다. 퓨샷은 문장으로 쓰는 게 아니라 <b>이전 보고서 파일 첨부</b>로 해결합니다.</div>
   </div>
 
   <div class="breath"></div>
@@ -1933,7 +1411,7 @@ p code, li code, td code {
     <div class="resource-text">
       <div class="r-meta">▶ AI에 첨부할 자료 1 &middot; 회의 맥락</div>
       <strong>영업1팀 주간회의 STT 회의록</strong>
-      <p>박본부장 지시 배경, 매출 부진 수치, 핵심 강조 3가지(fit · 접근 · 리스크), 보안 룰까지 회의 전체가 담긴 STT 자동 변환 텍스트. 김대리가 자료를 따로 정리하지 않고 그대로 AI에 던져도, 회의록 자체에 보고서 작성에 필요한 모든 맥락이 포함되어 있습니다.</p>
+      <p>회의 전체가 담긴 STT 자동 변환 텍스트. 따로 정리하지 않고 <b>그대로 첨부</b>합니다 &mdash; 보고서에 필요한 맥락이 이 안에 다 있습니다.</p>
     </div>
     <a class="resource-btn" href="교안_자료/회의록_영업주간회의_STT.txt" download>다운로드</a>
   </div>
@@ -1948,7 +1426,7 @@ p code, li code, td code {
     <div class="resource-text">
       <div class="r-meta">▶ AI에 첨부할 자료 2 &middot; 양식 참고</div>
       <strong>이전 분기 신규 거래처 발굴 보고서 (양식 참고용)</strong>
-      <p>우리 본부 영업1팀이 작년 4분기에 작성한 동일 양식 보고서. 7섹션 구조 · 후보 거래처 비교표 · fit 평가 · 접근 전략 · 리스크 표 · 실행 일정 표 모두 같은 양식이라, AI가 이 톤·구조를 그대로 따라 작성합니다.</p>
+      <p>작년 4분기에 작성된 동일 양식 보고서. <b>7섹션 구조·문체·표의 퓨샷</b>으로, AI가 이 모양을 그대로 따라 작성합니다.</p>
     </div>
     <a class="resource-btn" href="교안_자료/이전분기_신규거래처발굴보고서.docx" download>다운로드</a>
   </div>
@@ -1962,7 +1440,7 @@ p code, li code, td code {
   <div class="breath"></div>
 
   <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 2 &mdash; 첨부자료 설명 + 작업 요청 + 맥락·조건</span></div>
+    <div class="prompt-header"><span class="prompt-label">PROMPT 2 &mdash; 첨부자료 설명 + 작업 요청 + 맥락·조건</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
 <div class="prompt-body"><span class="hl">[첨부 자료 설명]</span>
 1. <b>회의록_영업주간회의_STT.txt</b>
 &nbsp;&nbsp;&rarr; 박본부장 지시 배경, 매출 부진 수치, 핵심 강조 3가지, 보안 룰까지 모두 담긴 영업 주간회의 STT 텍스트.
@@ -2009,21 +1487,9 @@ p code, li code, td code {
       </ul>
     </div>
     <div class="mock-row">
-      <span class="mock-row-label">3. 선정 기준</span>
-      <ol>
-        <li><b>시장 fit</b>: 자사 부품·소재군과의 적합성</li>
-        <li><b>규모 fit</b>: 최소 발주 규모 가능성</li>
-        <li><b>접근 가능성</b>: 컨택 채널 존재</li>
-        <li><b>리스크</b>: 신용도·계약 안정성</li>
-        <li><b>전략 가치</b>: 신규 산업군 진입 효과</li>
-      </ol>
-    </div>
-    <div class="mock-row">
-      <span class="mock-row-label">7. 실행 일정 (예정)</span>
+      <span class="mock-row-label">3 ~ 7. 선정 기준 · 상세 분석 · 접근 전략 · 리스크 · 실행 일정</span>
       <ul>
-        <li>W1~W2: 후보 1·2 1차 컨택 &rarr; 샘플 발송 &rarr; 1차 미팅</li>
-        <li>W3~W4: 호환성 테스트 시작 + 후보 3 컨설팅사 통한 소개</li>
-        <li>W5~W6: 1차 결과 종합 &rarr; MOU 추진 여부 결정</li>
+        <li>같은 방식으로 <b>섹션별 한 문단씩</b> 구성 &mdash; 실제 본문은 PART 06에서 한 섹션씩 채웁니다</li>
       </ul>
     </div>
   </div>
@@ -2039,33 +1505,24 @@ p code, li code, td code {
     <div class="sample-text">
       <div class="s-meta">▶ 강의 끝 모범 산출물 (앵커)</div>
       <strong>샘플 · 김대리 완성 보고서 미리보기</strong>
-      <p>강의 종료 시 김대리가 완성하게 될 7섹션 보고서 완성본 워드 파일. PART 03부터 PART 07까지 차근차근 채워가는 흐름의 도착점입니다. 본인 결과물과 비교하면서 톤·구조·표 디자인의 기준으로 활용합니다.</p>
+      <p>강의 종료 시 김대리가 완성하게 될 7섹션 보고서 완성본 워드 파일. PART 03부터 PART 06까지 차근차근 채워가는 흐름의 도착점입니다. 본인 결과물과 비교하면서 톤·구조·표 디자인의 기준으로 활용합니다.</p>
     </div>
     <a class="sample-btn" href="교안_자료/앵커_완성보고서_미리보기.docx" download>미리보기 받기</a>
   </div>
 
   <div class="breath-lg"></div>
 
-  <!-- ▶ 다음 PART 예고 -->
-  <div class="info-grid">
-    <div class="info-card">
-      <h5><em>다음 PART</em>03 · 심층리서치</h5>
-      <p>1차 구성안에서 비워둔 <b>후보 거래처 3곳</b>의 실제 데이터를 Deep Research로 채웁니다. 환각·교차검증까지 함께.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>그 다음</em>04 · 자료 통합 (마크다운)</h5>
-      <p>회의록과 리서치 결과를 <b>마크다운</b>으로 정리해서 AI에 잘 먹히는 자료로 패키지합니다.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>마지막</em>05~07 · 본문·자산화</h5>
-      <p>한 섹션씩 본문 작성 &rarr; 마스터프롬프트 추출 &rarr; <b>다음 분기 1분 만에 다시 만드는 GPTs</b>로 자산화합니다.</p>
-    </div>
+  <!-- 핵심 한 문장 -->
+  <div class="spotlight">
+    <div class="sp-eyebrow">PART 02 정리</div>
+    <div class="sp-headline">지시문 + 맥락 + 퓨샷 &mdash;<br>이 공식이 <em>오늘 하루의 뼈대</em>입니다</div>
+    <div class="sp-detail">자료에 맡길 것은 자료에 맡기고, 본인 의도만 명확히 던지면 1차 구성안이 나옵니다. 구성안에 비워둔 <b>후보 거래처 자리</b>는 다음 PART 03의 Deep Research로 채우고, 이후 마크다운 정리(04) &rarr; 마스터프롬프트(05) &rarr; 본문 작성(06) &rarr; 자산화(07·08)로 이어집니다.</div>
   </div>
 </section>
 
 
 <!-- ============================================================
-     PART 03 · 마크다운
+     PART 03 · 심층리서치
 ============================================================ -->
 <section class="module" id="p3">
   <div class="mod-head">
@@ -2110,30 +1567,14 @@ p code, li code, td code {
         </div>
       </div>
     </div>
-    <div class="visual-caption" style="margin-top:22px;">Deep Research = ChatGPT Plus / Team / Enterprise 사용자 한정 기능 (Plus는 월 25회 제한). 채팅창 하단 도구 메뉴에서 활성화. <b>리서치 보고서 1편을 강사가 대신 써주는 수준의 결과물</b>이 나옵니다.</div>
+    <div class="visual-caption" style="margin-top:22px;">채팅창 하단 <b>도구 메뉴</b>에서 활성화합니다. <b>리서치 보고서 1편을 통째로 받는 수준의 결과물</b>이 나옵니다.</div>
   </div>
 
   <div class="breath"></div>
 
-  <div class="info-box">
-    <strong>왜 수치 범위가 넓은가.</strong> 같은 Deep Research라도 ① <b>질문의 복잡도</b> (단일 회사 조사 vs 산업 전체 분석) ② <b>사용 모델 버전</b> (GPT-4o · GPT-5 · GPT-5.2 Deep Research 모델 등) ③ <b>구독 plan</b> (Plus 월 25회 / Team 250회 / Enterprise 무제한)에 따라 작업 시간·결과 분량·소스 수가 크게 달라집니다. 처음 사용하면 짧게 끝나기도 하지만, 다각도 비교가 필요한 영업 케이스에서는 보통 <b>15~30분 + 100개 이상 소스 분석</b>으로 들어갑니다.
-  </div>
-
-  <div class="breath"></div>
-
-  <div class="info-grid">
-    <div class="info-card">
-      <h5><em>STEP 1</em>새 채팅 열기</h5>
-      <p>이전 채팅의 맥락이 섞이지 않게 <b>새 채팅</b>으로 시작. 빈 백지 상태에서 후보 거래처 발굴에만 집중합니다.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>STEP 2</em>도구 메뉴 &rarr; Deep Research</h5>
-      <p>채팅 입력창 옆 <b>도구</b> 메뉴 클릭 &rarr; <b>Deep Research</b> 선택. 활성화 표시가 떠 있는지 확인합니다.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>STEP 3</em>PROMPT 입력 &rarr; 대기</h5>
-      <p>아래 PROMPT 3을 입력하고 <b>5~30분 정도</b> 기다림. 복잡한 케이스는 60분까지 갈 수도 있음. 그동안 다른 일 가능. 완료 시 알림.</p>
-    </div>
+  <div class="visual">
+    <img src="교안_자료/장표_딥리서치_활성화.png" alt="Deep Research 활성화와 진행 화면" style="width:100%; border-radius:6px; display:block;">
+    <div class="visual-caption"><b>새 채팅 &rarr; 도구 메뉴 &rarr; Deep Research 활성화 &rarr; PROMPT 3 입력.</b> 결과를 기다리는 동안 강의는 멈추지 않습니다 &mdash; <b>3-3 환각 사례와 PART 04 개념을 먼저 진행</b>하고, 완료 알림이 오면 돌아옵니다.</div>
   </div>
 
   <div class="breath-lg"></div>
@@ -2143,9 +1584,9 @@ p code, li code, td code {
   <p class="p-lead">Deep Research는 <b>출력 형식과 비교 항목을 명확히 지정</b>하면 가장 잘 답합니다. 후보 3사를 한눈에 비교할 수 있도록 항목들을 자연어로 나열해주고, 출처 URL과 신뢰도 라벨도 함께 요청합니다.</p>
 
   <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 3 &mdash; 후보 거래처 발굴 (Deep Research)</span></div>
+    <div class="prompt-header"><span class="prompt-label">PROMPT 3 &mdash; 후보 거래처 발굴 (Deep Research)</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
 <div class="prompt-body"><span class="hl">[지시]</span>
-자사 영업본부 김대리가 다음 분기 신규 거래처 발굴 보고서에 넣을 <b>후보 3곳</b>을 발굴해주세요. 결과는 회사 보고서 양식으로 정리하고, 후보 3사를 한눈에 비교할 수 있는 <b>비교 표</b>를 함께 첨부해주세요.
+자사 영업본부 김대리가 다음 분기 신규 거래처 발굴 보고서에 넣을 <b>후보 3곳</b>을 발굴해주세요. 결과는 보고서 형식으로 정리하고, 후보 3사를 한눈에 비교할 수 있는 <b>비교 표</b>를 함께 첨부해주세요.
 
 <span class="hl">[맥락]</span>
 자사 제품군은 산업용 부품·소재 (B2B 중대형 제조사 OEM 대상). 우선 산업군은 자동차 부품 · 정밀 기계 · 디스플레이/반도체 장비 중 1~2곳. 후보 매출 규모는 <b>연 1,500억 이상</b>(최소 발주 규모 충족), 국내 본사 기준. 박본부장이 <b>즉시 의사결정</b> 내릴 수 있도록 우선순위·강약점이 명확해야 함. 내부 매출·거래처 정보는 입력 금지 (학습용 가상 프로젝트).
@@ -2162,8 +1603,8 @@ p code, li code, td code {
   <!-- ▶ Deep Research 결과 예시 -->
   <div class="mock-doc">
     <div class="mock-doc-head">
-      <h4>Deep Research 결과<br>(약 12분 소요)</h4>
-      <div class="mock-doc-meta">실행 <b>ChatGPT Plus</b><br>도구 <b>Deep Research</b><br>출처 <b>23개 웹페이지 검토</b></div>
+      <h4>Deep Research 결과<br>(약 18분 소요)</h4>
+      <div class="mock-doc-meta">실행 <b>ChatGPT Plus</b><br>도구 <b>Deep Research</b><br>출처 <b>130여 개 웹페이지 검토</b></div>
     </div>
     <div class="mock-row">
       <span class="mock-row-label">요약</span>
@@ -2207,7 +1648,6 @@ p code, li code, td code {
       <li><b>2단계 (보통)</b>: 주요 언론사 기사, 신용평가사 보고서, 산업협회 정기 발간물</li>
       <li><b>3단계 (낮음)</b>: 블로그·커뮤니티·개인 분석 글 &rarr; 보고서에 그대로 인용 X</li>
     </ul>
-    출력 결과의 [출처: ___] 라벨을 한 번씩 클릭해서 원본을 직접 확인하는 것이 검증의 시작입니다.
   </div>
 
   <div class="breath-lg"></div>
@@ -2259,19 +1699,8 @@ p code, li code, td code {
 
   <div class="breath"></div>
 
-  <div class="info-box">
-    <strong>교차검증 &mdash; 강의에서는 출처 클릭 1가지만</strong>
-    <p style="margin-top:10px; line-height:1.7;">Deep Research 1회 실행이 5~30분 걸리기 때문에 강의 중에는 <b>Deep Research를 단 1번만 진행</b>합니다. 검증도 가장 효율적인 1가지 방법으로만 합니다.</p>
-    <ul>
-      <li><b>출처 클릭 &rarr; 원본 확인</b>: AI가 표시한 출처 URL을 한 번씩 클릭. 도메인이 살아있는지, 보고서·공시가 실제 존재하는지, 수치가 일치하는지 확인. <b>시간 부족하면 핵심 수치 출처 1~2개만 샘플 확인</b>해도 효과 큽니다.</li>
-    </ul>
-    <p style="margin-top:14px; font-size:13.5px; color:var(--md); line-height:1.6;">※ 시간이 충분한 실무 환경에서는 <b>다른 AI(Claude·Gemini)에 같은 질문</b>을 던져 결과를 비교하는 방법도 있습니다. 강의에서는 진행하지 않고, 실무에서 보고서 핵심 수치 1~2개에만 적용을 권장합니다.</p>
-  </div>
-
-  <div class="breath"></div>
-
   <div class="warn-box">
-    <strong>한 가지 주의.</strong> Deep Research 결과의 회사명·매출 수치·출처 인용에 <b>환각·오류가 섞일 수 있습니다</b>(특히 인용·출처 영역에서 자주 보고됨). 보고서에 그대로 넣지 마시고, <b>방법 ① 출처 클릭</b>으로 핵심 수치 1~2개만이라도 확인해보는 습관을 들이세요.
+    <strong>검증은 이 한 가지 &mdash; 출처 클릭.</strong> 강의에서는 Deep Research를 1번만 실행하고, 검증도 가장 효율적인 1가지로 끝냅니다. AI가 표시한 <b>출처 URL을 클릭해 원본을 확인</b>하세요 &mdash; 도메인이 살아있는지, 공시·보고서가 실제 존재하는지, 수치가 일치하는지. 시간이 부족하면 <b>핵심 수치 1~2개만 샘플 확인</b>해도 효과가 큽니다. (실무에서 여유가 있다면 다른 AI(Claude·Gemini)에 같은 질문을 던져 교차 비교하는 방법도 있습니다.)
   </div>
 
   <div class="breath-lg"></div>
@@ -2280,7 +1709,7 @@ p code, li code, td code {
   <div class="spotlight">
     <div class="sp-eyebrow">PART 03 정리</div>
     <div class="sp-headline"><em>30분 만에 받는 리서치 보고서 1편</em> &mdash;<br>단, 핵심 수치는 검증 후 사용한다</div>
-    <div class="sp-detail">Deep Research는 수백 개 소스를 자율 분석해 A4 5페이지 분량의 보고서를 만들어줍니다. 다만 1차 결과의 회사명·매출·출처에는 <b>환각·오류가 섞일 수 있습니다</b>(특히 인용·출처 영역). <b>출처 클릭으로 핵심 수치만 한 번씩 확인</b>하고 다음 단계로 넘어갑니다. 살아남은 후보 3곳 정보가 PART 06 보고서 본문의 데이터가 됩니다.</div>
+    <div class="sp-detail">Deep Research는 수백 개 소스를 자율 분석해 A4 5페이지 분량의 보고서를 만들어줍니다. <b>출처 클릭으로 핵심 수치만 한 번씩 확인</b>하고 다음 단계로 넘어갑니다. 검증을 통과한 후보 3곳 정보가 PART 06 보고서 본문의 데이터가 됩니다.</div>
   </div>
 </section>
 <!-- ============================================================
@@ -2291,17 +1720,26 @@ p code, li code, td code {
     <span class="mod-num">PART 04</span>
     <span class="mod-time">자료 통합 — 마크다운 본격 등장</span>
   </div>
-  <h2 class="mod-title">PART 03 리서치 결과를 마크다운으로 정리합니다<small>다음 PART 보고서 작성용 입력 자료로 변환 &mdash; 마크다운이 AI 입력 장치로 등장하는 단계</small></h2>
+  <h2 class="mod-title">심층리서치 결과를 마크다운으로 정리합니다<small>다음 PART 보고서 작성용 입력 자료로 변환 &mdash; 마크다운이 AI 입력 장치로 등장하는 단계</small></h2>
 
   <div class="breath-lg"></div>
 
-  <p class="p-lead">PART 03에서 Deep Research로 받은 후보 거래처 3곳 리서치 결과는 그 자체로 A4 5페이지 분량 보고서입니다. 그러나 그대로 다음 PART(보고서 본문 작성)에 입력하면, AI가 길고 흐트러진 문장을 다시 해석하느라 핵심을 놓칠 수 있습니다. 이번 PART에서는 그 리서치 결과를 <b>마크다운</b>으로 위계 정리해 다음 PART에 정확하게 넘기는 방법을 익힙니다.</p>
+  <p class="p-lead">PART 03에서 Deep Research로 받은 후보 거래처 3곳 리서치 결과는 그 자체로 A4 5페이지 분량 보고서입니다. 그러나 그대로 보고서 본문 작성 단계(PART 06)에 입력하면, AI가 길고 흐트러진 문장을 다시 해석하느라 핵심을 놓칠 수 있습니다. 이번 PART에서는 그 리서치 결과를 <b>마크다운</b>으로 위계 정리해 다음 단계에 정확하게 넘기는 방법을 익힙니다.</p>
 
   <div class="breath"></div>
 
   <!-- ▶ 4-1. 마크다운 = 입력 장치 -->
   <h3 class="h-lead" id="p4-md">4-1. 마크다운은 "예쁜 출력 문법"이 아니라 "AI 입력 표지판"</h3>
   <p class="p-lead">마크다운을 학교에서 배우면 보통 <code>#</code>·<code>##</code>·<code>-</code> 같은 출력 문법으로 가르칩니다. 그런데 실무자 입장에서 마크다운의 진짜 가치는 다른 곳에 있습니다 &mdash; <b>내가 가진 자료를 AI가 잘 이해하도록 구조화해서 입력하는 표준 장치</b>입니다.</p>
+
+  <div class="breath"></div>
+
+  <div class="visual">
+    <img src="교안_자료/장표_마크다운_변환.png" alt="산문 리서치 결과가 마크다운 위계로 변환되는 모습" style="width:100%; border-radius:6px; display:block;">
+    <div class="visual-caption">A4 5페이지 산문 덩어리가 <b>위계가 잡힌 30줄</b>로 바뀝니다. 마크다운은 <b>AI가 읽는 칸막이</b>입니다.</div>
+  </div>
+
+  <div class="breath"></div>
 
   <div class="visual" style="padding:36px 28px;">
     <div class="formula-grid" style="grid-template-columns: 1fr auto 1fr auto 1fr; gap: 20px; align-items: stretch;">
@@ -2349,7 +1787,7 @@ p code, li code, td code {
 
   <!-- ▶ 4-2. 리서치 결과 마크다운 정리 -->
   <h3 class="h-lead" id="p4-research">4-2. 리서치 결과를 마크다운으로 정리 &mdash; 실습</h3>
-  <p class="p-lead">PART 03 Deep Research 결과는 A4 5페이지 분량 보고서 형태입니다. 그대로 다음 PART에 넣으면 AI가 산문 흐름을 다시 따라가야 합니다. <b>핵심 정보만 골라 위계로 정리</b>하면 분량은 1/3로 줄고, AI는 후보 3사를 한눈에 비교할 수 있게 됩니다.</p>
+  <p class="p-lead">PART 03 Deep Research 결과는 A4 5페이지 분량 보고서 형태입니다. 그대로 이후 단계에 넣으면 AI가 산문 흐름을 다시 따라가야 합니다. <b>핵심 정보만 골라 위계로 정리</b>하면 분량은 1/3 이하로 줄고, AI는 후보 3사를 한눈에 비교할 수 있게 됩니다.</p>
 
   <div class="split-vis">
     <div class="split-card bad">
@@ -2386,8 +1824,25 @@ p code, li code, td code {
 
   <p class="p-lead">개념을 확인했으니 이제 실습입니다. <b>김대리가 직접 손으로 마크다운을 작성하지 말고, AI에게 PART 03 리서치 결과를 마크다운으로 정리해달라고 요청</b>합니다. 5분짜리 작업이 30초로 줄고, AI가 일관된 위계를 잡아줍니다.</p>
 
+  <div class="breath"></div>
+
+  <div class="resource">
+    <div class="resource-icon">
+      <span class="ri-emoji">🛟</span>
+      <span class="ri-ext">MD</span>
+    </div>
+    <div class="resource-text">
+      <div class="r-meta">▶ 백업 자료 &middot; 리서치가 아직이라면</div>
+      <strong>리서치 결과 백업 (후보 3사)</strong>
+      <p>Deep Research가 아직 안 끝났거나 실행이 어려운 경우, 이 파일을 내려받아 <b>같은 흐름 그대로</b> 이어가세요. 채팅에 이 파일을 첨부하고 아래 PROMPT 4를 그대로 입력하면 됩니다.</p>
+    </div>
+    <a class="resource-btn" href="교안_자료/리서치결과_백업_후보3사.md" download>다운로드</a>
+  </div>
+
+  <div class="breath"></div>
+
   <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 4 &mdash; AI에게 리서치 결과 마크다운 정리 요청</span></div>
+    <div class="prompt-header"><span class="prompt-label">PROMPT 4 &mdash; AI에게 리서치 결과 마크다운 정리 요청</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
 <div class="prompt-body"><span class="hl">[요청사항]</span>
 방금 받은 리서치 결과를 <b>마크다운 형식으로 정리</b>해줘. 정리한 결과는 <b>md 파일로 다운로드할 수 있는 링크</b>로 제공해줘.
 
@@ -2399,12 +1854,6 @@ p code, li code, td code {
   <div class="breath"></div>
 
   <p class="p-lead">AI는 위 요청에 따라 정리 결과를 <b>md 파일 다운로드 링크</b>로 제공합니다. 학습자는 이 md 파일을 다운받아 PART 05·06에서 그대로 입력 자료로 활용합니다.</p>
-
-  <div class="breath"></div>
-
-  <div class="info-box">
-    <strong>여기서 핵심.</strong> A4 5페이지짜리 리서치 보고서가 1~2페이지 분량 마크다운으로 압축됩니다. <b>분량은 1/3 이하로 줄지만 후보 3사가 동일 항목으로 비교</b>되어, 다음 PART에서 보고서 본문을 한 항목씩 호출하기 수월해집니다.
-  </div>
 
   <div class="breath-lg"></div>
 
@@ -2460,7 +1909,7 @@ p code, li code, td code {
   <div class="spotlight">
     <div class="sp-eyebrow">PART 04 정리</div>
     <div class="sp-headline"><em>리서치 결과를 그대로 던지지 말고</em><br>마크다운으로 위계 정리해서 다음 PART에 넘긴다</div>
-    <div class="sp-detail">PART 03 리서치 결과 A4 5페이지를 마크다운 30줄로 압축하면 분량은 1/3 이하로 줄고, AI는 후보 3사를 동일 항목으로 비교할 수 있게 됩니다. 다음 PART에서 보고서 본문을 한 항목씩 호출하기 수월해집니다.</div>
+    <div class="sp-detail">PART 03 리서치 결과 A4 5페이지를 마크다운 30줄로 압축하면 분량은 1/3 이하로 줄고, AI는 후보 3사를 동일 항목으로 비교할 수 있게 됩니다. PART 06에서 보고서 본문을 한 섹션씩 호출하기 수월해집니다.</div>
   </div>
 </section>
 <!-- ============================================================
@@ -2469,7 +1918,7 @@ p code, li code, td code {
 <section class="module" id="p5">
   <div class="mod-head">
     <span class="mod-num">PART 05</span>
-    <span class="mod-time">구조화 프롬프트 — AI에게 만들어 달라고 요청</span>
+    <span class="mod-time">마스터프롬프트 — AI에게 만들어 달라고 요청</span>
   </div>
   <h2 class="mod-title">프롬프트를 쓰지 말고, 만들어 달라고 요청합니다<small>최소 입력만 던지면 AI가 맥락을 보강해 구조화된 마스터프롬프트로 정리해줍니다</small></h2>
 
@@ -2498,18 +1947,14 @@ p code, li code, td code {
     <div class="visual-caption" style="margin-top:22px;">프롬프트를 쓰는 게 아니라 <b>AI에게 만들어 달라고 요청</b>합니다. 김대리가 가진 자료(회의록 · 사내 양식 · 리서치 정리물)를 첨부하고, 짧은 요청만 던지면 AI가 맥락을 보강해 정교한 프롬프트로 정리해줍니다.</div>
   </div>
 
-  <div class="breath"></div>
-
-  <div class="tip-box"><strong>핵심 메시지 &mdash; 어렵게 생각하지 마세요.</strong> 완벽한 프롬프트를 한 번에 작성하는 것이 목표가 아닙니다. <b>짧은 요청 + 맥락 몇 줄 + 자료 첨부</b>만 던지면 AI가 빠진 부분을 자동으로 채워줍니다. 이렇게 접근하면 프롬프트 작성에 대한 부담이 사라지고, <b>주요 맥락을 보충하기가 매우 쉬워집니다</b>. 실 활용 측면에서 효용성이 가장 높은 접근법입니다.</div>
-
   <div class="breath-lg"></div>
 
-  <!-- 5-2. 실습 — 최소 프롬프트로 구조화 요청 -->
-  <h3 class="h-lead" id="p5-request">5-2. 실습 &mdash; 최소 프롬프트로 구조화 요청</h3>
-  <p class="p-lead">학습자 입장에서 평소 쓰는 짧은 프롬프트로 시작합니다. <b>요청사항 한 줄 + 맥락 몇 줄 + 자료 첨부</b> 정도면 충분합니다. AI가 알아서 톤·출력 형식·검증 기준 같은 디테일을 보강해줍니다.</p>
+  <!-- 5-2. 실습 — 최소 입력으로 마스터프롬프트 요청 -->
+  <h3 class="h-lead" id="p5-request">5-2. 실습 &mdash; 최소 입력으로 마스터프롬프트 요청</h3>
+  <p class="p-lead">평소 쓰는 짧은 프롬프트로 시작합니다. <b>요청사항 한 줄 + 맥락 몇 줄 + 자료 첨부</b> 정도면 충분합니다.</p>
 
   <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 5 &mdash; 구조화 프롬프트 요청 (최소 입력)</span></div>
+    <div class="prompt-header"><span class="prompt-label">PROMPT 5 &mdash; 마스터프롬프트 요청 (최소 입력)</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
 <div class="prompt-body"><span class="hl">[요청사항]</span>
 첨부한 자료들을 기반으로, 다음 단계 <b>"신규 거래처 발굴 전략 보고서 본문 작성"</b>에 사용할 <b>구조화된 마스터프롬프트</b>를 작성해줘.
 
@@ -2531,16 +1976,10 @@ p code, li code, td code {
 4. 추후 채워야 할 부분은 <code>[채워주세요]</code> 빈칸으로</div>
   </div>
 
-  <div class="breath"></div>
-
-  <div class="info-box">
-    <strong>이 프롬프트의 특징.</strong> 김대리가 직접 적은 건 <b>요청사항 1줄 + 맥락 4줄 + 자료 3개 + AI에게 부탁 4줄</b>입니다. 출력 형식·톤 디테일·검증 기준 등은 빠져있지만, AI가 영업 보고서 통상에 맞춰 자동으로 채울 예정입니다. <b>"내가 모르는 부분은 AI가 알아서 채운다"</b>는 전제로 던지면 됩니다.
-  </div>
-
   <div class="breath-lg"></div>
 
   <!-- 5-3. AI가 만든 결과 -->
-  <h3 class="h-lead" id="p5-result">5-3. AI가 만들어준 구조화 프롬프트 &mdash; 모범 결과</h3>
+  <h3 class="h-lead" id="p5-result">5-3. AI가 만들어준 마스터프롬프트 &mdash; 모범 결과</h3>
   <p class="p-lead">AI는 김대리가 던진 최소 정보를 정리하면서, <b>빠뜨린 맥락을 영업 보고서 통상에 맞춰 자동으로 보강</b>해줍니다. <code>(AI 보강)</code> 표시로 어디가 AI가 더한 부분인지 명확히 보입니다. 학습자는 이 결과를 검토하고 수정해서 본인 마스터프롬프트로 확정합니다.</p>
 
   <div class="md-output project-prompt">
@@ -2579,7 +2018,7 @@ p code, li code, td code {
   <div class="breath"></div>
 
   <div class="info-box">
-    <strong>AI 보강의 가치.</strong> 김대리가 던진 <b>최소 4줄짜리 맥락</b>이 AI 손에서 <b>9개 섹션짜리 마스터프롬프트</b>로 보강됐습니다. 작성 톤·출력 형식·검증 기준은 학습자가 모두 빠뜨렸지만 AI가 영업 보고서 통상에 맞춰 채웠습니다. <b>(AI 보강) 표시 덕분에 어떤 항목이 자동 보강됐는지 추적·검토 가능</b>합니다. 마음에 들지 않으면 그 항목만 수정·삭제하면 됩니다.</div>
+    <strong>AI 보강의 가치.</strong> 김대리가 던진 <b>최소 4줄짜리 맥락</b>이 AI 손에서 <b>8개 섹션짜리 마스터프롬프트</b>로 보강됐습니다. 작성 톤·출력 형식·검증 기준은 학습자가 모두 빠뜨렸지만 AI가 영업 보고서 통상에 맞춰 채웠습니다. <b>(AI 보강) 표시 덕분에 어떤 항목이 자동 보강됐는지 추적·검토 가능</b>합니다. 마음에 들지 않으면 그 항목만 수정·삭제하면 됩니다.</div>
 
   <div class="breath-lg"></div>
 
@@ -2587,52 +2026,38 @@ p code, li code, td code {
   <div class="spotlight">
     <div class="sp-eyebrow">PART 05 정리</div>
     <div class="sp-headline">프롬프트를 <em>쓰는 게 아니라</em><br>만들어 달라고 요청하는 것이 가장 실용적입니다</div>
-    <div class="sp-detail">완벽한 프롬프트를 한 번에 작성하려고 부담 갖지 마세요. <b>짧은 요청 + 자료 첨부</b>만으로 AI가 맥락을 보강해 구조화된 마스터프롬프트로 정리해줍니다. 이 결과는 PART 06 보고서 본문 작성, PART 07 GPTs 자산화에 그대로 재사용됩니다.</div>
+    <div class="sp-detail">완벽한 프롬프트를 한 번에 작성하려고 부담 갖지 마세요. <b>짧은 요청 + 자료 첨부</b>만으로 AI가 맥락을 보강해 구조화된 마스터프롬프트로 정리해줍니다. 이 결과는 PART 06 보고서 본문 작성과 PART 08 GPTs 자산화에 그대로 재사용됩니다.</div>
   </div>
 </section>
 <!-- ============================================================
-     PART 06 · 보고서 본문 작성 (CoT 한 섹션씩 호출)
+     PART 06 · 보고서 본문 작성 (한 섹션씩 호출)
 ============================================================ -->
 <section class="module" id="p6">
   <div class="mod-head">
     <span class="mod-num">PART 06</span>
-    <span class="mod-time">보고서 본문 작성 — CoT 한 섹션씩 호출</span>
+    <span class="mod-time">보고서 본문 작성 — 한 섹션씩 호출</span>
   </div>
   <h2 class="mod-title">한 번에 7섹션을 다 만들지 말고, 한 절씩 호출합니다<small>마스터프롬프트와 자료 패키지를 한 채팅에 두고 섹션 1부터 7까지 차례로 채워갑니다</small></h2>
 
   <div class="breath-lg"></div>
 
-  <!-- 6-1. 왜 CoT -->
+  <!-- 6-1. 왜 한 섹션씩 호출인가 -->
   <h3 class="h-lead" id="p6-cot">6-1. 한 번에 다 만들지 말고, 한 섹션씩 호출하는 이유</h3>
-  <p class="p-lead">PART 05에서 만든 마스터프롬프트로 "보고서 7섹션 전체 한 번에 작성해줘"라고 하면 AI가 일단 답하긴 합니다. 그러나 결과는 <b>각 섹션의 깊이가 얕고, 분량이 들쭉날쭉하고, 핵심 강조 3가지가 일관되게 반영되지 않습니다</b>. 그래서 실무에서는 <b>섹션 1부터 7까지 한 절씩 호출</b>합니다 &mdash; 일종의 Chain of Thought 접근입니다.</p>
+  <p class="p-lead">PART 05에서 만든 마스터프롬프트로 "보고서 7섹션 전체 한 번에 작성해줘"라고 하면 AI가 일단 답하긴 합니다. 그러나 결과는 <b>각 섹션의 깊이가 얕고, 분량이 들쭉날쭉하고, 핵심 강조 3가지가 일관되게 반영되지 않습니다</b>. 그래서 실무에서는 <b>섹션 1부터 7까지 한 절씩 호출</b>합니다 &mdash; 큰 작업을 잘게 나눠 순차로 던지는 <b>프롬프트 체이닝</b> 방식입니다.</p>
 
-  <div class="visual" style="padding:36px 28px;">
-    <div class="formula-grid" style="grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: stretch;">
-      <div class="formula-card f1">
-        <div class="fc-no">방법 A · 한 번에</div>
-        <div class="fc-name">7섹션 동시 요청</div>
-        <div class="fc-sub">"보고서 전체 써줘"</div>
-        <div class="fc-eg" style="line-height:1.85;">▸ 각 섹션 깊이 얕음<br>▸ 분량 들쭉날쭉<br>▸ 토큰 제한 &rarr; 중간 끊김<br>▸ 핵심 강조 일관성 X</div>
-      </div>
-      <div class="formula-op" style="align-self:center;">vs</div>
-      <div class="formula-card f3">
-        <div class="fc-no">방법 B · CoT</div>
-        <div class="fc-name">한 섹션씩 호출</div>
-        <div class="fc-sub">"섹션 1만 써줘 &rarr; 섹션 2 &rarr; ..."</div>
-        <div class="fc-eg" style="line-height:1.85;">▸ 각 섹션 충분히 깊게<br>▸ 분량 일관 (한글 2,500자 이내)<br>▸ 검토 후 다음 섹션 진행<br>▸ 핵심 강조 매 섹션 점검</div>
-      </div>
-    </div>
-    <div class="visual-caption" style="margin-top:22px;">한 채팅창에 <b>마스터프롬프트 + 자료 패키지</b>를 두고, 섹션 1부터 7까지 차례로 호출. 이전 섹션 답변이 다음 섹션 호출 시 자동 맥락으로 쌓입니다.</div>
+  <div class="visual">
+    <img src="교안_자료/장표_CoT_호출비교.png" alt="한 번에 요청 vs 한 섹션씩 호출 채팅 비교" style="width:100%; border-radius:6px; display:block;">
+    <div class="visual-caption">같은 마스터프롬프트라도 <b>호출 방식이 결과의 깊이를 가릅니다</b>. 한 채팅창에 마스터프롬프트 + 자료 패키지를 두고 섹션 1부터 7까지 차례로 호출 &mdash; 이전 섹션 답변이 다음 호출의 맥락으로 쌓입니다.</div>
   </div>
 
   <div class="breath-lg"></div>
 
   <!-- 6-2. 섹션 1 호출 실습 -->
   <h3 class="h-lead" id="p6-write">6-2. 실습 &mdash; 한 섹션씩 호출 (PROMPT 6)</h3>
-  <p class="p-lead">실습은 간단합니다. PART 05 마스터프롬프트 + 자료 패키지를 채팅창에 첨부한 뒤, <b>"섹션 N만 작성해줘"</b> 형태로 한 절씩 호출합니다. 각 섹션이 완성되면 검토 후 다음 섹션으로 넘어갑니다.</p>
+  <p class="p-lead">실습은 간단합니다. PART 05에서 마스터프롬프트를 만든 <b>그 채팅에서 그대로 이어갑니다</b> &mdash; 마스터프롬프트와 자료 3종이 이미 채팅에 올라와 있으므로, <b>"섹션 N만 작성해줘"</b> 형태로 한 절씩 호출만 하면 됩니다. 각 섹션이 완성되면 검토 후 다음 섹션으로 넘어갑니다.</p>
 
   <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 6 &mdash; 섹션 1 (배경 및 목적) 호출</span></div>
+    <div class="prompt-header"><span class="prompt-label">PROMPT 6 &mdash; 섹션 1 (배경 및 목적) 호출</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
 <div class="prompt-body"><span class="hl">[지시]</span>
 방금 만든 마스터프롬프트와 첨부 자료(회의록 · 사내 양식 · 리서치 정리물)를 기반으로, <b>보고서 섹션 1 「배경 및 목적」만</b> 작성해줘.
 
@@ -2647,7 +2072,7 @@ p code, li code, td code {
 
   <p class="p-lead">AI가 작성한 섹션 1을 검토 후, 같은 채팅창에 <b>"이제 섹션 2 작성해줘"</b>로 이어 호출합니다. 마스터프롬프트와 자료 패키지가 이미 채팅 맥락에 있으므로 매번 다시 적을 필요가 없습니다.</p>
 
-  <div class="md-output project-prompt">
+  <div class="md-output report">
     <div class="h1"># 1. 배경 및 목적</div>
     <div class="h2">## 1.1 배경</div>
     <div class="ln">2026년 1분기 본부 매출 <span class="strong">목표 대비 -15%</span>, 전년 동기 대비 -7% [출처: 본부 임원회의 자료, 2026-05-08]</div>
@@ -2658,11 +2083,6 @@ p code, li code, td code {
     <div class="ln">본 보고서는 자사 부품군에 적합한 신규 후보 거래처 3곳을 발굴·분석하고, 박본부장이 본부 회의에서 어느 후보부터 컨택할지 즉시 결정 가능한 수준의 우선순위와 근거를 제시함을 목적으로 한다.</div>
     <div class="ln">박본부장 핵심 강조 3가지(<span class="strong">fit 평가 · 접근 전략 · 리스크 대응</span>)를 모든 후보 분석에 일관 적용한다.</div>
   </div>
-
-  <div class="breath"></div>
-
-  <div class="info-box">
-    <strong>섹션 2~7도 같은 방식.</strong> "이제 섹션 2 (후보 거래처 개요) 작성해줘" &rarr; 검토 &rarr; "섹션 3 (선정 기준)" &rarr; ... &rarr; "섹션 7 (실행 일정)". <b>한 채팅창에 모든 섹션이 누적</b>되므로 마지막에 통째로 복사해 워드에 붙이면 보고서 완성입니다.</div>
 
   <div class="breath-lg"></div>
 
@@ -2684,7 +2104,7 @@ p code, li code, td code {
       <!-- 섹션 1~7 누적 -->
       <g transform="translate(280,30)">
         <rect width="580" height="320" rx="6" fill="#FFF8F0" stroke="#FFB380"/>
-        <text x="290" y="26" font-family="Paperlogy" font-size="11" font-weight="700" fill="#C24E12" text-anchor="middle" letter-spacing="1">CoT · 한 섹션씩 호출 (같은 채팅)</text>
+        <text x="290" y="26" font-family="Paperlogy" font-size="11" font-weight="700" fill="#C24E12" text-anchor="middle" letter-spacing="1">한 섹션씩 호출 (같은 채팅)</text>
 
         <g font-family="Paperlogy" font-size="12" fill="#1A1A1A">
           <rect x="20" y="48" width="540" height="32" rx="4" fill="#FFF" stroke="#FFD2A8"/>
@@ -2717,7 +2137,7 @@ p code, li code, td code {
         </g>
       </g>
     </svg>
-    <div class="visual-caption">한 채팅창에 7섹션이 순서대로 쌓입니다. 마지막에 전체 복사 &rarr; 워드 붙여넣기 &rarr; 보고서 완성.</div>
+    <div class="visual-caption">한 채팅창에 7섹션이 순서대로 쌓입니다.</div>
   </div>
 
   <div class="breath"></div>
@@ -2737,7 +2157,7 @@ p code, li code, td code {
   <div class="spotlight">
     <div class="sp-eyebrow">PART 06 정리</div>
     <div class="sp-headline">7섹션을 <em>한 번에 만들지 말고</em><br>한 섹션씩 호출해야 깊이가 살아납니다</div>
-    <div class="sp-detail">마스터프롬프트와 자료 패키지를 한 채팅에 두고, "섹션 1만" &rarr; 검토 &rarr; "섹션 2만" &rarr; ... 순서로 호출합니다. 7섹션이 끝나면 채팅 전체를 복사해 워드에 붙이고, 박본부장 회의 직전 한 번 더 검토 체크리스트로 확인합니다. <b>다음 PART 07에서는 이 모든 흐름을 GPTs로 자산화해 다음 분기에 1분 만에 재실행</b>합니다.</div>
+    <div class="sp-detail">마스터프롬프트와 자료 패키지를 한 채팅에 두고, "섹션 1만" &rarr; 검토 &rarr; "섹션 2만" &rarr; ... 순서로 호출합니다. 7섹션이 끝나면 채팅 전체를 복사해 워드에 붙이고, 박본부장 회의 직전 한 번 더 검토 체크리스트로 확인합니다. 다음 PART 07에서는 보고서를 완성한 이 채팅에서 <b>내 작업 스타일을 마스터프롬프트로 추출</b>하고, 마지막 PART 08에서 <b>GPTs로 자산화</b>합니다.</div>
   </div>
 </section>
 <!-- ============================================================
@@ -2756,24 +2176,18 @@ p code, li code, td code {
   <h3 class="h-lead" id="p7-extract">7-1. 보고서가 끝난 순간, 채팅 안에는 무엇이 있는가</h3>
   <p class="p-lead">PART 06에서 김대리는 7섹션을 한 절씩 호출하면서 매번 검토·수정·재요청을 거쳤습니다. AI 입장에서 그 채팅창 안에는 김대리의 <b>작업 흐름·톤·구조 선호·수정 기준</b>이 모두 누적되어 있습니다. 이 정보를 그대로 흘려보내면 다음 보고서 작성에 다시 처음부터 시작해야 합니다. 한 번 더 요청해서 <b>"내 스타일이 담긴 마스터프롬프트"로 추출</b>합시다.</p>
 
-  <div class="visual" style="padding:36px 28px;">
-    <div class="formula-grid" style="grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: stretch;">
-      <div class="formula-card f1">
-        <div class="fc-no">PART 05 마스터프롬프트</div>
-        <div class="fc-name">프로젝트용</div>
-        <div class="fc-sub">이번 신규 거래처 발굴 보고서 전용</div>
-        <div class="fc-eg" style="line-height:1.85;">▸ 자사 영업본부 맥락<br>▸ 박본부장 핵심 강조 3가지<br>▸ 신규 거래처 7섹션 양식<br>▸ <b>주제 바뀌면 재사용 X</b></div>
-      </div>
-      <div class="formula-op" style="align-self:center;">+</div>
-      <div class="formula-card f3">
-        <div class="fc-no">PART 07 내 스타일</div>
-        <div class="fc-name">개인 작업 자산</div>
-        <div class="fc-sub">주제 바뀌어도 유지되는 작업 흐름</div>
-        <div class="fc-eg" style="line-height:1.85;">▸ "한 섹션씩 호출" 흐름<br>▸ "출처는 무조건 표기" 톤<br>▸ "결론 먼저 보이게" 구조<br>▸ <b>다른 보고서에도 그대로 적용</b></div>
-      </div>
-    </div>
-    <div class="visual-caption" style="margin-top:22px;">PART 05 마스터프롬프트가 <b>"이번 프로젝트의 맥락"</b>이라면, PART 07 내 스타일 마스터프롬프트는 <b>"내가 일하는 방식"</b>입니다. 둘은 서로 다른 자산이며, 둘 다 챙기면 다음 작업의 대부분이 자동화됩니다.</div>
-  </div>
+  <table class="comp-table">
+    <thead><tr><th width="50%">PART 05 · 프로젝트 마스터프롬프트</th><th width="50%">PART 07 · 내 스타일 마스터프롬프트</th></tr></thead>
+    <tbody>
+      <tr><td>이번 「신규 거래처 발굴 보고서」 <b>전용</b></td><td>주제가 바뀌어도 유지되는 <b>내 작업 방식</b></td></tr>
+      <tr><td>자사 영업본부 맥락 · 박본부장 핵심 강조 3가지 · 7섹션 양식</td><td>"한 섹션씩 호출" 흐름 · "출처는 무조건 표기" 톤 · "결론 먼저 보이게" 구조</td></tr>
+      <tr><td><b>주제가 바뀌면 재사용 어려움</b></td><td><b>다른 보고서에도 그대로 적용</b></td></tr>
+    </tbody>
+  </table>
+
+  <div class="breath"></div>
+
+  <p class="p-lead">PART 05 마스터프롬프트가 <b>"이번 프로젝트의 맥락"</b>이라면, PART 07 내 스타일 마스터프롬프트는 <b>"내가 일하는 방식"</b>입니다. 둘 다 챙기면 다음 작업의 대부분이 자동화됩니다.</p>
 
   <div class="breath-lg"></div>
 
@@ -2782,7 +2196,7 @@ p code, li code, td code {
   <p class="p-lead">PART 06에서 보고서 7섹션을 완성한 그 채팅창 그대로에 다음 프롬프트를 입력합니다. AI는 채팅 안에 누적된 작업 흐름을 분석해 <b>"내 스타일 마스터프롬프트"</b>로 정리해줍니다.</p>
 
   <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 7 &mdash; 내 스타일 마스터프롬프트 추출</span></div>
+    <div class="prompt-header"><span class="prompt-label">PROMPT 7 &mdash; 내 스타일 마스터프롬프트 추출</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
 <div class="prompt-body"><span class="hl">[요청사항]</span>
 방금 우리가 진행한 보고서 작성 흐름을 바탕으로, 다음 보고서 작성 때도 그대로 쓸 수 있는 <b>"내 작업 스타일이 담긴 마스터프롬프트"</b>를 추출해줘.
 
@@ -2802,7 +2216,7 @@ p code, li code, td code {
     <div class="h2">## 작업 흐름</div>
     <div class="ln">1. 자료 패키지 정리 (회의록·내부 양식·외부 리서치)</div>
     <div class="ln">2. 외부 리서치 결과는 항상 마크다운으로 1차 정리 후 입력</div>
-    <div class="ln">3. 본문은 <b>한 섹션씩 호출(CoT)</b>, 검토 후 다음 섹션 진행</div>
+    <div class="ln">3. 본문은 <b>한 섹션씩 호출</b>, 검토 후 다음 섹션 진행</div>
     <div class="h2">## 작성 톤</div>
     <div class="ln">사내 보고서 톤 (담백한 문어체, 홍보 표현 X)</div>
     <div class="ln">결론·우선순위가 먼저 보이도록 구조화</div>
@@ -2841,17 +2255,6 @@ p code, li code, td code {
     </div>
   </div>
 
-  <div class="breath"></div>
-
-  <div class="tip-box">
-    <strong>핵심 자산 2개.</strong>
-    <ul style="margin-top:10px;">
-      <li><b>PART 05 프로젝트 마스터프롬프트</b> &rarr; 신규 거래처 발굴 전용. PART 08에서 GPTs Instructions에 등록.</li>
-      <li><b>PART 07 내 스타일 마스터프롬프트</b> &rarr; 주제 무관. 새 GPTs 만들 때마다 기본 톤·구조 가이드로 활용.</li>
-    </ul>
-    두 자산이 함께 있으면 다음 보고서 작업이 매우 빨라집니다. 다음 PART에서 GPTs로 둘 다 통합 자산화합니다.
-  </div>
-
   <div class="breath-lg"></div>
 
   <!-- spotlight -->
@@ -2876,47 +2279,35 @@ p code, li code, td code {
 
   <div class="breath-lg"></div>
 
-  <!-- 7-1. GPTs란? 왜 자산화 -->
-  <h3 class="h-lead" id="p8-build">8-1. GPTs란 무엇이고, 왜 자산화하는가</h3>
+  <!-- 8-1. GPTs란? 왜 자산화 -->
+  <h3 class="h-lead" id="p8-why">8-1. GPTs란 무엇이고, 왜 자산화하는가</h3>
   <p class="p-lead">PART 05에서 만든 마스터프롬프트와 PART 04 마크다운 정리물·사내 양식 퓨샷·회의록을 매번 다시 첨부하는 건 비효율적입니다. <b>GPTs</b>는 ChatGPT 안에서 만드는 <b>업무별 전용 챗봇</b>입니다. 마스터프롬프트를 Instructions에, 자료 패키지를 Knowledge에 등록해두면 다음 분기 김대리는 한 줄 호출로 같은 보고서를 다시 만들 수 있습니다.</p>
-
-  <div class="visual" style="padding:36px 28px;">
-    <div class="formula-grid" style="grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: stretch;">
-      <div class="formula-card f1">
-        <div class="fc-no">자산화 전</div>
-        <div class="fc-name">매번 다시 시작</div>
-        <div class="fc-sub">분기마다 모든 단계 반복</div>
-        <div class="fc-eg" style="line-height:1.85;">▸ 마스터프롬프트 매번 첨부<br>▸ 자료 3종 매번 첨부<br>▸ 보고서 본문 매번 호출<br>▸ 전체 흐름을 매번 반복</div>
-      </div>
-      <div class="formula-op" style="align-self:center;">&rarr;</div>
-      <div class="formula-card f3">
-        <div class="fc-no">자산화 후</div>
-        <div class="fc-name">GPTs 한 번 등록</div>
-        <div class="fc-sub">분기마다 한 줄 호출</div>
-        <div class="fc-eg" style="line-height:1.85;">▸ Instructions 1회 등록<br>▸ Knowledge 자료 1회 업로드<br>▸ 한 줄 호출로 본문 작성 시작<br>▸ 새 자료만 교체하면 끝</div>
-      </div>
-    </div>
-    <div class="visual-caption" style="margin-top:22px;">한 번 잘 만든 자산이 부서원 누구에게나, 다음 분기 누구에게나 그대로 재사용됩니다. <b>오늘 익힌 흐름 = 분기마다 절약되는 평생 자산</b>이 됩니다.</div>
-  </div>
 
   <div class="breath-lg"></div>
 
-  <!-- 7-2. GPTs 구축 실습 -->
-  <h3 class="h-lead">8-2. GPTs 구축 실습 &mdash; 3단계로 끝</h3>
-  <p class="p-lead">GPTs 구축은 직관적입니다. ChatGPT 좌측 메뉴 → <b>Explore GPTs → Create</b>에서 다음 3가지만 채우면 됩니다.</p>
+  <!-- 8-2. GPTs 구축 실습 -->
+  <h3 class="h-lead" id="p8-build">8-2. GPTs 구축 실습 &mdash; 3단계로 끝</h3>
+  <p class="p-lead">GPTs 구축은 직관적입니다. ChatGPT 좌측 메뉴 → <b>GPT 탐색 → 만들기(Create)</b>에서 다음 3가지만 채우면 됩니다.</p>
+
+  <div class="breath"></div>
+
+  <div class="visual">
+    <img src="교안_자료/장표_GPTs_빌더.png" alt="GPTs 만들기 구성 화면 목업" style="width:100%; border-radius:6px; display:block;">
+    <div class="visual-caption">채울 곳은 세 군데뿐 &mdash; <b>오늘 만든 자산을 옮겨 담으면 챗봇이 됩니다</b>.</div>
+  </div>
 
   <div class="info-grid">
     <div class="info-card">
-      <h5><em>STEP 1</em>Instructions 등록</h5>
-      <p>PART 05에서 만든 <b>마스터프롬프트를 그대로 복사 → 붙여넣기</b>. (AI 보강) 항목·[채워주세요] 빈칸까지 모두 그대로. 챗봇이 호출될 때마다 이 지시를 기본으로 따릅니다.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>STEP 2</em>Knowledge 업로드</h5>
-      <p>PART 02·04에서 준비한 자료 3종 첨부 &mdash; <b>회의록 STT · 사내 양식 퓨샷(DOCX) · 리서치 정리물(MD)</b>. 챗봇이 답할 때 이 자료들을 자동으로 참고합니다.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>STEP 3</em>이름·아이콘 설정</h5>
+      <h5><em>STEP 1</em>이름 설정</h5>
       <p>예: <b>"신규 거래처 발굴 어시스턴트"</b>. 부서 단위 공유 가능 (회사 워크스페이스 GPTs). 이후 사이드바에서 즉시 호출됩니다.</p>
+    </div>
+    <div class="info-card">
+      <h5><em>STEP 2</em>Instructions 등록</h5>
+      <p>PART 05에서 만든 <b>마스터프롬프트를 그대로 복사 → 붙여넣기</b>. PART 07의 <b>내 스타일 마스터프롬프트</b>도 톤·작업 흐름 가이드로 상단에 함께 붙여넣습니다. 챗봇이 호출될 때마다 이 지시를 기본으로 따릅니다.</p>
+    </div>
+    <div class="info-card">
+      <h5><em>STEP 3</em>Knowledge 업로드</h5>
+      <p>PART 02·04에서 준비한 자료 3종 첨부 &mdash; <b>회의록 STT · 사내 양식 퓨샷(DOCX) · 리서치 정리물(MD)</b>. 챗봇이 답할 때 이 자료들을 자동으로 참고합니다.</p>
     </div>
   </div>
 
@@ -2928,12 +2319,12 @@ p code, li code, td code {
 
   <div class="breath-lg"></div>
 
-  <!-- 7-3. 다음 분기 활용 -->
+  <!-- 8-3. 다음 분기 활용 -->
   <h3 class="h-lead" id="p8-next">8-3. 다음 분기 활용 &mdash; 한 줄 호출 시연</h3>
-  <p class="p-lead">GPTs가 등록되면 다음 분기 김대리는 같은 작업을 처음부터 다시 하지 않습니다. 새 분기 회의록 + 리서치 결과만 Knowledge에 교체하고 챗봇을 호출하면 끝입니다.</p>
+  <p class="p-lead">GPTs가 등록되면 다음 분기 김대리는 같은 작업을 처음부터 다시 하지 않습니다. 새 분기 회의록 + 리서치 결과만 <b>대화창에 새로 첨부</b>하고 챗봇을 호출하면 끝입니다. (자료를 계속 쓸 거라면 GPTs 편집 화면에서 Knowledge를 교체해 둡니다.)</p>
 
   <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 8 &mdash; 다음 분기 GPTs 한 줄 호출</span></div>
+    <div class="prompt-header"><span class="prompt-label">PROMPT 8 &mdash; 다음 분기 GPTs 한 줄 호출</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
 <div class="prompt-body"><span class="hl">[김대리 호출]</span>
 이번 분기 회의록과 리서치 결과를 새로 첨부했어. <b>같은 양식으로 신규 거래처 발굴 전략 보고서</b>를 작성해줘. 섹션 1부터 7까지 차례로 호출할 거야.
 
@@ -2948,7 +2339,7 @@ p code, li code, td code {
 
   <div class="breath-lg"></div>
 
-  <!-- 7-4. 구현 실습 — 경비 정산 챗봇 -->
+  <!-- 8-4. 구현 실습 — 경비 정산 챗봇 -->
   <h3 class="h-lead" id="p8-practice">8-4. 구현 실습 &mdash; 두 번째 챗봇 「경비 정산 챗봇」 만들기</h3>
   <p class="p-lead">보고서 어시스턴트가 <b>오늘의 흐름을 저장</b>한 챗봇이라면, 이번엔 완전히 다른 반복 업무를
   직접 챗봇으로 만들어 봅니다. <b>영수증 사진을 올리면 엑셀로 정리해 주는 챗봇</b> —
@@ -2986,11 +2377,11 @@ p code, li code, td code {
 
   <div class="breath"></div>
 
-  <p class="p-lead">아래 지시문이 챗봇의 <b>두뇌(Instructions)</b>가 됩니다 — PART 05에서 배운 구조화 원리
-  (<b>작업 순서 · 예외 처리 · 필드별 규칙 · 실패 폴백</b>)가 그대로 들어 있는 프롬프트입니다.</p>
+  <p class="p-lead">아래 지시문이 챗봇의 <b>두뇌(Instructions)</b>가 됩니다 — 앞에서 만든 마스터프롬프트와 같은 구조화 원리로
+  짜여 있고, 이번에는 <b>작업 순서 · 예외 처리 · 필드별 규칙 · 실패 폴백</b>이라는 4개 기둥으로 구성했습니다.</p>
 
   <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 9 &mdash; 경비 정산 챗봇 Instructions (영수증 OCR)</span></div>
+    <div class="prompt-header"><span class="prompt-label">PROMPT 9 &mdash; 경비 정산 챗봇 Instructions (영수증 OCR)</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
 <div class="prompt-body"><span class="hl"># 지시문</span>
 - 업로드된 이미지 파일의 텍스트를 인식하고 데이터를 추출해, 만약 압축 파일이 업로드되었다면 압축을 풀어서 작업해
 - <span class="hl2">[중요]</span> OCR로 텍스트 추출할 때는 Code interpreter를 사용하지 마
@@ -3103,7 +2494,7 @@ p code, li code, td code {
   <div class="spotlight">
     <div class="sp-eyebrow">PART 08 정리 · 오늘의 마무리</div>
     <div class="sp-headline">오늘 익힌 흐름은 <em>분기마다 절약되는</em><br>평생 자산이 됩니다</div>
-    <div class="sp-detail">PART 00부터 06까지의 모든 흐름(케이스 정렬 → 3요소 → 심층리서치 → 마크다운 정리 → 마스터프롬프트 → CoT 본문 작성)이 <b>GPTs Instructions + Knowledge로 그대로 저장</b>됩니다. 다음 분기에는 회의록·리서치 결과만 새로 첨부하면 같은 보고서가 나옵니다. <b>부서원 누구나 같은 방식으로 활용</b>하면 본부 전체의 디지털 자산이 됩니다.</div>
+    <div class="sp-detail">PART 00부터 07까지의 모든 흐름(케이스 정렬 → 3요소 → 심층리서치 → 마크다운 정리 → 마스터프롬프트 → 한 섹션씩 본문 작성 → 내 스타일 추출)이 <b>GPTs Instructions + Knowledge로 그대로 저장</b>됩니다. 다음 분기에는 회의록·리서치 결과만 새로 첨부하면 같은 보고서가 나옵니다. <b>부서원 누구나 같은 방식으로 활용</b>하면 본부 전체의 디지털 자산이 됩니다.</div>
   </div>
 </section>
 
