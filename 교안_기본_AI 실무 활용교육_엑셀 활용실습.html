@@ -7,16 +7,25 @@
 <style>
 @import url("https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/subsets/Paperlogy-dynamic-subset.css");
 :root {
-  --p: #F36F21; --p2: #FF8B45; --pd: #C24E12;
-  --p-soft: #FFF3E6; --p-soft-2: #FFE3CC;
-  --accent: #1A1A1A; --bk: #1A1A1A;
-  --dk: #333; --md: #666; --lt: #999;
-  --bd: #E5E5E5; --bd-2: #CCC;
-  --bg: #F5F5F5; --bg-2: #FAFAFA; --w: #FFF;
-  --g: #2E7D32; --g-bg: #F0F9F0; --g-bd: #BFE3BF;
-  --r: #C62828; --r-bg: #FFEBEE;
-  --y: #F57F17; --y-bg: #FFFDE7;
-  --b: #1565C0; --b-bg: #E3F2FD;
+  --p: #F36F21;
+  --p2: #FF8B45;
+  --pd: #C24E12;
+  --p-soft: #FFF3E6;
+  --p-soft-2: #FFE3CC;
+  --bk: #1A1A1A;
+  --dk: #333;
+  --md: #666;
+  --lt: #999;
+  --bd: #E5E5E5;
+  --bd-2: #CCC;
+  --bg: #F5F5F5;
+  --bg-2: #FAFAFA;
+  --w: #FFF;
+  --g: #2E7D32;
+  --g-bg: #F0F9F0;
+  --g-bd: #BFE3BF;
+  --r: #C62828;
+  --r-bg: #FFEBEE;
   --sidebar-w: 250px;
 }
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -30,69 +39,40 @@ body {
 }
 svg { display: block; max-width: 100%; height: auto; }
 
-/* Sidebar */
+/* ── Sidebar ── */
 .sidebar {
   position: fixed; top: 0; left: 0;
   width: var(--sidebar-w); height: 100vh;
   background: var(--bk); overflow-y: auto; z-index: 1000;
   transition: transform 0.3s ease;
 }
-.sidebar-header {
-  padding: 24px 20px 18px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
+.sidebar-header { padding: 24px 20px 18px; border-bottom: 1px solid rgba(255,255,255,0.1); }
 .sidebar-badge {
-  display: inline-block;
-  border: 1px solid var(--p2);
-  padding: 3px 10px;
-  font-size: 10px; color: var(--p2);
-  letter-spacing: 1.5px; font-weight: 700;
-  margin-bottom: 8px;
+  display: inline-block; border: 1px solid var(--p2);
+  padding: 3px 10px; font-size: 10px; color: var(--p2);
+  letter-spacing: 1.5px; font-weight: 700; margin-bottom: 8px;
 }
-.sidebar-title {
-  font-size: 15px; color: var(--w);
-  font-weight: 700; line-height: 1.4;
-}
+.sidebar-title { font-size: 15px; color: var(--w); font-weight: 700; line-height: 1.4; }
 .sidebar-title em { font-style: normal; color: var(--p2); }
 .sidebar-nav { padding: 12px 0; }
 .sidebar-nav .nav-module {
-  padding: 10px 20px 6px;
-  font-size: 10px; font-weight: 700;
-  color: var(--p2); letter-spacing: 1px;
-  text-transform: uppercase;
+  padding: 10px 20px 6px; font-size: 10px; font-weight: 700;
+  color: var(--p2); letter-spacing: 1px; text-transform: uppercase;
 }
 .sidebar-nav a {
-  display: block;
-  padding: 7px 20px 7px 28px;
-  font-size: 13px;
-  color: rgba(255,255,255,0.55);
-  text-decoration: none;
-  transition: all 0.2s;
-  border-left: 2px solid transparent;
+  display: block; padding: 7px 20px 7px 28px; font-size: 13px;
+  color: rgba(255,255,255,0.55); text-decoration: none;
+  transition: all 0.2s; border-left: 2px solid transparent;
 }
 .sidebar-nav a:hover { color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.05); }
 .sidebar-nav a.active {
-  color: var(--w);
-  background: rgba(243,111,33,0.18);
-  border-left-color: var(--p2);
-  font-weight: 600;
-}
-.sidebar-nav a.sub { padding-left: 40px; font-size: 12px; }
-.sidebar-nav a.nav-head {
-  color: var(--p2); font-weight: 700; font-size: 14px;
-  padding: 14px 20px 8px 22px;
-  margin-top: 4px; letter-spacing: .2px;
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
-.sidebar-nav a.nav-head:hover { color: #FFB880; background: transparent; }
-.sidebar-nav a.nav-head.active {
-  color: #FFB880; background: rgba(243,111,33,0.14);
-  border-left-color: var(--p2);
+  color: var(--w); background: rgba(243,111,33,0.18);
+  border-left-color: var(--p2); font-weight: 600;
 }
 .sidebar-back-page {
   display: block;
   margin: 18px 14px 8px;
-  padding: 14px 16px;
+  padding: 14px 16px 14px 36px;
   background: linear-gradient(135deg, #333, #555);
   color: var(--w);
   text-decoration: none;
@@ -101,475 +81,228 @@ svg { display: block; max-width: 100%; height: auto; }
   box-shadow: 0 4px 14px rgba(0,0,0,.25);
   position: relative;
 }
-.sidebar-back-page:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(0,0,0,.4);
-}
+.sidebar-back-page:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,0,0,.4); }
 .sidebar-back-page::before {
-  content: "←";
-  position: absolute;
-  left: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 16px;
-  color: rgba(255,255,255,.7);
+  content: "←"; position: absolute; left: 14px; top: 50%;
+  transform: translateY(-50%); font-size: 16px; color: rgba(255,255,255,.7);
 }
-.sbp-meta {
-  font-size: 10px;
-  color: rgba(255,255,255,.55);
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  margin-bottom: 3px;
-  margin-left: 22px;
-}
-.sbp-label {
-  font-size: 13.5px;
-  font-weight: 700;
-  letter-spacing: -.005em;
-  margin-left: 22px;
-}
+.sbp-meta { font-size: 10px; color: rgba(255,255,255,.55); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.sbp-label { font-size: 13.5px; font-weight: 700; margin-top: 2px; }
 .sidebar-footer {
-  padding: 16px 20px;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 16px 20px; border-top: 1px solid rgba(255,255,255,0.1);
   font-size: 11px; color: rgba(255,255,255,0.35);
 }
-
 .hamburger {
-  display: none;
-  position: fixed; top: 14px; left: 14px;
-  z-index: 1100; background: var(--bk);
-  color: var(--w); border: none;
-  padding: 10px 12px; font-size: 20px;
-  cursor: pointer; border-radius: 4px;
+  display: none; position: fixed; top: 14px; left: 14px;
+  z-index: 1100; background: var(--bk); color: var(--w); border: none;
+  padding: 10px 12px; font-size: 20px; cursor: pointer; border-radius: 4px;
 }
+.sidebar-overlay {
+  display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.45); z-index: 999;
+}
+.sidebar-overlay.show { display: block; }
 
-.main {
-  margin-left: calc(var(--sidebar-w) + 20px);
-  max-width: 980px;
-  background: var(--w);
-  min-height: 100vh;
-}
+/* Main */
+.main { margin-left: calc(var(--sidebar-w) + 20px); max-width: 980px; background: var(--w); min-height: 100vh; }
 
 /* Hero */
-.hero {
-  background: linear-gradient(135deg, #2B1810, #C24E12 60%, #F36F21);
-  padding: 80px 60px; position: relative;
-}
+.hero { background: linear-gradient(135deg, #2A1403, #96420C 55%, #F36F21); padding: 80px 60px; position: relative; }
 .hero-badge {
-  display: inline-block;
-  border: 1px solid rgba(255,255,255,.35);
-  padding: 5px 14px;
-  font-size: 11px;
-  color: rgba(255,255,255,.8);
+  display: inline-block; border: 1px solid rgba(255,255,255,.35);
+  padding: 5px 14px; font-size: 11px; color: rgba(255,255,255,.8);
   letter-spacing: 1px; margin-bottom: 28px;
 }
-.hero h1 {
-  font-size: 44px; color: var(--w);
-  font-weight: 700; line-height: 1.2;
-  margin-bottom: 20px;
-  letter-spacing: -.02em;
-}
-.hero-sub {
-  font-size: 17px;
-  color: rgba(255,255,255,.9);
-  line-height: 1.7;
-}
+.hero h1 { font-size: 42px; color: var(--w); font-weight: 700; line-height: 1.25; margin-bottom: 20px; letter-spacing: -.02em; }
+.hero-sub { font-size: 17px; color: rgba(255,255,255,.9); line-height: 1.7; max-width: 720px; }
 .hero-sub b { color: var(--w); font-weight: 700; }
 .hero-meta {
-  margin-top: 36px; display: flex;
-  gap: 32px;
-  border-top: 1px solid rgba(255,255,255,.15);
-  padding-top: 22px; flex-wrap: wrap;
+  margin-top: 36px; display: flex; gap: 32px;
+  border-top: 1px solid rgba(255,255,255,.15); padding-top: 22px; flex-wrap: wrap;
 }
 .hero-meta-item { font-size: 13px; color: rgba(255,255,255,.65); }
 .hero-meta-item span { color: var(--w); font-weight: 600; display: block; margin-top: 2px; }
 
+/* Roadmap */
+.timetable { display: grid; grid-template-columns: repeat(7,1fr); border: 1px solid var(--bd); }
+.tt-item { padding: 18px 8px; text-align: center; border-right: 1px solid var(--bd); }
+.tt-item:last-child { border-right: none; }
+.tt-time { font-size: 11px; color: var(--p); font-weight: 700; letter-spacing: .5px; }
+.tt-title { font-size: 12px; font-weight: 700; color: var(--bk); margin-top: 6px; line-height: 1.4; }
+.tt-data { font-size: 11px; color: var(--lt); margin-top: 4px; }
+
 /* Module */
-.module {
-  padding: 80px 60px;
-  border-bottom: 1px solid var(--bd);
-}
-.mod-head {
-  display: flex; align-items: center;
-  gap: 16px; margin-bottom: 28px; flex-wrap: wrap;
-}
-.mod-num {
-  background: var(--bk); color: var(--w);
-  font-size: 11px; font-weight: 700;
-  padding: 6px 14px; letter-spacing: 1px;
-}
+.module { padding: 80px 60px; border-bottom: 1px solid var(--bd); }
+.mod-head { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; flex-wrap: wrap; }
+.mod-num { background: var(--bk); color: var(--w); font-size: 11px; font-weight: 700; padding: 6px 14px; letter-spacing: 1px; }
+.mod-num.demo { background: var(--p); }
 .mod-time { font-size: 13px; color: var(--p); font-weight: 600; }
-.mod-title {
-  font-size: 28px; font-weight: 700; color: var(--bk);
-  letter-spacing: -.01em; line-height: 1.3;
-}
-.mod-title small {
-  display: block; font-size: 15px;
-  font-weight: 400; color: var(--lt);
-  margin-top: 8px; line-height: 1.55;
-}
+.mod-title { font-size: 28px; font-weight: 700; color: var(--bk); letter-spacing: -.01em; line-height: 1.3; }
+.mod-title small { display: block; font-size: 15px; font-weight: 400; color: var(--lt); margin-top: 8px; line-height: 1.55; }
 
 .breath-sm { height: 36px; }
 .breath { height: 64px; }
 .breath-lg { height: 96px; }
 
-.h-lead {
-  font-size: 19px; font-weight: 700;
-  color: var(--bk);
-  margin: 0 0 16px;
-  padding-left: 12px;
-  border-left: 4px solid var(--accent);
-}
-.p-lead {
-  font-size: 15px; color: var(--dk);
-  margin: 0 0 24px;
-  line-height: 1.75;
-  max-width: 760px;
-}
+.h-lead { font-size: 19px; font-weight: 700; color: var(--bk); margin: 0 0 16px; padding-left: 12px; border-left: 4px solid var(--p); }
+.p-lead { font-size: 15px; color: var(--dk); margin: 0 0 24px; line-height: 1.75; max-width: 760px; }
 .p-lead b { color: var(--bk); }
 
-/* 마크다운 출력 미리보기 */
-.md-output {
-  background: #141822;
-  border-radius: 6px;
-  padding: 26px 30px;
-  margin: 0;
-  color: #E0E0E0;
-  font-family: 'Consolas', 'Courier New', monospace;
-  font-size: 13px;
-  line-height: 1.9;
-  border: 1px solid #252B3A;
-  position: relative;
+/* Spotlight */
+.spotlight {
+  margin: 0; padding: 48px 40px;
+  background: linear-gradient(180deg, var(--p-soft) 0%, #FFF 80%);
+  border: 1px solid var(--p-soft-2); border-radius: 8px; text-align: center;
 }
-.md-output::before {
-  content: '📄 정리된 마크다운 결과';
-  position: absolute; top: -10px; left: 20px;
-  background: #1E2433; color: var(--p2);
-  font-size: 10px; font-weight: 700;
-  padding: 4px 12px;
-  letter-spacing: .5px;
-  font-family: 'Paperlogy', sans-serif;
-  border-radius: 3px;
-}
-.md-output.project-prompt::before { content: '📄 생성된 마스터 프롬프트'; }
-.md-output .h1 {
-  color: var(--w); font-weight: 700; font-size: 14px;
-  border-bottom: 1px solid rgba(255,255,255,.15);
-  padding-bottom: 6px; margin: 6px 0 14px;
-}
-.md-output .h2 { color: var(--p2); font-weight: 700; font-size: 13px; margin: 16px 0 6px; }
-.md-output .ln { color: #CCC; padding-left: 14px; position: relative; }
-.md-output .ln::before { content: '-'; position: absolute; left: 0; color: #888; }
-.md-output .ai-add {
-  display: inline-block;
-  background: rgba(243, 111, 33, .22);
-  color: #FFB089;
-  padding: 1px 8px;
-  border-radius: 2px;
-  font-size: 10.5px;
-  font-weight: 700;
-  margin-left: 6px;
-  letter-spacing: .3px;
-}
-.md-output .blank {
-  color: #FFD369;
-  background: rgba(255, 211, 105, .1);
-  padding: 0 4px;
-  border-radius: 2px;
-}
+.spotlight .sp-eyebrow { font-size: 11px; color: var(--p); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px; }
+.spotlight .sp-headline { font-size: 25px; font-weight: 700; color: var(--bk); line-height: 1.4; letter-spacing: -.01em; margin-bottom: 16px; }
+.spotlight .sp-headline em { font-style: normal; background: var(--p); color: var(--w); padding: 0 10px; border-radius: 3px; }
+.spotlight .sp-detail { font-size: 14px; color: var(--md); line-height: 1.7; max-width: 640px; margin: 0 auto; }
+.spotlight .sp-detail b { color: var(--bk); }
 
-/* info-grid 2x2 변형 */
-.info-grid-2x2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  max-width: 760px;
-  margin: 0 auto;
-}
-.info-grid-2x2 .info-card {
-  text-align: center;
-  padding: 32px 28px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.info-grid-2x2 .info-card h5 {
-  margin-bottom: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-}
-.info-grid-2x2 .info-card h5 em {
-  margin: 0;
-  font-size: 10px;
-  letter-spacing: 1.2px;
-  padding: 3px 10px;
-  background: var(--p-soft);
-  border-radius: 999px;
-}
-.info-grid-2x2 .info-card p { text-align: center; max-width: 280px; }
-@media (max-width: 680px) {
-  .info-grid-2x2 { grid-template-columns: 1fr; max-width: 100%; }
-}
-
-/* 인라인 코드 */
-p code, li code, td code {
-  background: #FFF3E6;
-  color: var(--p);
-  padding: 1px 6px;
-  border-radius: 3px;
-  font-size: 12.5px;
-  font-family: 'Consolas', 'Courier New', monospace;
-  font-weight: 600;
-}
-
-/* 실습 자료 다운로드 카드 */
-.resource {
-  background: #FFF8F2;
-  border: 1px solid #FFD9B3;
-  border-left: 4px solid var(--p);
-  border-radius: 4px;
-  padding: 22px 26px;
-  margin: 0;
-  display: grid;
-  grid-template-columns: 60px 1fr auto;
-  gap: 22px;
-  align-items: center;
-}
-.resource-icon {
-  width: 60px; height: 60px;
-  background: var(--w);
-  border: 1px solid #FFD9B3;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  gap: 3px; border-radius: 4px;
-}
-.resource-icon .ri-emoji { font-size: 20px; }
-.resource-icon .ri-ext { font-size: 9px; font-weight: 700; color: var(--p); letter-spacing: .8px; }
-.resource-text .r-meta {
-  font-size: 10px; font-weight: 700;
-  color: var(--p); letter-spacing: 1px;
-  margin-bottom: 4px; text-transform: uppercase;
-}
-.resource-text strong { display: block; font-size: 16px; font-weight: 700; color: var(--bk); margin-bottom: 4px; }
-.resource-text p { font-size: 13px; color: var(--md); line-height: 1.65; margin: 0; }
-.resource-btn {
-  background: var(--bk); color: var(--w);
-  font-size: 12px; font-weight: 700;
-  text-decoration: none;
-  padding: 12px 22px;
-  border-radius: 3px;
-  letter-spacing: .5px;
-  transition: background 0.2s;
-  white-space: nowrap;
-}
-.resource-btn:hover { background: var(--p); }
-.resource-btn::after { content: ' ↓'; }
-@media (max-width: 900px) {
-  .resource { grid-template-columns: 48px 1fr; row-gap: 14px; }
-  .resource-icon { width: 48px; height: 48px; }
-  .resource-btn { grid-column: 1 / -1; justify-self: stretch; text-align: center; }
-}
-
-/* 프롬프트 블록 */
-.prompt-block {
-  position: relative;
-  background: #141822;
-  border-radius: 6px;
-  margin: 0;
-  overflow: hidden;
-  border: 1px solid #252B3A;
-}
-.prompt-header {
-  display: flex; justify-content: space-between;
-  align-items: center;
-  padding: 12px 18px;
-  background: #1E2433;
-  border-bottom: 1px solid #2A3142;
-}
-.prompt-label { font-size: 11px; color: var(--p2); font-weight: 700; letter-spacing: .5px; }
-.prompt-body {
-  padding: 20px 22px;
-  font-family: 'Consolas', 'Courier New', monospace;
-  font-size: 13px; color: #E0E0E0;
-  line-height: 1.85;
-  white-space: pre-wrap; word-break: break-word;
-  overflow-x: auto;
-  max-height: 720px; overflow-y: auto;
-}
-.prompt-body .hl { color: #FFD369; }
-.prompt-body .hl2 { color: #80D8FF; }
-.prompt-body .mute { color: #888; }
-
-/* Info grid */
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
-  margin: 0;
-}
-.info-card {
-  background: var(--w);
-  border: 1px solid var(--bd);
-  padding: 24px;
-  border-radius: 6px;
-}
-.info-card h5 { font-size: 15px; font-weight: 700; color: var(--bk); margin-bottom: 10px; line-height: 1.4; }
-.info-card h5 em { font-style: normal; color: var(--p); font-size: 11px; margin-right: 6px; letter-spacing: .5px; }
-.info-card p { font-size: 13.5px; color: var(--md); line-height: 1.7; }
-.info-card p b { color: var(--bk); }
-
-/* Tip / Note / Warn boxes */
-.tip-box, .note-box, .warn-box {
-  padding: 18px 24px;
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.75;
-  border-radius: 4px;
-}
+/* Boxes */
+.tip-box, .note-box, .warn-box { padding: 18px 24px; margin: 0; font-size: 14px; line-height: 1.75; border-radius: 4px; }
 .tip-box { background: #FFF8E1; border-left: 3px solid #FFB300; color: #6D4C00; }
 .tip-box strong { color: #E65100; }
 .note-box { background: var(--bg); color: var(--md); }
 .note-box strong { color: var(--dk); }
 .warn-box { background: var(--r-bg); border-left: 3px solid #E53935; color: #7A1E1E; }
 .warn-box strong { color: #B71C1C; }
-.tip-box b, .warn-box b { color: inherit; font-weight: 700; }
+.info-box {
+  background: var(--p-soft); border-left: 3px solid var(--p);
+  padding: 20px 26px; margin: 0; border-radius: 4px;
+  font-size: 14px; line-height: 1.75; color: var(--dk);
+}
+.info-box strong { color: var(--pd); display: block; margin-bottom: 8px; font-size: 15px; }
+.info-box ul { margin: 6px 0 0; padding-left: 18px; }
+.info-box li { font-size: 13.5px; color: var(--dk); line-height: 1.7; margin-bottom: 4px; }
+.info-box li b, .info-box p b { color: var(--bk); }
+.info-box p { margin: 0; }
 
-/* Step flow */
-.step-flow {
-  display: grid;
-  grid-template-columns: 1fr 32px 1fr 32px 1fr;
-  gap: 0;
-  align-items: stretch;
+/* Prompt block */
+.prompt-block { position: relative; background: #141822; border-radius: 6px; margin: 0; overflow: hidden; border: 1px solid #252B3A; }
+.prompt-header { display: flex; justify-content: space-between; align-items: center; padding: 12px 18px; background: #1E2433; border-bottom: 1px solid #2A3142; }
+.prompt-label { font-size: 11px; color: var(--p2); font-weight: 700; letter-spacing: .5px; }
+.copy-btn {
+  background: transparent; border: 1px solid #555; color: #aaa;
+  padding: 3px 10px; font-size: 11px; cursor: pointer;
+  border-radius: 3px; font-family: inherit; transition: all 0.2s;
 }
-.step-card {
-  background: var(--w);
-  border: 1px solid var(--bd);
-  border-top: 3px solid var(--p);
-  border-radius: 6px;
-  padding: 22px 22px 20px;
-  display: flex; flex-direction: column;
+.copy-btn:hover { border-color: var(--p2); color: var(--p2); }
+.copy-btn.copied { border-color: #4CAF50; color: #4CAF50; }
+.prompt-body {
+  padding: 20px 22px; font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 13px; color: #E0E0E0; line-height: 1.85;
+  white-space: pre-wrap; word-break: break-word;
+  overflow-x: auto; max-height: 640px; overflow-y: auto;
 }
-.step-card .step-num {
-  font-size: 10px; font-weight: 700;
-  color: var(--p); letter-spacing: 1.2px;
-  margin-bottom: 10px;
-}
-.step-card h4 {
-  font-size: 14.5px; font-weight: 700;
-  color: var(--bk); margin-bottom: 10px; line-height: 1.4;
-}
-.step-card p {
-  font-size: 12.5px; color: var(--md);
-  line-height: 1.65; margin: 0;
-}
-.step-arrow {
-  display: flex; align-items: center; justify-content: center;
-  font-size: 24px; color: var(--lt); font-weight: 300;
-}
-@media (max-width: 900px) {
-  .step-flow { grid-template-columns: 1fr; gap: 12px; }
-  .step-arrow { display: none; }
-}
+.prompt-body .hl { color: #FFD369; }
+.prompt-body .hl2 { color: #80D8FF; }
+.prompt-body .mute { color: #888; }
 
-/* Placeholder card */
-.placeholder-card {
-  background: var(--bg-2);
-  border: 2px dashed var(--bd-2);
-  border-radius: 12px;
-  padding: 60px 50px;
-  text-align: center;
-}
-.placeholder-card .ph-emoji {
-  font-size: 48px;
-  margin-bottom: 18px;
-}
-.placeholder-card .ph-title {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--bk);
-  margin-bottom: 10px;
-}
-.placeholder-card .ph-desc {
-  font-size: 14px;
-  color: var(--md);
-  line-height: 1.7;
-  max-width: 520px;
-  margin: 0 auto;
-}
+/* Info grid */
+.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin: 0; }
+.info-card { background: var(--w); border: 1px solid var(--bd); padding: 24px; border-radius: 6px; }
+.info-card h5 { font-size: 15px; font-weight: 700; color: var(--bk); margin-bottom: 10px; line-height: 1.4; }
+.info-card h5 em { font-style: normal; color: var(--p); font-size: 11px; margin-right: 6px; letter-spacing: .5px; }
+.info-card p { font-size: 13.5px; color: var(--md); line-height: 1.7; }
+.info-card p b { color: var(--bk); }
 
-/* 실습 카드 (예고 — 채워질 자리) */
-.upcoming-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 18px;
-  margin-top: 8px;
+/* Comparison table */
+.comp-table { width: 100%; border-collapse: collapse; margin: 0; font-size: 13px; }
+.comp-table th, .comp-table td { border: 1px solid var(--bd); padding: 12px 14px; text-align: left; vertical-align: top; }
+.comp-table th { background: var(--bg); color: var(--bk); font-weight: 700; font-size: 12px; }
+.comp-table td b { color: var(--bk); }
+.comp-table tr.hl td { background: var(--p-soft); }
+
+/* Self-check */
+.selfcheck { background: var(--bg-2); border: 1px dashed var(--bd); padding: 22px 26px; margin: 0; border-radius: 4px; font-size: 13.5px; color: var(--dk); }
+.selfcheck h5 { font-size: 12px; color: var(--p); font-weight: 700; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 14px; }
+.selfcheck li { list-style: none; padding: 6px 0 6px 26px; position: relative; line-height: 1.7; }
+.selfcheck li::before { content: '☐'; position: absolute; left: 0; color: var(--md); font-size: 14px; }
+.selfcheck li b { color: var(--bk); }
+
+/* Resource / Sample cards */
+.resource {
+  background: var(--p-soft); border: 1px solid var(--p-soft-2); border-left: 4px solid var(--p);
+  border-radius: 4px; padding: 22px 26px; margin: 0;
+  display: grid; grid-template-columns: 60px 1fr auto; gap: 22px; align-items: center;
 }
-.upcoming-card {
-  background: var(--w);
-  border: 1px solid var(--bd);
-  border-radius: 10px;
-  padding: 22px 24px;
-  position: relative;
+.resource-icon {
+  width: 60px; height: 60px; background: var(--w); border: 1px solid var(--p-soft-2);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 3px; border-radius: 4px;
 }
-.upcoming-card::before {
-  content: "예고";
-  position: absolute;
-  top: -10px; left: 18px;
-  background: var(--lt);
-  color: var(--w);
-  font-size: 10px;
-  font-weight: 700;
-  padding: 3px 9px;
-  border-radius: 3px;
-  letter-spacing: .5px;
+.resource-icon .ri-emoji { font-size: 20px; }
+.resource-icon .ri-ext { font-size: 9px; font-weight: 700; color: var(--p); letter-spacing: .8px; }
+.resource-text .r-meta { font-size: 10px; font-weight: 700; color: var(--p); letter-spacing: 1px; margin-bottom: 4px; text-transform: uppercase; }
+.resource-text strong { display: block; font-size: 16px; font-weight: 700; color: var(--bk); margin-bottom: 4px; }
+.resource-text p { font-size: 13px; color: var(--md); line-height: 1.65; margin: 0; }
+.resource-btn {
+  background: var(--bk); color: var(--w); font-size: 12px; font-weight: 700;
+  text-decoration: none; padding: 12px 22px; border-radius: 3px; letter-spacing: .5px;
+  transition: background 0.2s; white-space: nowrap; border: none; cursor: pointer; font-family: inherit;
 }
-.upcoming-card .uc-no {
-  font-size: 11px;
-  color: var(--p);
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
+.resource-btn:hover { background: var(--p); }
+.resource-btn::after { content: ' ↓'; }
+.sample {
+  background: var(--g-bg); border: 1px solid var(--g-bd); border-left: 4px solid var(--g);
+  border-radius: 4px; padding: 22px 26px; margin: 0;
+  display: grid; grid-template-columns: 60px 1fr auto; gap: 22px; align-items: center;
 }
-.upcoming-card h4 {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--bk);
-  margin-bottom: 8px;
-  line-height: 1.4;
+.sample-icon {
+  width: 60px; height: 60px; background: var(--w); border: 1px solid var(--g-bd);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 3px; border-radius: 4px;
 }
-.upcoming-card p {
-  font-size: 13px;
-  color: var(--md);
-  line-height: 1.65;
+.sample-icon .si-emoji { font-size: 20px; }
+.sample-icon .si-ext { font-size: 9px; font-weight: 700; color: var(--g); letter-spacing: .8px; }
+.sample-text .s-meta { font-size: 10px; font-weight: 700; color: var(--g); letter-spacing: 1px; margin-bottom: 4px; text-transform: uppercase; }
+.sample-text strong { display: block; font-size: 16px; font-weight: 700; color: var(--bk); margin-bottom: 4px; }
+.sample-text p { font-size: 13px; color: var(--md); line-height: 1.65; margin: 0; }
+.sample-btn {
+  background: var(--g); color: var(--w); font-size: 12px; font-weight: 700;
+  text-decoration: none; padding: 12px 22px; border-radius: 3px; letter-spacing: .5px;
+  transition: background 0.2s; white-space: nowrap;
 }
+.sample-btn:hover { background: #1B5E20; }
+.sample-btn::after { content: ' ↓'; }
+
+/* Steps */
+.num-steps { list-style: none; margin: 0; counter-reset: ns; }
+.num-steps li { padding: 8px 0 8px 38px; position: relative; counter-increment: ns; font-size: 14px; color: var(--dk); line-height: 1.7; }
+.num-steps li::before {
+  content: counter(ns); position: absolute; left: 0; top: 9px;
+  width: 24px; height: 24px; background: var(--p-soft); border: 1px solid var(--p-soft-2);
+  color: var(--pd); font-size: 12px; font-weight: 700; border-radius: 4px; text-align: center; line-height: 23px;
+}
+.num-steps li b { color: var(--bk); }
 
 /* Footer */
 .footer {
-  background: var(--bk);
-  padding: 36px 60px;
-  display: flex; justify-content: space-between;
-  align-items: center; flex-wrap: wrap; gap: 12px;
+  background: var(--bg-2); border-top: 1px solid var(--bd); padding: 28px 60px;
+  display: flex; justify-content: space-between; font-size: 12px; color: var(--md); flex-wrap: wrap; gap: 8px;
 }
-.footer p { font-size: 12px; color: rgba(255,255,255,.5); }
-.footer span { color: var(--w); font-weight: 500; }
+.footer span { color: var(--bk); font-weight: 700; }
 
-/* Sidebar overlay (mobile) */
-.sidebar-overlay {
-  display: none;
-  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.45);
-  z-index: 999;
+/* Print */
+@media print {
+  .sidebar, .hamburger { display: none !important; }
+  .main { margin-left: 0 !important; max-width: 100%; }
+  .hero, .module { padding: 32px 30px; }
+  .module { page-break-inside: avoid; }
+  .prompt-block { border: 1px solid #ccc; break-inside: avoid; }
+  .copy-btn, .resource-btn, .sample-btn { display: none; }
+  .breath, .breath-lg { height: 24px; }
 }
-.sidebar-overlay.show { display: block; }
-
-/* 반응형 */
 @media (max-width: 1100px) {
   .main { max-width: 100%; margin-left: calc(var(--sidebar-w) + 0px); }
   .hero { padding: 60px 40px; }
-  .hero h1 { font-size: 36px; }
+  .hero h1 { font-size: 34px; }
   .module { padding: 60px 40px; }
+  .timetable { grid-template-columns: repeat(4, 1fr); }
+  .timetable .tt-item:nth-child(4n) { border-right: none; }
+  .timetable .tt-item:nth-child(n+5) { border-top: 1px solid var(--bd); }
 }
 @media (max-width: 900px) {
   .sidebar { transform: translateX(-100%); width: 86%; max-width: 320px; }
@@ -577,18 +310,30 @@ p code, li code, td code {
   .hamburger { display: block; }
   .main { margin-left: 0 !important; max-width: 100%; }
   .hero { padding: 48px 24px; }
-  .hero h1 { font-size: 28px; line-height: 1.3; }
+  .hero h1 { font-size: 27px; line-height: 1.3; }
   .hero-sub { font-size: 15px; }
   .hero-meta { flex-direction: column; gap: 10px; padding-top: 18px; }
   .module { padding: 48px 22px; }
   .mod-title { font-size: 22px; }
-  .placeholder-card { padding: 40px 24px; }
-  .placeholder-card .ph-title { font-size: 18px; }
-  .upcoming-grid { grid-template-columns: 1fr; }
+  .mod-title small { font-size: 13.5px; }
+  .h-lead { font-size: 17px; }
+  .timetable { grid-template-columns: repeat(2, 1fr); }
+  .timetable .tt-item { border-right: 1px solid var(--bd); border-bottom: 1px solid var(--bd); }
+  .info-grid { grid-template-columns: 1fr; }
+  .comp-table { font-size: 12px; }
+  .comp-table th, .comp-table td { padding: 10px 10px; }
+  .prompt-body { font-size: 12px; padding: 14px; line-height: 1.7; }
+  .resource, .sample { grid-template-columns: 48px 1fr; row-gap: 14px; }
+  .resource-icon, .sample-icon { width: 48px; height: 48px; }
+  .resource-btn, .sample-btn { grid-column: 1 / -1; justify-self: stretch; text-align: center; }
+  .spotlight { padding: 36px 24px; }
+  .spotlight .sp-headline { font-size: 20px; }
+  .breath-lg { height: 56px; }
+  .breath { height: 40px; }
   .footer { padding: 24px 22px; flex-direction: column; align-items: flex-start; gap: 6px; }
 }
 @media (max-width: 480px) {
-  .hero h1 { font-size: 24px; }
+  .hero h1 { font-size: 23px; }
   .mod-title { font-size: 20px; }
   .module { padding: 36px 16px; }
   .hero { padding: 36px 18px; }
@@ -603,44 +348,24 @@ p code, li code, td code {
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-header">
     <div class="sidebar-badge">HRD · 기본 교안</div>
-    <div class="sidebar-title"><em>디지털 스킬 UP</em><br>AI 실무 5시간 과정</div>
+    <div class="sidebar-title">AI 실무 활용교육<em> · 실습편</em></div>
   </div>
   <div class="sidebar-nav">
     <div class="nav-module">교안 (Page 1)</div>
-    <a href="교안_기본_AI 실무 활용교육_프롬프트 엔지니어링.html">← 교안 개요</a>
-    <a href="교안_기본_AI 실무 활용교육_프롬프트 엔지니어링.html#p2">PART 02 · 프롬프트 기본</a>
-    <a href="교안_기본_AI 실무 활용교육_프롬프트 엔지니어링.html#p3">PART 03 · 마크다운</a>
-    <a href="교안_기본_AI 실무 활용교육_프롬프트 엔지니어링.html#p4">PART 04 · 본격 리서치</a>
-    <a href="교안_기본_AI 실무 활용교육_프롬프트 엔지니어링.html#p5">PART 05 · 기획안 본문</a>
-
+    <a href="index.html#p2">PART 02 · 프롬프트 기본</a>
+    <a href="index.html#p3">PART 03 · 심층리서치</a>
+    <a href="index.html#p5">PART 05 · 마스터프롬프트</a>
+    <a href="index.html#p8">PART 08 · GPTs 자산화</a>
     <div class="nav-module" style="margin-top:8px;">실습편 (Page 2)</div>
-    <a href="#practice-1" class="nav-head active">실습 1 · 영수증 OCR 추출</a>
-    <a href="#p1-scenario" class="sub">&#8226; 실습 시나리오</a>
-    <a href="#p1-files" class="sub">&#8226; 실습 자료 다운로드</a>
-    <a href="#p1-prompt" class="sub">&#8226; 실습 프롬프트</a>
-    <a href="#p1-anatomy" class="sub">&#8226; 프롬프트 구조 분석</a>
-    <a href="#p1-steps" class="sub">&#8226; 실행 단계</a>
-    <a href="#practice-2" class="nav-head">실습 2 · 엑셀 함수 X AI</a>
-    <a href="#p2-scenario" class="sub">&#8226; 실습 시나리오</a>
-    <a href="#p2-files" class="sub">&#8226; 실습 자료 다운로드</a>
-    <a href="#p2-prompts" class="sub">&#8226; 단계별 함수 실습</a>
-    <a href="#practice-3" class="nav-head">실습 3 · VBA 자동화</a>
-    <a href="#p3-vba" class="sub">&#8226; VBA란?</a>
-    <a href="#p3-scenario" class="sub">&#8226; 실습 시나리오</a>
-    <a href="#p3-files" class="sub">&#8226; 실습 자료 다운로드</a>
-    <a href="#p3-rough" class="sub">&#8226; STEP 1 러프 요청</a>
-    <a href="#p3-master" class="sub">&#8226; STEP 2 마스터 보강</a>
-    <a href="#p3-code" class="sub">&#8226; STEP 3 VBA 코드</a>
-    <a href="#p3-run" class="sub">&#8226; 실행 단계</a>
-    <a href="#practice-4" class="nav-head">실습 4 · Apps Script 폼 자동화</a>
-    <a href="#p4-as" class="sub">&#8226; Apps Script란?</a>
-    <a href="#p4-scenario" class="sub">&#8226; 실습 시나리오</a>
-    <a href="#p4-rough" class="sub">&#8226; STEP 1 러프 요청</a>
-    <a href="#p4-master" class="sub">&#8226; STEP 2 마스터 보강</a>
-    <a href="#p4-code" class="sub">&#8226; STEP 3 코드 받기</a>
-    <a href="#p4-run" class="sub">&#8226; 실행 단계</a>
+    <a href="#s0">오늘의 지도</a>
+    <a href="#s1">CASE 1 · 엑셀 함수</a>
+    <a href="#s2">CASE 2 · 데이터 분석</a>
+    <a href="#s3">CASE 3 · VBA 매크로</a>
+    <a href="#s4">CASE 4 · 앱스 스크립트</a>
+    <a href="#s5">CASE 5 · 보고 장표</a>
+    <a href="#s6">마무리 · 과제 카드</a>
   </div>
-  <a class="sidebar-back-page" href="교안_기본_AI 실무 활용교육_프롬프트 엔지니어링.html">
+  <a class="sidebar-back-page" href="index.html">
     <div class="sbp-meta">Page 1</div>
     <div class="sbp-label">교안으로 돌아가기</div>
   </a>
@@ -656,395 +381,446 @@ p code, li code, td code {
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-badge">PAGE 2 · HANDS-ON PRACTICE</div>
-  <h1>실습편</h1>
+  <h1>엑셀에서 자동화까지,<br>반복 업무를 걷어낸다</h1>
   <div class="hero-sub">
-    <b>OCR · 엑셀 함수 · VBA · Apps Script</b><br>
-    4가지 케이스로 손에 익히는 자동화 실습.
+    함수 한 줄부터 <b>스스로 도는 자동화 시스템</b>까지 — 사무 업무의 다섯 장면을
+    AI로 해결합니다. 수식도, 분석도, 코드도 <b>직접 만들 필요가 없습니다.</b>
+    설명하면, AI가 만듭니다.
   </div>
   <div class="hero-meta">
-    <div class="hero-meta-item">대상 <span>회사 경력사원</span></div>
-    <div class="hero-meta-item">방식 <span>케이스별 단독 실습</span></div>
-    <div class="hero-meta-item">목표 <span>교안 흐름을 다른 주제로 재현</span></div>
+    <div class="hero-meta-item">대상 <span>사무직 실무자</span></div>
+    <div class="hero-meta-item">메인 도구 <span>ChatGPT</span></div>
+    <div class="hero-meta-item">함께 쓰는 도구 <span>구글 폼·앱스 스크립트 · Napkin · NotebookLM · Claude</span></div>
+    <div class="hero-meta-item">산출물 <span>독립 사례 5개 완주</span></div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<div class="timetable" id="roadmap">
+  <div class="tt-item"><div class="tt-time">지도</div><div class="tt-title">오늘의 지도</div><div class="tt-data">사례 5개 · 진행 방식</div></div>
+  <div class="tt-item"><div class="tt-time">CASE 1</div><div class="tt-title">엑셀 함수</div><div class="tt-data">명단 150명 완성</div></div>
+  <div class="tt-item"><div class="tt-time">CASE 2</div><div class="tt-title">데이터 분석</div><div class="tt-data">설문 → 리포트</div></div>
+  <div class="tt-item"><div class="tt-time">CASE 3</div><div class="tt-title">VBA 매크로</div><div class="tt-data">거래명세서 자동 발급</div></div>
+  <div class="tt-item"><div class="tt-time">CASE 4</div><div class="tt-title">앱스 스크립트</div><div class="tt-data">접수 자동 안내</div></div>
+  <div class="tt-item"><div class="tt-time">CASE 5</div><div class="tt-title">보고 장표</div><div class="tt-data">시각화 도구 3종</div></div>
+  <div class="tt-item"><div class="tt-time">마무리</div><div class="tt-title">과제 카드</div><div class="tt-data">내 업무 자동화 1건</div></div>
+</div>
+
+
+<!-- ============================================================
+     S0 · 오늘의 지도
+============================================================ -->
+<section class="module" id="s0">
+  <div class="mod-head">
+    <span class="mod-num">오늘의 지도</span>
+    <span class="mod-time">다섯 개의 독립 사례</span>
+  </div>
+  <h2 class="mod-title">한 업무의 다섯 장면을 AI로 해결한다<small>배경은 하나 — 「직원 역량개발 연수」 운영 업무입니다. 다섯 장면을 각각 독립된 사례로 실습합니다.</small></h2>
+
+  <div class="breath-lg"></div>
+
+  <p class="p-lead">당신은 연수 운영 담당자입니다. 신청자 명단을 정리하고, 만족도 설문을 분석하고,
+  정산 서류를 발급하고, 다음 접수를 자동화하고, 보고 장표를 만듭니다.
+  오늘 이 다섯 가지를 전부 — <b>단, 손으로는 하나도 하지 않고</b> — 끝냅니다.</p>
+
+  <table class="comp-table">
+    <thead>
+      <tr><th style="width:13%;">사례</th><th style="width:29%;">업무 장면</th><th style="width:30%;">해결 도구</th><th>남는 것</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><b>CASE 1</b></td><td>신청자 명단 150명 정리</td><td>엑셀 함수 × AI</td><td>완성된 명단·집계</td></tr>
+      <tr><td><b>CASE 2</b></td><td>만족도 설문 72명 분석</td><td>ChatGPT 데이터 분석</td><td>분석 리포트</td></tr>
+      <tr><td><b>CASE 3</b></td><td>정산 명세서 건별 발급</td><td>VBA 매크로 × AI</td><td>명세서 PDF 자동 발급</td></tr>
+      <tr><td><b>CASE 4</b></td><td>다음 연수 접수 준비</td><td>구글 폼 + 앱스 스크립트</td><td>스스로 도는 접수 시스템</td></tr>
+      <tr><td><b>CASE 5</b></td><td>부서장 보고</td><td>Napkin · NotebookLM · Claude</td><td>보고 장표</td></tr>
+    </tbody>
+  </table>
+
+  <div class="breath-sm"></div>
+
+  <div class="info-box">
+    <strong>앞 사례를 놓쳤어도 괜찮습니다.</strong>
+    <p>사례마다 시작 파일이 준비되어 있어(CASE 4는 파일 없이 <b>새 폼을 만드는 것부터</b>가 시작입니다),
+    어느 사례든 <b>그 지점부터 새로 시작</b>할 수 있습니다.</p>
+  </div>
+
+  <div class="breath"></div>
+
+  <div class="spotlight">
+    <div class="sp-eyebrow">오늘의 한 줄</div>
+    <div class="sp-headline">사례가 진행될수록,<br><em>내가 안 해도 되는 범위</em>가 넓어집니다</div>
+    <div class="sp-detail">수식을 <b>묻고</b>(CASE 1) → 분석을 <b>맡기고</b>(CASE 2) → 코드를 <b>시키고</b>(CASE 3) →
+    시스템을 <b>걸어두고</b>(CASE 4) → 보고까지 <b>만들게 합니다</b>(CASE 5).
+    오늘 처음으로, 코드를 몰라도 코드로 일하게 됩니다.</div>
+  </div>
+
+  <div class="breath-sm"></div>
+
+  <div class="warn-box">
+    <strong>보안 원칙.</strong> 오늘 사용하는 파일은 모두 <b>가공된 더미 데이터</b>입니다(실존 인물·개인정보 없음).
+    실제 업무의 명단·연락처 등 개인정보는 외부 AI에 입력하기 전에 반드시 회사 보안 정책을 확인하세요.
   </div>
 </section>
 
 
-<!-- PRACTICE 1 · 영수증 OCR 데이터 추출 자동화 -->
-<section class="module" id="practice-1">
+<!-- ============================================================
+     S1 · CASE 1 엑셀 함수
+============================================================ -->
+<section class="module" id="s1">
   <div class="mod-head">
-    <span class="mod-num">PRACTICE 1</span>
-    <span class="mod-time">영수증 OCR 데이터 추출 자동화</span>
+    <span class="mod-num">CASE 1</span>
+    <span class="mod-time">엑셀 함수 × AI</span>
   </div>
-  <h2 class="mod-title">다량의 영수증을 한 프롬프트로 엑셀화한다<small>구조화된 프롬프트 하나가 반복 업무를 통째로 자동화한다</small></h2>
+  <h2 class="mod-title">신청자 명단 150명, 수식으로 끝낸다<small>부서도 프로그램도 코드번호뿐인 명단. 지원금 산정과 우선선발 판정까지 — 함수를 외우지 않고 해결합니다.</small></h2>
 
   <div class="breath-lg"></div>
 
-  <p class="p-lead"><b>영수증 30장 → 엑셀</b>. 손으로 옮겨 적으면 1시간, AI에 맡기면 <b>3분</b>. 핵심은 <b>구조화된 프롬프트 하나</b>다.</p>
-
-  <div class="breath"></div>
-
-  <!-- 시나리오 -->
-  <h3 class="h-lead" id="p1-scenario">실습 시나리오 — 월말 경비 정산</h3>
-  <p class="p-lead">책상 위 영수증 30장 → AI 한 번 → 엑셀 다운로드.</p>
-
-  <div class="info-grid">
-    <div class="info-card">
-      <h5><em>INPUT</em>영수증 이미지 다수</h5>
-      <p>JPG / PNG 또는 ZIP 압축 파일. 한국어 영수증.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>PROCESS</em>OCR + Code Interpreter</h5>
-      <p>이미지를 OCR로 한 장씩 읽고 → 추출한 데이터를 엑셀로 정리.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>OUTPUT</em>엑셀 파일</h5>
-      <p>가맹점명 / 거래일시 / 총금액 / 부가세 / 공급가액 <b>5열 시트</b>.</p>
-    </div>
-  </div>
-
-  <div class="breath-lg"></div>
-
-  <!-- 실습 자료 다운로드 -->
-  <h3 class="h-lead" id="p1-files">실습 자료</h3>
-  <p class="p-lead">영수증 이미지 <b>7장</b>이 담긴 ZIP. AI에 그대로 업로드.</p>
+  <p class="p-lead"><b>상황.</b> 연수 신청 마감 직후, 150명의 신청 명단이 도착했습니다. 그런데 부서와 프로그램이
+  <b>코드로만</b> 적혀 있습니다. 오늘 안에 ① 코드를 이름으로 바꾸고 ② 1인당 <b>예상 지원금을 산정</b>하고
+  ③ <b>우선선발 대상을 판정</b>하고 ④ 프로그램별 신청 현황까지 집계해야 합니다. 손으로 하면 한나절 — 수식이면 몇 분입니다.</p>
 
   <div class="resource">
-    <div class="resource-icon">
-      <span class="ri-emoji">🧾</span>
-      <span class="ri-ext">ZIP</span>
-    </div>
+    <div class="resource-icon"><span class="ri-emoji">📋</span><span class="ri-ext">XLSX</span></div>
     <div class="resource-text">
-      <div class="r-meta">▶ AI 채팅창에 업로드할 자료</div>
-      <strong>실습용 영수증 (7장)</strong>
-      <p>실제 영수증 사진 7장을 묶은 압축 파일. ChatGPT에 이 ZIP을 그대로 업로드 + 아래 프롬프트 입력 → 자동 압축 해제 후 OCR 추출이 진행됩니다.</p>
+      <div class="r-meta">Case 1 · Start File</div>
+      <strong>실습 1 — 연수 신청자 명단</strong>
+      <p>신청자 150명 + 부서코드표 + 프로그램표 + 집계 시트. 목표 열이 비어 있습니다.</p>
     </div>
-    <a class="resource-btn" href="실습편_자료/실습용 영수증.zip" download>다운로드</a>
+    <a class="resource-btn" href="실습편_자료/실습1_연수_신청자명단.xlsx" download>파일 받기</a>
   </div>
 
-  <div class="breath-lg"></div>
+  <div class="breath-sm"></div>
 
-  <!-- 실습 프롬프트 -->
-  <h3 class="h-lead" id="p1-prompt">실습 프롬프트</h3>
-  <p class="p-lead">아래 프롬프트 복사 → <b>ChatGPT</b> 채팅창 → ZIP 파일 첨부.</p>
+  <h3 class="h-lead">1-1 · 준비 — 데이터는 빼고, 구조만 넘긴다</h3>
+  <p class="p-lead">AI에게 수식을 시키려면 시트 구조를 알려줘야 합니다. 열 이름을 일일이 타이핑하는 대신 —
+  <b>데이터를 지우고 구조만 남긴 사본을 만들어 파일째 첨부</b>합니다. 실무에서 그대로 쓰는 요령입니다.</p>
 
-  <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT &mdash; 영수증 OCR + 엑셀 추출</span></div>
-<div class="prompt-body"><span class="hl"># 지시문</span>
-- 업로드된 이미지 파일의 텍스트를 인식하고 데이터를 추출해, 만약 압축 파일이 업로드되었다면 압축을 풀어서 작업해
-- <span class="hl2">[중요]</span> OCR로 텍스트 추출할 때는 Code interpreter를 사용하지 마
-- 사용자가 영수증 이미지를 여러 개 업로드할 때, 텍스트를 취합 및 변형 하지 말고 이미지 한 개씩 단계적으로 각각 모든 영수증 이미지의 내용을 추출해라
-- 영수증 이미지를 OCR해서 (1) 가맹점명(상호명), (2) 거래 일시, (3) 총 금액, (4) 부가세, (5) 공급가액 을 추출해
-- 텍스트를 추출하고 나서 Code interpreter를 사용해서 추출한 내용을 엑셀에 "가맹점명 / 거래 일시 / 총 금액 / 부가세 / 공급가액"으로 기록해
-- 최종 결과물을 프롬프트 창에 시트 형태로도 보여주고 엑셀 다운로드 형태로 제공해
-- OCR로 추출할 이미지는 한국어로 적혀 있으며, 모든 답변도 한국어로 진행해
+  <ul class="num-steps">
+    <li>실습 파일을 열어 '신청자명단' 시트에서 <b>3행부터 아래 데이터를 모두 삭제</b>합니다 — 헤더(1행)와 <b>예시 1행(2행)</b>만 남깁니다.</li>
+    <li>부서코드표·프로그램표 시트는 코드 기준표이므로 그대로 둡니다.</li>
+    <li><b>파일 → 다른 이름으로 저장</b> → 「신청자명단_구조.xlsx」</li>
+    <li>ChatGPT에 이 <b>구조 파일을 첨부</b>합니다 — 이제 열 구조를 한 글자도 설명할 필요가 없습니다.</li>
+  </ul>
 
-<span class="hl">## 영수증 이미지 추출 가이드</span>
-1. '가맹점명(상호명)'은 이 상품을 판매한 매장, 식당, 회사의 이름이다. '가맹점명(상호명)'은 다음과 같은 조건에 하나 이상 해당한다.
-   - '(주)'가 포함된 전체 텍스트 (예: 아성다이소_홍대2호점)
-   - 매장명 or 상호명 or 가맹점 or 상호 바로 뒤에 위치한 전체 텍스트
-   - 매장 주소 or 대표자 직전에 나오는 고유명사 전체 텍스트
-   - 영수증 최상단에 큰 글씨로 적힌 이름
+  <div class="breath-sm"></div>
 
-2. '거래 일시'는 YYYY-MM-DD 포맷으로 작성해 (예: 2024-08-15)
-3. '총 금액'은 거래한 총 금액이다. 문자나 특수기호는 제거하고 숫자만 출력해 (예: 11955)
-4. '부가세'는 이 거래에서 부가세가 있는 경우 적어줘. 문자나 특수기호는 제거하고 숫자만 출력해 (예: 1195)
-5. '공급가액'은 '총 금액'에서 '부가세'를 뺀 숫자야
-6. 정보 추출이 어려울 때는 '이 영수증은 제대로 인식되지 않았습니다. 다른 이미지를 업로드 하시거나 수동으로 정보를 피드백해 주세요.'라고 알려줘</div>
+  <div class="info-box">
+    <strong>이 요령이 곧 보안 수칙입니다.</strong>
+    <p>실무 파일에는 이름·연락처 같은 개인정보가 들어 있어 통째로 올릴 수 없습니다.
+    <b>구조 사본을 넘기고 → 수식만 받아 → 원본에서 실행</b>하면, 데이터는 내 PC를 떠나지 않습니다.
+    예시 행이 필요하면 가짜 값 한 줄을 만들어 두면 됩니다.</p>
   </div>
-
-  <div class="breath-lg"></div>
-
-  <!-- 구조 분석 -->
-  <h3 class="h-lead" id="p1-anatomy">프롬프트 구조 — 4가지 기둥</h3>
-  <p class="p-lead">같은 패턴은 <b>다른 자동화 프롬프트</b>(명함 정리·세금계산서·계약서 추출 등)에 그대로 옮길 수 있다.</p>
-
-  <div class="info-grid">
-    <div class="info-card">
-      <h5><em>구조 1</em>지시문 (작업 순서)</h5>
-      <p>"이미지 인식 → 데이터 추출 → 엑셀 기록 → 다운로드 제공"까지 <b>실행 순서를 단계별로 명시</b>. AI가 임의로 단계를 합치거나 빼지 않도록 통제.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>구조 2</em>예외 처리 명시</h5>
-      <p>"여러 장이면 한 개씩" / "Code interpreter는 OCR 단계에서 쓰지 마" / "인식 안 되면 이렇게 알려" — <b>흔한 실수를 사전에 차단</b>.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>구조 3</em>필드별 추출 규칙</h5>
-      <p>가맹점명은 4가지 조건 중 하나 / 거래일시는 YYYY-MM-DD / 금액은 숫자만 — <b>각 컬럼의 데이터 형식을 명확히</b> 정의해 결과 편차 제거.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>구조 4</em>실패 시 폴백</h5>
-      <p>"정보 추출이 어려울 때는 이렇게 안내해" — <b>AI가 거짓 데이터를 만들지 않고 정직하게 실패 신호를 보내도록</b> 유도.</p>
-    </div>
-  </div>
-
-  <div class="breath-lg"></div>
-
-  <!-- 실행 단계 -->
-  <h3 class="h-lead" id="p1-steps">실행 단계</h3>
-
-  <div class="step-flow">
-    <div class="step-card">
-      <div class="step-num">STEP 1</div>
-      <h4>위 프롬프트 복사</h4>
-      <p>실습 프롬프트를 그대로 복사해 ChatGPT (또는 Claude / Gemini) 채팅창에 첫 메시지로 붙여넣는다.</p>
-    </div>
-    <div class="step-arrow">→</div>
-    <div class="step-card">
-      <div class="step-num">STEP 2</div>
-      <h4>영수증 이미지 업로드</h4>
-      <p>영수증 사진을 여러 장 업로드하거나 ZIP 압축 파일을 첨부. "이 영수증들을 처리해줘"로 마무리.</p>
-    </div>
-    <div class="step-arrow">→</div>
-    <div class="step-card">
-      <div class="step-num">STEP 3</div>
-      <h4>엑셀 다운로드</h4>
-      <p>AI가 시트 형태 결과를 보여주고 엑셀 파일까지 첨부. 다운로드 받아 그대로 정산 시스템에 사용.</p>
-    </div>
-  </div>
-
-  <div class="breath-lg"></div>
-
-  <!-- 학습 포인트 -->
-  <div class="tip-box"><strong>오늘의 학습 포인트 — 한 번 잘 만든 프롬프트는 반복 업무를 통째로 없앱니다.</strong> 매월 1시간 → <b>3분</b>. 동일한 4기둥 패턴(<b>작업 순서 · 예외 처리 · 필드 추출 규칙 · 실패 폴백</b>)을 다른 반복 업무에도 그대로 적용.</div>
 
   <div class="breath"></div>
 
-  <div class="warn-box"><strong>실무 주의.</strong> 회사 영수증 · 증빙 자료는 보안 등급 확인 필수. <b>정보보안팀 협의 후</b> 개인 자료 또는 가상 데이터로 먼저 워크플로우 검증.</div>
+  <h3 class="h-lead">1-2 · 첫 요청 — 원하는 결과만 말한다</h3>
+  <p class="p-lead">함수 이름은 말하지 않습니다. <b>"무엇을 채우고 싶은지"</b>만 말하면 — 함수는 AI가 고릅니다.</p>
+
+  <div class="prompt-block">
+    <div class="prompt-header">
+      <span class="prompt-label">PROMPT 1 · 첫 요청 (구조 파일 첨부 후)</span>
+      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+    </div>
+    <div class="prompt-body">첨부한 파일은 연수 신청자 명단의 <span class="hl2">구조만 남긴 사본</span>이야.
+실제 파일에는 신청자명단 시트 2행부터 151행까지 150명이 들어 있어.
+
+신청자명단 시트의 <span class="hl">부서명·프로그램명·교육시간</span> 열이 비어 있는데,
+각각 부서코드표 시트와 프로그램표 시트에서 코드에 맞는 값을 찾아와 채우고 싶어.
+
+세 열에 넣을 수식을 만들어줘. 그대로 붙여넣을 수 있게 해주고,
+각 수식이 어떤 원리로 동작하는지 <span class="hl2">한 줄씩 설명</span>도 붙여줘.</div>
+  </div>
+
+  <div class="breath-sm"></div>
+
+  <div class="tip-box">
+    <strong>받은 수식은 2행에 붙여넣고, 채우기 핸들로 아래까지.</strong> 셀 오른쪽 아래 모서리를 더블클릭하면
+    150행까지 한 번에 채워집니다. 결과가 코드가 아니라 이름으로 바뀌는 순간을 확인하세요.
+  </div>
+
+  <div class="breath"></div>
+
+  <h3 class="h-lead">1-3 · 복합 산정 — 여러 정보를 조합해 결과치를 추산한다</h3>
+  <p class="p-lead">이제 진짜 실무형 수식입니다. 지원금은 <b>교육시간 × 시간당 단가 × 사전과제 제출 여부에 따른 지급률</b> —
+  두 시트의 정보와 조건 판단이 한 수식에 들어갑니다. 요령은 하나입니다: <b>"수식 줘"가 아니라, 지급 규칙을 조목조목 명시</b>합니다.</p>
+
+  <div class="prompt-block">
+    <div class="prompt-header">
+      <span class="prompt-label">PROMPT 2 · 복합 산정 (규칙 명시)</span>
+      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+    </div>
+    <div class="prompt-body">이번엔 <span class="hl">예상 지원금</span> 열을 채우자. 지급 규칙은 이래.
+
+- 지원금 = 신청한 프로그램의 <span class="hl2">교육시간 × 그 프로그램의 시간당 지원단가</span>
+- 단, 사전과제 제출이 "Y"면 전액, "N"이면 <span class="hl2">절반만 지급</span>
+- 결과는 원 단위, 천 단위 구분기호가 보이게
+
+이 규칙대로 계산되는 수식을 만들어줘.
+수식만 주지 말고 <span class="hl2">계산 구조를 단계별로 설명</span>하고,
+내가 규칙을 애매하게 말한 부분이 있으면 지적해줘.</div>
+  </div>
+
+  <div class="breath-sm"></div>
+
+  <div class="note-box">
+    <strong>이 수식이 하는 일을 사람이 하면</strong> — 신청자 1명마다 프로그램표를 찾아 단가를 확인하고,
+    사전과제 여부를 보고, 계산기를 두드립니다 × 150번. 수식은 이 판단 전체를 <b>규칙 한 줄</b>로 만든 것입니다.
+    "여러 표의 정보를 조건에 따라 조합해 값을 추산한다" — 사무 업무 수식의 본질입니다.
+  </div>
+
+  <div class="breath"></div>
+
+  <h3 class="h-lead">1-4 · 검증과 디버깅 — AI도 틀린다</h3>
+  <p class="p-lead">결과를 그대로 믿지 않습니다. <b>아무 신청자 한 명을 골라 손으로 대조</b>해 보고 —
+  이상하면 그 자리에서 따집니다. 오늘 사례에서 <b>가장 중요한 지점</b>입니다.</p>
+
+  <div class="prompt-block">
+    <div class="prompt-header">
+      <span class="prompt-label">PROMPT 3 · 디버깅 (결과가 이상할 때)</span>
+      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+    </div>
+    <div class="prompt-body">5행 신청자의 지원금이 이상해. 이 사람은 사전과제가 "N"인데 <span class="hl">전액으로 계산된 것 같아.</span>
+말이 되는지 검증하고, 문제가 있으면 원인 분석해서 제대로 된 수식 다시 줘.</div>
+  </div>
+
+  <div class="breath-sm"></div>
+
+  <div class="warn-box">
+    <strong>AI는 첫 답에서 곧잘 틀립니다.</strong> 절대 참조($)를 빠뜨리거나 범위를 잘못 잡는 일이 흔합니다.
+    <b>"결과가 이상하다 → 원인 분석해서 다시 줘"</b> 한 마디면 AI가 스스로 찾아 고칩니다.
+    수식이 아예 안 먹고 <b>#NAME?</b>가 뜨면 — "우리 엑셀에서 이 함수가 안 되는 것 같아. 같은 결과를 내는
+    다른 방법으로 다시 줘"라고 하세요. 버전 문제도 함수 이름을 몰라도 해결됩니다.
+  </div>
+
+  <div class="breath"></div>
+
+  <h3 class="h-lead">1-5 · 조건 판정 — 우선선발 가리기</h3>
+
+  <div class="prompt-block">
+    <div class="prompt-header">
+      <span class="prompt-label">PROMPT 4 · 판정 규칙 명시</span>
+      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+    </div>
+    <div class="prompt-body"><span class="hl">우선선발</span> 열을 채우자. 판정 규칙은 이래.
+
+- 사전과제를 제출했고, <span class="hl2">그리고</span> 작년 이수시간이 20시간 미만인 사람만 "우선"
+- 나머지는 전부 "일반"
+  <span class="mute">(작년에 교육 기회를 적게 받은 사람에게 먼저 주는 규칙이야)</span>
+
+수식을 만들어줘. 두 조건이 <span class="hl2">모두</span> 맞아야 한다는 게 핵심이야.</div>
+  </div>
+
+  <div class="breath"></div>
+
+  <h3 class="h-lead">1-6 · 조건 집계 — 데이터가 말을 하기 시작한다</h3>
+
+  <div class="prompt-block">
+    <div class="prompt-header">
+      <span class="prompt-label">PROMPT 5 · 집계 표 완성</span>
+      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+    </div>
+    <div class="prompt-body">마지막으로 <span class="hl">'집계' 시트</span>의 프로그램별 현황 표를 채우자.
+비어 있는 세 칸 — <span class="hl2">신청 인원 · 정원 · 정원 대비 신청률(%)</span> — 에 넣을 수식을 만들어줘.
+
+완성되면, 어떤 프로그램이 <span class="hl2">정원을 초과</span>했는지도 알려줘.</div>
+  </div>
+
+  <div class="breath-sm"></div>
+
+  <div class="info-box">
+    <strong>집계가 끝나면 보이는 것.</strong>
+    <p>「AI 활용 실무」 신청 49명 vs 정원 30명 — <b>정원 160% 초과</b>입니다.
+    1-5에서 만든 '우선선발' 판정이 왜 필요했는지, 데이터가 스스로 답합니다.
+    좋은 집계는 다음 의사결정(분반? 추가 개설?)의 근거가 됩니다.</p>
+  </div>
+
+  <div class="breath-sm"></div>
+
+  <div class="tip-box">
+    <strong>학습 포인트 — 함수 이름은 끝까지 등장하지 않았습니다.</strong>
+    우리는 <b>"무엇을" + "어떤 조건으로"</b>만 말했습니다. 그리고 가장 중요한 것은 1-4의 감각 —
+    <b>수식은 한 건을 손으로 대조한 뒤에 씁니다.</b>
+  </div>
+
+  <div class="breath-sm"></div>
+
+  <div class="sample">
+    <div class="sample-icon"><span class="si-emoji">✅</span><span class="si-ext">XLSX</span></div>
+    <div class="sample-text">
+      <div class="s-meta">Answer Example</div>
+      <strong>실습 1 — 완성 예시</strong>
+      <p>모든 수식이 채워진 완성본입니다. 내 결과와 비교해 보세요 — 막혔다면 이 파일로 다음 사례로.</p>
+    </div>
+    <a class="sample-btn" href="실습편_자료/실습1_연수_신청자명단_완성예시.xlsx" download>완성본 받기</a>
+  </div>
 </section>
 
 
-<!-- PRACTICE 2 · 엑셀 함수 X AI -->
-<section class="module" id="practice-2">
+<!-- ============================================================
+     S2 · CASE 2 데이터 분석
+============================================================ -->
+<section class="module" id="s2">
   <div class="mod-head">
-    <span class="mod-num">PRACTICE 2</span>
-    <span class="mod-time">엑셀 함수 X AI — 단순 함수부터 복합 함수까지</span>
+    <span class="mod-num">CASE 2</span>
+    <span class="mod-time">ChatGPT 데이터 분석</span>
   </div>
-  <h2 class="mod-title">엑셀 함수를 외우지 않고 AI에게 시킨다<small>"이렇게 만들어줘"만으로 SUMIFS · INDEX/MATCH · VLOOKUP 까지</small></h2>
+  <h2 class="mod-title">설문 72명, 파일째 던져서 분석한다<small>이번엔 수식조차 쓰지 않습니다. 파일을 통째로 맡기고, 분석 계획부터 차트·리포트까지 받아냅니다.</small></h2>
 
   <div class="breath-lg"></div>
 
-  <p class="p-lead">함수 이름 검색 = <b>가장 큰 시간 낭비</b>. <b>"이걸 이렇게 계산해줘"</b> 한 줄이면 AI가 적절한 함수식을 만들어준다.</p>
-
-  <div class="breath"></div>
-
-  <!-- 시나리오 -->
-  <h3 class="h-lead" id="p2-scenario">실습 시나리오 — 판매 데이터 분석</h3>
-  <p class="p-lead">함수 검색 X → <b>자연어 요청</b> O.</p>
-
-  <div class="info-grid">
-    <div class="info-card">
-      <h5><em>INPUT</em>판매 데이터 시트</h5>
-      <p>날짜 · 지점 · 카테고리 · 제품명 · 수량 · 단가 등 영업 데이터.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>PROCESS</em>자연어로 함수 요청</h5>
-      <p>AI가 적절한 함수식(SUMIFS / COUNTIFS / INDEX-MATCH 등)을 생성.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>OUTPUT</em>그대로 셀에 붙여넣는 함수</h5>
-      <p>복사 → 셀에 붙여넣기 → 결과 확인. 함수를 외울 필요 없음.</p>
-    </div>
-  </div>
-
-  <div class="breath-lg"></div>
-
-  <!-- 실습 자료 -->
-  <h3 class="h-lead" id="p2-files">실습 자료 다운로드</h3>
-  <p class="p-lead">실습용 판매 데이터 엑셀 파일을 다운로드하세요. AI 채팅창에 업로드하거나, ChatGPT에 직접 첨부해 데이터 구조를 확인시킨 뒤 함수 요청을 합니다.</p>
+  <p class="p-lead"><b>상황.</b> 연수가 끝나고 만족도 설문 72명 응답이 도착했습니다. 5점 척도 5문항에
+  자유 의견까지 — 내일까지 "그래서 어떻게 개선할 건지"를 보고해야 합니다.
+  CASE 1과 다른 점: 이번엔 엑셀을 열지 않습니다. <b>파일을 ChatGPT에 업로드하고 분석 자체를 위임</b>합니다.</p>
 
   <div class="resource">
-    <div class="resource-icon">
-      <span class="ri-emoji">📈</span>
-      <span class="ri-ext">XLSX</span>
-    </div>
+    <div class="resource-icon"><span class="ri-emoji">📊</span><span class="ri-ext">XLSX</span></div>
     <div class="resource-text">
-      <div class="r-meta">▶ AI 채팅창에 업로드할 자료</div>
-      <strong>판매 데이터 (sales_data.xlsx)</strong>
-      <p>날짜·지점·카테고리·제품·수량·단가가 정리된 영업 데이터 샘플. 단순 합계부터 복합 조건 집계까지 다양한 함수 실습이 가능한 구조.</p>
+      <div class="r-meta">Case 2 · Start File</div>
+      <strong>실습 2 — 만족도 설문 응답</strong>
+      <p>72명 응답 원본(구글폼 내보내기 형태). 척도 문항 5개 + 재참여 의향 + 자유 의견.</p>
     </div>
-    <a class="resource-btn" href="실습편_자료/sales_data.xlsx" download>다운로드</a>
+    <a class="resource-btn" href="실습편_자료/실습2_만족도_설문응답.xlsx" download>파일 받기</a>
   </div>
-
-  <div class="breath-lg"></div>
-
-  <!-- 단계별 실습 프롬프트 -->
-  <h3 class="h-lead" id="p2-prompts">5단계 실습 — G·H·I·J·K 컬럼을 차례로</h3>
-  <p class="p-lead"><b>곱셈 → 조건 수식 → AI 디버깅 → 시트 간 조회 → 조건부 선정</b>.</p>
 
   <div class="breath"></div>
 
-  <!-- PROMPT 1 — 데이터 구조 분석 + 첫 수식 -->
-  <h4 style="font-size:15px;color:var(--bk);margin-bottom:10px;font-weight:700;">1단계 · G열 매출액 — <span style="color:var(--p);">단순 곱셈</span></h4>
-  <p class="p-lead" style="margin-bottom:14px;">먼저 <b>데이터 구조 파악</b> → 가장 단순한 곱셈부터.</p>
+  <h3 class="h-lead">2-1 · 분석부터 시키지 않는다 — 계획을 먼저 합의</h3>
 
   <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 1 &mdash; 데이터 구조 분석 + 매출액 수식</span></div>
-<div class="prompt-body">sales_data 파일이야. 이 데이터 구조 분석해서 G열 매출액 칼럼에 넣을 수식 알려줘.</div>
+    <div class="prompt-header">
+      <span class="prompt-label">PROMPT 6 · 데이터 파악 + 분석 계획 (파일 첨부 후)</span>
+      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+    </div>
+    <div class="prompt-body"><span class="hl">[역할]</span> 너는 교육 운영 데이터를 다루는 분석가다.
+<span class="hl">[맥락]</span> 첨부한 파일은 사내 연수 6개 과정의 만족도 설문 응답(72명)이다.
+내일 부서장에게 결과와 개선 방향을 보고해야 한다.
+<span class="hl">[요청]</span> 아직 분석하지 마.
+1. 데이터 구조(열 구성·응답 수·척도)를 먼저 파악해서 요약해줘.
+2. 보고 목적에 맞는 <span class="hl2">분석 계획을 4단계 이내</span>로 제안해줘.
+3. 내가 "진행"이라고 하면 그때 순서대로 분석해줘.</div>
+  </div>
+
+  <div class="breath-sm"></div>
+
+  <div class="note-box">
+    <strong>왜 계획부터?</strong> 파일을 던지고 "분석해줘"만 하면 AI가 임의 방향으로 달립니다.
+    계획을 먼저 받고 다듬는 <b>10초의 합의</b>가 결과물의 방향을 결정합니다 — 사람에게 일을 맡길 때와 같습니다.
   </div>
 
   <div class="breath"></div>
 
-  <!-- PROMPT 2 — 구조화된 조건 -->
-  <h4 style="font-size:15px;color:var(--bk);margin-bottom:10px;font-weight:700;">2단계 · H열 기여도 % — <span style="color:var(--p);">조건 명시 요청</span></h4>
-  <p class="p-lead" style="margin-bottom:14px;">"수식 줘"만 X. <b>비율 기준 / % 표시 / 소수점 자리 / 합계 검증</b>까지 명시.</p>
+  <h3 class="h-lead">2-2 · 정량 분석 + 차트</h3>
 
   <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 2 &mdash; H열 기여도 칼럼 수식 (조건 명시)</span></div>
-<div class="prompt-body">좋아, H열 기여도 칼럼도 채울 거야. 수식 알려줘.
-
-- 기여도는 G열 매출액 데이터를 기반으로 <span class="hl">총 매출액 대비 각 데이터의 비율</span>을 나타낸다.
-- 기여도는 <span class="hl">%로 표시</span>한다.
-- 소수점 <span class="hl">둘째 자리까지</span>만 나타낸다. 셋째 자리에서 반올림.
-- 기여도의 총 합산이 <span class="hl">반드시 100이 되어야 한다</span>.</div>
+    <div class="prompt-header">
+      <span class="prompt-label">PROMPT 7 · 문항별 · 과정별 분석</span>
+      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+    </div>
+    <div class="prompt-body">진행. 먼저 정량 분석부터.
+1. 문항별(Q1~Q5) 전체 평균을 표로 — <span class="hl2">가장 높은 문항과 가장 낮은 문항</span>이 뭔지 짚어줘.
+2. 과정별 전반 만족도(Q1) 평균을 <span class="hl2">막대 그래프</span>로 그려줘. (그래프 안 라벨이 깨지면 다시 그려줘)
+3. 표와 그래프에서 읽히는 특징을 3줄로 요약해줘. 수치 근거를 함께.</div>
   </div>
 
-  <div class="breath"></div>
+  <div class="breath-sm"></div>
 
-  <!-- PROMPT 3 — 디버깅 / 비판적 검토 -->
-  <h4 style="font-size:15px;color:var(--bk);margin-bottom:10px;font-weight:700;">3단계 · <span style="background:#FFEBEE;color:#C62828;padding:2px 8px;border-radius:3px;">AI도 틀린다</span> — 디버깅</h4>
-  <p class="p-lead" style="margin-bottom:14px;">AI 결과 그대로 믿지 X. 결과 이상 → 즉시 <b>"원인 분석해서 다시 줘"</b>. <b>가장 중요한 단계</b>.</p>
+  <h3 class="h-lead">2-3 · 주관식 — 자유 의견을 유형으로</h3>
 
   <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 3 &mdash; 디버깅 (잘못된 수식 검증)</span></div>
-<div class="prompt-body">지금 H2 값에 수식 넣어봤는데 <span class="hl">55.00%로 나온다.</span>
-이게 말이 되냐? 문제 원인 분석해서 제대로 된 함수 가지고 와.</div>
+    <div class="prompt-header">
+      <span class="prompt-label">PROMPT 8 · 자유 의견 분류</span>
+      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+    </div>
+    <div class="prompt-body">이번엔 '개선 의견(자유 기재)' 열을 분석해줘.
+1. 의견을 <span class="hl2">유형별로 분류</span>하고, 유형마다 건수와 대표 의견 1개씩 표로 정리해줘.
+2. 정량 결과(문항 점수)와 <span class="hl2">일치하는 신호</span>가 있는지 연결해서 해석해줘.
+   (예: 점수가 낮은 문항과 관련된 불만이 실제로 많은가?)
+<span class="hl">[제약]</span> 의견 원문에 없는 내용을 만들어내지 말 것.</div>
   </div>
 
-  <div class="breath"></div>
+  <div class="breath-sm"></div>
 
-  <div class="warn-box"><strong>중요 — AI 결과는 항상 검증한다.</strong> 합계가 100이 안 나오거나 비정상 값이 나오면 즉시 다시 요청. AI는 첫 답에서 절대 참조($)를 빠뜨리거나 잘못된 범위를 쓰는 경우가 흔합니다. <b>"결과가 이상하다 → 원인 분석해서 다시 줘"</b> 한 마디면 AI가 SUM 범위 절대 참조 문제 등을 스스로 찾아 수정해 줍니다.</div>
-
-  <div class="breath-lg"></div>
-
-  <!-- PROMPT 4 — 시트 간 조회 -->
-  <h4 style="font-size:15px;color:var(--bk);margin-bottom:10px;font-weight:700;">4단계 · I·J열 — <span style="color:var(--p);">시트 간 조회 (VLOOKUP/XLOOKUP)</span></h4>
-  <p class="p-lead" style="margin-bottom:14px;">상품 코드 → 다른 시트에서 상품명/카테고리 매칭.</p>
+  <h3 class="h-lead">2-4 · 한 장 리포트로 종합</h3>
 
   <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 4 &mdash; I열 상품명 · J열 카테고리 (시트 간 조회)</span></div>
-<div class="prompt-body">I열 상품명 칼럼 채우자. 수식 줘.
-
-- C열 상품 코드에 맞는 상품명을 <span class="hl">product 시트에서 찾아서</span> 매칭된 값을 채워 넣는다.
-
-J열 카테고리 칼럼도 같이 해줘. 동일한 방식으로.</div>
+    <div class="prompt-header">
+      <span class="prompt-label">PROMPT 9 · 보고용 요약</span>
+      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+    </div>
+    <div class="prompt-body">지금까지의 분석을 부서장 보고용 <span class="hl2">한 장 요약</span>으로 정리해줘.
+<span class="hl">[구성]</span> ① 조사 개요(2줄) ② 핵심 수치(최고·최저 문항, 과정별 상·하위) ③ 자유 의견 유형(건수 포함)
+④ 진단(수치와 의견을 연결한 해석) ⑤ 개선 3대 과제(실행 가능한 수준으로)
+<span class="hl">[형식]</span> 개조식. 모든 주장에 수치 근거. 과장 표현 금지.</div>
   </div>
 
-  <div class="breath-lg"></div>
+  <div class="breath-sm"></div>
 
-  <!-- PROMPT 5 — 조건부 순위 -->
-  <h4 style="font-size:15px;color:var(--bk);margin-bottom:10px;font-weight:700;">5단계 · K열 상위매출 — <span style="color:var(--p);">조건부 순위 (LARGE + IF)</span></h4>
-  <p class="p-lead" style="margin-bottom:14px;">"매출 상위 5건만 'O' 표기" — 복잡한 식도 자연어로 OK.</p>
-
-  <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 5 &mdash; K열 상위매출 선정 (조건부 표기)</span></div>
-<div class="prompt-body">K열 칼럼 수식 알려줘. 상위매출 선정 내용이다.
-
-- G열 매출액을 기준으로 <span class="hl">상위 5개 데이터만</span> 선정해서 상위매출로 표기한다.
-- 선정된 데이터는 <span class="hl">'O'로 표기</span>한다.
-- 비선정된 데이터는 <span class="hl">공란</span>으로 둔다.</div>
+  <div class="tip-box">
+    <strong>검증 — 한 개는 직접 확인.</strong> AI가 낸 평균 중 하나(예: 전반 만족도)를 엑셀에서
+    <b>AVERAGE 함수로 직접 대조</b>해 보세요. CASE 1의 기술이 곧 CASE 2의 검증 도구가 됩니다.
+    맡기는 사람일수록, 표본 검증하는 습관이 필요합니다.
   </div>
-
-  <div class="breath-lg"></div>
-
-  <!-- 학습 포인트 -->
-  <div class="tip-box"><strong>학습 포인트 — 함수 이름은 외울 필요 없다.</strong> <b>"무엇을 계산할지" + "결과 조건"</b> 두 가지만 자연어로 말하면 AI가 함수 조합 + 동작 원리까지 같이 설명. <b>가장 중요한 건 3단계 디버깅 감각</b> — AI 결과 검증 없이 쓰면 실무 사고.</div>
-
-  <div class="breath"></div>
-
-  <div class="note-box"><strong>다음 단계 — 함수에서 자동화로.</strong> 5개 컬럼 작업을 새 데이터에도 자동 적용하려면 함수 X → <b>매크로/스크립트</b> O. 다음 실습 (Practice 3 VBA · Practice 4 Apps Script)에서 다룸.</div>
-
-  <div class="breath"></div>
-
-  <div class="warn-box"><strong>주의 — AI는 데이터 구조를 봐야 정확합니다.</strong> 컬럼명을 추측해서 답하면 셀 참조가 어긋날 수 있습니다. <b>가능하면 엑셀 파일을 먼저 첨부</b>해 AI가 시트 구조를 확인한 뒤 함수식을 요청하세요. 회사 보안상 파일 업로드가 어렵다면 첫 메시지에 <b>컬럼명 · 데이터 범위 · 시작 행</b>을 텍스트로 알려준 후 요청합니다.</div>
 </section>
 
 
-<!-- PRACTICE 3 · VBA 자동화 -->
-<section class="module" id="practice-3">
+<!-- ============================================================
+     S3 · CASE 3 VBA
+============================================================ -->
+<section class="module" id="s3">
   <div class="mod-head">
-    <span class="mod-num">PRACTICE 3</span>
-    <span class="mod-time">엑셀 VBA 자동화 — 거래명세서 자동 발급</span>
+    <span class="mod-num">CASE 3</span>
+    <span class="mod-time">VBA 매크로 × AI — 거래명세서 자동 발급</span>
   </div>
-  <h2 class="mod-title">러프한 한 마디를 AI가 마스터 프롬프트로 보강 → 동작하는 VBA 코드 받기<small>"이거 이렇게 만들어줘" 한 줄로 시작해 거래명세서 100건을 자동 생성한다</small></h2>
+  <h2 class="mod-title">명세서 발급, 버튼 한 번으로 끝낸다<small>연수가 끝나면 정산이 남습니다. 건별로 양식을 채워 PDF로 만들던 일 — 러프한 한마디에서 시작해, 동작하는 코드를 받아냅니다.</small></h2>
 
   <div class="breath-lg"></div>
 
-  <p class="p-lead">거래명세서 · 견적서 · 발주서 100건 → <b>버튼 한 번</b>. 코드 못 짜도 OK. <b>러프 요청 → 마스터 프롬프트 → 동작 코드</b> 3단계.</p>
+  <p class="p-lead"><b>상황.</b> 협력업체·외부 강사 정산 시즌입니다. 거래 건마다 <b>거래명세서 양식을 채워
+  PDF로 발급</b>해 왔습니다 — 거래처명 바꾸고, 품목 넣고, 금액 넣고, 저장하고, 또 다음 건.
+  실습 파일에는 <b>시트 1(명세서 양식)</b>과 <b>시트 2(거래 데이터 수십 건)</b>가 들어 있습니다.
+  오늘은 이 반복을 <b>코드 한 번</b>으로 끝냅니다 — 코드는 여러분이 아니라 AI가 짭니다.
+  <span style="color:var(--lt)">(회사마다 서류 명칭은 다르지만, 건별로 양식을 채워 PDF로 내보내는 서류라면 구조는 같습니다)</span></p>
+
+  <div class="note-box">
+    <strong>VBA 한 줄 개념.</strong> 엑셀 안에 내장된 자동화 언어입니다. 우리는 직접 코딩하지 않고
+    <b>AI에게 받아서 붙여넣습니다.</b> 매크로가 든 파일은 <b>.xlsm 형식</b>으로 저장해야 코드가 보관되고,
+    열 때 보안 경고는 "콘텐츠 사용"으로 허용합니다.
+  </div>
+
+  <div class="breath-sm"></div>
+
+  <div class="resource">
+    <div class="resource-icon"><span class="ri-emoji">🧾</span><span class="ri-ext">XLSX</span></div>
+    <div class="resource-text">
+      <div class="r-meta">Case 3 · Start File</div>
+      <strong>실습 3 — 거래명세서 샘플 (양식 + 데이터)</strong>
+      <p>시트 1: 거래명세서 양식(값 자리가 {거래처명} 같은 표시로 비워져 있음) / 시트 2: 거래처 명단 데이터.</p>
+    </div>
+    <a class="resource-btn" href="실습편_자료/거래명세서 샘플.xlsx" download>파일 받기</a>
+  </div>
 
   <div class="breath"></div>
 
-  <!-- VBA 개념 설명 -->
-  <h3 class="h-lead" id="p3-vba">VBA란? — 한 줄 정리</h3>
-  <p class="p-lead"><b>엑셀에 내장된 자동화 언어</b>. 1993년부터 MS Office 기본 탑재. 별도 설치 X.</p>
-
-  <div class="info-grid info-grid-2x2">
-    <div class="info-card">
-      <h5><em>WHAT</em>엑셀 안의 자동화 언어</h5>
-      <p>엑셀 메뉴 → 개발 도구 → Visual Basic에서 코드를 작성. 셀 값 읽고 쓰기 · 시트 복제 · PDF 저장 · 메일 발송까지 모두 가능.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>WHY</em>반복 업무 0초화</h5>
-      <p>거래명세서 100건 · 견적서 50건 · 월별 보고서 양식 — 사람이 1시간 걸리는 작업을 <b>버튼 한 번 클릭으로</b> 끝낸다.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>HOW</em>AI에게 코드 생성 요청</h5>
-      <p>"이런 작업 자동화하는 VBA 코드 만들어줘" → AI가 코드 작성 → 엑셀 모듈에 붙여넣기 → 실행. <b>직접 코딩 안 해도 됨</b>.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>WHERE</em>매크로 사용 파일 (.xlsm)</h5>
-      <p>VBA 코드를 저장하려면 <code>.xlsm</code> 형식으로 저장. 기존 <code>.xlsx</code>는 코드를 저장 못함. 보안 경고는 "콘텐츠 사용"으로 허용.</p>
-    </div>
+  <div class="spotlight">
+    <div class="sp-eyebrow">오늘의 전환점</div>
+    <div class="sp-headline">코드는 <em>읽는 것</em>이 아니라<br><em>시키는 것</em>입니다</div>
+    <div class="sp-detail">받게 될 코드가 무슨 뜻인지 몰라도 됩니다. 무엇을 원하는지 <b>정확히 설명</b>하고,
+    받은 코드를 <b>정해진 자리에 붙여넣고</b>, 결과를 <b>검증</b>할 수 있으면 — 코드로 일하는 사람입니다.
+    진행 순서는 세 걸음입니다: <b>러프하게 말하기 → AI에게 정돈시키기 → 빈칸 채워 코드 받기.</b></div>
   </div>
 
-  <div class="breath-lg"></div>
+  <div class="breath"></div>
 
-  <!-- 시나리오 -->
-  <h3 class="h-lead" id="p3-scenario">시나리오 — 거래명세서 100건 자동 발급</h3>
-  <p class="p-lead">시트 1 = 양식 · 시트 2 = 데이터. <b>한 행씩 양식 채우고 PDF 저장</b>을 VBA가 반복.</p>
-
-  <div class="info-grid">
-    <div class="info-card">
-      <h5><em>INPUT</em>엑셀 파일 (2시트)</h5>
-      <p>시트 1: 거래명세서 양식 / 시트 2: 거래 데이터 목록 (거래처 · 날짜 · 품목 · 수량 · 금액).</p>
-    </div>
-    <div class="info-card">
-      <h5><em>PROCESS</em>VBA 코드 실행</h5>
-      <p>시트 2 데이터를 한 행씩 시트 1 양식에 적용 → PDF로 저장 → 다음 행 반복.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>OUTPUT</em>거래명세서 PDF 다량</h5>
-      <p>지정한 폴더에 거래처별 PDF가 자동 생성. 클릭 한 번에 50~100건 처리.</p>
-    </div>
-  </div>
-
-  <div class="breath-lg"></div>
-
-  <!-- 실습 자료 -->
-  <h3 class="h-lead" id="p3-files">실습 자료</h3>
-  <p class="p-lead">양식 + 데이터 2시트가 든 엑셀. ChatGPT에 첨부.</p>
-
-  <div class="resource">
-    <div class="resource-icon">
-      <span class="ri-emoji">📄</span>
-      <span class="ri-ext">XLSX</span>
-    </div>
-    <div class="resource-text">
-      <div class="r-meta">▶ AI 채팅창에 업로드할 자료</div>
-      <strong>거래명세서 샘플 (양식 + 데이터)</strong>
-      <p>시트 1: 거래명세서 양식 / 시트 2: 거래 데이터 목록. VBA 코드를 받아서 적용한 뒤에는 <code>.xlsm</code> 형식으로 다시 저장해야 매크로가 보관됩니다.</p>
-    </div>
-    <a class="resource-btn" href="실습편_자료/거래명세서 샘플.xlsx" download>다운로드</a>
-  </div>
-
-  <div class="breath-lg"></div>
-
-  <!-- Step 1 : 러프한 요청 -->
-  <h3 class="h-lead" id="p3-rough">STEP 1 · 머릿속에 떠오르는 대로 적기</h3>
-  <p class="p-lead">구조화·형식 X. <b>내가 하고 싶은 작업을 한 덩어리 글로 풀어 적기</b>. 이게 현실적 출발점.</p>
+  <h3 class="h-lead">3-1 · 머릿속에 떠오르는 대로 적는다</h3>
+  <p class="p-lead">구조화된 프롬프트를 처음부터 잘 쓸 필요 없습니다. 실습 파일을 <b>첨부</b>하고,
+  하고 싶은 작업을 <b>한 덩어리 글로</b> 풀어 적습니다 — 이것이 현실적인 출발점입니다.</p>
 
   <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 1 &mdash; 평범한 직장인의 첫 요청</span></div>
-<div class="prompt-body">이 엑셀파일 양식 파악해서 거래명세서 자동발급 VBA 코드 만들어줘.
+    <div class="prompt-header">
+      <span class="prompt-label">PROMPT 10 · 러프한 첫 요청 (파일 첨부 후)</span>
+      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+    </div>
+    <div class="prompt-body">이 엑셀파일 양식 파악해서 거래명세서 자동발급 VBA 코드 만들어줘.
 
 1번 시트는 거래명세서 양식이고, 2번 시트는 거래명세서에 들어갈 변수값 데이터야.
 
@@ -1056,23 +832,22 @@ J열 카테고리 칼럼도 같이 해줘. 동일한 방식으로.</div>
 
   <div class="breath"></div>
 
-  <div class="note-box"><strong>구조화는 AI에게 맡깁니다.</strong> "내가 구조화를 잘해야 한다" X → <b>"AI에게 구조화를 맡긴다"</b> O. 다음 단계에서 AI가 빠진 맥락(셀 위치·파일명·예외 처리)을 채워 마스터 프롬프트로 정돈.</div>
-
-  <div class="breath-lg"></div>
-
-  <!-- Step 2 : 마스터 프롬프트 보강 -->
-  <h3 class="h-lead" id="p3-master">STEP 2 · AI에게 마스터 프롬프트 정돈 요청</h3>
-  <p class="p-lead">러프 요청을 코드 생성에 바로 쓰지 X. <b>"마스터 프롬프트로 정돈해 달라"</b>고 한 단계 띄워 요청.</p>
+  <h3 class="h-lead">3-2 · AI에게 마스터 프롬프트로 정돈시킨다</h3>
+  <p class="p-lead">러프한 요청을 그대로 코드로 만들면 동작하지 않는 코드가 나오기 쉽습니다.
+  <b>"마스터 프롬프트로 정돈해 달라"</b>고 한 단계 띄워 요청합니다.</p>
 
   <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 2 &mdash; 마스터 프롬프트 생성 요청</span></div>
-<div class="prompt-body">아래는 내가 만들고 싶은 VBA 자동화 작업의 러프한 요청이야.
+    <div class="prompt-header">
+      <span class="prompt-label">PROMPT 11 · 마스터 프롬프트 정돈 요청</span>
+      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+    </div>
+    <div class="prompt-body">아래는 내가 만들고 싶은 VBA 자동화 작업의 러프한 요청이야.
 이걸 그대로 던지면 동작 안 하는 코드가 나올 가능성이 높아.
 
-부족하거나 빠진 맥락(셀 위치, 파일명 규칙, 예외 처리 등)을
-업계 통상에 맞춰 보강해서 마스터 프롬프트 형태로 정돈해줘.
-
-내가 추가로 채워야 하는 부분은 [채워주세요] 빈칸으로 표시해줘.
+부족하거나 빠진 맥락(값을 채울 위치, 파일명 규칙, 예외 처리 등)을
+업계 통상에 맞춰 보강해서 <span class="hl2">마스터 프롬프트 형태로 정돈</span>해줘.
+첨부한 파일의 실제 구조를 근거로 삼고,
+내가 추가로 확인해야 하는 부분은 <span class="hl2">[채워주세요]</span> 빈칸으로 표시해줘.
 
 --- 러프한 요청 ---
 이 엑셀파일 양식 파악해서 거래명세서 자동발급 VBA 코드 만들어줘.
@@ -1081,283 +856,457 @@ J열 카테고리 칼럼도 같이 해줘. 동일한 방식으로.</div>
 파일 경로 설정 가능해야 함.</div>
   </div>
 
-  <div class="breath"></div>
+  <div class="breath-sm"></div>
 
-  <div class="md-output project-prompt">
-    <div class="h1"># VBA 거래명세서 자동 발급 — 마스터 프롬프트</div>
-    <div class="h2">## 작업 개요</div>
-    <div class="ln">엑셀 파일 시트 2의 거래 데이터를 한 행씩 읽어 시트 1 양식에 채우고 PDF로 저장</div>
-    <div class="ln">데이터 행 수만큼 PDF 파일 자동 생성</div>
-    <div class="h2">## 입력 정보 <span class="ai-add">AI 보강</span></div>
-    <div class="ln">데이터 시트(2)의 첫 행은 헤더, 2행부터 데이터 시작 가정</div>
-    <div class="ln">양식 시트(1)에서 채울 셀 위치 — <span class="blank">[거래처명: __셀, 날짜: __셀, 품목: __셀…]</span></div>
-    <div class="h2">## 파일 저장 규칙 <span class="ai-add">AI 보강</span></div>
-    <div class="ln">PDF 파일명 규칙 — "거래명세서_[거래처명]_[YYYY-MM-DD].pdf"</div>
-    <div class="ln">저장 경로 — 사용자가 코드 상단 변수에서 수정 가능하도록 <span class="blank">[savePath = "__"]</span></div>
-    <div class="h2">## 예외 처리 <span class="ai-add">AI 보강</span></div>
-    <div class="ln">빈 행을 만나면 반복 중단</div>
-    <div class="ln">파일명 중복 시 _v2, _v3 자동 부여</div>
-    <div class="ln">PDF 변환 실패 시 해당 행 번호와 함께 메시지 박스 표시</div>
-    <div class="h2">## 출력 형식 <span class="ai-add">AI 보강</span></div>
-    <div class="ln">완성된 VBA 코드 (Module1에 붙여넣는 형태)</div>
-    <div class="ln">사용 방법 3단계 (Alt+F11 → 코드 붙여넣기 → F5 실행) 안내</div>
-    <div class="ln">코드 주석에 각 블록의 역할 한 줄 설명</div>
+  <div class="note-box">
+    <strong>돌아오는 것.</strong> 작업 개요 · 값 채울 위치 · 파일 저장 규칙(예: "거래명세서_[거래처명]_[날짜].pdf") ·
+    예외 처리(빈 행 중단, 파일명 중복)까지 정돈된 <b>마스터 프롬프트</b>가 돌아옵니다.
+    [채워주세요] 빈칸만 내 상황에 맞게 채우면 됩니다.
   </div>
 
-  <div class="breath-lg"></div>
+  <div class="breath"></div>
 
-  <!-- Step 3 : 코드 받기 -->
-  <h3 class="h-lead" id="p3-code">STEP 3 · 빈칸 채워 코드 받기</h3>
-  <p class="p-lead">마스터 프롬프트의 <b>[채워주세요] 빈칸을 내 파일 기준으로 채우고</b> → 입력 → 동작 코드 완성.</p>
+  <h3 class="h-lead">3-3 · 빈칸 채워 코드 받는다</h3>
 
   <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 3 &mdash; 채워진 마스터 프롬프트로 코드 요청</span></div>
-<div class="prompt-body">위 마스터 프롬프트에 내 파일 기준으로 빈칸을 채웠어. 이 조건대로 동작하는 VBA 코드를 작성해줘.
+    <div class="prompt-header">
+      <span class="prompt-label">PROMPT 12 · 채워진 마스터 프롬프트로 코드 요청</span>
+      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+    </div>
+    <div class="prompt-body">위 마스터 프롬프트에 내 파일 기준으로 빈칸을 채웠어. 이 조건대로 동작하는 VBA 코드를 작성해줘.
 
 [채워진 정보]
-- 양식 시트 셀 위치: 거래처명 = C5, 날짜 = G5, 품목 = B10:B20, 수량 = E10:E20, 단가 = F10:F20
-- 데이터 시트(2) 컬럼: A = 거래처명, B = 날짜, C = 품목, D = 수량, E = 단가
-- 저장 경로 변수: savePath = "C:\Users\(내이름)\Documents\거래명세서\"
-- PDF 파일명: "거래명세서_(거래처명)_(YYYY-MM-DD).pdf"
+- 양식 시트(거래명세서): 값이 들어갈 자리가 <span class="hl2">{거래처명} {월} {일} {품목명} {수량} {단가} {공급가액} {총액}</span>
+  같은 표시로 적혀 있어 — 이 표시를 데이터 값으로 바꿔 넣으면 돼
+- 데이터 시트(거래처 명단): A발송일자, B거래처명, C품목명, D수량, E단가, F공급가액 — 2행부터 데이터
+- 저장 경로: 코드 상단 변수로 두고, 기본값은 <span class="hl2">savePath = "C:\거래명세서\"</span>
+- PDF 파일명: "거래명세서_(거래처명)_(발송일자).pdf"
 
 [출력 형식]
-1. VBA 코드 전체 (Module1에 붙여넣는 형태, 주석 포함)
-2. 사용 방법 3단계 (Alt+F11 / 모듈 추가 / 코드 붙여넣기 / 실행)
-3. 코드 실행 전 확인할 점 (저장 폴더 사전 생성 등)</div>
+1. VBA 코드 전체 (Module1에 붙여넣는 형태, 블록마다 주석 한 줄)
+2. 사용 방법 (Alt+F11 → 모듈 삽입 → 붙여넣기 → 실행) 순서
+3. 실행 전 확인할 점 (저장 폴더 미리 만들기 등)</div>
   </div>
-
-  <div class="breath-lg"></div>
-
-  <!-- 실행 단계 -->
-  <h3 class="h-lead" id="p3-run">실행 단계</h3>
-
-  <div class="step-flow">
-    <div class="step-card">
-      <div class="step-num">STEP 1</div>
-      <h4>VBA 편집기 열기</h4>
-      <p>엑셀에서 <code>Alt + F11</code> → Visual Basic 편집기. 좌측 트리에서 우클릭 → 삽입 → 모듈.</p>
-    </div>
-    <div class="step-arrow">→</div>
-    <div class="step-card">
-      <div class="step-num">STEP 2</div>
-      <h4>코드 붙여넣기</h4>
-      <p>AI가 만들어 준 VBA 코드를 Module1에 통째로 붙여넣기. 상단 <code>savePath</code> 변수만 본인 경로로 수정.</p>
-    </div>
-    <div class="step-arrow">→</div>
-    <div class="step-card">
-      <div class="step-num">STEP 3</div>
-      <h4>실행 + PDF 확인</h4>
-      <p><code>F5</code> 또는 실행 버튼 → 지정 폴더에 거래명세서 PDF가 데이터 행 수만큼 자동 생성됨.</p>
-    </div>
-  </div>
-
-  <div class="breath-lg"></div>
-
-  <div class="tip-box"><strong>학습 포인트 — 3단계 흐름이 핵심.</strong> <b>러프 → AI 정돈 → 동작 코드</b>. 한 번 만든 VBA 코드는 견적서·발주서·거래 확인서에도 <b>90% 재활용</b>. 다음 실습(Practice 4)에서 같은 흐름을 <b>Google 환경 Apps Script</b>로 다시 경험.</div>
 
   <div class="breath"></div>
 
-  <div class="warn-box"><strong>실행 보안.</strong> <b>.xlsm 형식</b>으로 저장 + "콘텐츠 사용" 허용 필요. 회사 PC 매크로 차단 시 정보보안팀 확인.</div>
+  <h3 class="h-lead">3-4 · 실행 — PDF가 다발로 쏟아진다</h3>
+  <ul class="num-steps">
+    <li>탐색기에서 <b>C:\거래명세서\</b> 폴더를 먼저 만들어 둡니다 (저장 경로)</li>
+    <li>엑셀에서 <b>Alt + F11</b> → 메뉴 <b>삽입 → 모듈</b> → 받은 코드를 <b>붙여넣기</b></li>
+    <li>코드 상단 <b>savePath</b>가 내 폴더 경로와 같은지 확인</li>
+    <li><b>F5</b>(실행) → 폴더를 열면 — 거래 건수만큼 <b>명세서 PDF가 생성</b>되어 있습니다</li>
+    <li>PDF 한 장을 열어 <b>양식에 값이 제대로 들어갔는지 확인</b> → 파일을 <b>.xlsm으로 저장</b>(코드 보관)</li>
+  </ul>
+
+  <div class="breath-sm"></div>
+
+  <div class="warn-box">
+    <strong>막혔을 때.</strong> 오류 창이 뜨면 — 메시지를 그대로 복사해 <b>"이 오류 고쳐줘"</b>. 디버깅도 위임 대상입니다.
+    회사 PC 보안 설정으로 매크로가 차단되면 정보보안 부서 확인이 필요합니다 — 오늘은 옆자리 화면과 함께 결과를 확인하고,
+    코드는 받아 두세요.
+  </div>
+
+  <div class="breath-sm"></div>
+
+  <div class="info-box">
+    <strong>방금 일어난 일.</strong>
+    <p>코드를 한 줄도 쓰지 않고, 수십 건의 서류 발급이 버튼 하나가 됐습니다. 이 흐름 —
+    <b>러프 → AI 정돈 → 동작 코드</b> — 은 견적서·발주서·확인서에도 90% 그대로 재활용됩니다.</p>
+  </div>
 </section>
 
 
-<!-- PRACTICE 4 · Apps Script 구글폼 자동 생성 -->
-<section class="module" id="practice-4">
+<!-- ============================================================
+     S4 · CASE 4 앱스 스크립트
+============================================================ -->
+<section class="module" id="s4">
   <div class="mod-head">
-    <span class="mod-num">PRACTICE 4</span>
-    <span class="mod-time">Google Apps Script — 교육 만족도 조사 구글폼 자동 생성</span>
+    <span class="mod-num">CASE 4</span>
+    <span class="mod-time">구글 폼 + 앱스 스크립트</span>
   </div>
-  <h2 class="mod-title">Apps Script로 설문 폼을 한 번에 만든다<small>VBA가 Office 자동화라면, Apps Script는 Google 자동화 — 같은 흐름으로 만난다</small></h2>
+  <h2 class="mod-title">내가 없어도 돌아가는 시스템을 만든다<small>다음 연수 접수 준비 — 신청이 들어오면 접수 확인 메일이 자동으로 나갑니다. 퇴근 후에도, 주말에도.</small></h2>
 
   <div class="breath-lg"></div>
 
-  <p class="p-lead">매 기수 만족도 폼 · 회의 신청 · 휴가 폼 → <b>코드 한 번</b>으로 자동 생성. VBA와 동일한 3단계 흐름을 <b>Google 환경</b>에서 다시 경험.</p>
+  <p class="p-lead"><b>상황.</b> 다음 연수 접수가 시작됩니다. 지금까지는 신청을 확인하고 한 명 한 명
+  접수 안내 메일을 보냈습니다. 오늘 만드는 것은 파일이 아니라 <b>시스템</b>입니다 —
+  구글 폼으로 신청을 받고, 제출되는 <b>순간</b> 확인 메일이 자동 발송되게 합니다.
+  CASE 3과의 차이: VBA는 내가 실행 버튼을 눌러야 하지만, 이번 것은 <b>스스로 실행</b>됩니다.</p>
+
+  <div class="breath-sm"></div>
+
+  <div class="note-box">
+    <strong>개념은 이 한 줄이면 충분합니다 — Apps Script는 VBA의 구글판입니다.</strong>
+    폼·시트·Gmail·드라이브를 코드로 움직이며, 결정적 차이는 <b>트리거</b>: 조건이 갖춰지면 <b>스스로 실행</b>됩니다.
+  </div>
 
   <div class="breath"></div>
 
-  <!-- Apps Script 개념 설명 -->
-  <h3 class="h-lead" id="p4-as">Apps Script란? — 한 줄 정리</h3>
-  <p class="p-lead"><b>Google Workspace의 자동화 언어</b>. JavaScript 기반. Google 계정만 있으면 브라우저에서 즉시 실행.</p>
+  <h3 class="h-lead">4-1 · 신청 폼 만들기</h3>
+  <ul class="num-steps">
+    <li><b>forms.google.com</b> 접속 → 새 양식 → 제목 「AI 실무 특강 신청」</li>
+    <li>아래 <b>문항 3개</b>를 만듭니다 (복사해서 쓰세요). 이메일 문항에는 <b>⋮ → 응답 확인 → 텍스트 → 이메일 주소</b>를 걸어 오타를 차단합니다</li>
+    <li><b>설정 탭 → 응답</b>에서 세 가지를 확인합니다: <b>이메일 주소 수집 = "수집 안 함"</b> ·
+      <b>응답 횟수 1회로 제한 = 해제</b> · (회사 계정 폼이면) <b>조직 사용자로 제한 = 해제</b>
+      — 켜져 있으면 응답자에게 <b>구글 로그인이 강제</b>됩니다</li>
+    <li>응답 탭 → <b>Sheets에 연결</b> — 응답이 쌓일 스프레드시트가 만들어집니다</li>
+  </ul>
 
-  <div class="info-grid info-grid-2x2">
-    <div class="info-card">
-      <h5><em>WHAT</em>Google 환경 자동화 언어</h5>
-      <p>JavaScript 기반 스크립트. <b>Forms · Sheets · Docs · Drive · Gmail · Calendar</b> 등 Google 서비스 전체를 코드로 자동화.</p>
+  <div class="breath-sm"></div>
+
+  <div class="prompt-block">
+    <div class="prompt-header">
+      <span class="prompt-label">폼 문항 (복사용)</span>
+      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
     </div>
-    <div class="info-card">
-      <h5><em>WHY</em>반복 폼·문서 0초화</h5>
-      <p>설문 폼 15문항 수동 작성 30분 → 코드 실행 <b>10초</b>. 한 번 짠 코드로 매 기수마다 양식 다른 폼을 즉시 생성.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>HOW</em>AI에게 코드 요청 → 붙여넣기</h5>
-      <p>"이런 폼 만드는 Apps Script 코드 만들어줘" → AI 코드 작성 → script.google.com에 붙여넣기 → 실행. 직접 코딩 안 해도 됨.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>WHERE</em>script.google.com</h5>
-      <p>브라우저에서 바로 접속. 또는 Google Sheets / Docs / Forms 안에서 <b>확장 프로그램 → Apps Script</b>로 진입. 별도 설치 X.</p>
-    </div>
+    <div class="prompt-body">1. 성명 — 단답형
+2. 이메일 — 단답형
+3. 희망 과정 — 객관식 (AI 심화 / 데이터 분석 / 업무 자동화)</div>
   </div>
+
+  <div class="breath"></div>
+
+  <h3 class="h-lead">4-2 · 자동 회신 스크립트 받기</h3>
+  <ul class="num-steps">
+    <li>연결된 스프레드시트 열기 → 메뉴 <b>확장 프로그램 → Apps Script</b></li>
+    <li>열린 편집기의 기존 내용을 지우고, 아래 프롬프트로 받은 코드를 <b>붙여넣기 → 저장(💾)</b></li>
+  </ul>
+
+  <div class="breath-sm"></div>
+
+  <div class="prompt-block">
+    <div class="prompt-header">
+      <span class="prompt-label">PROMPT 13 · 앱스 스크립트 요청</span>
+      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+    </div>
+    <div class="prompt-body"><span class="hl">[상황]</span> 구글 폼 「AI 실무 특강 신청」의 응답이 구글 시트에 쌓인다.
+시트 열 구성: A타임스탬프, B성명, C이메일, D희망 과정
+<span class="hl">[요청]</span> 구글 Apps Script 코드를 짜줘.
+- <span class="hl2">폼이 제출될 때마다</span> 실행되어, <span class="hl2">'이메일' 문항에 입력된 주소</span>로 접수 확인 메일을 보낸다.
+  (응답자의 구글 로그인 계정이 아니라, 문항으로 직접 입력받은 값이다)
+- 열 번호로 읽지 말고 <span class="hl2">문항 이름으로 값을 읽게</span> 해줘. 열이 밀려도 동작해야 한다.
+- 메일 제목: [사내 교육] 특강 신청이 접수되었습니다
+- 메일 본문: "OOO님, '희망 과정' 신청이 정상 접수되었습니다. 일정은 별도 안내드립니다."
+  형식으로, 성명과 희망 과정을 <span class="hl2">응답 값에서 가져와</span> 채워줘.
+- 트리거를 걸기 전에 <span class="hl2">권한 승인용으로 손으로 한 번 실행해 볼 테스트 함수</span>
+  (나에게 테스트 메일 1통 발송)도 함께 넣어줘.
+<span class="hl">[조건]</span> 나는 코드를 모른다. 코드와 함께 ① 붙여넣기·저장 ② 테스트 함수 실행과 권한 승인
+③ <span class="hl2">'양식 제출 시' 트리거 설정</span>의 순서를 초보자 기준 클릭 단위로 알려줘.</div>
+  </div>
+
+  <div class="breath"></div>
+
+  <h3 class="h-lead">4-3 · 권한 승인 — 트리거보다 먼저, 손으로 한 번 실행</h3>
+  <p class="p-lead">자동화가 내 Gmail로 메일을 보내려면 <b>권한 허락이 한 번</b> 필요합니다.
+  트리거를 걸기 전에 <b>테스트 함수를 수동 실행</b>해 승인 절차를 먼저 끝내는 것이 실무 순서입니다.</p>
+
+  <ul class="num-steps">
+    <li>편집기 상단에서 <b>테스트 함수</b>(AI가 만들어 준 것)를 선택 → <b>▶ 실행</b> 클릭</li>
+    <li><b>「권한 검토」</b> 창이 뜹니다 → 내 구글 <b>계정 선택</b></li>
+    <li><b>"Google에서 확인하지 않은 앱"</b> 경고가 나옵니다 — 내가 방금 만든 스크립트라서 뜨는 <b>정상 화면</b>입니다
+      → <b>고급</b> → <b>"(프로젝트 이름)(안전하지 않음)으로 이동"</b> 클릭</li>
+    <li>요청 권한을 읽어봅니다 — <b>"내 Gmail로 이메일 보내기"</b>, 이 스크립트가 요구하는 전부입니다 → <b>허용</b>
+      <span style="color:var(--lt); font-size:13px;">(승인은 스크립트마다 처음 한 번뿐입니다 — 무엇을 허용하는지 읽고 누르는 습관이 중요합니다)</span></li>
+    <li>받은편지함에 <b>테스트 메일이 도착</b>했으면 권한 완료 — 이제 자동화를 걸 수 있습니다</li>
+  </ul>
+
+  <div class="breath-sm"></div>
+
+  <div class="warn-box">
+    <strong>회사 구글 계정에서 승인이 막히면</strong> — 조직 보안 정책 때문일 수 있습니다.
+    개인 구글 계정으로 전환해 같은 순서로 진행하세요. (오늘 실습은 더미 신청 데이터만 사용합니다)
+  </div>
+
+  <div class="breath"></div>
+
+  <h3 class="h-lead">4-4 · 트리거 연결 — 이 클릭이 오늘의 하이라이트</h3>
+  <ul class="num-steps">
+    <li>편집기 왼쪽 <b>⏰ 트리거</b> 메뉴 → 오른쪽 아래 <b>트리거 추가</b></li>
+    <li>실행할 함수 = <b>폼 제출 처리 함수</b>(테스트 함수 아님) → 이벤트 소스 <b>스프레드시트에서</b> → 이벤트 유형 <b>양식 제출 시</b> → 저장</li>
+    <li>저장되면 목록에 트리거 한 줄이 생깁니다 — 이 한 줄이 "신청이 들어오면 실행하라"는 <b>예약</b>입니다</li>
+  </ul>
+
+  <div class="breath"></div>
+
+  <h3 class="h-lead">4-5 · 실전 테스트 — 그리고 안 될 때의 해결 순서</h3>
+  <ul class="num-steps">
+    <li>폼 링크를 <b>시크릿 창(로그아웃 상태)</b>에서 열어봅니다 — 로그인 요구 없이 바로 응답 화면이 보여야 정상입니다
+      (로그인을 요구하면 4-1의 설정 세 가지를 다시 확인)</li>
+    <li>그 상태로 <b>내 이메일을 입력해 신청</b>을 제출합니다 — 입력한 주소로 메일이 와야 합니다</li>
+    <li>받은편지함 확인 — 접수 확인 메일에 <b>내 성명과 희망 과정</b>이 채워져 있는지 봅니다 (안 보이면 <b>스팸함</b>도 확인)</li>
+    <li>메일이 안 오면: 편집기 왼쪽 <b>실행 기록</b> 메뉴 → 실패한 실행을 클릭 → <b>오류 메시지를 복사해 AI에게</b> "이 오류 고쳐줘"</li>
+    <li>수정한 코드로 저장 → 다시 폼 제출 → 될 때까지 이 반복이 곧 실무입니다</li>
+  </ul>
+
+  <div class="breath-sm"></div>
+
+  <div class="warn-box">
+    <strong>헷갈리기 쉬운 두 가지.</strong>
+    ① 편집기의 <b>배포(Deploy) 버튼은 누르지 않습니다</b> — 배포는 웹앱 공개용 기능이고, 폼 자동화는 트리거만 있으면 됩니다.
+    ② <b>"실행 완료"는 자동화 완성이 아닙니다</b> — 수동 실행에 성공했다는 뜻일 뿐, ⏰ 트리거 목록에
+    '양식 제출 시' 한 줄이 있어야 스스로 돕니다.
+  </div>
+
+  <div class="breath"></div>
+
+  <div class="spotlight">
+    <div class="sp-eyebrow">방금 만든 것</div>
+    <div class="sp-headline">지금 이 순간부터, 이 업무는<br><em>내가 없어도</em> 돌아갑니다</div>
+    <div class="sp-detail">메일이 도착했다면 — 여러분은 방금 <b>트리거(자동 실행 조건)</b>가 걸린 시스템을 만들었습니다.
+    누가 언제 신청하든, 여러분이 회의 중이든 퇴근했든, 접수 안내는 나갑니다.
+    "실행 버튼을 누르는 나"까지 사라진 것 — 이것이 자동화의 완성형입니다.</div>
+  </div>
+
+  <div class="breath-sm"></div>
+
+  <div class="note-box">
+    <strong>확장 아이디어.</strong> 같은 방법으로 "매주 월요일 아침, 지난주 접수 현황을 나에게 요약 메일로" 같은
+    <b>시간 기반 트리거</b>도 걸 수 있습니다 — 트리거 유형에서 '시간 기반'을 고르면 됩니다.
+  </div>
+</section>
+
+
+<!-- ============================================================
+     S5 · CASE 5 보고 장표
+============================================================ -->
+<section class="module" id="s5">
+  <div class="mod-head">
+    <span class="mod-num">CASE 5</span>
+    <span class="mod-time">시각화 도구 3종</span>
+  </div>
+  <h2 class="mod-title">분석 결과를, 보고 장표로<small>숫자와 글로 가득한 분석 요약을 — 도식·인포그래픽·슬라이드로 바꿉니다. 도구마다 잘하는 것이 다릅니다.</small></h2>
 
   <div class="breath-lg"></div>
 
-  <!-- 시나리오 -->
-  <h3 class="h-lead" id="p4-scenario">시나리오 — 만족도 조사 폼 자동 생성</h3>
-  <p class="p-lead">15문항 수동 30분 → 코드 1번 <b>10초</b>. 매 기수마다 재사용.</p>
+  <p class="p-lead"><b>상황.</b> CASE 2에서 마친 만족도 분석 — 이제 부서장 보고만 남았습니다.
+  줄글 요약을 읽게 하는 것과 장표 한 장을 보여주는 것 — 전달력의 차이는 결재선에서 갈립니다.
+  이번에 넘기는 것은 <b>'그리는 손'</b>입니다: 만들기는 AI가, 구성과 사실 확인은 내가 합니다.
+  <span style="color:var(--lt)">(CASE 2를 건너뛰었어도 아래 시작 파일로 바로 시작할 수 있습니다)</span></p>
+
+  <div class="resource">
+    <div class="resource-icon"><span class="ri-emoji">📝</span><span class="ri-ext">MD</span></div>
+    <div class="resource-text">
+      <div class="r-meta">Case 5 · Start File</div>
+      <strong>실습 5 — 만족도 분석 요약 (.md)</strong>
+      <p>설문 분석의 핵심 수치·의견 분류·개선 3대 과제가 정리된 요약. 시각화 도구의 입력 재료입니다.</p>
+    </div>
+    <a class="resource-btn" href="실습편_자료/실습5_만족도_분석요약.md" download>파일 받기</a>
+  </div>
+  <div class="breath-sm"></div>
+  <div class="sample">
+    <div class="sample-icon"><span class="si-emoji">📄</span><span class="si-ext">DOCX</span></div>
+    <div class="sample-text">
+      <div class="s-meta">Same Content</div>
+      <strong>실습 5 — 만족도 분석 요약 (.docx)</strong>
+      <p>같은 내용의 워드 문서입니다.</p>
+    </div>
+    <a class="sample-btn" href="실습편_자료/실습5_만족도_분석요약.docx" download>파일 받기</a>
+  </div>
+
+  <div class="breath"></div>
+
+  <h3 class="h-lead">도구 3종 — 무엇에 무엇을 쓰나</h3>
+  <table class="comp-table">
+    <thead>
+      <tr><th style="width:22%;">도구</th><th style="width:33%;">잘하는 것</th><th>오늘 만들 것</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><b>Napkin AI</b></td><td>텍스트 → 비즈니스 도식 자동 변환</td><td>개선 3대 과제 체계도 (5-1)</td></tr>
+      <tr><td><b>NotebookLM</b></td><td>자료 기반 인포그래픽 — 지어내지 않음</td><td>조사 결과 한 장 요약 (5-2)</td></tr>
+      <tr class="hl"><td><b>Claude</b></td><td>보고 슬라이드를 화면에서 바로 만들고, 대화로 수정</td><td>부서장 보고 슬라이드 5장 (5-3 · 집중)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="breath"></div>
+
+  <h3 class="h-lead">5-1 · Napkin — 개선 3대 과제를 도식으로</h3>
+  <ul class="num-steps">
+    <li><b>napkin.ai</b> 접속 → 새 문서 → 분석 요약의 <b>「개선 3대 과제」 부분을 붙여넣기</b></li>
+    <li>문단 선택 → <b>⚡ 아이콘</b> → 어울리는 도식 스타일 선택</li>
+    <li>색을 회사 보고 톤으로 조정 → <b>PNG 내보내기</b></li>
+  </ul>
+
+  <div class="breath"></div>
+
+  <h3 class="h-lead">5-2 · NotebookLM — 자료가 시키는 대로만 그리는 도구</h3>
+  <ul class="num-steps">
+    <li><b>notebooklm.google.com</b> → 새 노트북 → 소스 추가 → 분석 요약 파일 <b>업로드</b></li>
+    <li><b>인포그래픽</b>(또는 마인드맵) 생성 → 조사 개요·핵심 수치·과제가 한 장으로 정리됩니다</li>
+    <li>다운로드해 보관 — 소스에 없는 내용은 만들지 않는 것이 이 도구의 강점입니다</li>
+  </ul>
+
+  <div class="breath"></div>
+
+  <h3 class="h-lead">5-3 · Claude — 보고 슬라이드를 대화로 (집중 실습)</h3>
+  <ul class="num-steps">
+    <li><b>claude.ai</b> 접속 → 새 대화 → 분석 요약 파일 <b>첨부</b></li>
+    <li>아래 프롬프트 입력 → 화면 오른쪽에 슬라이드가 <b>즉시 렌더링</b>됩니다</li>
+    <li>이어서 수정 요청을 대화로 — 만들고 → 보고 → 고치는 반복</li>
+  </ul>
+
+  <div class="breath-sm"></div>
+
+  <div class="prompt-block">
+    <div class="prompt-header">
+      <span class="prompt-label">PROMPT 14 · 보고 슬라이드 생성 (Claude)</span>
+      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+    </div>
+    <div class="prompt-body">첨부한 만족도 분석 요약으로 <span class="hl2">부서장 보고용 슬라이드 5장</span>을 HTML로 만들어 화면에 보여줘.
+<span class="hl">[구성]</span> ① 표지 ② 조사 개요와 핵심 수치 ③ 자유 의견 분석 ④ 진단 ⑤ 개선 3대 과제
+<span class="hl">[디자인]</span> 차분한 네이비 기조, 회사 보고 문서 톤, 장식보다 가독성.
+숫자는 크게, 문장은 개조식으로 짧게.
+<span class="hl">[제약]</span> 요약에 없는 수치·내용을 추가하지 말 것.</div>
+  </div>
+
+  <div class="breath-sm"></div>
+
+  <div class="prompt-block">
+    <div class="prompt-header">
+      <span class="prompt-label">PROMPT 15 · 대화로 수정 (예시)</span>
+      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+    </div>
+    <div class="prompt-body">좋아. 두 가지만 고치자.
+- 2장의 핵심 수치를 문장 대신 <span class="hl2">숫자 카드 4개</span>로 보여줘 (전반 4.0 / 실무 적용 4.3 / 환경 3.1 / 응답 72명)
+- 5장의 개선 과제에 각각 <span class="hl2">담당·시기 한 줄</span>씩 추가해줘 (내용은 네가 제안하고, 나는 검토한다)</div>
+  </div>
+
+  <div class="breath-sm"></div>
+
+  <div class="tip-box">
+    <strong>도구 선택의 감.</strong> 급한 도식 한 개는 <b>Napkin</b>, 자료 요약 한 장은 <b>NotebookLM</b>,
+    구성부터 디자인까지 손보는 보고 슬라이드는 <b>Claude</b>.
+    셋 다 원본은 같은 텍스트였습니다 — <b>정리된 글이 모든 시각화의 출발점</b>입니다.
+  </div>
+</section>
+
+
+<!-- ============================================================
+     S6 · 마무리
+============================================================ -->
+<section class="module" id="s6">
+  <div class="mod-head">
+    <span class="mod-num">마무리</span>
+    <span class="mod-time">오늘의 정리 · 다음 여정</span>
+  </div>
+  <h2 class="mod-title">오늘 만든 다섯 가지, 그리고 한 가지 질문<small>다섯 사례를 완주했습니다. 책상 위에 남은 것을 세어 봅니다.</small></h2>
+
+  <div class="breath-lg"></div>
 
   <div class="info-grid">
     <div class="info-card">
-      <h5><em>INPUT</em>설문 질문 명세서</h5>
-      <p>섹션별 질문 텍스트 · 응답 유형(5점 척도 / 객관식 / 장문형) · 필수 여부가 정리된 마크다운 파일.</p>
+      <h5><em>CASE 1</em>완성된 명단</h5>
+      <p>150명 지원금 산정·우선선발 판정 — <b>수식을 물어서</b></p>
     </div>
     <div class="info-card">
-      <h5><em>PROCESS</em>Apps Script 코드 실행</h5>
-      <p>FormApp API로 새 폼 생성 → 섹션·질문·응답 유형·필수 여부 코드로 자동 추가.</p>
+      <h5><em>CASE 2</em>분석 리포트</h5>
+      <p>72명 설문의 수치·의견·진단 — <b>파일째 맡겨서</b></p>
     </div>
     <div class="info-card">
-      <h5><em>OUTPUT</em>완성된 구글폼 URL</h5>
-      <p>실행 즉시 응답 URL과 편집 URL이 로그에 출력. 사내 공유 링크로 바로 사용 가능.</p>
+      <h5><em>CASE 3</em>명세서 PDF 다발</h5>
+      <p>거래명세서 자동 발급 — <b>코드를 시켜서</b></p>
     </div>
-  </div>
-
-  <div class="breath-lg"></div>
-
-  <!-- Step 1 : 러프한 요청 -->
-  <h3 class="h-lead" id="p4-rough">STEP 1 · 머릿속에 떠오르는 대로 적기</h3>
-  <p class="p-lead">구조화·기술 옵션 X. <b>만들고 싶은 폼의 모습</b>을 한 덩어리 글로.</p>
-
-  <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 1 &mdash; 평범한 직장인의 첫 요청</span></div>
-<div class="prompt-body">교육 만족도 조사 구글폼을 자동으로 만드는 앱스 스크립트 코드 만들어줘.
-
-질문 목록은 첨부 파일에 정리해뒀어. 5점 척도, 장문형, 객관식이 섞여 있고
-응답자는 익명으로 받았으면 좋겠어.
-
-매 기수마다 같은 양식으로 만들어야 해서 한 번 짜두면 계속 쓸 수 있게 해줘.</div>
+    <div class="info-card">
+      <h5><em>CASE 4</em>스스로 도는 시스템</h5>
+      <p>접수 확인 메일 자동 발송 — <b>트리거를 걸어서</b></p>
+    </div>
+    <div class="info-card">
+      <h5><em>CASE 5</em>보고 장표</h5>
+      <p>도식·인포그래픽·슬라이드 — <b>보고까지 만들게 해서</b></p>
+    </div>
   </div>
 
   <div class="breath"></div>
 
-  <div class="note-box"><strong>구조화는 AI에게.</strong> 다음 단계에서 AI가 폼 제목·섹션 구분·응답 유형 매핑·에러 처리 등 빠진 맥락을 채워 마스터 프롬프트로 정돈해줌.</div>
-
-  <div class="breath-lg"></div>
-
-  <!-- Step 2 : 마스터 프롬프트로 보강 -->
-  <h3 class="h-lead" id="p4-master">STEP 2 · AI에게 마스터 프롬프트 정돈 요청</h3>
-  <p class="p-lead">러프 요청을 바로 코드 생성에 쓰지 X. <b>"마스터 프롬프트로 정돈해 달라"</b>고 한 단계 띄워 요청.</p>
-
-  <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 2 &mdash; 마스터 프롬프트 생성 요청</span></div>
-<div class="prompt-body">아래는 내가 만들고 싶은 Apps Script 자동화 작업의 러프한 요청이야.
-이걸 그대로 던지면 동작 안 하는 코드가 나올 가능성이 높아.
-
-부족하거나 빠진 맥락(폼 제목 규칙, 섹션 구조, 응답 유형 매핑, 에러 처리 등)을
-업계 통상에 맞춰 보강해서 마스터 프롬프트 형태로 정돈해줘.
-
-내가 추가로 채워야 하는 부분은 [채워주세요] 빈칸으로 표시해줘.
-
---- 러프한 요청 ---
-교육 만족도 조사 구글폼 만드는 앱스 스크립트 코드 만들어줘.
-질문은 첨부 파일에. 5점 척도/장문형/객관식 섞여 있음. 응답자 익명.
-매 기수마다 같은 양식으로 쓸 수 있게.</div>
+  <div class="spotlight">
+    <div class="sp-eyebrow">한 가지 질문</div>
+    <div class="sp-headline">다섯 도구 사이를 오가며<br>지휘한 것은 — 아직 <em>나</em>였습니다</div>
+    <div class="sp-detail">파일을 내려받아 옮기고, 결과를 복사해 넘기고, 도구를 바꿔 열었습니다.
+    만약 이 전체 — 명단 정리부터 분석·명세서·메일·보고 화면까지 — 를 <b>한 자리에서 알아서 처리하는 동료</b>가 있다면?
+    다음 여정의 주제는 그 동료, <b>AI 에이전트</b>입니다. 여러분의 실제 업무 하나를 자동화 시스템으로 만들고, 웹에 배포하는 것까지 갑니다.</div>
   </div>
 
   <div class="breath"></div>
 
-  <div class="md-output project-prompt">
-    <div class="h1"># 교육 만족도 조사 구글폼 자동 생성 — 마스터 프롬프트</div>
-    <div class="h2">## 작업 개요</div>
-    <div class="ln">Apps Script로 새 구글폼을 생성하고 첨부한 질문 명세서대로 섹션·질문·응답 유형을 자동 추가</div>
-    <div class="ln">실행 한 번에 응답 URL과 편집 URL을 로그에 출력</div>
-    <div class="h2">## 폼 기본 설정 <span class="ai-add">AI 보강</span></div>
-    <div class="ln">폼 제목 — <span class="blank">["[교육명] 교육 만족도 조사" — 교육명은 변수로 분리]</span></div>
-    <div class="ln">폼 설명 — 응답 익명 안내 + 활용 목적 한 줄</div>
-    <div class="ln">응답 수집 — 이메일 비수집 (익명), 응답자별 1회 제한 해제</div>
-    <div class="h2">## 질문 유형 매핑 <span class="ai-add">AI 보강</span></div>
-    <div class="ln">5점 척도 → FormApp.ItemType.SCALE (1=매우 불만족 / 5=매우 만족)</div>
-    <div class="ln">장문형 → FormApp.ItemType.PARAGRAPH_TEXT</div>
-    <div class="ln">객관식 → FormApp.ItemType.MULTIPLE_CHOICE (선택지는 명세서에서 파싱)</div>
-    <div class="h2">## 섹션 구조 <span class="ai-add">AI 보강</span></div>
-    <div class="ln">명세서의 ## 헤더마다 새 섹션(PageBreak) 추가</div>
-    <div class="ln">섹션 제목은 ## 헤더 텍스트 그대로 사용</div>
-    <div class="h2">## 필수 여부 <span class="ai-add">AI 보강</span></div>
-    <div class="ln">5점 척도·객관식 → 필수 응답 (setRequired(true))</div>
-    <div class="ln">장문형 → 선택 응답 (setRequired(false))</div>
-    <div class="h2">## 출력 형식 <span class="ai-add">AI 보강</span></div>
-    <div class="ln">완성된 Apps Script 코드 (script.google.com에 붙여넣는 형태)</div>
-    <div class="ln">사용 방법 3단계 (스크립트 생성 → 코드 붙여넣기 → 실행 → 권한 승인) 안내</div>
-    <div class="ln">함수 시작부에 질문 명세서 텍스트를 그대로 변수에 담는 방식 / 또는 파일 ID로 Drive 접근 방식 둘 중 선택 가능하도록 주석으로 안내</div>
-    <div class="h2">## 사용자 보충 필요</div>
-    <div class="ln"><span class="blank">[교육명 (예: "2026 AI 실무 활용교육 1차수")]</span></div>
-    <div class="ln"><span class="blank">[폼 생성 후 자동 공유할 그룹 이메일 — 없으면 생략]</span></div>
-  </div>
-
-  <div class="breath-lg"></div>
-
-  <!-- Step 3 : 코드 받기 -->
-  <h3 class="h-lead" id="p4-code">STEP 3 · 빈칸 채워 코드 받기</h3>
-  <p class="p-lead">[채워주세요] 빈칸 → 내 상황 기준으로 채우고 → 동작 코드 완성.</p>
+  <h3 class="h-lead">자동화 과제 카드 — 다음 여정의 내 프로젝트 정하기</h3>
+  <p class="p-lead">오늘 배운 눈으로 <b>내 업무 하나</b>를 고릅니다. 아래 카드를 채워 보세요 —
+  이 카드가 다음 여정에서 <b>여러분이 직접 만들 자동화 프로젝트의 주제</b>가 됩니다.</p>
 
   <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 3 &mdash; 채워진 마스터 프롬프트로 코드 요청</span></div>
-<div class="prompt-body">위 마스터 프롬프트에 빈칸을 채웠어. 이 조건대로 동작하는 Apps Script 코드를 작성해줘.
+    <div class="prompt-header">
+      <span class="prompt-label">자동화 과제 카드 (복사해서 작성)</span>
+      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+    </div>
+    <div class="prompt-body">■ 나의 자동화 과제 카드
 
-[채워진 정보]
-- 교육명: "2026 AI 실무 활용교육 — 1차수"
-- 질문 명세서: 첨부한 교육_만족도_조사_질문목록.md 그대로 활용
-- 자동 공유 그룹 이메일: 없음 (수동 공유)
-- 응답 시트 자동 연동: 같은 Google Drive 내에 응답 스프레드시트 자동 생성
+1. 업무 이름: <span class="hl2">(예: 월간 이용 통계 취합 보고)</span>
+2. 반복 주기: <span class="hl2">(매일 / 매주 / 매월 / 수시)</span>
+3. 들어오는 것(입력): <span class="hl2">(예: 부서별 엑셀 7개, 메일 회신, 폼 응답 …)</span>
+4. 하는 일(처리): <span class="hl2">(예: 취합 → 형식 통일 → 집계 → 요약)</span>
+5. 나가는 것(출력): <span class="hl2">(예: 보고서 1부, 안내 메일, 게시글 …)</span>
+6. 가장 귀찮은 지점: <span class="hl2">(예: 부서마다 양식이 달라 붙여넣기 지옥)</span>
+7. 오늘 배운 것 중 써먹을 수 있어 보이는 것: <span class="hl2">(CASE 번호로)</span></div>
+  </div>
 
-[출력 형식]
-1. Apps Script 코드 전체 (createSurvey 함수 하나로 묶고, 주석 포함)
-2. 사용 방법 3단계 (script.google.com → 새 프로젝트 → 코드 붙여넣기 → 실행 → 권한 승인)
-3. 실행 후 콘솔에 출력되는 응답 URL · 편집 URL 안내</div>
+  <div class="breath-sm"></div>
+
+  <div class="info-box">
+    <strong>카드를 고르는 기준.</strong>
+    <p>거창할 필요 없습니다 — <b>자주 반복되고 · 규칙이 분명하고 · 입출력이 파일이나 메일인 업무</b>가 최고의 후보입니다.
+    오늘의 다섯 사례가 전부 그랬습니다.</p>
   </div>
 
   <div class="breath-lg"></div>
 
-  <!-- 실행 단계 -->
-  <h3 class="h-lead" id="p4-run">실행 단계</h3>
-
-  <div class="step-flow">
-    <div class="step-card">
-      <div class="step-num">STEP 1</div>
-      <h4>Apps Script 편집기 열기</h4>
-      <p>브라우저에서 <code>script.google.com</code> 접속 → "새 프로젝트" 클릭. 또는 Google Sheets/Docs에서 확장 프로그램 → Apps Script.</p>
-    </div>
-    <div class="step-arrow">→</div>
-    <div class="step-card">
-      <div class="step-num">STEP 2</div>
-      <h4>코드 붙여넣기 + 권한 승인</h4>
-      <p>AI가 만들어 준 코드를 통째로 붙여넣기. 첫 실행 시 Google 권한 승인 팝업 → "허용" 클릭.</p>
-    </div>
-    <div class="step-arrow">→</div>
-    <div class="step-card">
-      <div class="step-num">STEP 3</div>
-      <h4>실행 → 폼 URL 확인</h4>
-      <p>상단 실행 버튼(▶) 클릭. 실행 로그에 응답 URL · 편집 URL이 출력되면 성공. 응답 URL을 사내 공유.</p>
-    </div>
+  <h3 class="h-lead">마치기 전 점검</h3>
+  <div class="selfcheck">
+    <h5>Checklist</h5>
+    <ul>
+      <li>데이터를 지운 <b>구조 파일</b>을 만들어 첨부했다 — 함수 이름 없이 원하는 결과만 말했다</li>
+      <li>수식을 받을 때 <b>"설명해줘"를 함께 요청</b>했다 · AI가 낸 집계 중 <b>최소 1개를 직접 대조</b>했다</li>
+      <li>거래명세서 매크로를 실행해 <b>PDF가 자동 생성</b>되는 것을 확인했다 (오류는 메시지를 복사해 AI에게)</li>
+      <li>내 폼으로 신청을 넣어 <b>자동 확인 메일 수신</b>을 확인했다</li>
+      <li>보고 장표를 <b>최소 1종</b> 완성해 저장했다</li>
+      <li><b>자동화 과제 카드</b>를 작성했다</li>
+      <li>실습에는 더미 데이터만 사용했고, 실제 업무 데이터 사용 전 <b>회사 보안 정책 확인</b>이 필요함을 안다</li>
+    </ul>
   </div>
-
-  <div class="breath-lg"></div>
-
-  <!-- 학습 포인트 -->
-  <div class="tip-box"><strong>학습 포인트 — 환경이 바뀌어도 3단계 흐름은 동일.</strong> VBA · Apps Script · Python · SQL — 모두 같은 패턴. 직장인은 <b>"무엇을 하고 싶은지"</b>만 자신의 언어로 적으면 OK. 한 번 만든 코드는 다른 폼(회의·휴가·투표 등)에도 90% 재활용.</div>
-
-  <div class="breath"></div>
-
-  <div class="warn-box"><strong>Google 권한.</strong> 첫 실행 시 Google 권한 승인 팝업 → 허용. 회사 Workspace 계정은 관리자 정책 확인. 개인 계정으로 먼저 테스트 권장.</div>
 </section>
 
 
 <!-- FOOTER -->
 <footer class="footer">
-  <p><span>한국GPT협회</span> &nbsp; AI 실무 활용교육 · 실습편 (기본 교안)</p>
-  <p>02-562-1552 &nbsp;|&nbsp; GPT@Rnbdp.com</p>
+  <p><span>한국GPT협회</span> &nbsp; AI 실무 활용교육 · 실습편 (기본 교안) &nbsp;|&nbsp; 발행 2026</p>
+  <p>대표전화 02-562-1552 &nbsp;|&nbsp; 이메일 GPT@Rnbdp.com</p>
 </footer>
 
 </div><!-- /.main -->
 
 <script>
+function copyPrompt(btn){
+  var block = btn.closest('.prompt-block');
+  if(!block) return;
+  var body = block.querySelector('.prompt-body');
+  if(!body) return;
+  var text = body.innerText;
+  var done = function(){
+    var prev = btn.textContent;
+    btn.textContent = '복사됨';
+    btn.classList.add('copied');
+    setTimeout(function(){ btn.textContent = prev; btn.classList.remove('copied'); }, 1300);
+  };
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(text).then(done).catch(function(){fallback(text, done);});
+  } else { fallback(text, done); }
+}
+function fallback(text, done){
+  var ta = document.createElement('textarea');
+  ta.value = text; ta.setAttribute('readonly','');
+  ta.style.position='fixed'; ta.style.left='-9999px';
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); done(); } finally { document.body.removeChild(ta); }
+}
+
 var hamburger = document.getElementById('hamburgerBtn');
 var sidebar = document.getElementById('sidebar');
 var overlay = document.getElementById('sidebarOverlay');
@@ -1368,22 +1317,12 @@ if(overlay){
   overlay.addEventListener('click', function(){ sidebar.classList.remove('open'); overlay.classList.remove('show'); });
 }
 
-// 스크롤 스파이 — 현재 보고 있는 PRACTICE(nav-head)와 sub 항목을 동시에 하이라이트
+/* 스크롤 스파이 */
 var sidebarLinks = Array.from(document.querySelectorAll('.sidebar-nav a[href^="#"]'));
 var linkMeta = [];
-var lastHead = null;
 sidebarLinks.forEach(function(a){
-  var isHead = a.classList.contains('nav-head');
-  if(isHead) lastHead = a;
-  var sel = a.getAttribute('href');
-  var el = document.querySelector(sel);
-  if(el){
-    linkMeta.push({
-      link: a,
-      el: el,
-      parent: a.classList.contains('sub') ? lastHead : null
-    });
-  }
+  var el = document.querySelector(a.getAttribute('href'));
+  if(el){ linkMeta.push({ link: a, el: el }); }
 });
 function onScroll(){
   var y = window.scrollY + 140;
@@ -1394,12 +1333,10 @@ function onScroll(){
   sidebarLinks.forEach(function(a){ a.classList.remove('active'); });
   if(current){
     current.link.classList.add('active');
-    if(current.parent) current.parent.classList.add('active');
-    // 활성 sub가 사이드바 뷰포트 밖이면 사이드바 내부 스크롤
-    var sidebar = document.getElementById('sidebar');
-    if(sidebar){
+    var sb = document.getElementById('sidebar');
+    if(sb){
       var lr = current.link.getBoundingClientRect();
-      var sr = sidebar.getBoundingClientRect();
+      var sr = sb.getBoundingClientRect();
       if(lr.top < sr.top + 80 || lr.bottom > sr.bottom - 80){
         current.link.scrollIntoView({block: 'nearest', behavior: 'smooth'});
       }
@@ -1410,6 +1347,6 @@ document.addEventListener('scroll', onScroll, {passive:true});
 window.addEventListener('resize', onScroll);
 onScroll();
 </script>
-
 </body>
 </html>
+

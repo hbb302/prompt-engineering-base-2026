@@ -1546,6 +1546,7 @@ p code, li code, td code {
     <a href="#p8" class="nav-head">PART 08 · GPTs 자산화</a>
     <a href="#p8-build" class="sub">&#8226; GPTs 구축</a>
     <a href="#p8-next" class="sub">&#8226; 다음 분기 활용</a>
+    <a href="#p8-practice" class="sub">&#8226; 구현 실습 · 경비 정산 챗봇</a>
   </div>
   <a class="sidebar-next-page" href="교안_기본_AI 실무 활용교육_엑셀 활용실습.html">
     <div class="snp-meta">Page 2</div>
@@ -2945,6 +2946,105 @@ p code, li code, td code {
 
   <p class="p-lead">오늘 강의에서 익힌 모든 흐름이 GPTs 안에 그대로 살아있습니다. 같은 보고서를 다시 만드는 데 드는 시간이 <b>처음 만들 때보다 크게 단축</b>됩니다. 부서원 누구에게나 공유 가능하므로 <b>본부 차원의 디지털 자산</b>이 됩니다.</p>
 
+  <div class="breath-lg"></div>
+
+  <!-- 7-4. 구현 실습 — 경비 정산 챗봇 -->
+  <h3 class="h-lead" id="p8-practice">7-4. 구현 실습 &mdash; 두 번째 챗봇 「경비 정산 챗봇」 만들기</h3>
+  <p class="p-lead">보고서 어시스턴트가 <b>오늘의 흐름을 저장</b>한 챗봇이라면, 이번엔 완전히 다른 반복 업무를
+  직접 챗봇으로 만들어 봅니다. <b>영수증 사진을 올리면 엑셀로 정리해 주는 챗봇</b> —
+  손으로 옮겨 적으면 1시간 걸리던 월말 경비 정산이 <b>3분</b>으로 줄어듭니다.</p>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <h5><em>INPUT</em>영수증 이미지 다수</h5>
+      <p>JPG/PNG 여러 장 또는 ZIP 압축 파일. 책상 위 영수증 더미 그대로.</p>
+    </div>
+    <div class="info-card">
+      <h5><em>PROCESS</em>OCR + 엑셀 정리</h5>
+      <p>챗봇이 이미지를 <b>한 장씩</b> 읽어 5개 항목을 추출하고 엑셀로 기록.</p>
+    </div>
+    <div class="info-card">
+      <h5><em>OUTPUT</em>정산용 엑셀 파일</h5>
+      <p>가맹점명 / 거래일시 / 총금액 / 부가세 / 공급가액 <b>5열 시트</b> + 다운로드.</p>
+    </div>
+  </div>
+
+  <div class="breath"></div>
+
+  <div class="resource">
+    <div class="resource-icon">
+      <span class="ri-emoji">🧾</span>
+      <span class="ri-ext">ZIP</span>
+    </div>
+    <div class="resource-text">
+      <div class="r-meta">▶ 챗봇 테스트용 자료</div>
+      <strong>실습용 영수증 (7장)</strong>
+      <p>실제 영수증 사진 7장을 묶은 압축 파일. 완성된 챗봇 대화창에 이 ZIP을 그대로 업로드해 테스트합니다.</p>
+    </div>
+    <a class="resource-btn" href="실습편_자료/실습용 영수증.zip" download>다운로드</a>
+  </div>
+
+  <div class="breath"></div>
+
+  <p class="p-lead">아래 지시문이 챗봇의 <b>두뇌(Instructions)</b>가 됩니다 — PART 05에서 배운 구조화 원리
+  (<b>작업 순서 · 예외 처리 · 필드별 규칙 · 실패 폴백</b>)가 그대로 들어 있는 프롬프트입니다.</p>
+
+  <div class="prompt-block">
+    <div class="prompt-header"><span class="prompt-label">PROMPT 9 &mdash; 경비 정산 챗봇 Instructions (영수증 OCR)</span></div>
+<div class="prompt-body"><span class="hl"># 지시문</span>
+- 업로드된 이미지 파일의 텍스트를 인식하고 데이터를 추출해, 만약 압축 파일이 업로드되었다면 압축을 풀어서 작업해
+- <span class="hl2">[중요]</span> OCR로 텍스트 추출할 때는 Code interpreter를 사용하지 마
+- 사용자가 영수증 이미지를 여러 개 업로드할 때, 텍스트를 취합 및 변형 하지 말고 이미지 한 개씩 단계적으로 각각 모든 영수증 이미지의 내용을 추출해라
+- 영수증 이미지를 OCR해서 (1) 가맹점명(상호명), (2) 거래 일시, (3) 총 금액, (4) 부가세, (5) 공급가액 을 추출해
+- 텍스트를 추출하고 나서 Code interpreter를 사용해서 추출한 내용을 엑셀에 "가맹점명 / 거래 일시 / 총 금액 / 부가세 / 공급가액"으로 기록해
+- 최종 결과물을 프롬프트 창에 시트 형태로도 보여주고 엑셀 다운로드 형태로 제공해
+- OCR로 추출할 이미지는 한국어로 적혀 있으며, 모든 답변도 한국어로 진행해
+
+<span class="hl">## 영수증 이미지 추출 가이드</span>
+1. '가맹점명(상호명)'은 이 상품을 판매한 매장, 식당, 회사의 이름이다. '가맹점명(상호명)'은 다음과 같은 조건에 하나 이상 해당한다.
+   - '(주)'가 포함된 전체 텍스트 (예: 아성다이소_홍대2호점)
+   - 매장명 or 상호명 or 가맹점 or 상호 바로 뒤에 위치한 전체 텍스트
+   - 매장 주소 or 대표자 직전에 나오는 고유명사 전체 텍스트
+   - 영수증 최상단에 큰 글씨로 적힌 이름
+2. '거래 일시'는 YYYY-MM-DD 포맷으로 작성해 (예: 2024-08-15)
+3. '총 금액'은 거래한 총 금액이다. 문자나 특수기호는 제거하고 숫자만 출력해 (예: 11955)
+4. '부가세'는 이 거래에서 부가세가 있는 경우 적어줘. 문자나 특수기호는 제거하고 숫자만 출력해 (예: 1195)
+5. '공급가액'은 '총 금액'에서 '부가세'를 뺀 숫자야
+6. 정보 추출이 어려울 때는 '이 영수증은 제대로 인식되지 않았습니다. 다른 이미지를 업로드 하시거나 수동으로 정보를 피드백해 주세요.'라고 알려줘</div>
+  </div>
+
+  <div class="breath"></div>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <h5><em>STEP 1</em>챗봇 만들기</h5>
+      <p>ChatGPT 좌측 <b>GPT 탐색 → 만들기(Create)</b> → 구성 탭의 <b>Instructions에 위 지시문을 통째로 붙여넣기</b>. Knowledge는 이번 챗봇엔 필요 없습니다.</p>
+    </div>
+    <div class="info-card">
+      <h5><em>STEP 2</em>이름 붙여 저장</h5>
+      <p>이름 <b>「경비 정산 챗봇」</b> + 아이콘 선택 → 저장(나만 보기). 사이드바에 두 번째 챗봇이 생깁니다.</p>
+    </div>
+    <div class="info-card">
+      <h5><em>STEP 3</em>영수증으로 테스트</h5>
+      <p>챗봇 대화창에 <b>영수증 ZIP 업로드</b> + "이 영수증들을 처리해줘" → 시트 미리보기와 <b>엑셀 다운로드</b>가 돌아오면 성공.</p>
+    </div>
+  </div>
+
+  <div class="breath"></div>
+
+  <div class="tip-box">
+    <strong>핵심 — 프롬프트가 좋으면 챗봇이 됩니다.</strong> 이번 챗봇은 Knowledge 없이 <b>지시문만으로</b> 완성됐습니다.
+    같은 4기둥 패턴(작업 순서 · 예외 처리 · 필드 규칙 · 실패 폴백)이면 <b>명함 정리 · 세금계산서 · 계약서 핵심 추출</b> 챗봇도
+    똑같이 만들 수 있습니다 — 반복 업무 하나당 챗봇 하나.
+  </div>
+
+  <div class="breath"></div>
+
+  <div class="warn-box">
+    <strong>실무 주의.</strong> 회사 영수증·증빙 자료는 보안 등급 확인이 먼저입니다. <b>정보보안 부서 협의 전에는</b>
+    오늘처럼 실습용·가상 데이터로 워크플로우를 검증하세요.
+  </div>
+
   <div class="breath"></div>
 
   <!-- GPTs 사이드바 누적 예시 -->
@@ -2955,6 +3055,10 @@ p code, li code, td code {
         <div class="gpts-item">
           <span class="gpts-icon i1">🤝</span>
           <span class="gpts-name">신규 거래처 발굴 어시스턴트</span>
+        </div>
+        <div class="gpts-item">
+          <span class="gpts-icon i2">🧾</span>
+          <span class="gpts-name">경비 정산 챗봇</span>
         </div>
         <div class="gpts-item">
           <span class="gpts-icon i2">📈</span>
