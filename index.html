@@ -7,11 +7,11 @@
 <style>
 @import url("https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/subsets/Paperlogy-dynamic-subset.css");
 :root {
-  --p: #F36F21;
-  --p2: #FF8B45;
-  --pd: #C24E12;
-  --p-soft: #FFF3E6;
-  --p-soft-2: #FFE3CC;
+  --p: #1B4F8A;
+  --p2: #3D77B8;
+  --pd: #123A66;
+  --p-soft: #F1F6FC;
+  --p-soft-2: #D5E3F2;
   --accent: #1A1A1A;
   --bk: #1A1A1A;
   --dk: #333;
@@ -86,7 +86,7 @@ svg { display: block; max-width: 100%; height: auto; }
 .sidebar-nav a:hover { color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.05); }
 .sidebar-nav a.active {
   color: var(--w);
-  background: rgba(243,111,33,0.18);
+  background: rgba(27,79,138,0.18);
   border-left-color: var(--p2);
   font-weight: 600;
 }
@@ -97,9 +97,9 @@ svg { display: block; max-width: 100%; height: auto; }
   margin-top: 4px; letter-spacing: .2px;
   border-top: 1px solid rgba(255,255,255,0.08);
 }
-.sidebar-nav a.nav-head:hover { color: #FFB880; background: transparent; }
+.sidebar-nav a.nav-head:hover { color: #9CC3EC; background: transparent; }
 .sidebar-nav a.nav-head.active {
-  color: #FFB880; background: rgba(243,111,33,0.14);
+  color: #9CC3EC; background: rgba(27,79,138,0.14);
   border-left-color: var(--p2);
 }
 .sidebar-footer {
@@ -127,7 +127,7 @@ svg { display: block; max-width: 100%; height: auto; }
 
 /* Hero */
 .hero {
-  background: linear-gradient(135deg, #2B1810, #C24E12 60%, #F36F21);
+  background: linear-gradient(135deg, #0B1422, #123A66 60%, #1B4F8A);
   padding: 80px 60px; position: relative;
 }
 .hero-badge {
@@ -426,8 +426,8 @@ svg { display: block; max-width: 100%; height: auto; }
 .warn-box { background: var(--r-bg); border-left: 3px solid #E53935; color: #7A1E1E; }
 .warn-box strong { color: #B71C1C; }
 .info-box {
-  background: #FFF8F2;
-  border: 1px solid #FFD9B3;
+  background: #F4F8FC;
+  border: 1px solid #BBDBFB;
   border-left: 3px solid var(--p);
   padding: 18px 24px;
   margin: 0;
@@ -521,8 +521,8 @@ svg { display: block; max-width: 100%; height: auto; }
 
 /* Resource card */
 .resource {
-  background: #FFF8F2;
-  border: 1px solid #FFD9B3;
+  background: #F4F8FC;
+  border: 1px solid #BBDBFB;
   border-left: 4px solid var(--p);
   border-radius: 4px;
   padding: 22px 26px;
@@ -535,7 +535,7 @@ svg { display: block; max-width: 100%; height: auto; }
 .resource-icon {
   width: 60px; height: 60px;
   background: var(--w);
-  border: 1px solid #FFD9B3;
+  border: 1px solid #BBDBFB;
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
   gap: 3px; border-radius: 4px;
@@ -689,8 +689,8 @@ svg { display: block; max-width: 100%; height: auto; }
 .md-output .ln em { font-style: normal; color: #888; font-size: 11px; margin-left: 4px; }
 .md-output .ai-add {
   display: inline-block;
-  background: rgba(243, 111, 33, .22);
-  color: #FFB089;
+  background: rgba(27,79,138, .22);
+  color: #9CC3EC;
   padding: 1px 8px;
   border-radius: 2px;
   font-size: 10.5px;
@@ -716,7 +716,7 @@ svg { display: block; max-width: 100%; height: auto; }
 }
 .next-page-btn {
   display: block;
-  background: linear-gradient(135deg, #2B1810 0%, #C24E12 60%, #F36F21 100%);
+  background: linear-gradient(135deg, #0B1422 0%, #123A66 60%, #1B4F8A 100%);
   color: var(--w);
   text-decoration: none;
   padding: 28px 56px 26px 38px;
@@ -724,7 +724,7 @@ svg { display: block; max-width: 100%; height: auto; }
   min-width: 420px;
   max-width: 520px;
   text-align: left;
-  box-shadow: 0 12px 32px rgba(243,111,33,.25);
+  box-shadow: 0 12px 32px rgba(27,79,138,.25);
   transition: transform 0.2s, box-shadow 0.2s;
   position: relative;
   overflow: hidden;
@@ -741,7 +741,7 @@ svg { display: block; max-width: 100%; height: auto; }
 }
 .next-page-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 18px 40px rgba(243,111,33,.36);
+  box-shadow: 0 18px 40px rgba(27,79,138,.36);
 }
 .next-page-btn:hover::after {
   transform: translateY(-50%) translateX(4px);
@@ -749,7 +749,7 @@ svg { display: block; max-width: 100%; height: auto; }
 }
 .next-page-meta {
   font-size: 11px;
-  color: #FFD9B3;
+  color: #BBDBFB;
   font-weight: 700;
   letter-spacing: 1.2px;
   margin-bottom: 8px;
@@ -774,17 +774,17 @@ svg { display: block; max-width: 100%; height: auto; }
   display: block;
   margin: 18px 14px 8px;
   padding: 14px 16px;
-  background: linear-gradient(135deg, #C24E12, #F36F21);
+  background: linear-gradient(135deg, #123A66, #1B4F8A);
   color: var(--w);
   text-decoration: none;
   border-radius: 8px;
   transition: transform 0.15s, box-shadow 0.15s;
-  box-shadow: 0 4px 14px rgba(243,111,33,.32);
+  box-shadow: 0 4px 14px rgba(27,79,138,.32);
   position: relative;
 }
 .sidebar-next-page:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(243,111,33,.45);
+  box-shadow: 0 6px 18px rgba(27,79,138,.45);
 }
 .sidebar-next-page::after {
   content: "→";
@@ -797,7 +797,7 @@ svg { display: block; max-width: 100%; height: auto; }
 }
 .snp-meta {
   font-size: 10px;
-  color: #FFD9B3;
+  color: #BBDBFB;
   font-weight: 700;
   letter-spacing: 1.2px;
   margin-bottom: 3px;
@@ -919,7 +919,7 @@ svg { display: block; max-width: 100%; height: auto; }
 
 /* 인라인 코드 */
 p code, li code, td code {
-  background: #FFF3E6;
+  background: #F1F6FC;
   color: var(--p);
   padding: 1px 6px;
   border-radius: 3px;
@@ -1017,6 +1017,7 @@ p code, li code, td code {
   .hero { padding: 72px 18px 36px; }
 }
 </style>
+<link rel="stylesheet" href="miraen-theme.css">
 </head>
 <body>
 
@@ -1032,1606 +1033,370 @@ p code, li code, td code {
     <div class="nav-module">Overview</div>
     <a href="#hero">교육 개요</a>
     <a href="#timetable">9개 파트 한눈에</a>
-    <a href="#p0" class="nav-head">PART 00 · 케이스</a>
-    <a href="#p0-scenario" class="sub">&#8226; 김대리의 미션</a>
-    <a href="#p0-preview" class="sub">&#8226; 산출물 미리보기</a>
-    <a href="#p0-rule" class="sub">&#8226; 보안 룰</a>
-    <a href="#p0-transfer" class="sub">&#8226; 내 부서로 적용</a>
-    <a href="#p0-schedule" class="sub">&#8226; 실습 일정</a>
+    <a href="#p0" class="nav-head">PART 00 · 오늘의 미션</a>
+    <a href="#p0-scenario" class="sub">• 박리더와 김대리</a>
+    <a href="#p0-transfer" class="sub">• 내 업무에 적용하기</a>
     <a href="#p1" class="nav-head">PART 01 · 첫 시도</a>
-    <a href="#p1-trial" class="sub">&#8226; 평범한 입력의 한계</a>
+    <a href="#p1-trial" class="sub">• 한 줄로 물어보기</a>
     <a href="#p2" class="nav-head">PART 02 · 프롬프트 기본</a>
-    <a href="#p2-formula" class="sub">&#8226; 3요소 공식</a>
-    <a href="#p2-context" class="sub">&#8226; Before / After 라이브</a>
-    <a href="#p2-compare" class="sub">&#8226; 회의록·퓨샷 결합</a>
+    <a href="#p2-formula" class="sub">• 지시문 · 맥락 · 퓨샷</a>
+    <a href="#p2-context" class="sub">• 입력 전후 비교</a>
+    <a href="#p2-compare" class="sub">• 회의록과 예시 첨부</a>
     <a href="#p3" class="nav-head">PART 03 · 심층리서치</a>
-    <a href="#p3-deep" class="sub">&#8226; Deep Research 활성화</a>
-    <a href="#p3-find" class="sub">&#8226; 개선 후보 근거 조사</a>
-    <a href="#p3-museum" class="sub">&#8226; 환각 사례</a>
+    <a href="#p3-deep" class="sub">• Deep Research</a>
+    <a href="#p3-find" class="sub">• 교육 운영 참고 자료 찾기</a>
+    <a href="#p3-museum" class="sub">• 환각과 출처 확인</a>
     <a href="#p4" class="nav-head">PART 04 · 자료 통합</a>
-    <a href="#p4-md" class="sub">&#8226; 마크다운 = 입력 장치</a>
-    <a href="#p4-research" class="sub">&#8226; 리서치 결과 정리</a>
-    <a href="#p4-pack" class="sub">&#8226; 자료 패키지 묶기</a>
+    <a href="#p4-md" class="sub">• 마크다운 = 입력 구조</a>
+    <a href="#p4-research" class="sub">• 리서치 결과 정리</a>
+    <a href="#p4-pack" class="sub">• 자료 패키지 묶기</a>
     <a href="#p5" class="nav-head">PART 05 · 마스터프롬프트</a>
-    <a href="#p5-why" class="sub">&#8226; 왜 마스터프롬프트인가</a>
-    <a href="#p5-request" class="sub">&#8226; AI에 마스터프롬프트 요청</a>
-    <a href="#p5-result" class="sub">&#8226; AI 보강 + 완성본</a>
-    <a href="#p6" class="nav-head">PART 06 · 보고서 작성</a>
-    <a href="#p6-cot" class="sub">&#8226; 한 섹션씩 호출</a>
-    <a href="#p6-write" class="sub">&#8226; 7섹션 채우기</a>
-    <a href="#p7" class="nav-head">PART 07 · 내 스타일 마스터</a>
-    <a href="#p7-extract" class="sub">&#8226; 채팅 안 내 스타일</a>
-    <a href="#p7-style" class="sub">&#8226; 추출 + 적용 시나리오</a>
+    <a href="#p5-why" class="sub">• AI에게 작성 요청</a>
+    <a href="#p5-request" class="sub">• 짧게 요청하기</a>
+    <a href="#p5-result" class="sub">• AI 제안 검토</a>
+    <a href="#p6" class="nav-head">PART 06 · 기획안 작성</a>
+    <a href="#p6-cot" class="sub">• 한 항목씩 작성</a>
+    <a href="#p6-write" class="sub">• 기획안 완성</a>
+    <a href="#p7" class="nav-head">PART 07 · 내 스타일 추출</a>
+    <a href="#p7-extract" class="sub">• 대화에 쌓인 작업 방식</a>
+    <a href="#p7-style" class="sub">• 다음 업무에 재사용</a>
     <a href="#p8" class="nav-head">PART 08 · GPTs 자산화</a>
-    <a href="#p8-build" class="sub">&#8226; GPTs 구축</a>
-    <a href="#p8-next" class="sub">&#8226; 다음 분기 활용</a>
-    <a href="#p8-practice" class="sub">&#8226; 구현 실습 · 교사연수 경비 정리 챗봇</a>
+    <a href="#p8-build" class="sub">• 전용 챗봇 만들기</a>
+    <a href="#p8-next" class="sub">• 새 자료로 다시 활용</a>
+    <a href="#p8-practice" class="sub">• 교육 운영 경비 정리 챗봇</a>
   </div>
   <a class="sidebar-next-page" href="교안_기본_AI 실무 활용교육_업무자동화_엑셀편.html">
     <div class="snp-meta">Page 2</div>
     <div class="snp-label">업무자동화[엑셀편]으로 이동</div>
   </a>
   <div class="sidebar-footer">
-    <div style="font-size:15px; color:#fff; font-weight:700; margin-bottom:8px;">&copy; 한국GPT협회</div>
-    <div>02-562-1552</div>
-    <div>GPT@Rnbdp.com</div>
+    <div style="font-size:15px;color:#fff;font-weight:700;margin-bottom:8px;">&copy; 한국GPT협회</div>
+    <div>02-562-1552</div><div>GPT@Rnbdp.com</div>
   </div>
 </nav>
 
 <div class="main">
-
-<!-- HERO -->
 <section class="hero" id="hero">
-  <div class="hero-badge">미래엔 전사교육 · PAGE 1 · 프롬프트 엔지니어링</div>
+  <div class="hero-badge">미래엔 전사교육 · PAGE 1</div>
   <h1>프롬프트 엔지니어링</h1>
-  <div class="hero-sub">
-    같은 AI라도 <b>입력이 다르면 결과가 다릅니다.</b><br>
-    부서협업 TF의 김대리가 받은 한 가지 미션을 함께 끝까지 완성합니다 &mdash; <b>회의록 · 내부 양식 · 외부 리서치 → 보고서 → GPTs 자산화</b>.
-  </div>
+  <div class="hero-sub">같은 AI라도 <b>입력이 다르면 결과가 다릅니다.</b><br>하나의 기획안을 만들며, 업무 요청부터 나만의 챗봇까지 익힙니다.</div>
   <div class="hero-meta">
     <div class="hero-meta-item">대상 <span>미래엔 전사 임직원</span></div>
-    <div class="hero-meta-item">구성 <span>총 9개 PART</span></div>
-    <div class="hero-meta-item">도구 <span>ChatGPT Plus · MS Word</span></div>
-    <div class="hero-meta-item">산출물 <span>교사 지원 서비스 개선 보고서 (DOCX · 7섹션)</span></div>
+    <div class="hero-meta-item">구성 <span>9개 PART</span></div>
+    <div class="hero-meta-item">도구 <span>ChatGPT · MS Word</span></div>
+    <div class="hero-meta-item">산출물 <span>사내 AI 활용 교육 운영 기획안</span></div>
   </div>
 </section>
 
-<!-- TIMETABLE -->
 <div class="timetable" id="timetable">
-  <div class="tt-item"><div class="tt-time">PART 00</div><div class="tt-title">케이스 정렬</div><div class="tt-data">김대리 미션 · 미리보기</div></div>
-  <div class="tt-item"><div class="tt-time">PART 01</div><div class="tt-title">첫 시도</div><div class="tt-data">한계 체감</div></div>
-  <div class="tt-item"><div class="tt-time">PART 02</div><div class="tt-title">프롬프트 기본</div><div class="tt-data">3요소 공식</div></div>
-  <div class="tt-item"><div class="tt-time">PART 03</div><div class="tt-title">심층리서치</div><div class="tt-data">Deep Research + 환각 사례</div></div>
-  <div class="tt-item"><div class="tt-time">PART 04</div><div class="tt-title">자료 통합</div><div class="tt-data">마크다운 = 입력 장치</div></div>
-  <div class="tt-item"><div class="tt-time">PART 05</div><div class="tt-title">마스터프롬프트</div><div class="tt-data">AI 요청 + AI 보강</div></div>
-  <div class="tt-item"><div class="tt-time">PART 06</div><div class="tt-title">보고서 작성</div><div class="tt-data">한 섹션씩 호출</div></div>
-  <div class="tt-item"><div class="tt-time">PART 07</div><div class="tt-title">내 스타일 마스터</div><div class="tt-data">스타일 추출·재사용</div></div>
-  <div class="tt-item"><div class="tt-time">PART 08</div><div class="tt-title">GPTs 자산화</div><div class="tt-data">한 줄 호출로 재사용</div></div>
+  <div class="tt-item"><div class="tt-time">PART 00</div><div class="tt-title">오늘의 미션</div><div class="tt-data">업무 요청 이해</div></div>
+  <div class="tt-item"><div class="tt-time">PART 01</div><div class="tt-title">첫 시도</div><div class="tt-data">한 줄 입력</div></div>
+  <div class="tt-item"><div class="tt-time">PART 02</div><div class="tt-title">프롬프트 기본</div><div class="tt-data">지시문 · 맥락 · 퓨샷</div></div>
+  <div class="tt-item"><div class="tt-time">PART 03</div><div class="tt-title">심층리서치</div><div class="tt-data">근거 찾기 · 검증</div></div>
+  <div class="tt-item"><div class="tt-time">PART 04</div><div class="tt-title">자료 통합</div><div class="tt-data">마크다운으로 정리</div></div>
+  <div class="tt-item"><div class="tt-time">PART 05</div><div class="tt-title">마스터프롬프트</div><div class="tt-data">AI에게 작성 요청</div></div>
+  <div class="tt-item"><div class="tt-time">PART 06</div><div class="tt-title">기획안 작성</div><div class="tt-data">한 항목씩 완성</div></div>
+  <div class="tt-item"><div class="tt-time">PART 07</div><div class="tt-title">내 스타일 추출</div><div class="tt-data">작업 방식 재사용</div></div>
+  <div class="tt-item"><div class="tt-time">PART 08</div><div class="tt-title">GPTs 자산화</div><div class="tt-data">전용 챗봇 만들기</div></div>
 </div>
 
-
-<!-- ============================================================
-     PART 00 · 케이스
-============================================================ -->
 <section class="module" id="p0">
-  <div class="mod-head">
-    <span class="mod-num">PART 00</span>
-    <span class="mod-time">케이스 정렬</span>
-  </div>
-  <h2 class="mod-title">오늘의 미션 : 김대리의 「교사 지원 서비스 개선 보고서」<small>회의록 · 내부 양식 · 외부 리서치를 합쳐 7섹션 보고서를 끝까지 완성합니다</small></h2>
-
+  <div class="mod-head"><span class="mod-num">PART 00</span><span class="mod-time">오늘의 미션</span></div>
+  <h2 class="mod-title">사내 AI 활용 교육 운영 기획안<small>익숙한 업무로 배우는 2시간 교육을 준비합니다</small></h2>
   <div class="breath-lg"></div>
-
-  <!-- ▶ 김대리의 미션 -->
-  <div class="resource" style="margin-bottom:40px;">
-    <div class="resource-icon"><span class="ri-emoji">📦</span><span class="ri-ext">ZIP</span></div>
-    <div class="resource-text"><div class="r-meta">미래엔 전사교육 실습자료</div><strong>회의록·보고서·엑셀·영수증 자료 모음</strong><p>압축을 푼 뒤 안내문을 확인하고, 각 실습에 필요한 파일만 첨부하세요. 완성예시와 OCR 검증기준은 결과를 만든 후 비교합니다.</p></div>
+  <h3 class="h-lead" id="p0-scenario">0-1. 박리더의 요청</h3>
+  <div class="mission-scene" aria-label="박리더가 김대리에게 사내 AI 활용 교육 기획을 요청하는 대화">
+    <div class="mission-dialogue">
+      <div class="mission-bubble leader"><span class="mission-name">박리더</span><p>다음 달 임직원 대상 <b>AI 활용 교육</b>을 준비해 주세요.<br>처음 쓰는 분도 따라올 수 있는 <b>2시간 실습</b>으로요.<br>무엇을 배우고, 어떻게 운영할지 기획안으로 정리해 주세요.</p></div>
+      <div class="mission-bubble staff"><span class="mission-name">김대리</span><p><b>보고서·메일·회의록</b>처럼 자주 하는 업무를 중심으로 구성하고,<br><b>준비 사항</b>도 함께 정리하겠습니다.</p></div>
+    </div>
+    <img class="mission-art" src="교안_자료/미션_박리더_김대리.png" width="1536" height="1024" alt="사무실에서 교육 기획을 의논하는 박리더와 김대리">
+  </div>
+  <p class="visual-caption">등장인물과 자료는 교육용 가상 사례입니다.</p>
+  <div class="resource">
+    <div class="resource-icon"><span class="ri-emoji">📁</span><span class="ri-ext">ZIP</span></div>
+    <div class="resource-text"><strong>미래엔 전사교육 실습자료</strong><p>회의록, 기획안 예시, 리서치 자료와 엑셀 실습 파일을 한 번에 받습니다.</p></div>
     <a class="resource-btn" href="미래엔_전사교육_실습자료.zip" download>전체 자료 받기</a>
   </div>
-  <h3 class="h-lead" id="p0-scenario">0-1. 김대리의 미션</h3>
-  <p class="p-lead">당신은 미래엔 전사교육을 위해 설정한 <b>가상 부서협업 TF의 김대리</b>입니다. 편집·콘텐츠, 영업·마케팅, 고객지원, 제작·물류, 인사·재무 담당자가 함께 교사 지원 경험을 살펴봅니다. 2026년 9월 7일 TF 회의에서 박리더가 다음과 같이 요청했습니다.</p>
-
-  <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">박리더 지시 &mdash; 부서협업 TF 회의 (2026-09-07)</span></div>
-<div class="prompt-body">9월 14일에 초안을 검토하고 15일에 <b>교사 지원 서비스 개선 보고서</b>를 제출해 줘. 후보는 <b>A 수업자료 탐색 안내 개선 / B 교재 문의 FAQ 개선 / C 교사 연수 운영 개선</b>이야. <b>교사 편의, 실행 가능성, 운영 리스크</b>를 같은 기준으로 비교해 줘. A의 안내 초안을 먼저 검토하고 B의 근거 자료는 함께 정리하자. C의 시범 검토 담당과 일정은 미정으로 남겨 줘. 실제 서비스 도입은 결정하지 않았고, 내부 문제나 성과도 추정하지 마.</div>
-  </div>
-
   <div class="breath"></div>
-
-  <!-- ▶ 시나리오 흐름 시각화 -->
-  <div class="visual">
-    <svg viewBox="0 0 880 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="김대리 미션 흐름">
-      <!-- 자료 3종 박스 -->
-      <g transform="translate(20,30)">
-        <rect width="200" height="60" rx="6" fill="#FFF3E6" stroke="#FF8B45" stroke-width="1.5"/>
-        <text x="100" y="22" font-family="Paperlogy" font-size="10" font-weight="700" fill="#999" text-anchor="middle" letter-spacing="1">RESOURCE 1</text>
-        <text x="100" y="44" font-family="Paperlogy" font-size="14" font-weight="700" fill="#C24E12" text-anchor="middle">회의록 (STT)</text>
-      </g>
-      <g transform="translate(20,125)">
-        <rect width="200" height="60" rx="6" fill="#FFF3E6" stroke="#FF8B45" stroke-width="1.5"/>
-        <text x="100" y="22" font-family="Paperlogy" font-size="10" font-weight="700" fill="#999" text-anchor="middle" letter-spacing="1">RESOURCE 2</text>
-        <text x="100" y="44" font-family="Paperlogy" font-size="14" font-weight="700" fill="#C24E12" text-anchor="middle">실습용 양식 퓨샷</text>
-      </g>
-      <g transform="translate(20,220)">
-        <rect width="200" height="60" rx="6" fill="#FFF3E6" stroke="#FF8B45" stroke-width="1.5"/>
-        <text x="100" y="22" font-family="Paperlogy" font-size="10" font-weight="700" fill="#999" text-anchor="middle" letter-spacing="1">RESOURCE 3</text>
-        <text x="100" y="44" font-family="Paperlogy" font-size="14" font-weight="700" fill="#C24E12" text-anchor="middle">Deep Research (외부)</text>
-      </g>
-      <!-- 화살표들 -->
-      <line x1="230" y1="60" x2="290" y2="155" stroke="#999" stroke-width="2"/>
-      <line x1="230" y1="155" x2="290" y2="160" stroke="#999" stroke-width="2"/>
-      <line x1="230" y1="250" x2="290" y2="165" stroke="#999" stroke-width="2"/>
-      <polygon points="290,160 282,155 282,165" fill="#999"/>
-      <!-- 가운데: 프롬프트 엔지니어링 -->
-      <g transform="translate(300,100)">
-        <rect width="240" height="120" rx="6" fill="#F36F21"/>
-        <text x="120" y="30" font-family="Paperlogy" font-size="11" font-weight="700" fill="#FFE0CC" text-anchor="middle" letter-spacing="1">YOUR WORK</text>
-        <text x="120" y="60" font-family="Paperlogy" font-size="22" font-weight="700" fill="#FFF" text-anchor="middle">프롬프트</text>
-        <text x="120" y="86" font-family="Paperlogy" font-size="22" font-weight="700" fill="#FFF" text-anchor="middle">엔지니어링</text>
-        <text x="120" y="108" font-family="Paperlogy" font-size="12" fill="#FFE0CC" text-anchor="middle">PART 00~08 · 한 케이스 완주</text>
-      </g>
-      <!-- 화살표 -->
-      <line x1="550" y1="160" x2="600" y2="160" stroke="#999" stroke-width="2"/>
-      <polygon points="600,160 592,155 592,165" fill="#999"/>
-      <!-- 산출물 -->
-      <g transform="translate(610,100)">
-        <rect width="240" height="120" rx="6" fill="#FFF" stroke="#1A1A1A" stroke-width="1.5"/>
-        <rect width="240" height="26" fill="#1A1A1A"/>
-        <text x="14" y="18" font-family="Paperlogy" font-size="11" font-weight="700" fill="#FF8B45">DOCX · 7섹션</text>
-        <text x="226" y="18" font-family="Paperlogy" font-size="10" fill="#FFF" text-anchor="end">최종 산출물</text>
-        <text x="120" y="56" font-family="Paperlogy" font-size="15" font-weight="700" fill="#1A1A1A" text-anchor="middle">교사 지원 서비스</text>
-        <text x="120" y="76" font-family="Paperlogy" font-size="15" font-weight="700" fill="#1A1A1A" text-anchor="middle">개선 보고서</text>
-        <line x1="20" y1="92" x2="220" y2="92" stroke="#E5E5E5"/>
-        <line x1="20" y1="100" x2="200" y2="100" stroke="#E5E5E5"/>
-        <line x1="20" y1="108" x2="220" y2="108" stroke="#E5E5E5"/>
-      </g>
-    </svg>
-    <div class="visual-caption">3종 자료를 받아서 → 프롬프트 엔지니어링으로 합쳐 → <b>실습용 양식 보고서 한 부</b>로 마무리합니다.</div>
-  </div>
-
-  <div class="breath-lg"></div>
-
-  <!-- ▶ 산출물 미리보기 -->
-  <h3 class="h-lead" id="p0-preview">0-2. 강의 끝나면 이렇게 나옵니다 &mdash; 산출물 미리보기</h3>
-  <p class="p-lead">강의를 끝까지 따라오면, 다음 7섹션이 채워진 보고서를 손에 들고 자리로 돌아갑니다. <b>지금 양식이 머리에 들어오지 않아도 괜찮습니다</b> &mdash; 남은 8개 PART(01~08)를 거치면서 각 섹션이 어떻게 채워지는지 직접 만들어봅니다.</p>
-
-  <div class="info-grid">
-    <div class="info-card">
-      <h5><em>SECTION 1~3</em>배경 · 후보 개요 · 선정 기준</h5>
-      <p>왜 개선안을 검토하는지, A·B·C가 무엇인지, 어떤 기준으로 비교할지. <b>회의록 + 외부 리서치</b>로 채웁니다.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>SECTION 4~5</em>상세 분석 · 실행 전략</h5>
-      <p>후보별 대상 업무·공개 근거·기대 효과 가설. 초안 검토 순서, 협업 관점, 확인할 운영 조건. <b>퓨샷 + 리서치</b>로 채웁니다.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>SECTION 6~7</em>리스크 · 실행 일정</h5>
-      <p>각 후보별 리스크와 대응 방안, 9월 15일 제출까지의 작성 일정. C의 담당·일정과 실제 도입은 미정으로 유지. <b>퓨샷 + 본인 판단</b>으로 마무리합니다.</p>
-    </div>
-  </div>
-
-  <div class="breath-lg"></div>
-
-  <!-- ▶ 역할 · 자원 · 보안 -->
-  <h3 class="h-lead" id="p0-rule">0-3. 역할 · 자원 · 보안 룰</h3>
-  <p class="p-lead">강의 내내 김대리 입장에서 작업합니다. 강사가 자료 3종을 미리 준비해 두었습니다.</p>
-
-  <div class="info-grid">
-    <div class="info-card">
-      <h5><em>YOUR ROLE</em>김대리</h5>
-      <p>실습용 부서협업 TF의 김대리. 교사 지원 서비스 개선 보고서를 작성하고 2026년 9월 14일 박리더 검토를 거쳐 9월 15일 제출합니다.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>GOAL</em>의사결정 보조</h5>
-      <p>박리더가 <b>A의 초안 검토와 B의 근거 정리를 확인</b>할 수 있게 합니다. C의 담당·일정은 미정으로 남기고, 실제 도입 결정에 앞서 확인할 조건과 리스크를 보여 줍니다.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>CONSTRAINT</em>외부 AI 입력 금지</h5>
-      <p>미공개 교재 원고·문항, 계약·실적, 교사·학생 개인정보는 승인되지 않은 외부 AI에 입력하지 않습니다. <b>TF·회의록·보고서·실습 데이터·보안 조건은 교육용 가상 설정</b>이며 미래엔의 실제 조직·정책·문제·성과를 뜻하지 않습니다. 개선안은 공개 웹 근거와 실습 가정을 구분해 작성합니다. 실제 업무 적용 시에는 <b>회사 보안 정책과 계정 유형(개인용/기업용)</b>을 먼저 확인합니다.</p>
-    </div>
-  </div>
-  <div class="breath"></div>
-  <div class="info-box">
-    <strong>이 교안의 자료를 읽는 기준.</strong> 공개 서비스의 실제 안내와 교육용 설정을 구분합니다. <b>TF·인물·회의·일정·보고서·업무 데이터·실습 보안 조건은 가상</b>이며 미래엔의 실제 문제나 내부 정책을 나타내지 않습니다. 엠티처·미래엔 참고서 자료실·초코클래스의 <b>공개 웹 안내</b>는 조사 근거입니다. 개선안과 기대 효과는 학습자가 검증할 제안·가설입니다.
-  </div>
-  <div class="breath"></div>
-  <h3 class="h-lead" id="p0-transfer">0-4. 같은 원리를 내 부서 업무로 옮기기</h3>
-  <p class="p-lead">공통 실습에서는 같은 TF 보고서를 만듭니다. 실무에서는 <b>지시문·맥락·퓨샷과 자료 정리의 흐름</b>을 유지하고, 아래처럼 입력과 산출물만 내 업무로 바꾸세요.</p>
-  <table class="comp-table">
-    <thead><tr><th>직무</th><th>실습 자료를 바꾸는 예</th><th>내 업무 산출물</th></tr></thead>
-    <tbody>
-      <tr><td>편집·콘텐츠</td><td>공개 교재 소개 + 가상 검토 회의록 + 안내문 예시</td><td>교재 활용 안내 초안·콘텐츠 검토표</td></tr>
-      <tr><td>영업·마케팅</td><td>공개 서비스 안내 + 가상 캠페인 요청 + 제안서 예시</td><td>교사 대상 서비스 소개·캠페인 제안</td></tr>
-      <tr><td>고객지원</td><td>가상 교재 문의 + 공개 이용 안내 + 답변 양식</td><td>문의 유형별 FAQ·답변 초안</td></tr>
-      <tr><td>제작·물류</td><td>가상 제작 일정·배송 요청 + 업무 보고 양식</td><td>일정 점검표·배송 문의 대응안</td></tr>
-      <tr><td>인사·재무</td><td>가상 연수 계획·경비 증빙 + 정리 양식</td><td>교육 운영안·경비 검토용 정리표</td></tr>
-    </tbody>
-  </table>
-  <div class="breath"></div>
-  <h3 class="h-lead" id="p0-schedule">0-5. 가상 TF 보고서 작성 일정</h3>
-  <table class="comp-table">
-    <thead><tr><th>날짜</th><th>활동</th><th>담당</th><th>산출물</th></tr></thead>
-    <tbody>
-      <tr><td>2026-09-07</td><td>가상 부서협업 회의</td><td>김대리·박리더</td><td>회의 기록</td></tr>
-      <tr><td>2026-09-08</td><td>공개 자료 확인</td><td>김대리</td><td>출처·확인 필요 메모</td></tr>
-      <tr><td>2026-09-10</td><td>후보 비교·보고서 초안</td><td>김대리</td><td>7섹션 초안</td></tr>
-      <tr><td>2026-09-14</td><td>근거·표현 검토</td><td>박리더</td><td>수정 의견</td></tr>
-      <tr><td>2026-09-15</td><td>보고서 제출</td><td>김대리</td><td>검토 반영 보고서</td></tr>
-      <tr><td>미정</td><td>C 시범 검토</td><td>미정</td><td>운영 조건 확인안</td></tr>
-    </tbody>
-  </table>
-  <p class="p-lead" style="margin-top:14px;">위 날짜는 <b>교육용 보고서 작성 일정</b>입니다. A의 초안을 먼저 검토하고 B의 근거 정리를 병행합니다. C의 시범 검토 담당·일정과 실제 서비스 도입·연수 개최는 미정이며, 자료에 없는 부서나 날짜를 임의로 채우지 않습니다.</p>
+  <h3 class="h-lead" id="p0-transfer">내 업무에 적용하기</h3>
+  <p class="p-lead">오늘 익힐 흐름은 <b>행사 기획안, 업무 보고서, 협업 제안서</b>에도 같습니다. 업무 주제와 참고 자료를 바꿔 활용하세요.</p>
 </section>
 
-
-<!-- ============================================================
-     PART 01 · 막연한 첫 시도
-============================================================ -->
 <section class="module" id="p1">
-  <div class="mod-head">
-    <span class="mod-num">PART 01</span>
-    <span class="mod-time">첫 시도</span>
-  </div>
-  <h2 class="mod-title">평범한 입력은 평범한 출력을 만든다<small>김대리가 평소처럼 한 줄로 시켜본다 &mdash; 어디서 막히는지 직접 부딪힙니다</small></h2>
-
+  <div class="mod-head"><span class="mod-num">PART 01</span><span class="mod-time">첫 시도</span></div>
+  <h2 class="mod-title">한 줄로 요청하면 어떤 결과가 나올까요?</h2>
   <div class="breath-lg"></div>
-
-  <h3 class="h-lead" id="p1-trial">1-1. 평범한 입력의 한계 &mdash; 김대리의 첫 시도</h3>
-  <p class="p-lead">김대리는 박리더 지시를 받고 자리에 돌아왔습니다. 평소처럼 ChatGPT 창을 열고 한 줄로 물어봅니다. <b>좋은 프롬프트를 먼저 보여드리지 않습니다</b> &mdash; 왜 그게 필요한지 체감하려면, 평범한 시도가 어디서 막히는지 직접 봐야 합니다. 여러분도 지금 ChatGPT를 열고 <b>이 한 줄을 그대로 입력</b>해 보세요 &mdash; 결과 창을 닫지 말고 띄워두면, PART 02에서 3요소를 적용했을 때 <b>내 화면에서 직접 Before / After</b>를 비교할 수 있습니다.</p>
-
-  <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 1 &mdash; 김대리의 첫 시도 (막연한 한 줄)</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
-<div class="prompt-body">교사 지원 서비스 개선 보고서 작성해줘.</div>
+  <h3 class="h-lead" id="p1-trial">1-1. 김대리의 첫 시도</h3>
+  <p class="p-lead">ChatGPT에 아래 문장을 입력하고, 박리더의 요청이 반영됐는지 살펴보세요.</p>
+  <div class="prompt-block" id="prompt1">
+    <div class="prompt-header"><span class="prompt-label">PROMPT 1 · 첫 요청</span></div>
+    <div class="prompt-body">사내 AI 활용 교육 기획안 작성해줘.</div>
   </div>
-
   <div class="breath"></div>
-
-  <!-- ▶ 왜 나쁜 프롬프트인가 — 빈자리 5가지 -->
-  <div class="visual" style="background:#FFF5F5; border-color:#FCA5A5;">
-    <div class="visual-title" style="color:#B71C1C;">왜 이 프롬프트가 나쁜가 &mdash; 5가지 빈자리</div>
-    <div style="background:#FFF; border:1px dashed #FCA5A5; border-radius:4px; padding:18px 22px; font-family:'Consolas','Courier New',monospace; font-size:14px; color:#1A1A1A; line-height:1.85; margin-bottom:22px;">
-      "<b style="background:#FFE0E0; padding:1px 4px; border-radius:2px;">교사 지원 서비스 개선</b> <b style="background:#FFE0E0; padding:1px 4px; border-radius:2px;">보고서</b> 작성해줘."
-    </div>
-    <div class="info-grid" style="margin:0;">
-      <div class="info-card" style="border-left:3px solid #E53935;">
-        <h5 style="color:#B71C1C;"><em>빈자리 1</em>WHO &middot; 누가 누구에게 보고?</h5>
-        <p>TF 리더에게 보고하는 김대리? 컨설팅사가 외부 의뢰사에 제출? 톤·전문성 수준이 완전히 달라집니다. <b>이 한 줄로 AI는 평균치를 추측</b>합니다.</p>
-      </div>
-      <div class="info-card" style="border-left:3px solid #E53935;">
-        <h5 style="color:#B71C1C;"><em>빈자리 2</em>WHAT &middot; 어떤 서비스, 어떤 업무?</h5>
-        <p>어떤 교사 지원 업무를 개선하는지, 대상 서비스와 A·B·C 후보가 무엇인지 없습니다. <b>가장 핵심 정보가 비어있습니다.</b></p>
-      </div>
-      <div class="info-card" style="border-left:3px solid #E53935;">
-        <h5 style="color:#B71C1C;"><em>빈자리 3</em>WHY &middot; 왜 만드는 보고서?</h5>
-        <p>회의록에 박리더가 강조한 <b>"교사 편의 · 실행 가능성 · 운영 리스크"</b> 3가지 핵심이 있는데 한 줄에는 전혀 반영되지 않았습니다.</p>
-      </div>
-      <div class="info-card" style="border-left:3px solid #E53935;">
-        <h5 style="color:#B71C1C;"><em>빈자리 4</em>FORM &middot; 양식 없음</h5>
-        <p>제공된 7섹션 실습용 양식이 있는데도, 한 줄 프롬프트는 이를 모릅니다. AI 결과는 <b>회사 양식과 다른 모양</b>이 나옵니다.</p>
-      </div>
-      <div class="info-card" style="border-left:3px solid #E53935;">
-        <h5 style="color:#B71C1C;"><em>빈자리 5</em>DATA &middot; 개선 후보 정보 없음</h5>
-        <p>공개 서비스가 무엇을 안내하는지, 개선안의 근거와 검증할 가설이 무엇인지 AI는 모릅니다. 외부 리서치 없이는 <b>"~를 잘 분석해야 합니다"같은 일반론</b>만 나옵니다.</p>
-      </div>
-    </div>
+  <div class="visual">
+    <div class="visual-title">AI가 아직 모르는 것</div>
+    <table class="comp-table"><thead><tr><th>빠진 정보</th><th>이번 업무에 필요한 내용</th></tr></thead><tbody>
+      <tr><td>대상</td><td>AI 사용이 익숙하지 않은 임직원</td></tr>
+      <tr><td>목적</td><td>보고서·메일·회의록에 AI를 활용해 보기</td></tr>
+      <tr><td>운영 조건</td><td>다음 달, 2시간, 실습 중심</td></tr>
+      <tr><td>결과 형식</td><td>교육 목적부터 준비 사항까지 담은 기획안</td></tr>
+      <tr><td>참고 자료</td><td>기획 회의록과 이전 행사 기획안</td></tr>
+    </tbody></table>
   </div>
-
-  <div class="breath-lg"></div>
-
-  <!-- ▶ 핵심 한 문장 -->
-  <div class="spotlight">
-    <div class="sp-eyebrow">오늘 가장 중요한 한 문장</div>
-    <div class="sp-headline">지금 결과가 평범한 이유는<br>AI 성능 문제가 아니라 <em>우리가 평범하게 시켰기</em> 때문입니다</div>
-    <div class="sp-detail">좋은 프롬프트는 "길게 쓰는 기술"이 아니라 AI가 추측하지 않도록 <b>판단 기준을 주는 기술</b>입니다. 다음 PART부터 이 5개 빈자리를 하나씩 채워봅니다.</div>
-  </div>
+  <div class="spotlight"><div class="sp-headline">AI가 <em>추측할 부분</em>을 줄이세요.</div><div class="sp-detail">필요한 조건이 빠지면 결과도 막연해집니다.</div></div>
 </section>
 
-
-<!-- ============================================================
-     PART 02 · 프롬프트의 기본 + 기획안 초안
-============================================================ -->
 <section class="module" id="p2">
-  <div class="mod-head">
-    <span class="mod-num">PART 02</span>
-    <span class="mod-time">프롬프트 기본 → 보고서 1차 구성안</span>
-  </div>
-  <h2 class="mod-title">프롬프트의 기본 : 지시문 + 맥락 + 퓨샷<small>이 기본기로 김대리의 보고서 1차 구성안까지 만듭니다</small></h2>
-
+  <div class="mod-head"><span class="mod-num">PART 02</span><span class="mod-time">프롬프트 기본</span></div>
+  <h2 class="mod-title">지시문 + 맥락 + 퓨샷<small>원하는 결과를 만드는 세 가지 재료</small></h2>
   <div class="breath-lg"></div>
-
-  <div class="info-box"><strong>이번 보고서의 공통 비교 기준.</strong> <b>교사 편의</b>는 이용 목적과 다음 행동의 명료성, <b>실행 가능성</b>은 공개 근거로 검토할 초안을 만들 수 있는지, <b>운영 리스크</b>는 안내 오류와 근거 없는 약속을 통제할 수 있는지를 뜻합니다. 도식의 <b>편의·실행·리스크</b>는 이 세 기준을 줄여 쓴 표현입니다.</div>
-  <div class="breath"></div>
-
-  <!-- ▶ 3요소 공식 -->
-  <h3 class="h-lead" id="p2-formula">2-1. 모든 좋은 프롬프트의 공식</h3>
-  <p class="p-lead">실무에서 쓰이는 좋은 프롬프트는 결국 세 요소의 조합으로 환원됩니다. <b>이 공식만 외워도 70%는 끝납니다.</b></p>
-
-  <div class="visual" style="padding:36px 32px;">
-    <div class="formula-grid">
-      <div class="formula-card f1">
-        <div class="fc-no">01 · INSTRUCTION</div>
-        <div class="fc-name">지시문</div>
-        <div class="fc-sub">무엇을 시킬 것인가</div>
-        <div class="fc-eg"><b>"교사 지원 서비스 개선 보고서 1차 구성안을 작성하라"</b><br>동사로 시작 + WHO/WHAT/WHY/FORM</div>
-      </div>
-      <div class="formula-op">+</div>
-      <div class="formula-card f2">
-        <div class="fc-no">02 · CONTEXT</div>
-        <div class="fc-name">맥락</div>
-        <div class="fc-sub">어떤 조건에서 만들까</div>
-        <div class="fc-eg"><b>"9/14 검토·9/15 제출 / 교사 지원 / 편의·실행·리스크"</b><br>회의록·판단 기준·제약</div>
-      </div>
-      <div class="formula-op">+</div>
-      <div class="formula-card f3">
-        <div class="fc-no">03 · FEW-SHOT</div>
-        <div class="fc-name">퓨샷</div>
-        <div class="fc-sub">어떻게 생긴 결과를 원하나</div>
-        <div class="fc-eg"><b>"이전 개선 보고서의 가상 예시 첨부"</b><br>양식·문체·표 구조 학습</div>
-      </div>
-      <div class="formula-op equal">=</div>
-      <div class="formula-card fr">
-        <div class="fc-no">RESULT</div>
-        <div class="fc-name">보고 가능한 산출물</div>
-        <div class="fc-sub">의도한 양식 + 채워야 할 데이터 자리 표시</div>
-        <div class="fc-eg">▸ 실습용 7섹션 양식<br>▸ 박리더 핵심 3가지 반영</div>
-      </div>
-    </div>
-    <div class="visual-caption" style="margin-top:22px;">맥락이 빠지면 결과가 가장 크게 흔들립니다. <b>실무에서 가장 자주 빠뜨리는 층이 맥락</b>입니다 &mdash; 회의록·판단 기준·제약을 빠뜨리지 마세요.</div>
+  <h3 class="h-lead" id="p2-formula">2-1. 무엇을, 어떤 조건으로, 어떤 모습으로</h3>
+  <div class="info-grid">
+    <div class="info-card"><h5><em>INSTRUCTION</em>지시문</h5><p><b>무엇을 할지</b><br>“AI 활용 교육 기획안을 작성해줘.”</p></div>
+    <div class="info-card"><h5><em>CONTEXT</em>맥락</h5><p><b>어떤 조건인지</b><br>초보 임직원 · 2시간 · 실습 중심<br>→ 기획 회의록 첨부</p></div>
+    <div class="info-card"><h5><em>FEW-SHOT</em>퓨샷</h5><p><b>어떤 결과를 원하는지</b><br>문체 · 목차 · 표 구성<br>→ 이전 기획안 예시 첨부</p></div>
   </div>
-
-  <div class="breath"></div>
-
-  <div class="visual">
-    <div class="prompt-block" aria-label="3요소를 배치한 교육용 입력창 목업">
-      <div class="prompt-header"><span class="prompt-label">입력창 목업 · 3요소를 한 번에 전달</span></div>
-      <div class="prompt-body"><span class="hl">① 지시문</span>
-교사 지원 서비스 개선 보고서의 1차 구성안을 작성해줘.
-
-<span class="hl2">② 맥락 · 파일 첨부</span>
-📎 가상 부서협업 TF 회의록
-→ 9/15 제출 · A/B/C 개선안 · 편의/실행/리스크 · 공개 사실과 가설 구분
-
-<span class="hl">③ 퓨샷 · 파일 첨부</span>
-📎 이전 개선 보고서의 가상 예시
-→ 7섹션 구조 · 담백한 문체 · 비교표 모양을 참고
-
-공개 근거가 필요한 자리는 [공개 리서치 후 작성]으로 표시해줘.</div>
-    </div>
-    <div class="visual-caption">세 요소는 이론이 아니라 <b>입력창 안에 이렇게 배치</b>됩니다. 퓨샷은 문장으로 쓰는 게 아니라 <b>이전 보고서 파일 첨부</b>로 해결합니다.</div>
-  </div>
-
-  <div class="breath"></div>
-
-  <!-- 5개 빈자리 → 3요소 매핑 -->
-  <div class="info-box">
-    <strong>PART 01의 5개 빈자리가 3요소에 어떻게 들어가는가</strong>
-    <ul>
-      <li><b>WHO · WHAT · WHY · FORM</b> &rarr; <b>지시문</b> 한 문단에 4가지가 압축됩니다 (역할·대상 업무·목적·양식 명시)</li>
-      <li><b>회의록 · KPI · 제약 조건</b> &rarr; <b>맥락</b>에 첨부 (회의록 텍스트 그대로 또는 정리해서)</li>
-      <li><b>DATA(개선 후보)</b> &rarr; 퓨샷이 양식·접근법을 가르치면, 본문 데이터는 다음 PART 심층리서치에서 채웁니다</li>
-    </ul>
-  </div>
-
+  <div class="tip-box"><strong>자료에 있는 내용을 다시 길게 적을 필요는 없습니다.</strong> 회의록은 맥락으로, 잘 만든 문서는 결과의 예시로 전달하세요.</div>
   <div class="breath-lg"></div>
-
-  <!-- ▶ Before/After 비교 -->
-  <h3 class="h-lead" id="p2-context">2-2. 같은 자료, 같은 AI &mdash; 입력이 다르면 결과가 다르다</h3>
-  <p class="p-lead">평범한 한 줄 입력과 3요소 묶음 입력은 같은 AI에서도 완전히 다른 결과를 만듭니다. PART 01의 한 줄 vs PART 02의 3요소 &mdash; 김대리의 같은 보고서 작업에 대해 두 결과를 나란히 비교해봅니다.</p>
-
+  <h3 class="h-lead" id="p2-context">2-2. 입력을 바꾸면 결과가 달라집니다</h3>
   <div class="split-vis">
-    <div class="split-card bad">
-      <span class="sv-tag">BEFORE · 한 줄 프롬프트 (PART 01)</span>
-      <div class="sv-name">한 줄로 던지기</div>
-      <div class="sv-prompt">"교사 지원 서비스 개선 보고서 작성해줘"</div>
-      <div class="sv-arrow">▼</div>
-      <div class="sv-result">
-        <ul>
-          <li>일반론 ("요구 분석 &rarr; 서비스 품질 개선")</li>
-          <li>개선안·비교 근거 누락</li>
-          <li>미래엔 부서협업 TF 맥락 없음</li>
-          <li>회사 양식과 무관한 구조</li>
-          <li>박리더에게 가져가면 반려</li>
-        </ul>
-      </div>
-    </div>
-    <div class="split-card good">
-      <span class="sv-tag">AFTER · 3요소 묶음 (PART 02)</span>
-      <div class="sv-name">지시 + 맥락 + 퓨샷</div>
-      <div class="sv-prompt">"역할 + 회의록 + 실습용 양식 퓨샷 + 1차 구성안 지시"</div>
-      <div class="sv-arrow">▼</div>
-      <div class="sv-result">
-        <ul>
-          <li>실습용 7섹션 양식 그대로</li>
-          <li>박리더 핵심 3가지(편의·실행·리스크) 반영</li>
-          <li>개선 후보 자리 마련 (다음 PART에서 채움)</li>
-          <li>실습용 양식 보고서 문체·표 그대로</li>
-          <li>9/14 검토용으로 확인할 내용이 드러나는 구조</li>
-        </ul>
-      </div>
-    </div>
+    <div class="split-card bad"><span class="sv-tag">BEFORE</span><div class="sv-name">한 줄 요청</div><div class="sv-prompt">사내 AI 활용 교육 기획안 작성해줘.</div><div class="sv-result">AI 개념 소개와 활용 분야를 나열한 일반적인 구성. 대상·시간·실습 내용은 다시 조정해야 합니다.</div></div>
+    <div class="split-card good"><span class="sv-tag">AFTER</span><div class="sv-name">요청 + 회의록 + 예시</div><div class="sv-prompt">회의록을 바탕으로 작성하고, 이전 기획안의 구성을 참고해줘.</div><div class="sv-result">초보자 대상 2시간 교육, 업무 실습과 준비 사항을 담은 구성. 자료에 없는 정보는 확인할 항목으로 남깁니다.</div></div>
   </div>
-
   <div class="breath-lg"></div>
-
-  <!-- ▶ 김대리 3요소 적용 -->
-  <h3 class="h-lead" id="p2-compare">2-3. 김대리가 3요소를 묶어 보고서 1차 구성안 만들기</h3>
-  <p class="p-lead">실무에서 퓨샷은 보통 <b>회사 내 이전에 작성된 유사 보고서(실습에서는 가상 예시)</b>를 첨부하는 방식입니다. 새로 만들 보고서와 주제는 다르더라도 양식·톤·표 구조가 같은 이전 사례를 AI에 보여주면, AI가 그 양식을 그대로 따라 만듭니다. 아래 파일을 ChatGPT 채팅창에 첨부한 뒤 PROMPT 2를 입력하세요.</p>
-
-  <!-- 첨부 자료 2종 -->
-  <div class="resource">
-    <div class="resource-icon">
-      <span class="ri-emoji">🎙️</span>
-      <span class="ri-ext">TXT</span>
-    </div>
-    <div class="resource-text">
-      <div class="r-meta">▶ AI에 첨부할 자료 1 &middot; 회의 맥락</div>
-      <strong>부서협업 TF 회의 STT 회의록</strong>
-      <p>회의 전체가 담긴 STT 자동 변환 텍스트. 따로 정리하지 않고 <b>그대로 첨부</b>합니다 &mdash; 보고서에 필요한 맥락이 이 안에 다 있습니다.</p>
-    </div>
-    <a class="resource-btn" href="교안_자료/회의록_교사지원개선_TF_STT.txt" download>다운로드</a>
-  </div>
-
+  <h3 class="h-lead" id="p2-compare">2-3. 자료를 첨부해 첫 구성안 만들기</h3>
+  <p class="p-lead">아래 회의록과 이전 기획안을 첨부한 뒤 요청해 보세요.</p>
+  <div class="resource"><div class="resource-icon"><span class="ri-emoji">📝</span><span class="ri-ext">TXT</span></div><div class="resource-text"><strong>사내 AI 교육 기획 회의록</strong><p>박리더의 요청과 교육 운영 조건</p></div><a class="resource-btn" href="교안_자료/회의록_사내AI교육_기획회의_STT.txt" download>회의록 받기</a></div>
+  <div class="resource"><div class="resource-icon"><span class="ri-emoji">📄</span><span class="ri-ext">DOCX</span></div><div class="resource-text"><strong>이전 업무 공유 세미나 기획안</strong><p>문체·목차·표 구성을 참고할 퓨샷</p></div><a class="resource-btn" href="교안_자료/퓨샷_사내업무공유세미나_기획안.docx" download>예시 받기</a></div>
+  <div class="prompt-block" id="prompt2"><div class="prompt-header"><span class="prompt-label">PROMPT 2 · 구성안 요청</span></div><div class="prompt-body">회의록을 바탕으로 사내 AI 활용 교육 기획안의 구성을 잡아줘.
+이전 기획안의 목차와 문체를 참고하고, 자료에 없는 내용은 ‘확인 필요’로 표시해줘.</div></div>
   <div class="breath"></div>
-
-  <div class="resource">
-    <div class="resource-icon">
-      <span class="ri-emoji">📄</span>
-      <span class="ri-ext">DOCX</span>
-    </div>
-    <div class="resource-text">
-      <div class="r-meta">▶ AI에 첨부할 자료 2 &middot; 양식 참고</div>
-      <strong>이전 분기 학습자료 배포 안내 개선 보고서 (양식 참고용)</strong>
-      <p>이전 개선 과제를 다룬 교육용 가상 보고서. <b>7섹션 구조·문체·표의 퓨샷</b>으로, AI가 이 모양을 그대로 따라 작성합니다.</p>
-    </div>
-    <a class="resource-btn" href="교안_자료/퓨샷_이전분기_학습자료배포개선.docx" download>다운로드</a>
-  </div>
-
-  <div class="breath"></div>
-
-  <div class="tip-box">
-    <strong>핵심 아이디어.</strong> 회의록과 양식 두 파일을 첨부하면, 보고서에 필요한 <b>맥락(WHY · WHAT · WHO · 제약)</b>과 <b>양식(FORM)</b>은 이미 들어 있습니다. 김대리가 프롬프트에 다시 풀어 적어야 할 것은 <b>"어떤 방향성으로 작업할지"</b>입니다. 맥락을 길게 풀어쓰는 게 아니라, <b>자료에 맡길 것은 자료에 맡기고 본인 의도만 명확히 던지는 것</b>이 실무 프롬프트의 핵심입니다.
-  </div>
-
-  <div class="breath"></div>
-
-  <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 2 &mdash; 첨부자료 설명 + 작업 요청 + 맥락·조건</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
-<div class="prompt-body"><span class="hl">[첨부 자료 설명]</span>
-1. <b>회의록_교사지원개선_TF_STT.txt</b>
-&nbsp;&nbsp;&rarr; 2026-09-07 가상 TF 회의의 배경, A·B·C 개선 후보, 핵심 강조 3가지, 9/15 제출 조건을 담은 STT 텍스트.
-2. <b>퓨샷_이전분기_학습자료배포개선.docx</b>
-&nbsp;&nbsp;&rarr; 이전 교사 지원 개선 과제를 다룬 실습용 가상 보고서. 실제 사내 문서가 아니며 7섹션·문체·표 구조 참고용.
-
-<span class="hl">[작업 요청]</span>
-첨부한 회의록을 읽고 박리더가 지시한 「교사 지원 서비스 개선 보고서」의 <b>1차 구성안</b>을 작성해줘.
-&mdash; 양식 · 톤 · 표 구조는 첨부한 이전 분기 보고서를 그대로 따라가 주고,
-&mdash; 7섹션 각각에 어떤 내용이 들어갈지 <b>한 문단씩 정리</b>해주면 돼.
-
-<span class="hl">[맥락 · 조건]</span>
-- A 수업자료 탐색 안내 개선 / B 교재 문의 FAQ 개선 / C 교사 연수 운영 개선을 후보로 유지
-&nbsp;&nbsp;&rarr; 1차 구성안에서는 각 후보의 공개 근거와 3기준 비교 내용을 [공개 리서치 후 작성]으로 표시
-- <b>A 초안 우선 검토·B 근거 자료 병행 정리·C 담당과 일정 미정</b>을 반영. 실제 서비스 도입은 미확정으로 표시
-- 회의록 내 박리더의 <b>핵심 강조 사항은 빠짐없이</b> 반영
-- 7섹션: 배경 및 목적 / 개선 후보 개요 / 선정 기준 / 후보별 상세 분석 / 실행 전략 / 리스크 및 대응 / 실행 일정
-- 실제 서비스 사실과 개선 제안·효과 가설을 구분하고, 가상 회의·일정은 [실습 가정]으로 표시</div>
-  </div>
-
-  <div class="breath"></div>
-
-  <!-- ▶ 실제 1차 구성안 산출물 -->
   <div class="mock-doc">
-    <div class="mock-doc-head">
-      <h4>교사 지원 서비스<br>개선 보고서 &mdash; 1차 구성안</h4>
-      <div class="mock-doc-meta">작성 <b>부서협업 TF 김대리</b><br>검토 <b>박리더 (9/14)</b><br>제출 <b>박리더 (9/15)</b></div>
-    </div>
-    <div class="mock-row">
-      <span class="mock-row-label">핵심 결론 (요지)</span>
-      <p class="lead">본 보고서는 교사 지원 서비스 개선 후보 A·B·C를 교사 편의·실행 가능성·운영 리스크로 비교하기 위한 1차 구성안이다. A 초안 검토와 B 근거 정리를 우선 진행하고 C의 담당·일정은 미정으로 남긴다. 9월 14일 검토, 15일 제출을 준비하며 실제 도입과 효과는 확정하지 않는다.</p>
-    </div>
-    <div class="mock-row">
-      <span class="mock-row-label">1. 배경 및 목적</span>
-      <ul>
-        <li>[실습 가정] 2026년 9월 7일 TF 회의에서 교사 지원 개선 후보 3안을 검토하기로 함</li>
-        <li>공개 서비스 안내를 조사하고 실제 제공 기능과 개선 제안을 구분할 계획</li>
-        <li>[실습 가정] 9/14 박리더 검토 후 9/15 보고서 제출. C 담당·일정 미정, 실제 도입 미확정</li>
-      </ul>
-    </div>
-    <div class="mock-row">
-      <span class="mock-row-label">2. 개선 후보 개요</span>
-      <ul>
-        <li>A 수업자료 탐색 안내 개선 / B 교재 문의 FAQ 개선 / C 교사 연수 운영 개선 &mdash; <span class="src">공개 근거·실행 가능성·우선순위는 다음 단계 심층리서치 후 작성</span></li>
-        <li>표 양식: 실습용 양식 보고서와 동일 항목 비교표</li>
-      </ul>
-    </div>
-    <div class="mock-row">
-      <span class="mock-row-label">3 ~ 7. 선정 기준 · 상세 분석 · 실행 전략 · 리스크 · 실행 일정</span>
-      <ul>
-        <li>같은 방식으로 <b>섹션별 한 문단씩</b> 구성 &mdash; 실제 본문은 PART 06에서 한 섹션씩 채웁니다</li>
-      </ul>
-    </div>
+    <div class="mock-doc-head"><h4>사내 AI 활용 교육 운영 기획안</h4><div class="mock-doc-meta">구성 예시</div></div>
+    <div class="mock-row"><span class="mock-row-label">1. 교육 목적</span><p>일상 업무에서 AI로 초안을 만들고 결과를 검토하는 방법을 익힌다.</p></div>
+    <div class="mock-row"><span class="mock-row-label">2. 운영 개요</span><p>대상: 미래엔 임직원 · 시기: 다음 달 · 시간: 2시간 · 방식: 초보자 실습 중심</p></div>
+    <div class="mock-row"><span class="mock-row-label">3. 교육 프로그램</span><p>보고서·메일·회의록 실습을 중심으로 구성한다. 세부 순서와 시간 배분은 다음 단계에서 보완한다.</p></div>
+    <div class="mock-row"><span class="mock-row-label">4. 준비 사항</span><p>실습 자료, 접속 환경, 안내 사항을 정리한다. 정확한 일정·장소·인원은 확인이 필요하다.</p></div>
+    <div class="mock-row"><span class="mock-row-label">5. 기대 효과와 확인 방법</span><p>배운 내용을 업무에 적용할 수 있는지 실습 결과와 교육 후 의견으로 확인한다.</p></div>
   </div>
-
-  <div class="breath"></div>
-
-  <!-- ▶ 앵커 산출물 -->
-  <div class="sample">
-    <div class="sample-icon">
-      <span class="si-emoji">🎯</span>
-      <span class="si-ext">DOCX</span>
-    </div>
-    <div class="sample-text">
-      <div class="s-meta">▶ 강의 끝 모범 산출물 (앵커)</div>
-      <strong>샘플 · 교사 지원 서비스 개선 보고서 미리보기</strong>
-      <p>실습 가정과 공개 근거를 구분한 7섹션 가상 보고서 워드 파일. PART 03부터 PART 06까지 차근차근 채워가는 흐름의 도착점입니다. 본인 결과물과 비교하면서 톤·구조·표 디자인의 기준으로 활용합니다.</p>
-    </div>
-    <a class="sample-btn" href="교안_자료/앵커_완성보고서_미리보기.docx" download>미리보기 받기</a>
-  </div>
-
-  <div class="breath-lg"></div>
-
-  <!-- 핵심 한 문장 -->
-  <div class="spotlight">
-    <div class="sp-eyebrow">PART 02 정리</div>
-    <div class="sp-headline">지시문 + 맥락 + 퓨샷 &mdash;<br>이 공식이 <em>오늘 하루의 뼈대</em>입니다</div>
-    <div class="sp-detail">자료에 맡길 것은 자료에 맡기고, 본인 의도만 명확히 던지면 1차 구성안이 나옵니다. 구성안에 비워둔 <b>개선 후보의 공개 근거 자리</b>는 다음 PART 03의 Deep Research로 채우고, 이후 마크다운 정리(04) &rarr; 마스터프롬프트(05) &rarr; 본문 작성(06) &rarr; 자산화(07·08)로 이어집니다.</div>
-  </div>
+  <p class="visual-caption">처음 받은 답변과 비교해 대상·조건·형식이 더 분명해졌는지 확인하세요.</p>
+  <p class="p-lead"><a href="교안_자료/양식_사내AI교육_기획안.md" download>빈 기획안 양식 받기</a></p>
+  <div class="spotlight"><div class="sp-headline">자료는 <em>맥락과 예시</em>,<br>프롬프트는 <em>작업의 방향</em>을 담습니다.</div><div class="sp-detail">이번 구성안에 필요한 외부 참고 자료를 다음 PART에서 찾습니다.</div></div>
 </section>
 
-
-<!-- ============================================================
-     PART 03 · 심층리서치
-============================================================ -->
 <section class="module" id="p3">
-  <div class="mod-head">
-    <span class="mod-num">PART 03</span>
-    <span class="mod-time">심층리서치</span>
-  </div>
-  <h2 class="mod-title">Deep Research로 개선 후보 3안의 근거를 채운다<small>1차 구성안에서 비워둔 자리를 본문 데이터로 채웁니다</small></h2>
-
+  <div class="mod-head"><span class="mod-num">PART 03</span><span class="mod-time">심층리서치</span></div>
+  <h2 class="mod-title">기획안에 필요한 근거 찾기<small>교육 내용과 운영 방법을 보완할 공개 자료를 조사합니다</small></h2>
   <div class="breath-lg"></div>
-
-  <p class="p-lead">PART 02에서 만든 1차 구성안에는 <b>개선 후보 A·B·C의 근거 자리가 비어 있었습니다.</b> 이번 PART에서 ChatGPT의 <b>Deep Research</b> 기능으로 공개 서비스 정보를 조사하고 개선 후보 3안의 근거를 보강합니다. 끝부분 <b>환각 사례</b>에서는 AI가 그럴듯하게 거짓말하는 패턴도 함께 봅니다 &mdash; 보고서에 그대로 넣으면 TF의 판단을 잘못 이끌 수 있는 부분입니다.</p>
-
-  <div class="breath"></div>
-
-  <!-- ▶ 3-1. Deep Research 활성화 -->
-  <h3 class="h-lead" id="p3-deep">3-1. Deep Research 활성화 &mdash; 일반 검색과 무엇이 다른가</h3>
-  <p class="p-lead">ChatGPT에는 두 가지 리서치 방식이 있습니다. <b>일반 웹 검색(Web Search)</b>은 가벼운 검색 + 짧은 요약, <b>심층 리서치(Deep Research)</b>는 여러 웹 자료를 탐색·종합해 출처를 포함한 보고서로 정리합니다. 단순 확인보다 비교·검토가 많은 과제에 활용하며, 소요 시간과 분량은 질문과 이용 환경에 따라 달라집니다.</p>
-
-  <div class="visual" style="padding:36px 28px;">
-    <div class="formula-grid" style="grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: stretch;">
-      <div class="formula-card f1">
-        <div class="fc-no">일반 웹 검색</div>
-        <div class="fc-name">Web Search</div>
-        <div class="fc-sub">빠르게 짧게</div>
-        <div class="fc-eg" style="line-height:1.85;">
-          ▸ <b>빠른 사실 확인</b>에 활용<br>
-          ▸ 필요한 출처를 찾아 확인<br>
-          ▸ 분량: 질문에 맞는 요약<br>
-          &nbsp;&nbsp;&nbsp;(단일 기능·자료 찾기 등)
-        </div>
-      </div>
-      <div class="formula-op" style="align-self:center;">vs</div>
-      <div class="formula-card f3">
-        <div class="fc-no">심층 리서치</div>
-        <div class="fc-name">Deep Research</div>
-        <div class="fc-sub">길게 깊게</div>
-        <div class="fc-eg" style="line-height:1.85;">
-          ▸ <b>복수 자료의 비교·종합</b><br>
-          ▸ 과제 범위에 맞춰 자료 탐색<br>
-          ▸ 결과: <b>출처가 있는 보고서</b><br>
-          &nbsp;&nbsp;&nbsp;시간·분량은 과제별로 다름
-        </div>
-      </div>
-    </div>
-    <div class="visual-caption" style="margin-top:22px;">채팅창 하단 <b>도구 메뉴</b>에서 활성화합니다. <b>리서치 보고서 1편을 통째로 받는 수준의 결과물</b>이 나옵니다.</div>
-  </div>
-
-  <div class="breath"></div>
-
-  <div class="visual">
-    <img src="교안_자료/장표_딥리서치_활성화.png" alt="Deep Research 활성화와 진행 화면" style="width:100%; border-radius:6px; display:block;">
-    <div class="visual-caption"><b>새 채팅 &rarr; 도구 메뉴 &rarr; Deep Research 활성화 &rarr; PROMPT 3 입력.</b> 결과를 기다리는 동안 강의는 멈추지 않습니다 &mdash; <b>3-3 환각 사례와 PART 04 개념을 먼저 진행</b>하고, 완료 알림이 오면 돌아옵니다.</div>
-  </div>
-
-  <div class="breath-lg"></div>
-
-  <!-- ▶ 3-2. 개선 후보 근거 조사 프롬프트 -->
-  <h3 class="h-lead" id="p3-find">3-2. 개선 후보 근거 조사 프롬프트</h3>
-  <p class="p-lead">Deep Research는 <b>출력 형식과 비교 항목을 명확히 지정</b>하면 가장 잘 답합니다. 개선 후보 3안을 한눈에 비교할 수 있도록 항목들을 자연어로 나열해주고, 출처 URL과 신뢰도 라벨도 함께 요청합니다.</p>
-
-  <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 3 &mdash; 개선 후보 근거 조사 (Deep Research)</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
-<div class="prompt-body"><span class="hl">[지시]</span>
-미래엔 전사교육의 가상 부서협업 TF 김대리를 도와 <b>교사 지원 서비스 개선 후보 A·B·C의 공개 근거</b>를 조사해줘. 보고서와 동일 항목 비교표를 제공해줘.
-
-<span class="hl">[맥락]</span>
-2026-09-07 가상 TF 회의에서 A의 안내 초안을 먼저 검토하고 B의 근거 자료를 병행 정리하기로 했어. 9/14 박리더 검토 후 9/15 보고서를 제출해. C의 시범 검토 담당·일정은 미정이고 실제 도입은 결정하지 않았어.
-A 수업자료 탐색 안내 개선 / B 교재 문의 FAQ 개선 / C 교사 연수 운영 개선.
-핵심은 <b>교사 편의 / 실행 가능성 / 운영 리스크</b>이야. 실제 내부 불편·문의량·매출·이용률은 제공하지 않았어.
-
-<span class="hl">[공개 조사 출발점]</span>
-- 미래엔 엠티처: https://www.m-teacher.co.kr/pages/common/Gate.mrn
-- 미래엔 참고서 자료실: https://www.mirae-n.com/rb/mn-rb-2-01.frm?educationLevel=02&amp;linkServiceCd=RB0010SC&amp;menuType=C
-- 초코클래스 공식 앱 설명: https://play.google.com/store/apps/details?hl=ko&amp;id=com.miraen.chococlass
-공식 공개 안내를 우선 읽고 필요하면 교육부·공공기관의 공개 자료로 보완해. 로그인 후 자료, 미공개 교재·문항, 개인정보는 사용하지 마.
-
-<span class="hl">[비교 표 항목]</span>
-후보 / 대상 업무 / 공개 자료에서 확인한 사실 / 개선 제안 / 교사 편의 / 실행 가능성 / 운영 리스크 / 초안 검토·협업 관점 / 효과 가설·확인 방법 / 자료명·URL·확인일 / 추가 확인 사항.
-
-<span class="hl">[제약]</span>
-- <b>[공개 사실] / [개선 제안] / [효과 가설] / [실습 가정]</b>을 명확히 구분.
-- 링크가 존재한다는 이유만으로 주장을 검증했다고 하지 말고, 본문에서 뒷받침하는 내용을 확인.
-- 공개 설명에 없는 기능·운영 문제·문의량·효과 수치·내부 조직·정책을 만들지 말 것.
-- A·B·C는 검토용 제안이며 기존 서비스에 해당 기능이 없다는 뜻이 아님. 효과 점수나 개선율을 근거 없이 부여하지 말 것.
-- C의 담당·일정은 미정으로 유지하고 운영 조건 확인 질문만 작성. 실제 도입·연수 개최는 미확정.
-- 자료 접근이나 근거 확인이 안 되면 <b>[추가 확인 필요]</b>. 우선순위는 공개 근거와 실습 가정에 따른 잠정 제안으로 표현.</div>
-  </div>
-
-  <div class="breath"></div>
-
-  <!-- ▶ Deep Research 결과의 작성 형식 예시 -->
-  <div class="mock-doc">
-    <div class="mock-doc-head">
-      <h4>공개 근거와 개선 제안<br>작성 형식 예시</h4>
-      <div class="mock-doc-meta">구분 <b>교육용 예시</b><br>기준 <b>공개 근거 + 실습 가정</b><br>확인일 <b>2026-09-08</b></div>
-    </div>
-    <div class="mock-row">
-      <span class="mock-row-label">요약</span>
-      <p class="lead">A·B·C를 교사 편의·실행 가능성·운영 리스크로 비교한다. A의 초안을 먼저 검토하고 B의 근거를 병행 정리하며 C는 담당·일정을 미정으로 둔다. 공개 설명은 서비스 이해에 사용하고 효과는 확인할 가설로 남긴다. 실제 도입이나 시범 운영을 결정한 문서가 아니다.</p>
-    </div>
-    <div class="mock-row">
-      <span class="mock-row-label">A · 수업자료 탐색 안내 개선</span>
-      <ul>
-        <li><b>[공개 사실]</b> 엠티처 진입 페이지에서 초등·중학·고등 경로를 확인할 수 있다. <a href="https://www.m-teacher.co.kr/pages/common/Gate.mrn" target="_blank" rel="noopener noreferrer">근거: 엠티처 공식 안내</a></li>
-        <li><b>[개선 제안]</b> 학교급·교과·사용 목적별 자료 찾기 안내 초안을 만든다.</li>
-        <li><b>[효과 가설]</b> 안내가 탐색에 도움이 되는지 테스트 과제의 완료 시간·완료 여부로 검증한다.</li>
-        <li><b>[추가 확인 필요]</b> 세부 서비스 화면과 기존 안내의 중복 여부. 현재 탐색이 불편하다고 단정하지 않는다.</li>
-      </ul>
-    </div>
-    <div class="mock-row">
-      <span class="mock-row-label">B · 교재 문의 FAQ 개선</span>
-      <ul>
-        <li><b>[조사 대상]</b> <a href="https://www.mirae-n.com/rb/mn-rb-2-01.frm?educationLevel=02&amp;linkServiceCd=RB0010SC&amp;menuType=C" target="_blank" rel="noopener noreferrer">미래엔 참고서 자료실</a>에서 교재 관련 공개 안내를 직접 확인하고 근거를 기록한다.</li>
-        <li><b>[개선 제안]</b> 가상 문의를 교재 식별·자료 확인·이용 안내로 분류한 FAQ 초안을 만든다.</li>
-        <li><b>[효과 가설]</b> 답변의 정확성·근거 연결·담당자 검토 시간을 비교한다.</li>
-        <li><b>[추가 확인 필요]</b> 최신 공식 답변과의 일치 여부. 공개 안내만으로 실제 문의량을 추정하지 않는다.</li>
-      </ul>
-    </div>
-    <div class="mock-row">
-      <span class="mock-row-label">C · 교사 연수 운영 개선</span>
-      <ul>
-        <li><b>[공개 사실]</b> 초코클래스 공식 설명은 학교·기관용 학습플랫폼이며 교사가 공유한 자료와 맞춤형 시간표를 활용한다고 안내한다. <a href="https://play.google.com/store/apps/details?hl=ko&amp;id=com.miraen.chococlass" target="_blank" rel="noopener noreferrer">근거: 개발자 공식 앱 설명</a></li>
-        <li><b>[개선 제안]</b> 공개 기능 소개를 활용한 가상 연수의 사전 안내·진행 체크리스트·후속 FAQ를 만든다.</li>
-        <li><b>[효과 가설]</b> 안내 이해도와 운영 체크리스트 누락 여부로 효과를 검증한다.</li>
-        <li><b>[추가 확인 필요]</b> 실제 연수 운영 여부·참가 조건·제공 자료·피드백 방식. C 시범 검토 담당·일정은 미정이며 특정 부서나 날짜를 배정하지 않는다.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="breath"></div>
-  <div class="tip-box">
-    <strong>출처를 판단하는 3단계.</strong>
-    <ul>
-      <li><b>1단계 · 원문 우선</b>: 공식 서비스 안내·개발자 설명·정부 및 공공기관 자료에서 해당 사실을 확인.</li>
-      <li><b>2단계 · 보완 비교</b>: 언론·연구·산업 자료는 발행일·대상·방법을 확인해 배경 이해에 사용.</li>
-      <li><b>3단계 · 검증 전 사용 보류</b>: 블로그·커뮤니티 주장은 원문 근거를 추적. 공식 설명도 성과를 독립 검증한 자료와 구분.</li>
-    </ul>
-  </div>
-
-  <div class="breath-lg"></div>
-
-  <!-- ▶ 3-3. 환각 사례 -->
-  <h3 class="h-lead" id="p3-museum">3-3. 환각 사례 &mdash; AI가 그럴듯하게 거짓말하는 3가지 패턴</h3>
-  <p class="p-lead">Deep Research를 사용해도 AI는 <b>없는 서비스·수치·자료를 만들어낼 수 있습니다.</b> 다음은 오류를 구별하기 위해 만든 <b>가상의 오답 예시</b>입니다. 실제 서비스의 문제나 검증 결과를 뜻하지 않습니다.</p>
-
-  <div class="visual" style="background:#FFF8E1; border-color:#FFB300;">
-    <div class="visual-title" style="color:#E65100;">환각 사례 1 &mdash; 존재를 확인하지 않은 서비스를 만들어냄</div>
-    <div class="prompt-block" style="margin-top:14px;">
-      <div class="prompt-header" style="background:#FFF;"><span class="prompt-label">학습용 가상 오답 · 사실로 사용 금지</span></div>
-<div class="prompt-body" style="background:#FFF; color:#1A1A1A; border:1px solid #FFE082;">"미래엔의 교사 상담 AI '미래쌤365'가 모든 교재 문의에 자동 응답합니다.
-출처: https://mirae-teacher.example.invalid"
-
-[오류 찾기] 서비스명과 URL 모두 오답을 설명하기 위해 만든 가상 표기다. <b>그럴듯한 이름과 링크는 실재 근거가 아니다.</b>
-[바른 처리] 공식 서비스 목록과 원문을 확인하지 못하면 [추가 확인 필요].</div>
-    </div>
-  </div>
-  <div class="breath"></div>
-  <div class="visual" style="background:#FFF8E1; border-color:#FFB300;">
-    <div class="visual-title" style="color:#E65100;">환각 사례 2 &mdash; 실제 서비스에 근거 없는 수치를 붙임</div>
-    <div class="prompt-block" style="margin-top:14px;">
-      <div class="prompt-header" style="background:#FFF;"><span class="prompt-label">학습용 가상 오답 · 사실로 사용 금지</span></div>
-<div class="prompt-body" style="background:#FFF; color:#1A1A1A; border:1px solid #FFE082;">"엠티처의 FAQ 개선으로 문의가 40% 감소했습니다.
-출처: 엠티처 공식 홈페이지"
-
-[오류 찾기] 엠티처는 실제 서비스지만 이 예시의 40%는 설명을 위해 만든 수치다. <b>공식 홈페이지 링크만으로 특정 개선 성과가 입증되지는 않는다.</b>
-[바른 처리] 해당 수치를 뒷받침하는 자료가 없으면 삭제. 기대 효과는 [효과 가설]로 분리하고 측정 방법을 제안.</div>
-    </div>
-  </div>
-  <div class="breath"></div>
-  <div class="visual" style="background:#FFF8E1; border-color:#FFB300;">
-    <div class="visual-title" style="color:#E65100;">환각 사례 3 &mdash; 기관명에 가짜 보고서 제목을 붙임</div>
-    <div class="prompt-block" style="margin-top:14px;">
-      <div class="prompt-header" style="background:#FFF;"><span class="prompt-label">학습용 가상 오답 · 사실로 사용 금지</span></div>
-<div class="prompt-body" style="background:#FFF; color:#1A1A1A; border:1px solid #FFE082;">"교육부의 '2026 교사 자료 탐색 만족도 전수조사'에 따르면
-대부분의 교사가 자료 찾기에 어려움을 겪고 있습니다."
-
-[오류 찾기] 위 보고서명은 오답을 설명하기 위해 만든 가상 제목이다. <b>실제 기관 이름 뒤에 보고서를 붙였다고 자료가 존재하는 것은 아니다.</b>
-[바른 처리] 발간물 목록·원문·조사 대상과 시점을 확인. 원문을 찾지 못하면 인용하지 않음.</div>
-    </div>
-  </div>
-  <div class="breath"></div>
-  <div class="warn-box">
-    <strong>검증의 시작은 출처 클릭.</strong> URL을 열어 <b>자료가 있는지, 문장과 수치가 원문에 있는지, 지금의 대상·시점에 맞는지</b> 확인하세요. 강의에서는 핵심 주장 1~2개를 함께 확인하고, 최종 보고서에서는 의사결정을 좌우하는 근거를 모두 검토합니다. 다른 AI의 같은 답은 원문 검증을 대신하지 않습니다.
-  </div>
-
-  <div class="breath-lg"></div>
-
-  <!-- ▶ 핵심 한 문장 -->
-  <div class="spotlight">
-    <div class="sp-eyebrow">PART 03 정리</div>
-    <div class="sp-headline"><em>리서치를 보고서 1편으로 정리</em> &mdash;<br>단, 핵심 근거는 검증 후 사용한다</div>
-    <div class="sp-detail">Deep Research로 여러 공개 자료를 비교하고 <b>출처 원문에서 핵심 주장을 확인</b>합니다. 검증한 공개 사실과 별도로 표시한 제안·가설이 PART 06 보고서의 입력 자료가 됩니다.</div>
-  </div>
-</section>
-<!-- ============================================================
-     PART 04 · 자료 통합 (마크다운 = AI 입력 장치)
-============================================================ -->
-<section class="module" id="p4">
-  <div class="mod-head">
-    <span class="mod-num">PART 04</span>
-    <span class="mod-time">자료 통합 — 마크다운 본격 등장</span>
-  </div>
-  <h2 class="mod-title">심층리서치 결과를 마크다운으로 정리합니다<small>다음 PART 보고서 작성용 입력 자료로 변환 &mdash; 마크다운이 AI 입력 장치로 등장하는 단계</small></h2>
-
-  <div class="breath-lg"></div>
-
-  <p class="p-lead">PART 03에서 Deep Research로 받은 개선 후보 3안 리서치 결과는 여러 페이지의 보고서 형태일 수 있습니다. 그러나 그대로 보고서 본문 작성 단계(PART 06)에 입력하면, AI가 길고 흐트러진 문장을 다시 해석하느라 핵심을 놓칠 수 있습니다. 이번 PART에서는 그 리서치 결과를 <b>마크다운</b>으로 위계 정리해 다음 단계에 정확하게 넘기는 방법을 익힙니다.</p>
-
-  <div class="breath"></div>
-
-  <!-- ▶ 4-1. 마크다운 = 입력 장치 -->
-  <h3 class="h-lead" id="p4-md">4-1. 마크다운은 "예쁜 출력 문법"이 아니라 "AI 입력 표지판"</h3>
-  <p class="p-lead">마크다운을 학교에서 배우면 보통 <code>#</code>·<code>##</code>·<code>-</code> 같은 출력 문법으로 가르칩니다. 그런데 실무자 입장에서 마크다운의 진짜 가치는 다른 곳에 있습니다 &mdash; <b>내가 가진 자료를 AI가 잘 이해하도록 구조화해서 입력하는 표준 장치</b>입니다.</p>
-
-  <div class="breath"></div>
-
-  <div class="visual">
-    <div class="split-vis" aria-label="공개 리서치 산문을 마크다운으로 구조화하는 예시">
-      <div class="split-card bad">
-        <span class="sv-tag">BEFORE · 산문</span>
-        <div class="sv-name">사실과 제안이 한 문단에 섞임</div>
-        <div class="sv-result">엠티처는 초·중·고 진입 경로를 안내한다. 학교급과 교과별 자료 찾기 안내 초안을 만들면 교사에게 도움이 될 수 있다. 검증 방법으로 테스트 완료 시간과 완료 여부를 제안하되, 시행 여부는 아직 결정하지 않았다. 세부 화면과 기존 안내의 중복도 확인해야 한다.</div>
-      </div>
-      <div class="split-card good">
-        <span class="sv-tag">AFTER · 마크다운 위계</span>
-        <div class="sv-name">같은 내용을 판단 항목별로 분리</div>
-        <div class="sv-prompt">## A 수업자료 탐색 안내 개선<br>### 공개 사실<br>- 엠티처 초·중·고 진입 경로 안내<br>- 출처: 엠티처 공식 안내 / 2026-09-08<br>### 개선 제안<br>- 학교급·교과별 찾기 안내 초안<br>### 효과 가설·검증<br>- 테스트 완료 시간·완료 여부<br>### 추가 확인<br>- 세부 화면·기존 안내 중복</div>
-      </div>
-    </div>
-    <div class="visual-caption">산문에 흩어진 정보가 <b>후보별로 같은 항목을 갖춘 위계</b>로 바뀝니다. 마크다운은 <b>AI가 읽는 칸막이</b>입니다.</div>
-  </div>
-
-  <div class="breath"></div>
-
-  <div class="visual" style="padding:36px 28px;">
-    <div class="formula-grid" style="grid-template-columns: 1fr auto 1fr auto 1fr; gap: 20px; align-items: stretch;">
-      <div class="formula-card f1">
-        <div class="fc-no">USE 1 · 메인</div>
-        <div class="fc-name">입력 자료 구조화</div>
-        <div class="fc-sub">내가 다루는 자료를 AI에 넘길 때</div>
-        <div class="fc-eg" style="line-height:1.85;">▸ 리서치 결과 정리<br>▸ PDF·보고서 압축<br>▸ 회의록·메모 정리</div>
-      </div>
-      <div class="formula-op">+</div>
-      <div class="formula-card f2">
-        <div class="fc-no">USE 2 · PART 05</div>
-        <div class="fc-name">긴 프롬프트 위계</div>
-        <div class="fc-sub">마스터프롬프트가 길어질 때</div>
-        <div class="fc-eg" style="line-height:1.85;">▸ 지시·맥락·퓨샷·제약<br>&nbsp;&nbsp;<code>#</code> 위계로 정리<br>▸ 재사용 가능한 자산</div>
-      </div>
-      <div class="formula-op">+</div>
-      <div class="formula-card f3">
-        <div class="fc-no">USE 3 · 사이클</div>
-        <div class="fc-name">출력 → 다음 입력</div>
-        <div class="fc-sub">AI 결과를 다음 단계 입력으로</div>
-        <div class="fc-eg" style="line-height:1.85;">▸ Deep Research 결과<br>▸ 본문 초안<br>▸ 다음 PART 입력</div>
-      </div>
-    </div>
-    <div class="visual-caption" style="margin-top:22px;">마크다운 = <b>"AI가 잘 알아보게 자료에 칸막이 치는 표준 방법"</b>. 출력 문법 외우기가 아니라 <b>입력 구조화 도구로 익히는 것</b>이 실무 관점입니다.</div>
-  </div>
-
-  <div class="breath"></div>
-
-  <h4 style="font-size:17px; font-weight:700; color:var(--bk); margin-bottom:12px; margin-top:30px;">실무에 필요한 마크다운 5개</h4>
-  <p class="p-lead">5개만 알면 입력 구조화 90%는 끝납니다. 외울 필요 없고 필요할 때 확인만 하면 됩니다.</p>
-
-  <table class="comp-table">
-    <thead><tr><th width="16%">문법</th><th width="28%">의미</th><th width="56%">실무 활용 예</th></tr></thead>
-    <tbody>
-      <tr><td><code>#</code></td><td>큰 제목 (자료 이름)</td><td><code># 교사 지원 서비스 개선 — 후보 A·B·C 정리</code></td></tr>
-      <tr><td><code>##</code></td><td>섹션 (안건·항목 단위)</td><td><code>## 후보 A: 수업자료 탐색 안내 개선</code></td></tr>
-      <tr><td><code>###</code></td><td>하위 섹션 (세부)</td><td><code>### 교사 편의</code></td></tr>
-      <tr><td><code>-</code></td><td>목록 (불릿)</td><td><code>- [제안] 학교급·교과별 자료 찾기 안내 초안</code></td></tr>
-      <tr><td><code>**굵게**</code></td><td>강조 (놓치면 안 되는 부분)</td><td><code>**효과 미확인 · 검증 방법 제안**</code></td></tr>
-    </tbody>
-  </table>
-
-  <div class="breath-lg"></div>
-
-  <!-- ▶ 4-2. 리서치 결과 마크다운 정리 -->
-  <h3 class="h-lead" id="p4-research">4-2. 리서치 결과를 마크다운으로 정리 &mdash; 실습</h3>
-  <p class="p-lead">PART 03 Deep Research 결과는 여러 자료를 종합한 보고서 형태입니다. 그대로 이후 단계에 넣으면 AI가 산문 흐름을 다시 따라가야 합니다. <b>핵심 정보와 출처를 유지하며 위계로 정리</b>하면 중복이 줄고, AI는 개선 후보 3안을 같은 기준으로 비교할 수 있습니다.</p>
-
+  <h3 class="h-lead" id="p3-deep">3-1. Web Search와 Deep Research</h3>
   <div class="split-vis">
-    <div class="split-card bad">
-      <span class="sv-tag">BEFORE · 리서치 결과 그대로 던지기</span>
-      <div class="sv-name">여러 페이지 보고서 통째로 첨부</div>
-      <div class="sv-prompt">"이 리서치 결과 보고 보고서 본문 써줘"</div>
-      <div class="sv-arrow">▼</div>
-      <div class="sv-result">
-        <ul>
-          <li>개선 후보 3안 정보가 산문으로 흩어져 있음</li>
-          <li>AI가 비교 기준을 다시 찾아야 함</li>
-          <li>편의·실행·리스크 항목 누락 가능</li>
-          <li>출처 인용 형식이 일관되지 않음</li>
-        </ul>
-      </div>
-    </div>
-    <div class="split-card good">
-      <span class="sv-tag">AFTER · 마크다운 정리해서 던지기</span>
-      <div class="sv-name">리서치 결과 → 마크다운 위계</div>
-      <div class="sv-prompt">"# 개선안 / ## 공개 사실 / ## 교사 편의 / ## 실행 가능성 / ## 운영 리스크"</div>
-      <div class="sv-arrow">▼</div>
-      <div class="sv-result">
-        <ul>
-          <li>개선 후보 3안이 동일 항목으로 비교 가능</li>
-          <li>박리더 핵심 3가지가 항목별 명시</li>
-          <li>출처·사실·가설 라벨 유지</li>
-          <li>다음 PART 본문 작성 즉시 가능</li>
-        </ul>
-      </div>
-    </div>
+    <div class="split-card"><span class="sv-tag">WEB SEARCH</span><div class="sv-name">빠른 사실 확인</div><div class="sv-result">특정 기능이나 자료를 찾아 짧게 확인할 때 활용합니다.</div></div>
+    <div class="split-card good"><span class="sv-tag">DEEP RESEARCH</span><div class="sv-name">여러 자료의 비교·종합</div><div class="sv-result">복수의 자료를 검토해 출처가 있는 보고서로 정리할 때 활용합니다.</div></div>
   </div>
-
+  <div class="note-box">새 채팅의 도구 메뉴에서 <b>Deep Research(심층 리서치)</b>를 선택합니다. 메뉴와 이용 범위는 계정에 따라 다를 수 있습니다.</div>
   <div class="breath-lg"></div>
-
-  <p class="p-lead">개념을 확인했으니 이제 실습입니다. <b>김대리가 직접 손으로 마크다운을 작성하지 말고, AI에게 PART 03 리서치 결과를 마크다운으로 정리해달라고 요청</b>합니다. AI가 일관된 위계의 초안을 잡아주면, 학습자가 사실·가설 라벨과 출처의 누락을 확인합니다.</p>
-
+  <h3 class="h-lead" id="p3-find">3-2. 교육 운영에 참고할 자료 조사하기</h3>
+  <p class="p-lead">조사 범위와 필요한 결과를 함께 알려주세요.</p>
+  <div class="prompt-block" id="prompt3"><div class="prompt-header"><span class="prompt-label">PROMPT 3 · Deep Research</span></div><div class="prompt-body">초보 임직원 대상 2시간 AI 활용 교육에 참고할 공개 자료를 찾아줘.
+보고서·메일·회의록 실습 아이디어와 운영 준비 사항을 정리하고, 출처 링크를 달아줘.
+자료에서 확인한 사실과 우리 교육에 적용할 제안은 구분해줘.</div></div>
+  <div class="tip-box"><strong>리서치를 기다리는 동안</strong> 아래 환각 사례와 PART 04를 먼저 살펴보세요. 실습을 이어갈 수 있도록 백업 자료도 준비되어 있습니다.</div>
   <div class="breath"></div>
-
-  <div class="resource">
-    <div class="resource-icon">
-      <span class="ri-emoji">🛟</span>
-      <span class="ri-ext">MD</span>
-    </div>
-    <div class="resource-text">
-      <div class="r-meta">▶ 백업 자료 &middot; 리서치가 아직이라면</div>
-      <strong>리서치 결과 백업 (개선 후보 3안)</strong>
-      <p>Deep Research가 아직 안 끝났거나 실행이 어려운 경우, 이 파일을 내려받아 <b>같은 흐름 그대로</b> 이어가세요. 채팅에 이 파일을 첨부하고 아래 PROMPT 4를 그대로 입력하면 됩니다.</p>
-    </div>
-    <a class="resource-btn" href="교안_자료/리서치결과_백업_개선후보3안.md" download>다운로드</a>
+  <div class="info-grid">
+    <div class="info-card"><h5><em>찾을 내용</em>실습 아이디어</h5><p>초보자가 수행할 수 있는 보고서·메일·회의록 과제</p></div>
+    <div class="info-card"><h5><em>적용할 내용</em>운영 준비</h5><p>계정 접속, 예시 자료, 결과 확인과 질문 시간</p></div>
+    <div class="info-card"><h5><em>남길 내용</em>출처와 확인 사항</h5><p>자료명·링크·발행일, 우리 교육에 맞는지 확인할 점</p></div>
   </div>
-
-  <div class="breath"></div>
-
-  <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 4 &mdash; AI에게 리서치 결과 마크다운 정리 요청</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
-<div class="prompt-body"><span class="hl">[요청사항]</span>
-방금 받은 리서치 결과를 <b>마크다운 형식으로 정리</b>해줘. 정리한 결과는 <b>md 파일로 다운로드할 수 있는 링크</b>로 제공해줘.
-
-<span class="hl">[맥락]</span>
-- A 수업자료 탐색 안내 개선 / B 교재 문의 FAQ 개선 / C 교사 연수 운영 개선을 <code>##</code> 섹션으로 분리
-- 각 후보 아래 ### 공개 사실 / ### 개선 제안·효과 가설 / ### 교사 편의 / ### 실행 가능성 / ### 운영 리스크 및 추가 확인을 같은 순서로 배치
-- 사실 항목에는 <b>근거 자료 링크·자료명·확인일</b>을 제시
-- 공개 사실, [개선 제안], [효과 가설], [실습 가정], [추가 확인 필요] 라벨을 유지. 요약하면서 가설을 사실로 바꾸지 말 것</div>
-  </div>
-
-  <div class="breath"></div>
-
-  <p class="p-lead">AI는 위 요청에 따라 정리 결과를 <b>md 파일 다운로드 링크</b>로 제공합니다. 학습자는 이 md 파일을 다운받아 PART 05·06에서 그대로 입력 자료로 활용합니다.</p>
-
   <div class="breath-lg"></div>
-
-  <!-- ▶ 4-3. 자료 패키지 -->
-  <h3 class="h-lead" id="p4-pack">4-3. 자료 패키지 만들기 &mdash; PART 05·06으로 넘길 준비</h3>
-  <p class="p-lead">PART 05에서 마스터프롬프트를 만들고, PART 06에서 보고서 본문을 작성합니다. 그때 필요한 자료를 미리 한 묶음으로 만들어둡니다. <b>회의록(원본) + 실습용 양식 퓨샷 + 리서치 정리물(마크다운)</b> 3종 세트가 다음 PART의 입력 패키지입니다.</p>
-
-  <div class="visual">
-    <svg viewBox="0 0 880 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="자료 패키지 묶기">
-      <g transform="translate(20,30)">
-        <rect width="220" height="60" rx="6" fill="#FFF3E6" stroke="#FF8B45" stroke-width="1.5"/>
-        <text x="110" y="22" font-family="Paperlogy" font-size="10" font-weight="700" fill="#999" text-anchor="middle" letter-spacing="1">PART 02 원본</text>
-        <text x="110" y="44" font-family="Paperlogy" font-size="13" font-weight="700" fill="#C24E12" text-anchor="middle">회의록 (STT)</text>
-      </g>
-      <g transform="translate(20,120)">
-        <rect width="220" height="60" rx="6" fill="#FFF3E6" stroke="#FF8B45" stroke-width="1.5"/>
-        <text x="110" y="22" font-family="Paperlogy" font-size="10" font-weight="700" fill="#999" text-anchor="middle" letter-spacing="1">PART 02 첨부물</text>
-        <text x="110" y="44" font-family="Paperlogy" font-size="13" font-weight="700" fill="#C24E12" text-anchor="middle">실습용 양식 퓨샷 (DOCX)</text>
-      </g>
-      <g transform="translate(20,210)">
-        <rect width="220" height="60" rx="6" fill="#FFF3E6" stroke="#FF8B45" stroke-width="1.5"/>
-        <text x="110" y="22" font-family="Paperlogy" font-size="10" font-weight="700" fill="#999" text-anchor="middle" letter-spacing="1">PART 04 산출물</text>
-        <text x="110" y="44" font-family="Paperlogy" font-size="13" font-weight="700" fill="#C24E12" text-anchor="middle">리서치 정리물 (MD)</text>
-      </g>
-      <line x1="250" y1="60" x2="310" y2="140" stroke="#999" stroke-width="2"/>
-      <line x1="250" y1="150" x2="310" y2="145" stroke="#999" stroke-width="2"/>
-      <line x1="250" y1="240" x2="310" y2="150" stroke="#999" stroke-width="2"/>
-      <polygon points="310,145 302,140 302,150" fill="#999"/>
-      <g transform="translate(320,85)">
-        <rect width="240" height="120" rx="6" fill="#F36F21"/>
-        <text x="120" y="30" font-family="Paperlogy" font-size="11" font-weight="700" fill="#FFE0CC" text-anchor="middle" letter-spacing="1">PACKAGE</text>
-        <text x="120" y="62" font-family="Paperlogy" font-size="22" font-weight="700" fill="#FFF" text-anchor="middle">자료 3종 묶음</text>
-        <text x="120" y="88" font-family="Paperlogy" font-size="12" fill="#FFE0CC" text-anchor="middle">한 채팅창에 모두 첨부</text>
-        <text x="120" y="106" font-family="Paperlogy" font-size="11" fill="#FFE0CC" text-anchor="middle">+ 마스터프롬프트 (다음 PART)</text>
-      </g>
-      <line x1="570" y1="145" x2="610" y2="145" stroke="#999" stroke-width="2"/>
-      <polygon points="610,145 602,140 602,150" fill="#999"/>
-      <g transform="translate(620,85)">
-        <rect width="240" height="120" rx="6" fill="#FFF" stroke="#1A1A1A" stroke-width="1.5"/>
-        <rect width="240" height="26" fill="#1A1A1A"/>
-        <text x="14" y="18" font-family="Paperlogy" font-size="11" font-weight="700" fill="#FF8B45">PART 05</text>
-        <text x="226" y="18" font-family="Paperlogy" font-size="10" fill="#FFF" text-anchor="end">다음 단계</text>
-        <text x="120" y="56" font-family="Paperlogy" font-size="14" font-weight="700" fill="#1A1A1A" text-anchor="middle">마스터프롬프트</text>
-        <text x="120" y="76" font-family="Paperlogy" font-size="14" font-weight="700" fill="#1A1A1A" text-anchor="middle">만들기</text>
-      </g>
-    </svg>
-    <div class="visual-caption">자료 패키지가 완성되면 PART 05에서 <b>마스터프롬프트</b>를 만들고, PART 06에서 보고서 본문을 작성합니다.</div>
-  </div>
-
-  <div class="breath-lg"></div>
-
-  <!-- 핵심 한 문장 -->
-  <div class="spotlight">
-    <div class="sp-eyebrow">PART 04 정리</div>
-    <div class="sp-headline"><em>리서치 결과를 그대로 던지지 말고</em><br>마크다운으로 위계 정리해서 다음 PART에 넘긴다</div>
-    <div class="sp-detail">PART 03 리서치 결과를 마크다운으로 정리하면 공개 사실·제안·가설의 경계가 드러나고, AI는 개선 후보 3안을 동일 항목으로 비교할 수 있습니다. PART 06에서 보고서 본문을 한 섹션씩 호출하기 수월해집니다.</div>
-  </div>
+  <h3 class="h-lead" id="p3-museum">3-3. 그럴듯한 답변도 확인합니다</h3>
+  <p class="p-lead">다음은 오류를 찾기 위한 <b>가상의 오답</b>입니다.</p>
+  <table class="comp-table"><thead><tr><th>환각 패턴</th><th>가상의 오답</th><th>확인할 것</th></tr></thead><tbody>
+    <tr><td>없는 사실 만들기</td><td>“미래엔은 이미 모든 부서에서 AI 교육을 정기 운영하고 있습니다.”</td><td>제공 자료에 실제로 있는 내용인가?</td></tr>
+    <tr><td>근거 없는 수치</td><td>“2시간 교육만으로 업무 시간이 40% 줄어듭니다.”</td><td>수치의 원문과 측정 조건이 있는가?</td></tr>
+    <tr><td>없는 출처 붙이기</td><td>“2026 전사 AI 교육 효과 전수조사에 따르면…”</td><td>링크가 열리고, 해당 주장을 뒷받침하는가?</td></tr>
+  </tbody></table>
+  <div class="spotlight"><div class="sp-headline">출처를 열고, <em>주장과 근거</em>를 대조하세요.</div><div class="sp-detail">자료의 사실, 적용 제안, 기대 효과는 구분해서 기획안에 담습니다.</div></div>
 </section>
-<!-- ============================================================
-     PART 05 · 구조화 프롬프트 만들기 (AI에게 요청)
-============================================================ -->
+
+<section class="module" id="p4">
+  <div class="mod-head"><span class="mod-num">PART 04</span><span class="mod-time">자료 통합</span></div>
+  <h2 class="mod-title">마크다운으로 다음 입력을 정리합니다<small>자료의 제목·위계·구분을 AI에게 분명하게 전달합니다</small></h2>
+  <div class="breath-lg"></div>
+  <h3 class="h-lead" id="p4-md">4-1. 마크다운은 AI가 읽는 입력 구조</h3>
+  <p class="p-lead">제목과 목록으로 내용을 나누면, 긴 자료에서도 <b>사실·제안·출처의 경계</b>가 드러납니다.</p>
+  <div class="split-vis">
+    <div class="split-card bad"><span class="sv-tag">BEFORE · 산문</span><div class="sv-name">여러 내용이 한 문단에</div><div class="sv-result">보고서와 메일, 회의록을 실습하면 좋겠다. 처음에는 AI에게 요청하는 방법을 설명하고 각자 결과를 확인하는 시간도 필요하다. 실습 전 접속 환경을 점검하고 예시 자료를 준비한다.</div></div>
+    <div class="split-card good"><span class="sv-tag">AFTER · 마크다운</span><div class="sv-name">같은 내용을 항목별로</div><div class="sv-prompt"># AI 교육 운영 메모<br>## 실습 주제<br>- 보고서·메일·회의록<br>## 진행 흐름<br>- 요청 방법 설명 → 실습 → 결과 확인<br>## 준비 사항<br>- 접속 환경 점검<br>- 예시 자료 준비</div></div>
+  </div>
+  <p class="visual-caption">리서치 결과, 회의록, 긴 프롬프트를 <b>다음 작업의 입력 자료</b>로 정리할 때 활용합니다.</p>
+  <table class="comp-table"><thead><tr><th>문법</th><th>용도</th><th>예시</th></tr></thead><tbody>
+    <tr><td><code>#</code></td><td>큰 제목</td><td><code># AI 교육 참고 자료</code></td></tr>
+    <tr><td><code>##</code></td><td>항목</td><td><code>## 교육 프로그램</code></td></tr>
+    <tr><td><code>###</code></td><td>하위 항목</td><td><code>### 메일 작성 실습</code></td></tr>
+    <tr><td><code>-</code></td><td>목록</td><td><code>- 실습 후 결과 검토</code></td></tr>
+    <tr><td><code>**굵게**</code></td><td>강조</td><td><code>**확인 필요**</code></td></tr>
+  </tbody></table>
+  <div class="breath-lg"></div>
+  <h3 class="h-lead" id="p4-research">4-2. 리서치 결과를 정리해 달라고 요청하기</h3>
+  <p class="p-lead">PART 03의 결과를 첨부하거나 같은 대화에서 이어서 요청합니다.</p>
+  <div class="resource"><div class="resource-icon"><span class="ri-emoji">🔎</span><span class="ri-ext">MD</span></div><div class="resource-text"><strong>사내 AI 교육 리서치 백업</strong><p>리서치가 끝나지 않았을 때 사용할 연습 자료</p></div><a class="resource-btn" href="교안_자료/리서치결과_백업_사내AI교육.md" download>백업 자료 받기</a></div>
+  <div class="prompt-block" id="prompt4"><div class="prompt-header"><span class="prompt-label">PROMPT 4 · 마크다운 정리</span></div><div class="prompt-body">이 리서치 결과를 기획안 작성에 쓸 마크다운 자료로 정리해줘.
+교육 내용, 운영 준비, 확인할 사항으로 나누고, 사실·제안·출처를 구분해줘.
+출처 링크는 유지하고 md 파일로 저장해줘.</div></div>
+  <p class="visual-caption">파일 생성이 지원되지 않으면 마크다운 본문을 메모장에 저장하세요. 출처와 핵심 내용이 빠지지 않았는지 확인합니다.</p>
+  <div class="breath-lg"></div>
+  <h3 class="h-lead" id="p4-pack">4-3. 다음 작업에 쓸 자료 세 가지</h3>
+  <div class="info-grid">
+    <div class="info-card"><h5><em>맥락</em>기획 회의록</h5><p>대상 · 목적 · 시간 · 요청 사항</p></div>
+    <div class="info-card"><h5><em>퓨샷</em>이전 기획안</h5><p>목차 · 문체 · 표 구성</p></div>
+    <div class="info-card"><h5><em>근거</em>리서치 정리물</h5><p>참고 내용 · 적용 제안 · 출처</p></div>
+  </div>
+  <div class="spotlight"><div class="sp-headline">AI의 결과를 <em>다음 AI 작업의 입력</em>으로 만드세요.</div><div class="sp-detail">정리된 자료를 바탕으로 기획안 작성용 마스터프롬프트를 만듭니다.</div></div>
+</section>
+
 <section class="module" id="p5">
-  <div class="mod-head">
-    <span class="mod-num">PART 05</span>
-    <span class="mod-time">마스터프롬프트 — AI에게 만들어 달라고 요청</span>
-  </div>
-  <h2 class="mod-title">프롬프트를 쓰지 말고, 만들어 달라고 요청합니다<small>최소 입력만 던지면 AI가 맥락을 보강해 구조화된 마스터프롬프트로 정리해줍니다</small></h2>
-
+  <div class="mod-head"><span class="mod-num">PART 05</span><span class="mod-time">마스터프롬프트</span></div>
+  <h2 class="mod-title">프롬프트 작성도 AI에게 요청합니다<small>짧은 요청을 반복해서 쓸 작업 지침으로 정리합니다</small></h2>
   <div class="breath-lg"></div>
-
-  <!-- 5-1. 왜 AI에게 요청하는가 -->
-  <h3 class="h-lead" id="p5-why">5-1. 프롬프트 작성이 어려운 이유 &mdash; 가장 쉬운 해법</h3>
-  <p class="p-lead">PART 02 · 03 · 04를 거치면서 김대리는 프롬프트를 여러 번 작성했습니다. 그런데 실무자 입장에서 매번 <b>5개 빈자리(WHO · WHAT · WHY · FORM · DATA)</b>를 다 채워 쓰는 건 부담스럽습니다. 다음 PART 보고서 본문 작성처럼 길고 복잡한 작업이면 더 그렇습니다. 가장 쉬운 해법은 <b>AI에게 "구조화된 프롬프트를 만들어달라"고 요청하는 것</b>입니다.</p>
-
-  <div class="visual" style="padding:36px 28px;">
-    <div class="formula-grid" style="grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: stretch;">
-      <div class="formula-card f1">
-        <div class="fc-no">기존 방식</div>
-        <div class="fc-name">내가 다 쓴다</div>
-        <div class="fc-sub">5개 빈자리 다 채우려고 노력</div>
-        <div class="fc-eg" style="line-height:1.85;">▸ 매번 맥락 6~10줄 새로 작성<br>▸ 빠뜨린 항목 누락 위험<br>▸ 분량 길어지면 부담<br>▸ 다른 작업으로 재사용 어려움</div>
-      </div>
-      <div class="formula-op" style="align-self:center;">&rarr;</div>
-      <div class="formula-card f3">
-        <div class="fc-no">AI에 요청</div>
-        <div class="fc-name">AI가 만들어준다</div>
-        <div class="fc-sub">최소 정보 + 자료만 던지기</div>
-        <div class="fc-eg" style="line-height:1.85;">▸ 짧게 요청 + 자료 첨부<br>▸ AI가 맥락 자동 보강<br>▸ <code>(AI 보강)</code> 표시로 추적<br>▸ 다음 작업에 그대로 재사용</div>
-      </div>
-    </div>
-    <div class="visual-caption" style="margin-top:22px;">프롬프트를 쓰는 게 아니라 <b>AI에게 만들어 달라고 요청</b>합니다. 김대리가 가진 자료(회의록 · 실습용 양식 · 리서치 정리물)를 첨부하고, 짧은 요청만 던지면 AI가 맥락을 보강해 정교한 프롬프트로 정리해줍니다.</div>
+  <h3 class="h-lead" id="p5-why">5-1. 마스터프롬프트란?</h3>
+  <p class="p-lead"><b>목적·자료·작성 방식·검토 기준을 모아 둔 작업 지침</b>입니다. 먼저 내 의도를 짧게 말하고, AI가 정리한 지침을 검토하면 됩니다.</p>
+  <div class="info-grid">
+    <div class="info-card"><h5><em>내가 전달</em>의도와 자료</h5><p>기획안 작성 요청<br>회의록 · 이전 기획안 · 리서치</p></div>
+    <div class="info-card"><h5><em>AI가 정리</em>작업 지침</h5><p>작성 순서 · 출력 형식<br>추가하면 좋을 검토 기준</p></div>
+    <div class="info-card"><h5><em>내가 검토</em>맞는지 확인</h5><p>요청이 반영됐는지<br>없는 사실을 추가했는지</p></div>
   </div>
-
   <div class="breath-lg"></div>
-
-  <!-- 5-2. 실습 — 최소 입력으로 마스터프롬프트 요청 -->
-  <h3 class="h-lead" id="p5-request">5-2. 실습 &mdash; 최소 입력으로 마스터프롬프트 요청</h3>
-  <p class="p-lead">평소 쓰는 짧은 프롬프트로 시작합니다. <b>요청사항 한 줄 + 맥락 몇 줄 + 자료 첨부</b> 정도면 충분합니다.</p>
-
-  <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 5 &mdash; 마스터프롬프트 요청 (최소 입력)</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
-<div class="prompt-body"><span class="hl">[요청사항]</span>
-첨부한 자료들을 기반으로, 다음 단계 <b>"교사 지원 서비스 개선 보고서 본문 작성"</b>에 사용할 <b>구조화된 마스터프롬프트</b>를 작성해줘.
-
-<span class="hl">[맥락]</span>
-- 회의록 · 실습용 양식 · 리서치 정리물 3개 자료를 모두 참고
-- 박리더 강조 3가지(교사 편의 · 실행 가능성 · 운영 리스크)는 빠뜨리지 말 것
-- 미공개 원고·문항·계약·실적·개인정보는 입력·본문에 포함하지 말 것
-- 실제 서비스 사실 / 개선 제안·효과 가설 / 실습 가정을 구분하고 출처·확인일 유지
-- 톤은 사내 보고서 (담백한 문어체, 홍보 표현 X)
-
-<span class="hl">[첨부 자료]</span>
-- 회의록_교사지원개선_TF_STT.txt
-- 퓨샷_이전분기_학습자료배포개선.docx (양식 퓨샷)
-- 리서치 정리물 (PART 04 마크다운)
-
-<span class="hl">[AI에게 부탁]</span>
-1. 위 정보를 <code>#</code> 큰 섹션 &rarr; <code>##</code> 하위 항목 구조의 마크다운으로 정리
-2. 내가 빠뜨린 맥락(출력 형식, 검증 기준, 우선순위 등)은 부서협업 개선 보고서의 작성 관행에 맞춰 알아서 보강
-3. 보강 항목 뒤에 <code>(AI 보강)</code> 표시
-4. 추가 정보가 필요한 부분은 <code>[확인 필요]</code>로 표시. 회의에서 미정으로 둔 C 담당·일정은 추정해 채우지 말 것
-5. A 초안 검토·B 근거 병행은 반영하되 실제 도입·연수 개최 결정은 만들지 말 것</div>
-  </div>
-
+  <h3 class="h-lead" id="p5-request">5-2. 짧게 요청하기</h3>
+  <p class="p-lead">PART 04에서 준비한 자료 세 가지를 첨부합니다.</p>
+  <div class="prompt-block" id="prompt5"><div class="prompt-header"><span class="prompt-label">PROMPT 5 · 마스터프롬프트 요청</span></div><div class="prompt-body">첨부 자료로 사내 AI 활용 교육 기획안을 작성하려고 해.
+한 항목씩 작성하고 검토할 수 있는 마스터프롬프트를 만들어줘.
+네가 추가한 제안은 따로 표시하고, 자료에 없는 사실은 채우지 마.</div></div>
   <div class="breath-lg"></div>
-
-  <!-- 5-3. AI가 만든 결과 -->
-  <h3 class="h-lead" id="p5-result">5-3. AI가 만들어준 마스터프롬프트 &mdash; 모범 결과</h3>
-  <p class="p-lead">AI는 김대리가 던진 최소 정보를 정리하면서, <b>빠뜨린 맥락을 부서협업 개선 보고서의 작성 관행에 맞춰 자동으로 보강</b>해줍니다. <code>(AI 보강)</code> 표시로 어디가 AI가 더한 부분인지 명확히 보입니다. 학습자는 이 결과를 검토하고 수정해서 본인 마스터프롬프트로 확정합니다.</p>
-
+  <h3 class="h-lead" id="p5-result">5-3. AI가 정리한 지침 검토하기</h3>
+  <p class="p-lead">아래는 결과 예시입니다. <b>AI가 더한 작성 제안</b>이 내 의도에 맞는지 확인합니다.</p>
   <div class="md-output project-prompt">
-    <div class="h1"># 마스터프롬프트: 교사 지원 서비스 개선 보고서 본문 작성</div>
-    <div class="h2">## 작업 목적</div>
-    <div class="ln">박리더에게 보고할 7섹션 보고서 본문 작성</div>
-    <div class="ln">A 초안 우선 검토·B 근거 병행·C 미정 조건이 드러나는 수준. 실제 도입 미확정</div>
-    <div class="h2">## 핵심 강조 3가지</div>
-    <div class="ln">1. 교사 편의 (이용 목적·다음 행동의 명료성)</div>
-    <div class="ln">2. 실행 가능성 (공개 근거로 검토 가능한 초안 작성)</div>
-    <div class="ln">3. 운영 리스크 (안내 오류·근거 없는 약속 통제)</div>
-    <div class="h2">## 참고 자료</div>
-    <div class="ln">회의록 STT &mdash; 박리더 지시 배경·강조사항</div>
-    <div class="ln">실습용 양식 퓨샷 &mdash; 7섹션 구조·문체 기준</div>
-    <div class="ln">리서치 정리물 &mdash; 개선 후보 3안 정보</div>
-    <div class="h2">## 작성 톤 <span class="ai-add">AI 보강</span></div>
-    <div class="ln">사내 보고서 톤 (담백한 문어체)</div>
-    <div class="ln">의사결정 보조 관점 (감정·홍보 표현 X)</div>
-    <div class="ln">결론·우선순위가 먼저 보이도록 구조화</div>
-    <div class="h2">## 출력 형식 <span class="ai-add">AI 보강</span></div>
-    <div class="ln">7섹션: 배경 및 목적 / 개선 후보 개요 / 선정 기준 / 후보별 상세 분석 / 실행 전략 / 리스크 및 대응 / 실행 일정</div>
-    <div class="ln">비교표·우선순위 표·실행 일정 표 양식 동일</div>
-    <div class="ln">한 섹션씩 호출 가능하도록 섹션 간 독립성 유지</div>
-    <div class="h2">## 보안 제약</div>
-    <div class="ln">미공개 원고·문항·계약·실적 입력·본문 노출 <span class="strong">금지</span></div>
-    <div class="ln">교사·학생·직원 개인정보 입력·본문 노출 <span class="strong">금지</span></div>
-    <div class="h2">## 검증 기준 <span class="ai-add">AI 보강</span></div>
-    <div class="ln">후보별 편의·실행·리스크가 동일 위계로 정리되었는지</div>
-    <div class="ln">박리더가 다음에 결정할 것이 명확히 드러나는지</div>
-    <div class="ln">우선순위 근거가 비교 가능하고, 공개 사실·제안·효과 가설·실습 가정이 구분되는지</div>
-    <div class="h2">## 사용자 보충 필요</div>
-    <div class="ln"><span class="blank">[C 시범 검토 담당·일정 &mdash; 미정 유지, 확인 질문만 작성]</span></div>
-    <div class="ln"><span class="blank">[실제 도입·연수 개최 &mdash; 미확정 유지, 필요한 운영 조건만 정리]</span></div>
+    <div class="h1"># 사내 AI 활용 교육 기획안 작성 지침</div>
+    <div class="h2">## 목적</div><div class="ln">초보 임직원을 위한 2시간 실습 교육의 내용과 운영 방법을 정리한다.</div>
+    <div class="h2">## 참고 자료</div><div class="ln">회의록: 조건과 요청 / 이전 기획안: 구성과 문체 / 리서치: 참고 내용과 출처</div>
+    <div class="h2">## 작성할 항목</div><div class="ln">1 교육 목적 → 2 운영 개요 → 3 교육 프로그램 → 4 준비 사항 → 5 기대 효과와 확인 방법</div>
+    <div class="h2">## 작성 방식</div><div class="ln">요청받은 항목만 작성하고 검토 후 다음 항목으로 넘어간다. 짧고 명확한 업무 문체를 사용한다.</div>
+    <div class="h2">## 검토 기준</div><div class="ln">자료에 없는 사실은 ‘확인 필요’로 남긴다. 출처의 사실과 적용 제안을 구분한다.</div>
+    <div class="ln"><b>[AI 제안]</b> 프로그램은 시간·내용·실습 결과를 표로 정리하고, 총 120분인지 확인한다.</div>
   </div>
-
-  <div class="breath"></div>
-
-  <div class="info-box">
-    <strong>AI 보강의 가치.</strong> 김대리가 던진 <b>짧게 적은 맥락</b>이 AI 손에서 <b>8개 섹션짜리 마스터프롬프트</b>로 보강됐습니다. 작성 톤은 구체화하고 출력 형식·검증 기준은 자료와 요청에 맞춰 보강했습니다. 실제 내부 사실·정책·성과는 AI가 채우지 않도록 확인합니다. <b>(AI 보강) 표시 덕분에 어떤 항목이 자동 보강됐는지 추적·검토 가능</b>합니다. 마음에 들지 않으면 그 항목만 수정·삭제하면 됩니다.</div>
-
-  <div class="breath-lg"></div>
-
-  <!-- 핵심 한 문장 -->
-  <div class="spotlight">
-    <div class="sp-eyebrow">PART 05 정리</div>
-    <div class="sp-headline">프롬프트를 <em>쓰는 게 아니라</em><br>만들어 달라고 요청하는 것이 가장 실용적입니다</div>
-    <div class="sp-detail">완벽한 프롬프트를 한 번에 작성하려고 부담 갖지 마세요. <b>짧은 요청 + 자료 첨부</b>만으로 AI가 맥락을 보강해 구조화된 마스터프롬프트로 정리해줍니다. 이 결과는 PART 06 보고서 본문 작성과 PART 08 GPTs 자산화에 그대로 재사용됩니다.</div>
-  </div>
+  <div class="tip-box"><strong>AI 보강은 제안입니다.</strong> 문체나 검토 방식은 채택할 수 있지만, 실제 일정·예산·성과를 임의로 채우지 않았는지 확인하세요.</div>
+  <div class="spotlight"><div class="sp-headline">내 의도는 짧게,<br><em>작업 지침은 AI와 함께</em> 만드세요.</div><div class="sp-detail">확정한 마스터프롬프트로 기획안 본문을 작성합니다.</div></div>
 </section>
-<!-- ============================================================
-     PART 06 · 보고서 본문 작성 (한 섹션씩 호출)
-============================================================ -->
+
 <section class="module" id="p6">
-  <div class="mod-head">
-    <span class="mod-num">PART 06</span>
-    <span class="mod-time">보고서 본문 작성 — 한 섹션씩 호출</span>
-  </div>
-  <h2 class="mod-title">한 번에 7섹션을 다 만들지 말고, 한 절씩 호출합니다<small>마스터프롬프트와 자료 패키지를 한 채팅에 두고 섹션 1부터 7까지 차례로 채워갑니다</small></h2>
-
+  <div class="mod-head"><span class="mod-num">PART 06</span><span class="mod-time">기획안 작성</span></div>
+  <h2 class="mod-title">한 항목씩 작성하고, 검토하며 이어갑니다<small>큰 작업을 나누어 진행하는 프롬프트 체이닝</small></h2>
   <div class="breath-lg"></div>
-
-  <!-- 6-1. 왜 한 섹션씩 호출인가 -->
-  <h3 class="h-lead" id="p6-cot">6-1. 한 번에 다 만들지 말고, 한 섹션씩 호출하는 이유</h3>
-  <p class="p-lead">PART 05에서 만든 마스터프롬프트로 "보고서 7섹션 전체 한 번에 작성해줘"라고 하면 AI가 일단 답하긴 합니다. 그러나 결과는 <b>각 섹션의 깊이가 얕고, 분량이 들쭉날쭉하고, 핵심 강조 3가지가 일관되게 반영되지 않습니다</b>. 그래서 실무에서는 <b>섹션 1부터 7까지 한 절씩 호출</b>합니다 &mdash; 큰 작업을 잘게 나눠 순차로 던지는 <b>프롬프트 체이닝</b> 방식입니다.</p>
-
-  <div class="visual">
-    <img src="교안_자료/장표_CoT_호출비교.png" alt="한 번에 요청 vs 한 섹션씩 호출 채팅 비교" style="width:100%; border-radius:6px; display:block;">
-    <div class="visual-caption">같은 마스터프롬프트라도 <b>호출 방식이 결과의 깊이를 가릅니다</b>. 한 채팅창에 마스터프롬프트 + 자료 패키지를 두고 섹션 1부터 7까지 차례로 호출 &mdash; 이전 섹션 답변이 다음 호출의 맥락으로 쌓입니다.</div>
+  <h3 class="h-lead" id="p6-cot">6-1. 작성 → 검토 → 다음 항목</h3>
+  <p class="p-lead">한 번에 전체를 요청하기보다, <b>한 항목의 방향을 확인한 뒤 다음 항목으로</b> 이어가면 수정 사항을 반영하기 쉽습니다.</p>
+  <div class="info-grid">
+    <div class="info-card"><h5><em>01</em>한 항목 작성</h5><p>“교육 목적만 작성해줘.”</p></div>
+    <div class="info-card"><h5><em>02</em>검토·수정</h5><p>“업무 활용 목적이 드러나게 줄여줘.”</p></div>
+    <div class="info-card"><h5><em>03</em>이어서 작성</h5><p>“이제 운영 개요를 작성해줘.”</p></div>
   </div>
-
   <div class="breath-lg"></div>
-
-  <!-- 6-2. 섹션 1 호출 실습 -->
-  <h3 class="h-lead" id="p6-write">6-2. 실습 &mdash; 한 섹션씩 호출 (PROMPT 6)</h3>
-  <p class="p-lead">실습은 간단합니다. PART 05에서 마스터프롬프트를 만든 <b>그 채팅에서 그대로 이어갑니다</b> &mdash; 마스터프롬프트와 자료 3종이 이미 채팅에 올라와 있으므로, <b>"섹션 N만 작성해줘"</b> 형태로 한 절씩 호출만 하면 됩니다. 각 섹션이 완성되면 검토 후 다음 섹션으로 넘어갑니다.</p>
-
-  <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 6 &mdash; 섹션 1 (배경 및 목적) 호출</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
-<div class="prompt-body"><span class="hl">[지시]</span>
-방금 만든 마스터프롬프트와 첨부 자료(회의록 · 실습용 양식 · 리서치 정리물)를 기반으로, <b>보고서 섹션 1 「배경 및 목적」만</b> 작성해줘.
-
-<span class="hl">[작업 방향]</span>
-- 실습용 양식 퓨샷의 섹션 1과 동일한 구조·문체·길이
-- 회의록에 나온 박리더 지시 배경 반영
-- 한글 2,500자 이내, 핵심만
-- 공개 사실은 자료명·URL·확인일과 함께, 개선 제안·효과 가설은 따로 표시
-- 회의 내용·일정은 [실습 가정], 확인되지 않은 서비스 기능은 [추가 확인 필요]로 표시</div>
-  </div>
-
+  <h3 class="h-lead" id="p6-write">6-2. 같은 대화에서 기획안 완성하기</h3>
+  <p class="p-lead">마스터프롬프트를 만든 대화에서 이어서 요청합니다.</p>
+  <div class="prompt-block" id="prompt6"><div class="prompt-header"><span class="prompt-label">PROMPT 6 · 첫 항목 작성</span></div><div class="prompt-body">방금 만든 지침과 첨부 자료로 ‘1. 교육 목적’만 작성해줘.
+보고서·메일·회의록에 AI를 활용하는 목적이 드러나게 3문장으로 정리해줘.</div></div>
+  <div class="mock-doc"><div class="mock-doc-head"><h4>1. 교육 목적</h4><div class="mock-doc-meta">작성 예시</div></div><div class="mock-row"><p>임직원이 보고서·메일·회의록 등 일상 업무에 AI를 활용하는 방법을 익힌다. 초보자도 짧은 요청을 작성하고 결과를 검토할 수 있도록 실습을 진행한다. 교육 후 자신의 업무에 적용할 활용 방법 한 가지를 정리한다.</p></div></div>
   <div class="breath"></div>
-
-  <p class="p-lead">AI가 작성한 섹션 1을 검토 후, 같은 채팅창에 <b>"이제 섹션 2 작성해줘"</b>로 이어 호출합니다. 마스터프롬프트와 자료 패키지가 이미 채팅 맥락에 있으므로 매번 다시 적을 필요가 없습니다.</p>
-
-  <div class="md-output report">
-    <div class="h1"># 1. 배경 및 목적</div>
-    <div class="h2">## 1.1 배경</div>
-    <div class="ln">[실습 가정] 2026-09-07 가상 TF 회의에서 교사 지원 개선 후보 A·B·C를 비교하고 9/15에 보고서를 제출하기로 했다. [출처: 실습용 TF 회의록]</div>
-    <div class="ln">[공개 사실] 엠티처 공식 진입 페이지는 초등·중학·고등 경로를 안내한다. 이는 교사 지원 서비스의 공개 접점을 살펴보는 출발점이다. [출처: 엠티처 공식 안내, 2026-09-08 확인]</div>
-    <div class="ln">공개 안내만으로 현재 이용 불편이나 문의량을 판단할 수 없으므로, 개선 필요성과 기대 효과는 확인할 가설로 둔다.</div>
-    <div class="h2">## 1.2 목적</div>
-    <div class="ln">A 수업자료 탐색 안내 개선 / B 교재 문의 FAQ 개선 / C 교사 연수 운영 개선의 공개 근거와 운영 조건을 비교한다. A의 초안을 먼저 검토하고 B의 근거를 병행 정리하며 C의 담당·일정은 미정으로 둔다. 실제 도입은 결정하지 않았다.</div>
-    <div class="ln">핵심 기준 <span class="strong">교사 편의 · 실행 가능성 · 운영 리스크</span>을 일관 적용한다. 제안과 효과 가설은 사실과 분리하고, 검증할 지표와 추가 확인 사항을 명시한다.</div>
-    <div class="ln">공개 근거: <a href="https://www.m-teacher.co.kr/pages/common/Gate.mrn" target="_blank" rel="noopener noreferrer" style="color:#80D8FF;">엠티처 공식 안내</a></div>
-  </div>
-
-  <div class="breath-lg"></div>
-
-  <!-- 6-3. 7섹션 완성 -->
-  <h3 class="h-lead">6-3. 7섹션 완성 흐름</h3>
-  <p class="p-lead">섹션 1부터 7까지 차례로 호출하면 다음 흐름으로 보고서가 완성됩니다. 각 섹션은 한 채팅 안에서 자동으로 이전 섹션 맥락을 참고합니다.</p>
-
-  <div class="visual">
-    <svg viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="7섹션 작성 흐름">
-      <!-- SETUP -->
-      <g transform="translate(20,30)">
-        <rect width="200" height="80" rx="6" fill="#F36F21"/>
-        <text x="100" y="28" font-family="Paperlogy" font-size="11" font-weight="700" fill="#FFE0CC" text-anchor="middle" letter-spacing="1">SETUP</text>
-        <text x="100" y="52" font-family="Paperlogy" font-size="14" font-weight="700" fill="#FFF" text-anchor="middle">마스터프롬프트</text>
-        <text x="100" y="70" font-family="Paperlogy" font-size="12" fill="#FFE0CC" text-anchor="middle">+ 자료 3종 첨부</text>
-      </g>
-      <line x1="230" y1="70" x2="270" y2="70" stroke="#999" stroke-width="2"/>
-      <polygon points="270,70 262,65 262,75" fill="#999"/>
-      <!-- 섹션 1~7 누적 -->
-      <g transform="translate(280,30)">
-        <rect width="580" height="320" rx="6" fill="#FFF8F0" stroke="#FFB380"/>
-        <text x="290" y="26" font-family="Paperlogy" font-size="11" font-weight="700" fill="#C24E12" text-anchor="middle" letter-spacing="1">한 섹션씩 호출 (같은 채팅)</text>
-
-        <g font-family="Paperlogy" font-size="12" fill="#1A1A1A">
-          <rect x="20" y="48" width="540" height="32" rx="4" fill="#FFF" stroke="#FFD2A8"/>
-          <text x="32" y="68" font-weight="700" fill="#C24E12">1.</text>
-          <text x="55" y="68">배경 및 목적 &mdash; 가상 TF 회의의 목적·제출 조건 반영</text>
-
-          <rect x="20" y="86" width="540" height="32" rx="4" fill="#FFF" stroke="#FFD2A8"/>
-          <text x="32" y="106" font-weight="700" fill="#C24E12">2.</text>
-          <text x="55" y="106">개선 후보 개요 &mdash; 리서치 정리물의 개선 후보 3안 비교표</text>
-
-          <rect x="20" y="124" width="540" height="32" rx="4" fill="#FFF" stroke="#FFD2A8"/>
-          <text x="32" y="144" font-weight="700" fill="#C24E12">3.</text>
-          <text x="55" y="144">선정 기준 &mdash; 교사 편의 / 실행 가능성 / 운영 리스크</text>
-
-          <rect x="20" y="162" width="540" height="32" rx="4" fill="#FFF" stroke="#FFD2A8"/>
-          <text x="32" y="182" font-weight="700" fill="#C24E12">4.</text>
-          <text x="55" y="182">후보별 상세 분석 &mdash; A·B·C 각각 공개 근거·가설·강약점</text>
-
-          <rect x="20" y="200" width="540" height="32" rx="4" fill="#FFF" stroke="#FFD2A8"/>
-          <text x="32" y="220" font-weight="700" fill="#C24E12">5.</text>
-          <text x="55" y="220">실행 전략 &mdash; A 초안 우선·B 근거 병행·C 조건 확인</text>
-
-          <rect x="20" y="238" width="540" height="32" rx="4" fill="#FFF" stroke="#FFD2A8"/>
-          <text x="32" y="258" font-weight="700" fill="#C24E12">6.</text>
-          <text x="55" y="258">리스크 및 대응 &mdash; 후보별 리스크 + 대응 방안</text>
-
-          <rect x="20" y="276" width="540" height="32" rx="4" fill="#FFF" stroke="#FFD2A8"/>
-          <text x="32" y="296" font-weight="700" fill="#C24E12">7.</text>
-          <text x="55" y="296">실행 일정 &mdash; 9/14 검토·9/15 제출·C 담당/일정 미정</text>
-        </g>
-      </g>
-    </svg>
-    <div class="visual-caption">한 채팅창에 7섹션이 순서대로 쌓입니다.</div>
-  </div>
-
-  <div class="breath"></div>
-
-  <div class="tip-box"><strong>완성 후 검토 체크리스트.</strong>
-    <ul style="margin-top:10px;">
-      <li>박리더 핵심 강조 3가지(교사 편의 · 실행 가능성 · 운영 리스크)가 개선 후보 3안 모두에 일관 반영되었는가</li>
-      <li>A 초안 검토 우선·B 근거 병행·C 담당과 일정 미정이 반영되며 실제 도입 미확정이 드러나는가</li>
-      <li>공개 사실의 URL·확인일을 확인했는가. 제안·효과 가설을 실적으로 쓰지 않았는가</li>
-      <li>실습 가정이 실제 내부 문제·정책으로 표현되거나 미공개 자료가 포함되지 않았는가</li>
-    </ul>
-  </div>
-
-  <div class="breath-lg"></div>
-
-  <!-- 핵심 한 문장 -->
-  <div class="spotlight">
-    <div class="sp-eyebrow">PART 06 정리</div>
-    <div class="sp-headline">7섹션을 <em>한 번에 만들지 말고</em><br>한 섹션씩 호출해야 깊이가 살아납니다</div>
-    <div class="sp-detail">마스터프롬프트와 자료 패키지를 한 채팅에 두고, "섹션 1만" &rarr; 검토 &rarr; "섹션 2만" &rarr; ... 순서로 호출합니다. 7섹션이 끝나면 채팅 전체를 복사해 워드에 붙이고, 9월 14일 박리더 검토 전에 체크리스트로 확인하고 15일 제출합니다. 다음 PART 07에서는 보고서를 완성한 이 채팅에서 <b>내 작업 스타일을 마스터프롬프트로 추출</b>하고, 마지막 PART 08에서 <b>GPTs로 자산화</b>합니다.</div>
-  </div>
+  <table class="comp-table"><thead><tr><th>다음 요청</th><th>확인할 내용</th></tr></thead><tbody>
+    <tr><td>“2. 운영 개요를 작성해줘.”</td><td>대상·시기·시간이 회의록과 맞는가?</td></tr>
+    <tr><td>“3. 교육 프로그램을 작성해줘.”</td><td>업무 실습이 중심이며 총 120분인가?</td></tr>
+    <tr><td>“4. 준비 사항을 작성해줘.”</td><td>실습 자료와 접속 환경을 준비할 수 있는가?</td></tr>
+    <tr><td>“5. 기대 효과와 확인 방법을 작성해줘.”</td><td>효과를 단정하지 않고 확인 방법을 제시했는가?</td></tr>
+  </tbody></table>
+  <div class="tip-box"><strong>마무리 검토</strong> 중복된 내용은 줄이고, 운영 조건·시간 합계·미정 사항·출처를 확인합니다. 검토한 본문을 Word에 모아 기획안으로 저장하세요.</div>
+  <div class="resource"><div class="resource-icon"><span class="ri-emoji">📄</span><span class="ri-ext">DOCX</span></div><div class="resource-text"><strong>완성 기획안 참고 예시</strong><p>내 결과의 구성과 빠진 내용을 비교할 때 활용합니다.</p></div><a class="resource-btn" href="교안_자료/앵커_사내AI교육_기획안.docx" download>완성 예시 받기</a></div>
+  <div class="spotlight"><div class="sp-headline"><em>한 항목씩 작성하고 검토</em>하면<br>내 판단을 결과에 반영하기 쉽습니다.</div><div class="sp-detail">이 대화에 쌓인 요청과 수정 기준을 다음 업무에도 활용해 봅니다.</div></div>
 </section>
-<!-- ============================================================
-     PART 07 · 내 스타일 마스터프롬프트 추출
-============================================================ -->
+
 <section class="module" id="p7">
-  <div class="mod-head">
-    <span class="mod-num">PART 07</span>
-    <span class="mod-time">내 스타일 마스터프롬프트 추출</span>
-  </div>
-  <h2 class="mod-title">보고서가 완성된 채팅 안에 내 작업 스타일이 다 들어있습니다<small>한 번 더 요청하면 주제가 바뀌어도 그대로 쓸 수 있는 "내 스타일 마스터프롬프트"가 추출됩니다</small></h2>
-
+  <div class="mod-head"><span class="mod-num">PART 07</span><span class="mod-time">내 스타일 추출</span></div>
+  <h2 class="mod-title">잘된 작업의 방식도 저장합니다<small>대화에 쌓인 문체·진행 순서·검토 기준을 재사용합니다</small></h2>
   <div class="breath-lg"></div>
-
-  <!-- 7-1. 보고서 완성된 채팅 = 내 스타일 저장소 -->
-  <h3 class="h-lead" id="p7-extract">7-1. 보고서가 끝난 순간, 채팅 안에는 무엇이 있는가</h3>
-  <p class="p-lead">PART 06에서 김대리는 7섹션을 한 절씩 호출하면서 매번 검토·수정·재요청을 거쳤습니다. AI 입장에서 그 채팅창 안에는 김대리의 <b>작업 흐름·톤·구조 선호·수정 기준</b>이 모두 누적되어 있습니다. 이 정보를 그대로 흘려보내면 다음 보고서 작성에 다시 처음부터 시작해야 합니다. 한 번 더 요청해서 <b>"내 스타일이 담긴 마스터프롬프트"로 추출</b>합시다.</p>
-
-  <table class="comp-table">
-    <thead><tr><th width="50%">PART 05 · 프로젝트 마스터프롬프트</th><th width="50%">PART 07 · 내 스타일 마스터프롬프트</th></tr></thead>
-    <tbody>
-      <tr><td>이번 「교사 지원 서비스 개선 보고서」 <b>전용</b></td><td>주제가 바뀌어도 유지되는 <b>내 작업 방식</b></td></tr>
-      <tr><td>미래엔 부서협업 TF 맥락 · 박리더 핵심 강조 3가지 · 7섹션 양식</td><td>"한 섹션씩 호출" 흐름 · "출처는 무조건 표기" 톤 · "결론 먼저 보이게" 구조</td></tr>
-      <tr><td><b>주제가 바뀌면 재사용 어려움</b></td><td><b>다른 보고서에도 그대로 적용</b></td></tr>
-    </tbody>
-  </table>
-
-  <div class="breath"></div>
-
-  <p class="p-lead">PART 05 마스터프롬프트가 <b>"이번 프로젝트의 맥락"</b>이라면, PART 07 내 스타일 마스터프롬프트는 <b>"내가 일하는 방식"</b>입니다. 둘 다 챙기면 다음 작업의 대부분이 자동화됩니다.</p>
-
+  <h3 class="h-lead" id="p7-extract">7-1. 이번 업무와 내 작업 방식을 구분하기</h3>
+  <table class="comp-table"><thead><tr><th>PART 05 · 이번 업무의 지침</th><th>PART 07 · 내 작업 스타일</th></tr></thead><tbody>
+    <tr><td>사내 AI 활용 교육 기획안 작성</td><td>요청을 정리한 뒤 한 항목씩 작성</td></tr>
+    <tr><td>초보 임직원 · 2시간 실습</td><td>짧고 명확한 업무 문체</td></tr>
+    <tr><td>이번 회의록과 리서치 참고</td><td>근거·미정 사항을 표시하고 검토</td></tr>
+  </tbody></table>
   <div class="breath-lg"></div>
-
-  <!-- 7-2. 내 스타일 추출 실습 -->
-  <h3 class="h-lead" id="p7-style">7-2. 실습 &mdash; 내 스타일 마스터프롬프트 추출 요청</h3>
-  <p class="p-lead">PART 06에서 보고서 7섹션을 완성한 그 채팅창 그대로에 다음 프롬프트를 입력합니다. AI는 채팅 안에 누적된 작업 흐름을 분석해 <b>"내 스타일 마스터프롬프트"</b>로 정리해줍니다.</p>
-
-  <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 7 &mdash; 내 스타일 마스터프롬프트 추출</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
-<div class="prompt-body"><span class="hl">[요청사항]</span>
-방금 우리가 진행한 보고서 작성 흐름을 바탕으로, 다음 보고서 작성 때도 그대로 쓸 수 있는 <b>"내 작업 스타일이 담긴 마스터프롬프트"</b>를 추출해줘.
-
-<span class="hl">[맥락]</span>
-- 주제(교사 지원 서비스 개선)는 제외하고, <b>주제 바뀌어도 유지되는 작업 방식</b>만 정리
-- 내가 어떤 톤·구조·검토 기준을 선호했는지 채팅 흐름에서 추출
-- 다음에 다른 보고서 작성 시 첫 호출에 그대로 쓸 수 있도록 마크다운 형식으로
-- md 파일 다운로드 링크로 제공</div>
+  <h3 class="h-lead" id="p7-style">7-2. 다음 업무에도 쓸 지침 추출하기</h3>
+  <p class="p-lead">기획안을 완성한 대화에서 요청해 보세요.</p>
+  <div class="prompt-block" id="prompt7"><div class="prompt-header"><span class="prompt-label">PROMPT 7 · 내 스타일 추출</span></div><div class="prompt-body">지금까지 내가 요청하고 수정한 방식을 다음 업무에도 쓸 프롬프트로 정리해줘.
+문체, 작성 순서, 검토 기준은 남기고, 이번 교육의 고유 정보는 빼줘.</div></div>
+  <div class="md-output">
+    <div class="h1"># 내 업무 문서 작성 방식</div>
+    <div class="h2">## 시작</div><div class="ln">문서의 목적과 대상, 첨부 자료를 확인한다.</div>
+    <div class="h2">## 작성</div><div class="ln">구성을 먼저 제안하고, 한 항목씩 작성한다. 짧고 명확한 문장을 사용한다.</div>
+    <div class="h2">## 검토</div><div class="ln">수정 요청을 다음 항목에도 반영한다. 근거가 없는 정보는 확인할 사항으로 남긴다.</div>
+    <div class="h2">## 이번에 할 일</div><div class="ln">[새 업무의 주제·목적·자료 입력]</div>
   </div>
-
-  <div class="breath"></div>
-
-  <p class="p-lead">AI가 추출한 내 스타일 마스터프롬프트는 다음과 같은 형태입니다. <b>주제 자리만 비워두고, 작업 흐름·톤·구조·검토 기준은 그대로 유지</b>됩니다.</p>
-
-  <div class="md-output project-prompt">
-    <div class="h1"># 내 스타일 마스터프롬프트 (부서협업 TF 김대리)</div>
-    <div class="h2">## 작업 흐름</div>
-    <div class="ln">1. 자료 패키지 정리 (회의록·내부 양식·외부 리서치)</div>
-    <div class="ln">2. 외부 리서치 결과는 항상 마크다운으로 1차 정리 후 입력</div>
-    <div class="ln">3. 본문은 <b>한 섹션씩 호출</b>, 검토 후 다음 섹션 진행</div>
-    <div class="h2">## 작성 톤</div>
-    <div class="ln">사내 보고서 톤 (담백한 문어체, 홍보 표현 X)</div>
-    <div class="ln">결론·우선순위가 먼저 보이도록 구조화</div>
-    <div class="ln">의사결정 보조 관점 (감정 표현 X)</div>
-    <div class="h2">## 구조 선호</div>
-    <div class="ln">표·비교 양식 적극 활용 (산문보다)</div>
-    <div class="ln">핵심 강조 항목은 굵게 표기 (보고 받는 사람 시선 가이드)</div>
-    <div class="h2">## 검토 기준</div>
-    <div class="ln">출처 없는 수치 본문 노출 금지</div>
-    <div class="ln">미공개 원고·문항·계약·개인정보는 승인되지 않은 외부 AI에 입력 금지</div>
-    <div class="ln">의사결정자가 다음에 무엇을 결정할지 명확해야 함</div>
-    <div class="h2">## 다음에 채울 부분</div>
-    <div class="ln"><span class="blank">[새 보고서 주제 &mdash; 채워주세요]</span></div>
-    <div class="ln"><span class="blank">[보고 대상 &mdash; 채워주세요]</span></div>
-    <div class="ln"><span class="blank">[참고 자료 &mdash; 첨부]</span></div>
-  </div>
-
-  <div class="breath-lg"></div>
-
-  <!-- 7-3. 다른 주제 적용 -->
-  <h3 class="h-lead">7-3. 주제가 바뀌어도 흐름은 유지 &mdash; 적용 시나리오</h3>
-  <p class="p-lead">이 "내 스타일 마스터프롬프트"는 교사 지원 서비스 개선 외 다른 보고서에도 그대로 첫 호출로 쓸 수 있습니다. 빈칸만 채워서 던지면 동일한 작업 방식으로 진행됩니다.</p>
-
-  <div class="info-grid">
-    <div class="info-card">
-      <h5><em>적용 1</em>교재 안내 콘텐츠 개선</h5>
-      <p>주제: "교재 안내 콘텐츠 개선 보고서". 자료: 공개 교재 소개·실습용 문의 유형·안내문 초안. <b>같은 흐름</b>(자료 정리 &rarr; 한 섹션씩 본문).</p>
-    </div>
-    <div class="info-card">
-      <h5><em>적용 2</em>공개 교육서비스 동향 정리</h5>
-      <p>주제: "공개 교육서비스 동향 보고서". 자료: 서비스 공식 발표·공개 기능 안내·업무 적용 가설. <b>같은 톤·구조</b>로 진행.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>적용 3</em>교사 연수 운영 제안서</h5>
-      <p>주제: "교사 연수 운영 제안서". 자료: 가상 연수 요청·운영 회의록·안내문 예시. <b>같은 검토 기준</b>으로 작성.</p>
-    </div>
-  </div>
-
-  <div class="breath-lg"></div>
-
-  <!-- spotlight -->
-  <div class="spotlight">
-    <div class="sp-eyebrow">PART 07 정리</div>
-    <div class="sp-headline">보고서 끝난 채팅창은 <em>그냥 닫지 마세요</em><br>내 작업 스타일이 거기 다 들어있습니다</div>
-    <div class="sp-detail">한 번 더 요청해서 내 스타일 마스터프롬프트를 추출하면, <b>주제는 바뀌어도 작업 흐름이 그대로 유지되는 평생 자산</b>이 됩니다. 다음 PART 08에서 이 자산과 PART 05 프로젝트 마스터프롬프트를 GPTs로 통합 자산화합니다.</div>
-  </div>
+  <p class="visual-caption">“부서 업무 공유회 기획안”, “월간 업무 보고서”처럼 새 주제와 자료를 넣어 적용해 보세요.</p>
+  <div class="spotlight"><div class="sp-headline">결과물과 함께 <em>잘된 작업 방식</em>도 남기세요.</div><div class="sp-detail">내가 확인한 스타일만 선택해 다음 업무에 적용합니다.</div></div>
 </section>
 
-
-
-<!-- ============================================================
-     PART 08 · GPTs 자산화
-============================================================ -->
 <section class="module" id="p8">
-  <div class="mod-head">
-    <span class="mod-num">PART 08</span>
-    <span class="mod-time">GPTs 자산화 — 다음 분기 즉시 재사용</span>
-  </div>
-  <h2 class="mod-title">오늘 만든 모든 흐름을 GPTs로 자산화합니다<small>마스터프롬프트와 자료 패키지를 GPTs에 등록하면 다음 분기에는 한 줄 호출로 같은 보고서를 다시 만듭니다</small></h2>
-
+  <div class="mod-head"><span class="mod-num">PART 08</span><span class="mod-time">GPTs 자산화</span></div>
+  <h2 class="mod-title">반복 업무를 나만의 GPTs로 저장합니다<small>자주 쓰는 지침과 자료를 담은 업무 전용 챗봇</small></h2>
   <div class="breath-lg"></div>
-
-  <!-- 8-1. GPTs란? 왜 자산화 -->
-  <h3 class="h-lead" id="p8-why">8-1. GPTs란 무엇이고, 왜 자산화하는가</h3>
-  <p class="p-lead">PART 05에서 만든 마스터프롬프트와 PART 04 마크다운 정리물·실습용 양식 퓨샷·회의록을 매번 다시 첨부하는 건 비효율적입니다. <b>GPTs</b>는 ChatGPT 안에서 만드는 <b>업무별 전용 챗봇</b>입니다. 마스터프롬프트를 Instructions에, 자료 패키지를 Knowledge에 등록해두면 다음 분기 김대리는 한 줄 호출로 같은 보고서를 다시 만들 수 있습니다.</p>
-
-  <div class="breath-lg"></div>
-
-  <!-- 8-2. GPTs 구축 실습 -->
-  <h3 class="h-lead" id="p8-build">8-2. GPTs 구축 실습 &mdash; 3단계로 끝</h3>
-  <p class="p-lead">GPTs 구축은 직관적입니다. ChatGPT 좌측 메뉴 → <b>GPT 탐색 → 만들기(Create)</b>에서 다음 3가지만 채우면 됩니다.</p>
-
-  <div class="breath"></div>
-
-  <div class="visual">
-    <div class="info-grid" aria-label="GPTs 이름·Instructions·Knowledge 설정의 교육용 목업">
-      <div class="info-card"><h5><em>NAME</em>이름</h5><p><b>교사 지원 서비스 개선 어시스턴트</b><br>TF의 반복 보고서 작성에 사용할 이름</p></div>
-      <div class="info-card"><h5><em>INSTRUCTIONS</em>기본 지시</h5><p><b>PART 05 마스터프롬프트 + PART 07 작업 스타일</b><br>7섹션 · 한 섹션씩 작성 · 사실과 가설 구분 · 출처 유지</p></div>
-      <div class="info-card"><h5><em>KNOWLEDGE</em>참고 파일</h5><p><b>가상 TF 회의록 · 실습용 양식 · 공개 리서치 MD</b><br>검증한 자료만 등록하고 갱신일 확인</p></div>
-    </div>
-    <div class="visual-caption">채울 곳은 세 군데뿐 &mdash; <b>오늘 만든 자산을 옮겨 담으면 챗봇이 됩니다</b>.</div>
-  </div>
-
+  <h3 class="h-lead" id="p8-why">8-1. GPTs에 무엇을 담을까요?</h3>
+  <p class="p-lead"><b>GPTs</b>는 ChatGPT에서 만드는 맞춤형 챗봇입니다. 자주 쓰는 지침과 참고 자료를 등록해 반복 요청을 줄입니다.</p>
   <div class="info-grid">
-    <div class="info-card">
-      <h5><em>STEP 1</em>이름 설정</h5>
-      <p>예: <b>"교사 지원 서비스 개선 어시스턴트"</b>. 실습에서는 나만 보기로 저장하고, 업무 공유는 이용 중인 회사 워크스페이스의 허용 범위를 확인합니다.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>STEP 2</em>Instructions 등록</h5>
-      <p>PART 05에서 만든 <b>마스터프롬프트를 그대로 복사 → 붙여넣기</b>. PART 07의 <b>내 스타일 마스터프롬프트</b>도 톤·작업 흐름 가이드로 상단에 함께 붙여넣습니다. 챗봇이 호출될 때마다 이 지시를 기본으로 따릅니다.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>STEP 3</em>Knowledge 업로드</h5>
-      <p>PART 02·04에서 준비한 자료 3종 첨부 &mdash; <b>회의록 STT · 실습용 양식 퓨샷(DOCX) · 리서치 정리물(MD)</b>. 챗봇이 답할 때 이 자료들을 자동으로 참고합니다.</p>
-    </div>
+    <div class="info-card"><h5><em>NAME</em>챗봇 이름</h5><p>사내 교육 기획 도우미</p></div>
+    <div class="info-card"><h5><em>INSTRUCTIONS</em>기본 지침</h5><p>기획안 마스터프롬프트<br>+ 내 작업 스타일</p></div>
+    <div class="info-card"><h5><em>KNOWLEDGE</em>참고 자료</h5><p>기획안 양식 · 이전 예시<br>반복해서 사용할 자료</p></div>
   </div>
-
-  <div class="breath"></div>
-
-  <div class="tip-box">
-    <strong>핵심 요령.</strong> Instructions는 마스터프롬프트 그대로 + <b>"한 섹션씩 호출되면 그 섹션만 작성, 전체 호출되면 7섹션 순서대로 작성"</b> 한 줄을 추가하면 더 명확합니다. Knowledge는 자료가 갱신될 때마다(분기마다 회의록·리서치 결과) 새 파일로 교체하면 됩니다.
-  </div>
-
   <div class="breath-lg"></div>
-
-  <!-- 8-3. 다음 분기 활용 -->
-  <h3 class="h-lead" id="p8-next">8-3. 다음 분기 활용 &mdash; 한 줄 호출 시연</h3>
-  <p class="p-lead">GPTs가 등록되면 다음 분기 김대리는 같은 작업을 처음부터 다시 하지 않습니다. 새 분기 회의록 + 리서치 결과만 <b>대화창에 새로 첨부</b>하고 챗봇을 호출하면 끝입니다. (자료를 계속 쓸 거라면 GPTs 편집 화면에서 Knowledge를 교체해 둡니다.)</p>
-
-  <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 8 &mdash; 다음 분기 GPTs 한 줄 호출</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
-<div class="prompt-body"><span class="hl">[김대리 호출]</span>
-이번 분기의 가상 TF 회의록과 최신 공개 리서치를 새로 첨부했어. <b>같은 양식으로 교사 지원 서비스 개선 보고서</b>를 작성해줘. 이전 분기의 근거·가설·일정을 그대로 가져오지 말고 최신 첨부 기준으로 갱신해. 섹션 1부터 7까지 차례로 호출할 거야.
-
-<span class="hl">[GPTs 응답]</span>
-&rarr; 등록된 지시를 참고하고 최신 첨부 자료의 범위·시점을 확인합니다.
-&rarr; 섹션 1 「배경 및 목적」 작성 시작...</div>
-  </div>
-
-  <div class="breath"></div>
-
-  <p class="p-lead">오늘 강의에서 익힌 모든 흐름이 GPTs 안에 그대로 살아있습니다. 같은 보고서를 다시 만드는 데 드는 시간이 <b>처음 만들 때보다 크게 단축</b>됩니다. 허용된 워크스페이스 공유 범위에서 함께 활용하면 <b>전사 차원의 디지털 자산</b>이 됩니다.</p>
-
-  <div class="breath-lg"></div>
-
-  <!-- 8-4. 구현 실습 — 교사연수 경비 정리 챗봇 -->
-  <h3 class="h-lead" id="p8-practice">8-4. 구현 실습 &mdash; 두 번째 챗봇 「교사연수 경비 정리 챗봇」 만들기</h3>
-  <p class="p-lead">보고서 어시스턴트가 <b>오늘의 흐름을 저장</b>한 챗봇이라면, 이번엔 완전히 다른 반복 업무를
-  직접 챗봇으로 만들어 봅니다. <b>영수증 사진을 올리면 엑셀로 정리해 주는 챗봇</b> —
-  이번 상황은 <b>가상 교사 연수의 인쇄·문구·다과·행사소모품 경비를 검토용 표로 정리</b>하는 일입니다. 입력 시간을 줄이되, 누락값은 사람이 확인합니다.</p>
-
+  <h3 class="h-lead" id="p8-build">8-2. 전용 챗봇 만들기</h3>
   <div class="info-grid">
-    <div class="info-card">
-      <h5><em>INPUT</em>영수증 이미지 다수</h5>
-      <p>JPG/PNG 여러 장 또는 ZIP 압축 파일. 가상 교사 연수 운영경비 증빙 7장.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>PROCESS</em>OCR + 엑셀 정리</h5>
-      <p>챗봇이 이미지를 <b>한 장씩</b> 읽어 5개 항목을 추출하고 엑셀로 기록.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>OUTPUT</em>경비 검토용 엑셀 파일</h5>
-      <p>가맹점명 / 거래일시 / 총금액 / 부가세 / 공급가액 <b>5열 시트</b> + 다운로드.</p>
-    </div>
+    <div class="info-card"><h5><em>STEP 1</em>GPT 만들기 열기</h5><p>GPT 탐색에서 만들기를 열고 챗봇 이름을 입력합니다.</p></div>
+    <div class="info-card"><h5><em>STEP 2</em>지침·자료 등록</h5><p>검토한 마스터프롬프트와 작업 스타일을 Instructions에 넣고 참고 파일을 Knowledge에 추가합니다.</p></div>
+    <div class="info-card"><h5><em>STEP 3</em>테스트하고 저장</h5><p>미리보기에서 요청을 실행해 형식과 근거를 확인한 뒤 나만 보기로 저장합니다.</p></div>
   </div>
-
-  <div class="breath"></div>
-
-  <div class="resource">
-    <div class="resource-icon">
-      <span class="ri-emoji">🧾</span>
-      <span class="ri-ext">ZIP</span>
-    </div>
-    <div class="resource-text">
-      <div class="r-meta">▶ 챗봇 테스트용 자료</div>
-      <strong>가상 교사 연수 운영경비 영수증 (7장)</strong>
-      <p>교육용 가상 상호·거래로 제작한 PNG 7장입니다. 7번은 부가세·공급가액이 인쇄 누락되어 있으므로 추정하지 않고 <b>확인 필요</b>로 남기는지 테스트합니다.</p>
-    </div>
-    <a class="resource-btn" href="교안_자료/실습용 영수증.zip" download>다운로드</a>
-  </div>
-  <p class="p-lead" style="margin-top:14px; font-size:13px;">함께 보기: <a href="교안_자료/영수증_실습안내.md" download>영수증 실습 안내 (MD)</a> · <a href="교안_자료/영수증_OCR_검증기준.csv" download>강의용 OCR 검증 기준 (CSV)</a>. 결과 7행과 원본 이미지, 누락값을 비교하세요. 이 표는 정산 승인 결과가 아닙니다.</p>
-
-  <div class="breath"></div>
-
-  <p class="p-lead">아래 지시문이 챗봇의 <b>두뇌(Instructions)</b>가 됩니다 — 앞에서 만든 마스터프롬프트와 같은 구조화 원리로
-  짜여 있고, 이번에는 <b>작업 순서 · 예외 처리 · 필드별 규칙 · 실패 폴백</b>이라는 4개 기둥으로 구성했습니다.</p>
-
-  <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 9 &mdash; 교사연수 경비 정리 챗봇 Instructions (영수증 OCR)</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
-<div class="prompt-body"><span class="hl"># 역할·목적</span>
-가상 교사 연수 운영경비 영수증을 읽어 <b>검토용 엑셀 표</b>로 정리하는 챗봇이다. 실제 정산 승인·비용 인정·세무 판단은 하지 않는다.
-
-<span class="hl"># 작업 순서</span>
-- ZIP을 받으면 먼저 압축을 풀어 이미지 목록을 확인해.
-- OCR 단계는 <span class="hl2">이미지를 직접 읽어</span> 진행하고, Code interpreter는 압축 해제와 추출 후 엑셀 생성에 사용해.
-- 이미지를 합쳐 읽거나 내용을 임의 변형하지 말고 <b>파일 1개씩</b> 순서대로 추출해. 파일명과 해당 행의 대응을 유지해.
-- 각 영수증에서 (1) 가맹점명, (2) 거래 일시, (3) 총 금액, (4) 부가세, (5) 공급가액을 추출해.
-- 모든 이미지의 추출·확인 필요 항목을 정리한 뒤 Code interpreter로 엑셀을 만들어.
-- 기본 시트는 "가맹점명 / 거래 일시 / 총 금액 / 부가세 / 공급가액"의 <b>5열</b>로 작성해.
-- 원본 파일명·누락·불일치·중복 의심 내역은 별도 "확인 필요" 시트와 답변에 기록해. 중복으로 보이는 이미지를 임의 삭제하지 마.
-- 대화창에 시트 미리보기를 보여주고 엑셀 다운로드를 제공해. 답변은 한국어로 해.
-
-<span class="hl"># 필드별 규칙</span>
-1. 가맹점명은 영수증에 인쇄된 판매자 상호 전체를 사용해. 예: 실습문구센터(가상). 주소·담당자 이름을 상호로 바꾸지 마.
-2. 거래 일시는 날짜를 YYYY-MM-DD 형식으로 기록해. 예: 2026-09-07. 날짜가 불명확하면 확인 필요.
-3. 총 금액·부가세·공급가액은 확인된 경우 숫자로 입력해. 쉼표·원 표시는 제거하고 숫자형 셀로 저장해.
-4. 부가세·공급가액이 영수증에 있으면 그대로 읽어. <b>누락·판독 불가·인쇄 누락이면 확인 필요</b>로 남겨. 0원으로 바꾸거나 일반 세율을 적용해 추정하지 마.
-5. 총 금액·부가세·공급가액이 모두 읽혔을 때만 합계 관계를 검산해. 맞지 않으면 원문을 유지하고 불일치를 표시해. 누락된 필드를 총액에서 역산해 채우지 마.
-
-<span class="hl"># 예외 처리·실패 폴백</span>
-- 이미지가 흐리거나 잘렸으면 "이 영수증은 제대로 인식되지 않았습니다. 원본 이미지를 다시 올리거나 해당 정보를 수동 확인해 주세요."라고 알려줘.
-- 부분만 읽혔으면 확인된 필드는 유지하고 나머지는 확인 필요로 표시해.
-- ZIP 해제나 엑셀 생성이 불가능한 환경이면 가능한 단계와 막힌 단계를 구분하고, 이미지 개별 업로드 또는 복사 가능한 표를 안내해. 파일을 만들지 못했다면 다운로드 링크를 지어내지 마.
-- 처리한 이미지 수와 추출 행 수가 일치하는지 대조하고, 누락된 부가세·공급가액이 확인 필요로 남아 있는지 마지막에 점검해.</div>
-  </div>
-
-  <div class="breath"></div>
-
-  <div class="info-grid">
-    <div class="info-card">
-      <h5><em>STEP 1</em>챗봇 만들기</h5>
-      <p>ChatGPT 좌측 <b>GPT 탐색 → 만들기(Create)</b> → 구성 탭의 <b>Instructions에 위 지시문을 통째로 붙여넣기</b>. Knowledge는 이번 챗봇엔 필요 없습니다.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>STEP 2</em>이름 붙여 저장</h5>
-      <p>이름 <b>「교사연수 경비 정리 챗봇」</b> + 아이콘 선택 → 저장(나만 보기). 사이드바에 두 번째 챗봇이 생깁니다.</p>
-    </div>
-    <div class="info-card">
-      <h5><em>STEP 3</em>영수증으로 테스트</h5>
-      <p>챗봇 대화창에 <b>영수증 ZIP 업로드</b> + "가상 교사 연수 경비 7장을 정리하고 누락값을 알려줘" → 7행·5열, 7번 확인 필요 항목, <b>엑셀 다운로드</b>를 원본·검증 기준과 비교.</p>
-    </div>
-  </div>
-
-  <div class="breath"></div>
-
-  <div class="tip-box">
-    <strong>핵심 — 프롬프트가 좋으면 챗봇이 됩니다.</strong> 이번 챗봇은 Knowledge 없이 <b>지시문만으로</b> 완성됐습니다.
-    같은 4기둥 패턴(작업 순서 · 예외 처리 · 필드 규칙 · 실패 폴백)이면 <b>명함 정리 · 세금계산서 · 계약서 핵심 추출</b> 챗봇도
-    똑같이 만들 수 있습니다 — 반복 업무 하나당 챗봇 하나.
-  </div>
-
-  <div class="breath"></div>
-
-  <div class="warn-box">
-    <strong>실무 주의.</strong> 회사 영수증·증빙 자료는 보안 등급 확인이 먼저입니다. <b>정보보안 부서 협의 전에는</b>
-    오늘처럼 실습용·가상 데이터로 워크플로우를 검증하세요.
-  </div>
-
-  <div class="breath"></div>
-
-  <!-- GPTs 사이드바 누적 예시 -->
-  <div class="visual">
-    <div class="gpts-showcase">
-      <div class="gpts-list" role="img" aria-label="GPTs 사이드바 예시">
-        <div class="gpts-header">GPT</div>
-        <div class="gpts-item">
-          <span class="gpts-icon i1">🤝</span>
-          <span class="gpts-name">교사 지원 서비스 개선 어시스턴트</span>
-        </div>
-        <div class="gpts-item">
-          <span class="gpts-icon i2">🧾</span>
-          <span class="gpts-name">교사연수 경비 정리 챗봇</span>
-        </div>
-        <div class="gpts-item">
-          <span class="gpts-icon i2">📈</span>
-          <span class="gpts-name">교재 안내 콘텐츠 개선</span>
-        </div>
-        <div class="gpts-item">
-          <span class="gpts-icon i3">📝</span>
-          <span class="gpts-name">교사 문의 유형 정리</span>
-        </div>
-        <div class="gpts-item">
-          <span class="gpts-icon i4">📊</span>
-          <span class="gpts-name">공개 교육서비스 동향 정리</span>
-        </div>
-        <div class="gpts-item">
-          <span class="gpts-icon i5">▢</span>
-          <span class="gpts-name">주간업무 보고서 봇</span>
-        </div>
-        <div class="gpts-item">
-          <span class="gpts-icon i6">▢</span>
-          <span class="gpts-name">제안서 양식 봇</span>
-        </div>
-      </div>
-      <div class="gpts-detail">
-        <h4>업무별 챗봇으로 누적되는 디지털 자산</h4>
-        <p>한 번 잘 만든 마스터프롬프트는 <b>업무별 전용 챗봇</b>으로 저장됩니다. 새 사람이 와도 똑같은 양식으로 답하고, 본인이 잊어버려도 챗봇이 기억합니다. <b>매번 신입에게 입으로 설명하는 대신 매뉴얼을 만들어 두는 것</b>과 같습니다.</p>
-        <ul class="gpts-uses">
-          <li>교재 안내 개선</li>
-          <li>교사 문의 정리</li>
-          <li>공개 서비스 조사</li>
-          <li>제안서 작성</li>
-          <li>주간 업무 보고</li>
-          <li>… 업무 수만큼</li>
-        </ul>
-      </div>
-    </div>
-    <div class="visual-caption" style="margin-top:18px;">전사 업무를 연결한 ChatGPT 사이드바의 교육용 GPTs 예시. <b>한 업무당 하나씩 자산을 쌓아가면 부서 전체의 업무 매뉴얼</b>이 됩니다.</div>
-  </div>
-
+  <div class="tip-box"><strong>계속 바뀌는 자료는 대화마다 첨부하세요.</strong> 회사 자료는 허용된 도구와 공유 범위에서 사용합니다. 만들기 메뉴와 기능은 계정에 따라 다를 수 있습니다.</div>
   <div class="breath-lg"></div>
-
-  <!-- 최종 spotlight -->
-  <div class="spotlight">
-    <div class="sp-eyebrow">PART 08 정리 · 오늘의 마무리</div>
-    <div class="sp-headline">오늘 익힌 흐름은 <em>분기마다 절약되는</em><br>평생 자산이 됩니다</div>
-    <div class="sp-detail">PART 00부터 07까지의 모든 흐름(케이스 정렬 → 3요소 → 심층리서치 → 마크다운 정리 → 마스터프롬프트 → 한 섹션씩 본문 작성 → 내 스타일 추출)이 <b>GPTs Instructions + Knowledge로 그대로 저장</b>됩니다. 다음 분기에는 회의록·리서치 결과만 새로 첨부하면 같은 보고서가 나옵니다. <b>부서원 누구나 같은 방식으로 활용</b>하면 전사 협업의 디지털 자산이 됩니다.</div>
+  <h3 class="h-lead" id="p8-next">8-3. 새 자료로 다시 활용하기</h3>
+  <p class="p-lead">다음 교육을 준비할 때 새 회의록과 참고 자료를 첨부합니다.</p>
+  <div class="prompt-block" id="prompt8"><div class="prompt-header"><span class="prompt-label">PROMPT 8 · 저장한 챗봇 활용</span></div><div class="prompt-body">첨부한 새 회의록을 바탕으로 교육 기획안을 준비해줘.
+이전 교육과 달라진 조건을 먼저 정리하고, 교육 목적부터 작성해줘.</div></div>
+  <p class="visual-caption">이전 자료의 날짜·대상·운영 조건이 새 기획안에 섞이지 않았는지 확인합니다.</p>
+  <div class="breath-lg"></div>
+  <h3 class="h-lead" id="p8-practice">8-4. 교육 운영 경비 정리 챗봇 만들기</h3>
+  <p class="p-lead">영수증 사진을 올리면 경비 검토용 엑셀로 정리하는 챗봇을 만들어 봅니다.</p>
+  <div class="info-grid">
+    <div class="info-card"><h5><em>INPUT</em>영수증 7장</h5><p>교육 운영에 쓴 가상 영수증 이미지</p></div>
+    <div class="info-card"><h5><em>PROCESS</em>이미지 읽기</h5><p>파일별 항목 추출<br>누락값 확인</p></div>
+    <div class="info-card"><h5><em>OUTPUT</em>검토용 엑셀</h5><p>기본 5열 표<br>별도 확인 필요 시트</p></div>
   </div>
+  <div class="resource"><div class="resource-icon"><span class="ri-emoji">🧾</span><span class="ri-ext">ZIP</span></div><div class="resource-text"><strong>교육 운영 경비 영수증 7장</strong><p>7번 영수증은 부가세·공급가액이 누락된 테스트 자료입니다.</p></div><a class="resource-btn" href="교안_자료/실습용 영수증.zip" download>영수증 받기</a></div>
+  <p class="p-lead"><a href="교안_자료/영수증_실습안내.md" download>실습 안내</a> · <a href="교안_자료/영수증_OCR_검증기준.csv" download>OCR 검증 기준</a></p>
+  <p class="p-lead">새 GPT의 Instructions에 아래 지침을 입력하세요. 파일을 다루는 <b>코드 인터프리터 및 데이터 분석</b> 기능도 켭니다.</p>
+  <div class="prompt-block" id="prompt9"><div class="prompt-header"><span class="prompt-label">PROMPT 9 · 영수증 챗봇 지침</span></div><div class="prompt-body">영수증을 한 장씩 읽어 가맹점명, 거래 일시, 총 금액, 부가세, 공급가액의 5열 엑셀로 정리해줘.
+날짜는 YYYY-MM-DD, 금액은 숫자로 저장하고, 안 보이거나 빠진 값은 ‘확인 필요’로 남겨줘.
+파일명·행 번호와 누락·금액 불일치·중복 의심은 별도 ‘확인 필요’ 시트에 기록해줘. 빠진 값은 추정하지 마.
+ZIP은 풀어서 처리하고, 이미지 수와 행 수를 대조한 뒤 미리보기와 엑셀 파일을 제공해줘. 파일 처리가 안 되면 가능한 표와 막힌 단계를 알려줘.</div></div>
+  <div class="info-grid">
+    <div class="info-card"><h5><em>설정</em>이름과 기능</h5><p>교육 운영 경비 정리 챗봇<br>파일 처리 기능 활성화<br>나만 보기로 저장</p></div>
+    <div class="info-card"><h5><em>실행</em>영수증 업로드</h5><p>“영수증 7장을 정리하고 확인할 항목을 알려줘.”</p></div>
+    <div class="info-card"><h5><em>검토</em>원본과 비교</h5><p>7행 · 기본 5열인가?<br>7번 누락값을 추정하지 않았는가?<br>엑셀 다운로드가 열리는가?</p></div>
+  </div>
+  <div class="tip-box"><strong>같은 방식으로 확장하기</strong> 명함 정리, 회의 메모 분류, 문서 핵심 항목 추출처럼 반복 업무의 입력·처리·결과를 정해 챗봇으로 만들 수 있습니다.</div>
+  <div class="spotlight"><div class="sp-headline">잘 만든 지침과 자료를<br><em>반복해서 쓰는 업무 도구</em>로 만드세요.</div><div class="sp-detail">요청 → 자료 정리 → 작성·검토 → 작업 방식 추출 → GPTs 저장</div></div>
 </section>
 
-
-
-
-<!-- 다음 페이지 이동 CTA -->
-<div class="page-nav-bottom">
-  <a class="next-page-btn" href="교안_기본_AI 실무 활용교육_업무자동화_엑셀편.html">
-    <div class="next-page-meta">Page 2 · 업무자동화[엑셀편]</div>
-    <div class="next-page-title">업무자동화[엑셀편]으로 이어가기</div>
-    <div class="next-page-desc">프롬프트를 익혔다면, 이제 엑셀 함수부터 자동화까지 다섯 케이스로 손에 익힐 차례입니다.</div>
-  </a>
+<div class="page-nav-bottom"><a class="next-page-btn" href="교안_기본_AI 실무 활용교육_업무자동화_엑셀편.html"><div class="next-page-meta">Page 2 · 업무자동화[엑셀편]</div><div class="next-page-title">업무자동화[엑셀편]으로 이어가기</div><div class="next-page-desc">엑셀 함수부터 데이터 분석과 자동화까지 실습합니다.</div></a></div>
+<footer class="footer"><p><span>한국GPT협회</span> &nbsp; 미래엔 전사 AI 실무 활용교육 · 프롬프트 엔지니어링 &nbsp;|&nbsp; 발행 2026</p><p>대표전화 02-562-1552 &nbsp;|&nbsp; 이메일 GPT@Rnbdp.com</p></footer>
 </div>
 
-
-<!-- FOOTER -->
-<footer class="footer">
-  <p><span>한국GPT협회</span> &nbsp; 미래엔 전사 AI 실무 활용교육 · 프롬프트 엔지니어링 &nbsp;|&nbsp; 발행 2026</p>
-  <p>대표전화 02-562-1552 &nbsp;|&nbsp; 이메일 GPT@Rnbdp.com</p>
-</footer>
-
-</div><!-- /.main -->
-
 <script>
-function copyPrompt(btn){
-  var block = btn.closest('.prompt-block');
-  if(!block) return;
-  var body = block.querySelector('.prompt-body');
-  if(!body) return;
-  var text = body.innerText;
-  var done = function(){
-    var prev = btn.textContent;
-    btn.textContent = '복사됨';
-    btn.classList.add('copied');
-    setTimeout(function(){ btn.textContent = prev; btn.classList.remove('copied'); }, 1300);
-  };
-  if(navigator.clipboard && window.isSecureContext){
-    navigator.clipboard.writeText(text).then(done).catch(function(){fallback(text, done);});
-  } else { fallback(text, done); }
-}
-function fallback(text, done){
-  var ta = document.createElement('textarea');
-  ta.value = text; ta.setAttribute('readonly','');
-  ta.style.position='fixed'; ta.style.left='-9999px';
-  document.body.appendChild(ta); ta.select();
-  try { document.execCommand('copy'); done(); } finally { document.body.removeChild(ta); }
-}
-
 var hamburger = document.getElementById('hamburgerBtn');
 var sidebar = document.getElementById('sidebar');
 var overlay = document.getElementById('sidebarOverlay');
@@ -2641,6 +1406,18 @@ if(hamburger){
 if(overlay){
   overlay.addEventListener('click', function(){ sidebar.classList.remove('open'); overlay.classList.remove('show'); });
 }
+sidebar.addEventListener('click', function(event){
+  if(event.target.closest('a')){
+    sidebar.classList.remove('open');
+    overlay.classList.remove('show');
+  }
+});
+document.addEventListener('keydown', function(event){
+  if(event.key === 'Escape'){
+    sidebar.classList.remove('open');
+    overlay.classList.remove('show');
+  }
+});
 
 // 스크롤 스파이 — 현재 보고 있는 PART(nav-head)와 sub 항목을 동시에 하이라이트
 var sidebarLinks = Array.from(document.querySelectorAll('.sidebar-nav a[href^="#"]'));
@@ -2683,7 +1460,7 @@ function onScroll(){
 document.addEventListener('scroll', onScroll, {passive:true});
 window.addEventListener('resize', onScroll);
 onScroll();
-</script>
 
+</script>
 </body>
 </html>

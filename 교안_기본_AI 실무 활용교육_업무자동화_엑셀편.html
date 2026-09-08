@@ -7,11 +7,11 @@
 <style>
 @import url("https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/subsets/Paperlogy-dynamic-subset.css");
 :root {
-  --p: #F36F21;
-  --p2: #FF8B45;
-  --pd: #C24E12;
-  --p-soft: #FFF3E6;
-  --p-soft-2: #FFE3CC;
+  --p: #1B4F8A;
+  --p2: #3D77B8;
+  --pd: #123A66;
+  --p-soft: #F1F6FC;
+  --p-soft-2: #D5E3F2;
   --bk: #1A1A1A;
   --dk: #333;
   --md: #666;
@@ -66,7 +66,7 @@ svg { display: block; max-width: 100%; height: auto; }
 }
 .sidebar-nav a:hover { color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.05); }
 .sidebar-nav a.active {
-  color: var(--w); background: rgba(243,111,33,0.18);
+  color: var(--w); background: rgba(27,79,138,0.18);
   border-left-color: var(--p2); font-weight: 600;
 }
 .sidebar-back-page {
@@ -87,7 +87,7 @@ svg { display: block; max-width: 100%; height: auto; }
 .page-nav-bottom { display: flex; justify-content: center; padding: 0 50px 60px; }
 .prev-page-btn {
   display: block;
-  background: linear-gradient(135deg, #2B1810 0%, #C24E12 60%, #F36F21 100%);
+  background: linear-gradient(135deg, #0B1422 0%, #123A66 60%, #1B4F8A 100%);
   color: var(--w);
   text-decoration: none;
   padding: 28px 38px 26px 60px;
@@ -95,7 +95,7 @@ svg { display: block; max-width: 100%; height: auto; }
   min-width: 420px;
   max-width: 520px;
   text-align: left;
-  box-shadow: 0 12px 32px rgba(243,111,33,.25);
+  box-shadow: 0 12px 32px rgba(27,79,138,.25);
   transition: transform 0.2s, box-shadow 0.2s;
   position: relative;
   overflow: hidden;
@@ -110,9 +110,9 @@ svg { display: block; max-width: 100%; height: auto; }
   color: rgba(255,255,255,.4);
   transition: transform 0.2s, color 0.2s;
 }
-.prev-page-btn:hover { transform: translateY(-2px); box-shadow: 0 18px 40px rgba(243,111,33,.36); }
+.prev-page-btn:hover { transform: translateY(-2px); box-shadow: 0 18px 40px rgba(27,79,138,.36); }
 .prev-page-btn:hover::before { transform: translateY(-50%) translateX(-4px); color: var(--w); }
-.prev-page-meta { font-size: 11px; color: #FFD9B3; font-weight: 700; letter-spacing: 1.2px; margin-bottom: 8px; text-transform: uppercase; }
+.prev-page-meta { font-size: 11px; color: #BBDBFB; font-weight: 700; letter-spacing: 1.2px; margin-bottom: 8px; text-transform: uppercase; }
 .prev-page-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; letter-spacing: -.01em; }
 .prev-page-desc { font-size: 13px; color: rgba(255,255,255,.85); line-height: 1.6; }
 @media (max-width: 760px) {
@@ -144,7 +144,7 @@ svg { display: block; max-width: 100%; height: auto; }
 .main { margin-left: calc(var(--sidebar-w) + 20px); max-width: 980px; background: var(--w); min-height: 100vh; }
 
 /* Hero */
-.hero { background: linear-gradient(135deg, #2A1403, #96420C 55%, #F36F21); padding: 80px 60px; position: relative; }
+.hero { background: linear-gradient(135deg, #0B1422, #11335A 55%, #1B4F8A); padding: 80px 60px; position: relative; }
 .hero-badge {
   display: inline-block; border: 1px solid rgba(255,255,255,.35);
   padding: 5px 14px; font-size: 11px; color: rgba(255,255,255,.8);
@@ -376,6 +376,7 @@ svg { display: block; max-width: 100%; height: auto; }
   .hero { padding: 72px 18px 36px; }
 }
 </style>
+<link rel="stylesheet" href="miraen-theme.css">
 </head>
 <body>
 
@@ -384,7 +385,7 @@ svg { display: block; max-width: 100%; height: auto; }
 
 <nav class="sidebar" id="sidebar">
   <div class="sidebar-header">
-    <div class="sidebar-badge">HRD · 기본 교안 · PAGE 2</div>
+    <div class="sidebar-badge">미래엔 전사교육 · PAGE 2</div>
     <div class="sidebar-title">미래엔 전사 AI 교육<br><em>업무자동화[엑셀편]</em></div>
   </div>
   <div class="sidebar-nav">
@@ -419,11 +420,7 @@ svg { display: block; max-width: 100%; height: auto; }
 <section class="hero" id="hero">
   <div class="hero-badge">미래엔 전사 AI 업무역량 교육 · PAGE 2</div>
   <h1>업무자동화<span style="color:var(--p2);">[엑셀편]</span></h1>
-  <div class="hero-sub">
-    엑셀 함수 한 줄부터 <b>스스로 도는 자동화 시스템</b>까지 — 반복 업무를 걷어내는
-    다섯 장면을 AI로 해결합니다. 수식도, 분석도, 코드도 <b>직접 만들 필요가 없습니다.</b>
-    설명하면, AI가 만듭니다.
-  </div>
+  <div class="hero-sub">명단 정리부터 분석·정산·접수·보고까지, <b>반복 업무 다섯 가지를 AI로 해결</b>합니다. 원하는 결과와 조건을 설명하고, 직접 확인하며 완성합니다.</div>
   <div class="hero-meta">
     <div class="hero-meta-item">대상 <span>미래엔 전 부문 임직원</span></div>
     <div class="hero-meta-item">구성 <span>총 5개 CASE</span></div>
@@ -453,13 +450,11 @@ svg { display: block; max-width: 100%; height: auto; }
     <span class="mod-num">오늘의 지도</span>
     <span class="mod-time">다섯 개의 독립 사례</span>
   </div>
-  <h2 class="mod-title">한 업무의 다섯 장면을 AI로 해결한다<small>배경은 하나 — 「미래엔 전사 AI 업무역량 교육」 운영 업무입니다. 다섯 장면을 각각 독립된 사례로 실습합니다.</small></h2>
+  <h2 class="mod-title">한 업무, 다섯 가지 자동화<small>미래엔 전사 AI 교육의 가상 운영 사례로 실습합니다.</small></h2>
 
   <div class="breath-lg"></div>
 
-  <p class="p-lead">당신은 미래엔의 전사 AI 교육을 준비하는 가상 운영 담당자입니다. 신청자 명단을 정리하고, 만족도 설문을 분석하고,
-  정산 서류를 발급하고, 다음 접수를 자동화하고, 보고 장표를 만듭니다.
-  오늘 이 다섯 가지를 전부 — <b>단, 손으로는 하나도 하지 않고</b> — 끝냅니다.</p>
+  <p class="p-lead">전사 AI 교육 운영을 예로, <b>명단 정리 → 설문 분석 → 정산 → 접수 자동화 → 보고 장표</b>를 실습합니다.</p>
 
   <table class="comp-table">
     <thead>
@@ -477,26 +472,22 @@ svg { display: block; max-width: 100%; height: auto; }
   <div class="breath-sm"></div>
 
   <div class="info-box">
-    <strong>앞 사례를 놓쳤어도 괜찮습니다.</strong>
-    <p>VBA의 CASE 3은 기존 거래명세서 실습을 그대로 사용합니다. 다른 사례는 미래엔 전사 AI 교육의 가상 운영 상황입니다. 사례마다 시작 파일이 준비되어 있어(CASE 4는 파일 없이 <b>새 폼을 만드는 것부터</b>가 시작입니다),
-    어느 사례든 <b>그 지점부터 새로 시작</b>할 수 있습니다.</p>
+    <strong>사례별로 시작할 수 있습니다.</strong>
+    <p>CASE 1·2·3·5는 제공 파일로, CASE 4는 새 구글 폼으로 시작합니다.</p>
   </div>
 
   <div class="breath"></div>
 
   <div class="spotlight">
     <div class="sp-eyebrow">오늘의 한 줄</div>
-    <div class="sp-headline">사례가 진행될수록,<br><em>내가 안 해도 되는 범위</em>가 넓어집니다</div>
-    <div class="sp-detail">수식을 <b>묻고</b>(CASE 1) → 분석을 <b>맡기고</b>(CASE 2) → 코드를 <b>시키고</b>(CASE 3) →
-    시스템을 <b>걸어두고</b>(CASE 4) → 보고까지 <b>만들게 합니다</b>(CASE 5).
-    오늘 처음으로, 코드를 몰라도 코드로 일하게 됩니다.</div>
+    <div class="sp-headline">조건은 내가 설명하고,<br><em>반복 작업은 AI에게</em></div>
+    <div class="sp-detail">수식 → 분석 → 코드 → 자동 실행 → 시각화. 결과를 확인하고 수정하며 활용 범위를 넓힙니다.</div>
   </div>
 
   <div class="breath-sm"></div>
 
   <div class="warn-box">
-    <strong>보안 원칙.</strong> 오늘 사용하는 파일은 모두 <b>교육 실습용 가상 데이터</b>입니다. 부서명은 직무 예시이며, 실제 미래엔 조직·인사정책·교육제도·성과를 나타내지 않습니다. 지원금·정원·우선선발 규칙도 수식 연습을 위한 가상 조건입니다. 신청자 150건과 만족도 응답 72건은 서로 다른 가상 표본입니다.
-    실제 업무의 명단·연락처 등 개인정보는 외부 AI에 입력하기 전에 반드시 회사 보안 정책을 확인하세요.
+    <strong>교육용 가상 자료입니다.</strong> 부서·지원금·선발 조건·성과는 실제 미래엔 제도가 아닙니다. 명단 150건과 설문 72건은 별도 표본입니다. 실무 자료 사용 전에는 회사 보안 기준을 확인하세요.
   </div>
 </section>
 
@@ -509,13 +500,11 @@ svg { display: block; max-width: 100%; height: auto; }
     <span class="mod-num">CASE 1</span>
     <span class="mod-time">엑셀 함수 × AI</span>
   </div>
-  <h2 class="mod-title">신청자 명단 150명, 수식으로 끝낸다<small>부서도 프로그램도 코드번호뿐인 명단. 지원금 산정과 우선선발 판정까지 — 함수를 외우지 않고 해결합니다.</small></h2>
+  <h2 class="mod-title">신청자 명단 150명, 수식으로 정리하기<small>원하는 결과와 조건을 설명해 수식을 만듭니다.</small></h2>
 
   <div class="breath-lg"></div>
 
-  <p class="p-lead"><b>상황.</b> 미래엔 전사 AI 교육의 가상 신청 마감 직후, 150명의 신청 명단이 도착했습니다. 그런데 부서와 프로그램이
-  <b>코드로만</b> 적혀 있습니다. 오늘 안에 ① 코드를 이름으로 바꾸고 ② 1인당 <b>예상 지원금을 산정</b>하고
-  ③ <b>우선선발 대상을 판정</b>하고 ④ 프로그램별 신청 현황까지 집계해야 합니다. 손으로 하면 한나절 — 수식이면 몇 분입니다.</p>
+  <p class="p-lead">신청자 150명의 <b>코드를 이름으로 바꾸고, 지원금·우선선발·프로그램별 현황</b>을 수식으로 정리합니다.</p>
 
   <div class="resource">
     <div class="resource-icon"><span class="ri-emoji">📋</span><span class="ri-ext">XLSX</span></div>
@@ -530,104 +519,78 @@ svg { display: block; max-width: 100%; height: auto; }
   <div class="breath-sm"></div>
 
   <h3 class="h-lead">1-1 · 준비 — 데이터는 빼고, 구조만 넘긴다</h3>
-  <p class="p-lead">AI에게 수식을 시키려면 시트 구조를 알려줘야 합니다. 열 이름을 일일이 타이핑하는 대신 —
-  <b>데이터를 지우고 구조만 남긴 사본을 만들어 파일째 첨부</b>합니다. 실무에서 그대로 쓰는 요령입니다.</p>
+  <p class="p-lead">원본은 보관하고, <b>헤더와 가상 예시 한 행만 남긴 구조 파일</b>을 만들어 첨부합니다.</p>
 
   <ul class="num-steps">
-    <li>실습 파일을 열어 '신청자명단' 시트에서 <b>3행부터 아래 데이터를 모두 삭제</b>합니다 — 헤더(1행)와 <b>예시 1행(2행)</b>만 남깁니다.</li>
-    <li>부서코드표·프로그램표 시트는 코드 기준표이므로 그대로 둡니다.</li>
-    <li><b>파일 → 다른 이름으로 저장</b> → 「신청자명단_구조.xlsx」</li>
-    <li>ChatGPT에 이 <b>구조 파일을 첨부</b>합니다 — 이제 열 구조를 한 글자도 설명할 필요가 없습니다.</li>
+    <li>실습 파일을 열어 <b>다른 이름으로 저장</b> → 「신청자명단_구조.xlsx」</li>
+    <li>사본의 '신청자명단' 시트에서 <b>3행부터 아래 데이터를 삭제</b>합니다. 헤더(1행)와 가상 예시(2행)만 남깁니다.</li>
+    <li>부서코드표·프로그램표는 그대로 두고 저장합니다.</li>
+    <li>ChatGPT에 <b>구조 파일을 첨부</b>합니다. 받은 수식은 원본 파일에 적용합니다.</li>
   </ul>
 
   <div class="breath-sm"></div>
 
   <div class="info-box">
-    <strong>이 요령이 곧 보안 수칙입니다.</strong>
-    <p>실무 파일에는 이름·연락처 같은 개인정보가 들어 있어 통째로 올릴 수 없습니다.
-    <b>구조 사본을 넘기고 → 수식만 받아 → 원본에서 실행</b>하면, 데이터는 내 PC를 떠나지 않습니다.
-    예시 행이 필요하면 가짜 값 한 줄을 만들어 두면 됩니다.</p>
+    <strong>구조 파일에는 가상 값만.</strong>
+    <p>실무에 적용할 때는 예시 행과 코드표에도 실제 개인정보·기밀이 남아 있지 않은지 확인합니다.</p>
   </div>
 
   <div class="breath"></div>
 
   <h3 class="h-lead">1-2 · 첫 요청 — 원하는 결과만 말한다</h3>
-  <p class="p-lead">함수 이름은 말하지 않습니다. <b>"무엇을 채우고 싶은지"</b>만 말하면 — 함수는 AI가 고릅니다.</p>
+  <p class="p-lead"><b>채울 열과 참고할 표</b>를 알려주면 AI가 알맞은 함수를 제안합니다.</p>
 
   <div class="prompt-block">
     <div class="prompt-header">
       <span class="prompt-label">PROMPT 1 · 첫 요청 (구조 파일 첨부 후)</span>
-      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
     </div>
-    <div class="prompt-body">첨부한 파일은 미래엔 전사 AI 교육의 가상 신청자 명단에서 <span class="hl2">구조만 남긴 사본</span>이야. 부서는 편집·콘텐츠, 디자인, 디지털교육, 영업, 마케팅, 고객지원, 제작, 물류, 인사, 재무를 상정한 직무 예시야.
-실제 파일에는 신청자명단 시트 2행부터 151행까지 150명이 들어 있어.
-
-신청자명단 시트의 <span class="hl">부서명·프로그램명·교육시간</span> 열이 비어 있는데,
-각각 부서코드표 시트와 프로그램표 시트에서 코드에 맞는 값을 찾아와 채우고 싶어.
-
-세 열에 넣을 수식을 만들어줘. 그대로 붙여넣을 수 있게 해주고,
-각 수식이 어떤 원리로 동작하는지 <span class="hl2">한 줄씩 설명</span>도 붙여줘.</div>
+    <div class="prompt-body">첨부한 구조 파일을 보고, 신청자명단의 <span class="hl">부서명·프로그램명·교육시간</span>을 코드표에서 찾아오는 수식을 만들어줘.
+원본은 <span class="hl2">2~151행</span>이야. 2행에 넣고 아래로 채울 수식과 작동 원리를 한 줄씩 알려줘.</div>
   </div>
 
   <div class="breath-sm"></div>
 
   <div class="tip-box">
-    <strong>받은 수식은 2행에 붙여넣고, 채우기 핸들로 아래까지.</strong> 셀 오른쪽 아래 모서리를 더블클릭하면
-    151행까지 한 번에 채워집니다. 결과가 코드가 아니라 이름으로 바뀌는 순간을 확인하세요.
+    <strong>원본의 2행에 수식을 넣고 151행까지 채웁니다.</strong> 셀 오른쪽 아래 채우기 핸들을 더블클릭하고, 마지막 행까지 적용됐는지 확인합니다.
   </div>
 
   <div class="breath"></div>
 
-  <h3 class="h-lead">1-3 · 복합 산정 — 여러 정보를 조합해 결과치를 추산한다</h3>
-  <p class="p-lead">이제 진짜 실무형 수식입니다. 지원금은 <b>교육시간 × 시간당 단가 × 사전과제 제출 여부에 따른 지급률</b> —
-  두 시트의 정보와 조건 판단이 한 수식에 들어갑니다. 요령은 하나입니다: <b>"수식 줘"가 아니라, 지급 규칙을 조목조목 명시</b>합니다.</p>
+  <h3 class="h-lead">1-3 · 계산 규칙을 수식으로</h3>
+  <p class="p-lead"><b>교육시간 × 시간당 단가 × 지급률</b>처럼 계산 규칙을 구체적으로 알려줍니다.</p>
 
   <div class="prompt-block">
     <div class="prompt-header">
       <span class="prompt-label">PROMPT 2 · 복합 산정 (규칙 명시)</span>
-      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
     </div>
-    <div class="prompt-body">이번엔 <span class="hl">예상 지원금</span> 열을 채우자. 실습용 가상 지급 규칙은 이래.
-
-- 지원금 = 신청한 프로그램의 <span class="hl2">교육시간 × 그 프로그램의 시간당 지원단가</span>
-- 단, 사전과제 제출이 "Y"면 전액, "N"이면 <span class="hl2">절반만 지급</span>
-- 결과는 원 단위, 천 단위 구분기호가 보이게
-
-이 규칙대로 계산되는 수식을 만들어줘.
-수식만 주지 말고 <span class="hl2">계산 구조를 단계별로 설명</span>하고,
-내가 규칙을 애매하게 말한 부분이 있으면 지적해줘.</div>
+    <div class="prompt-body"><span class="hl">예상 지원금</span> 수식을 만들어줘.
+교육시간 × 프로그램표의 시간당 지원단가로 계산하고, <span class="hl2">사전과제 Y는 전액, N은 절반</span>이야.
+원 단위·천 단위 구분 표시 방법과 계산 과정을 짧게 설명해줘.</div>
   </div>
 
   <div class="breath-sm"></div>
 
   <div class="note-box">
-    <strong>이 수식이 하는 일을 사람이 하면</strong> — 신청자 1명마다 프로그램표를 찾아 단가를 확인하고,
-    사전과제 여부를 보고, 계산기를 두드립니다 × 150번. 수식은 이 판단 전체를 <b>규칙 한 줄</b>로 만든 것입니다.
-    "여러 표의 정보를 조건에 따라 조합해 값을 추산한다" — 사무 업무 수식의 본질입니다.
+    <strong>수식은 업무 규칙을 반복합니다.</strong> 기준표에서 값을 찾고, 조건을 판단하고, 계산하는 작업을 한 번에 처리합니다.
   </div>
 
   <div class="breath"></div>
 
   <h3 class="h-lead">1-4 · 검증과 디버깅 — AI도 틀린다</h3>
-  <p class="p-lead">결과를 그대로 믿지 않습니다. <b>아무 신청자 한 명을 골라 손으로 대조</b>해 보고 —
-  이상하면 그 자리에서 따집니다. 오늘 사례에서 <b>가장 중요한 지점</b>입니다.</p>
+  <p class="p-lead">신청자 한 명을 골라 <b>직접 계산한 값과 대조</b>합니다. 차이가 나면 사용한 수식과 조건을 알려주고 수정합니다.</p>
 
   <div class="prompt-block">
     <div class="prompt-header">
       <span class="prompt-label">PROMPT 3 · 디버깅 (결과가 이상할 때)</span>
-      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
     </div>
-    <div class="prompt-body">5행 신청자의 지원금이 이상해. 이 사람은 사전과제가 "N"인데 <span class="hl">전액으로 계산된 것 같아.</span>
-말이 되는지 검증하고, 문제가 있으면 원인 분석해서 제대로 된 수식 다시 줘.</div>
+    <div class="prompt-body">사전과제가 N인데 지원금이 전액으로 나와.
+현재 수식 <span class="hl2">[내가 사용한 수식]</span>을 확인하고, 절반으로 계산되도록 고쳐줘.</div>
   </div>
 
   <div class="breath-sm"></div>
 
   <div class="warn-box">
-    <strong>AI는 첫 답에서 곧잘 틀립니다.</strong> 절대 참조($)를 빠뜨리거나 범위를 잘못 잡는 일이 흔합니다.
-    <b>"결과가 이상하다 → 원인 분석해서 다시 줘"</b> 한 마디면 AI가 스스로 찾아 고칩니다.
-    수식이 아예 안 먹고 <b>#NAME?</b>가 뜨면 — "우리 엑셀에서 이 함수가 안 되는 것 같아. 같은 결과를 내는
-    다른 방법으로 다시 줘"라고 하세요. 버전 문제도 함수 이름을 몰라도 해결됩니다.
+    <strong>수정 후에도 다시 대조합니다.</strong> 참조 범위와 지급 조건을 확인하세요. <b>#NAME?</b>가 뜨면 엑셀 버전과 오류를 알려주고, 지원되는 함수로 바꿔 달라고 요청합니다.
   </div>
 
   <div class="breath"></div>
@@ -637,47 +600,34 @@ svg { display: block; max-width: 100%; height: auto; }
   <div class="prompt-block">
     <div class="prompt-header">
       <span class="prompt-label">PROMPT 4 · 판정 규칙 명시</span>
-      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
     </div>
-    <div class="prompt-body"><span class="hl">우선선발</span> 열을 채우자. 실습용 가상 판정 규칙은 이래.
-
-- 사전과제를 제출했고, <span class="hl2">그리고</span> 작년 이수시간이 20시간 미만인 사람만 "우선"
-- 나머지는 전부 "일반"
-  <span class="mute">(작년에 교육 기회를 적게 받은 사람에게 먼저 주는 규칙이야)</span>
-
-수식을 만들어줘. 두 조건이 <span class="hl2">모두</span> 맞아야 한다는 게 핵심이야.</div>
+    <div class="prompt-body"><span class="hl">우선선발</span> 수식을 만들어줘.
+<span class="hl2">사전과제 Y이면서 작년 이수시간이 20시간 미만</span>이면 “우선”, 나머지는 “일반”이야.</div>
   </div>
 
   <div class="breath"></div>
 
-  <h3 class="h-lead">1-6 · 조건 집계 — 데이터가 말을 하기 시작한다</h3>
+  <h3 class="h-lead">1-6 · 프로그램별 신청 현황 집계</h3>
 
   <div class="prompt-block">
     <div class="prompt-header">
       <span class="prompt-label">PROMPT 5 · 집계 표 완성</span>
-      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
     </div>
-    <div class="prompt-body">마지막으로 <span class="hl">'집계' 시트</span>의 프로그램별 현황 표를 채우자.
-비어 있는 세 칸 — <span class="hl2">신청 인원 · 정원 · 정원 대비 신청률(%)</span> — 에 넣을 수식을 만들어줘.
-
-완성되면, 어떤 프로그램이 <span class="hl2">정원을 초과</span>했는지도 알려줘.</div>
+    <div class="prompt-body"><span class="hl">집계</span> 시트의 프로그램별 <span class="hl2">신청 인원·정원·정원 대비 신청률(%)</span> 수식을 만들어줘.
+정원 초과 여부를 확인하는 방법도 알려줘.</div>
   </div>
 
   <div class="breath-sm"></div>
 
   <div class="info-box">
     <strong>집계가 끝나면 보이는 것.</strong>
-    <p>「AI 업무 기본」 신청 49명 vs 정원 30명 — <b>정원 대비 신청률 163.3%</b>, 정원보다 19명(63.3%) 많습니다.
-    1-5에서 만든 '우선선발' 판정이 왜 필요했는지, 데이터가 스스로 답합니다.
-    좋은 집계는 다음 의사결정(분반? 추가 개설?)의 근거가 됩니다.</p>
+    <p>「AI 업무 기본」은 신청 49명, 정원 30명으로 <b>신청률 163.3%</b>입니다. 정원보다 19명 많으므로 선발이나 분반을 검토할 수 있습니다.</p>
   </div>
 
   <div class="breath-sm"></div>
 
   <div class="tip-box">
-    <strong>학습 포인트 — 함수 이름은 끝까지 등장하지 않았습니다.</strong>
-    우리는 <b>"무엇을" + "어떤 조건으로"</b>만 말했습니다. 그리고 가장 중요한 것은 1-4의 감각 —
-    <b>수식은 한 건을 손으로 대조한 뒤에 씁니다.</b>
+    <strong>핵심은 결과와 조건입니다.</strong> 함수 이름을 몰라도 수식을 요청할 수 있습니다. 적용 전에는 한 건 이상 직접 대조합니다.
   </div>
 
   <div class="breath-sm"></div>
@@ -687,7 +637,7 @@ svg { display: block; max-width: 100%; height: auto; }
     <div class="sample-text">
       <div class="s-meta">Answer Example</div>
       <strong>실습 1 — 완성 예시</strong>
-      <p>모든 수식이 채워진 완성본입니다. 내 결과와 비교해 보세요 — 막혔다면 이 파일로 다음 사례로.</p>
+      <p>수식과 집계 결과를 내 파일과 비교해 보세요.</p>
     </div>
     <a class="sample-btn" href="업무자동화_자료/실습1_연수_신청자명단_완성예시.xlsx" download>완성본 받기</a>
   </div>
@@ -702,13 +652,11 @@ svg { display: block; max-width: 100%; height: auto; }
     <span class="mod-num">CASE 2</span>
     <span class="mod-time">ChatGPT 데이터 분석</span>
   </div>
-  <h2 class="mod-title">설문 72명, 파일째 던져서 분석한다<small>이번엔 수식조차 쓰지 않습니다. 파일을 통째로 맡기고, 분석 계획부터 차트·리포트까지 받아냅니다.</small></h2>
+  <h2 class="mod-title">설문 72건, 핵심 수치와 개선점 찾기<small>계획을 확인한 뒤 분석하고, 한 장 리포트로 정리합니다.</small></h2>
 
   <div class="breath-lg"></div>
 
-  <p class="p-lead"><b>상황.</b> 가상 전사 AI 교육이 끝나고 만족도 설문 72명 응답이 도착했습니다. 5점 척도 5문항에
-  자유 의견까지 — 내일까지 "그래서 어떻게 개선할 건지"를 보고해야 합니다.
-  CASE 1과 다른 점: 이번엔 엑셀을 열지 않습니다. <b>파일을 ChatGPT에 업로드하고 분석 자체를 위임</b>합니다.</p>
+  <p class="p-lead">만족도 응답 72건에서 <b>핵심 수치와 개선할 점</b>을 찾아 한 장으로 보고합니다.</p>
 
   <div class="resource">
     <div class="resource-icon"><span class="ri-emoji">📊</span><span class="ri-ext">XLSX</span></div>
@@ -722,27 +670,21 @@ svg { display: block; max-width: 100%; height: auto; }
 
   <div class="breath"></div>
 
-  <h3 class="h-lead">2-1 · 분석부터 시키지 않는다 — 계획을 먼저 합의</h3>
+  <h3 class="h-lead">2-1 · 데이터 확인과 분석 계획</h3>
 
   <div class="prompt-block">
     <div class="prompt-header">
       <span class="prompt-label">PROMPT 6 · 데이터 파악 + 분석 계획 (파일 첨부 후)</span>
-      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
     </div>
-    <div class="prompt-body"><span class="hl">[역할]</span> 너는 교육회사 임직원의 AI 교육 운영 데이터를 다루는 분석가다.
-<span class="hl">[맥락]</span> 첨부한 파일은 미래엔 전사 AI 업무역량 교육을 상정한 6개 과정의 가상 만족도 응답(72명)이다. AI 업무 기본·데이터 분석·사내 보고서·교육콘텐츠 검수·제작운영·고객응대 과정이며, 실제 미래엔 교육 성과가 아니다.
-내일 교육 운영 책임자에게 전 부문 임직원의 실습 경험과 개선 방향을 보고해야 한다.
-<span class="hl">[요청]</span> 아직 분석하지 마.
-1. 데이터 구조(열 구성·응답 수·척도)를 먼저 파악해서 요약해줘.
-2. 보고 목적에 맞는 <span class="hl2">분석 계획을 4단계 이내</span>로 제안해줘.
-3. 내가 "진행"이라고 하면 그때 순서대로 분석해줘.</div>
+    <div class="prompt-body">첨부한 교육 만족도 설문으로 운영 개선점을 보고하려고 해.
+먼저 <span class="hl2">열 구성·응답 수·척도를 확인</span>하고, 분석 계획을 4단계 안으로 제안해줘.
+내가 “진행”이라고 하면 분석을 시작해줘.</div>
   </div>
 
   <div class="breath-sm"></div>
 
   <div class="note-box">
-    <strong>왜 계획부터?</strong> 파일을 던지고 "분석해줘"만 하면 AI가 임의 방향으로 달립니다.
-    계획을 먼저 받고 다듬는 <b>10초의 합의</b>가 결과물의 방향을 결정합니다 — 사람에게 일을 맡길 때와 같습니다.
+    <strong>분석 방향부터 맞춥니다.</strong> 보고 목적에 필요한 분석인지 확인한 뒤 진행하세요.
   </div>
 
   <div class="breath"></div>
@@ -752,12 +694,9 @@ svg { display: block; max-width: 100%; height: auto; }
   <div class="prompt-block">
     <div class="prompt-header">
       <span class="prompt-label">PROMPT 7 · 문항별 · 과정별 분석</span>
-      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
     </div>
-    <div class="prompt-body">진행. 먼저 정량 분석부터.
-1. 문항별(Q1~Q5) 전체 평균을 표로 — <span class="hl2">가장 높은 문항과 가장 낮은 문항</span>이 뭔지 짚어줘.
-2. 과정별 전반 만족도(Q1) 평균을 <span class="hl2">막대 그래프</span>로 그려줘. (그래프 안 라벨이 깨지면 다시 그려줘)
-3. 표와 그래프에서 읽히는 특징을 3줄로 요약해줘. 수치 근거를 함께.</div>
+    <div class="prompt-body">진행해줘. <span class="hl2">Q1~Q5 평균은 표</span>로, 과정별 Q1 평균은 막대그래프로 보여줘.
+최고·최저 문항과 주요 특징을 수치 근거와 함께 3줄로 정리해줘.</div>
   </div>
 
   <div class="breath-sm"></div>
@@ -767,13 +706,9 @@ svg { display: block; max-width: 100%; height: auto; }
   <div class="prompt-block">
     <div class="prompt-header">
       <span class="prompt-label">PROMPT 8 · 자유 의견 분류</span>
-      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
     </div>
-    <div class="prompt-body">이번엔 '개선 의견(자유 기재)' 열을 분석해줘.
-1. 의견을 <span class="hl2">유형별로 분류</span>하고, 유형마다 건수와 대표 의견 1개씩 표로 정리해줘.
-2. 정량 결과(문항 점수)와 <span class="hl2">일치하는 신호</span>가 있는지 연결해서 해석해줘.
-   (예: 점수가 낮은 문항과 관련된 불만이 실제로 많은가?)
-<span class="hl">[제약]</span> 의견 원문에 없는 내용을 만들어내지 말 것.</div>
+    <div class="prompt-body"><span class="hl2">개선 의견(자유 기재)</span>을 유형별로 묶어 건수와 대표 의견을 표로 보여줘.
+문항 점수와 연결해 해석하되, 원문에 없는 내용은 만들지 마.</div>
   </div>
 
   <div class="breath-sm"></div>
@@ -783,20 +718,15 @@ svg { display: block; max-width: 100%; height: auto; }
   <div class="prompt-block">
     <div class="prompt-header">
       <span class="prompt-label">PROMPT 9 · 보고용 요약</span>
-      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
     </div>
-    <div class="prompt-body">지금까지의 가상 전사 AI 교육 분석을 교육 운영 책임자 보고용 <span class="hl2">한 장 요약</span>으로 정리해줘.
-<span class="hl">[구성]</span> ① 조사 개요(2줄) ② 핵심 수치(최고·최저 문항, 과정별 상·하위) ③ 자유 의견 유형(건수 포함)
-④ 진단(수치와 의견을 연결한 해석) ⑤ 개선 3대 과제(실행 가능한 수준으로)
-<span class="hl">[형식]</span> 개조식. 모든 주장에 수치 근거. 과장 표현 금지.</div>
+    <div class="prompt-body">분석 결과를 운영 책임자 보고용 <span class="hl2">한 장 요약</span>으로 정리해줘.
+조사 개요 → 핵심 수치 → 의견 유형·건수 → 진단 → 개선 과제 3개 순서로, 근거 수치를 넣어 짧게 써줘.</div>
   </div>
 
   <div class="breath-sm"></div>
 
   <div class="tip-box">
-    <strong>검증 — 한 개는 직접 확인.</strong> AI가 낸 평균 중 하나(예: 전반 만족도)를 엑셀에서
-    <b>AVERAGE 함수로 직접 대조</b>해 보세요. CASE 1의 기술이 곧 CASE 2의 검증 도구가 됩니다.
-    맡기는 사람일수록, 표본 검증하는 습관이 필요합니다.
+    <strong>평균 한 개는 직접 확인합니다.</strong> 전반 만족도 평균을 엑셀의 <b>AVERAGE 함수로 대조</b>하고, 표와 그래프의 수치도 확인합니다.
   </div>
 </section>
 
@@ -963,20 +893,16 @@ svg { display: block; max-width: 100%; height: auto; }
     <span class="mod-num">CASE 4</span>
     <span class="mod-time">구글 폼 + 앱스 스크립트</span>
   </div>
-  <h2 class="mod-title">내가 없어도 돌아가는 시스템을 만든다<small>다음 전사 AI 교육 접수 준비 — 신청이 들어오면 접수 확인 메일이 자동으로 나갑니다. 퇴근 후에도, 주말에도.</small></h2>
+  <h2 class="mod-title">신청하면 안내 메일이 자동으로<small>구글 폼과 Apps Script를 연결해 접수 안내를 자동화합니다.</small></h2>
 
   <div class="breath-lg"></div>
 
-  <p class="p-lead"><b>상황.</b> 다음 전사 AI 교육 접수가 시작됩니다. 지금까지는 신청을 확인하고 한 명 한 명
-  접수 안내 메일을 보냈습니다. 오늘 실습에서는 본인 테스트 주소만 사용합니다. 만드는 것은 파일이 아니라 <b>시스템</b>입니다 —
-  구글 폼으로 신청을 받고, 제출되는 <b>순간</b> 확인 메일이 자동 발송되게 합니다.
-  CASE 3과의 차이: VBA는 내가 실행 버튼을 눌러야 하지만, 이번 것은 <b>스스로 실행</b>됩니다.</p>
+  <p class="p-lead">교육 신청이 들어오면 <b>접수 확인 메일이 자동 발송</b>되게 만듭니다. 본인 이메일과 가상 이름으로 테스트합니다.</p>
 
   <div class="breath-sm"></div>
 
   <div class="note-box">
-    <strong>개념은 이 한 줄이면 충분합니다 — Apps Script는 VBA의 구글판입니다.</strong>
-    폼·시트·Gmail·드라이브를 코드로 움직이며, 결정적 차이는 <b>트리거</b>: 조건이 갖춰지면 <b>스스로 실행</b>됩니다.
+    <strong>Apps Script는 구글 업무 도구를 연결하는 코드입니다.</strong> <b>트리거</b>를 설정하면 폼 제출 같은 조건이 생겼을 때 자동으로 실행됩니다.
   </div>
 
   <div class="breath"></div>
@@ -984,10 +910,8 @@ svg { display: block; max-width: 100%; height: auto; }
   <h3 class="h-lead">4-1 · 신청 폼 만들기</h3>
   <ul class="num-steps">
     <li><b>forms.google.com</b> 접속 → 새 양식 → 제목 「실습용_미래엔 전사 AI 교육 신청」</li>
-    <li>아래 <b>문항 3개</b>를 만듭니다 (복사해서 쓰세요). 이메일 문항에는 <b>⋮ → 응답 확인 → 텍스트 → 이메일 주소</b>를 걸어 오타를 차단합니다</li>
-    <li><b>설정 탭 → 응답</b>에서 세 가지를 확인합니다: <b>이메일 주소 수집 = "수집 안 함"</b> ·
-      <b>응답 횟수 1회로 제한 = 해제</b> · (회사 계정 폼이면) <b>조직 사용자로 제한 = 해제</b>
-      — 켜져 있으면 응답자에게 <b>구글 로그인이 강제</b>됩니다</li>
+    <li>아래 <b>문항 3개</b>를 만듭니다. 이메일 문항은 <b>응답 확인 → 텍스트 → 이메일 주소</b>로 형식을 검사합니다</li>
+    <li><b>이메일 주소 자동 수집은 사용하지 않고</b> 아래 이메일 문항으로 입력받습니다. 폼의 응답 권한에 본인 테스트 계정이 포함돼 있는지 확인합니다</li>
     <li>응답 탭 → <b>Sheets에 연결</b> — 응답이 쌓일 스프레드시트가 만들어집니다</li>
   </ul>
 
@@ -995,8 +919,7 @@ svg { display: block; max-width: 100%; height: auto; }
 
   <div class="prompt-block">
     <div class="prompt-header">
-      <span class="prompt-label">폼 문항 (복사용)</span>
-      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+      <span class="prompt-label">폼에 직접 만들 문항</span>
     </div>
     <div class="prompt-body">1. 성명 — 단답형
 2. 이메일 — 단답형
@@ -1008,7 +931,7 @@ svg { display: block; max-width: 100%; height: auto; }
   <h3 class="h-lead">4-2 · 자동 회신 스크립트 받기</h3>
   <ul class="num-steps">
     <li>연결된 스프레드시트 열기 → 메뉴 <b>확장 프로그램 → Apps Script</b></li>
-    <li>열린 편집기의 기존 내용을 지우고, 아래 프롬프트로 받은 코드를 <b>붙여넣기 → 저장(💾)</b></li>
+    <li>새 프로젝트에 아래 요청으로 받은 코드를 <b>붙여넣기 → 저장</b></li>
   </ul>
 
   <div class="breath-sm"></div>
@@ -1016,91 +939,72 @@ svg { display: block; max-width: 100%; height: auto; }
   <div class="prompt-block">
     <div class="prompt-header">
       <span class="prompt-label">PROMPT 13 · 앱스 스크립트 요청</span>
-      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
     </div>
-    <div class="prompt-body"><span class="hl">[상황]</span> 구글 폼 「실습용_미래엔 전사 AI 교육 신청」의 응답이 구글 시트에 쌓인다.
-시트 열 구성: A타임스탬프, B성명, C이메일, D희망 과정
-<span class="hl">[요청]</span> 구글 Apps Script 코드를 짜줘.
-- <span class="hl2">폼이 제출될 때마다</span> 실행되어, <span class="hl2">'이메일' 문항에 입력된 주소</span>로 접수 확인 메일을 보낸다.
-  (응답자의 구글 로그인 계정이 아니라, 문항으로 직접 입력받은 값이다)
-- 열 번호로 읽지 말고 <span class="hl2">문항 이름으로 값을 읽게</span> 해줘. 열이 밀려도 동작해야 한다.
-- 메일 제목: [실습용·미래엔 AI 교육] 신청이 접수되었습니다
-- 메일 본문: "OOO님, 실습용 미래엔 전사 AI 교육 '희망 과정' 신청이 접수되었습니다. 이 메일은 교육 실습용 안내이며 실제 교육 신청이 아닙니다."
-  형식으로, 성명과 희망 과정을 <span class="hl2">응답 값에서 가져와</span> 채워줘.
-- 트리거를 걸기 전에 <span class="hl2">권한 승인용으로 손으로 한 번 실행해 볼 테스트 함수</span>
-  (나에게 테스트 메일 1통 발송)도 함께 넣어줘.
-<span class="hl">[조건]</span> 나는 코드를 모른다. 코드와 함께 ① 붙여넣기·저장 ② 테스트 함수 실행과 권한 승인
-③ <span class="hl2">'양식 제출 시' 트리거 설정</span>의 순서를 초보자 기준 클릭 단위로 알려줘.</div>
+    <div class="prompt-body">구글 폼 응답 시트용 Apps Script를 만들어줘.
+<span class="hl2">성명·이메일·희망 과정</span> 문항 이름으로 값을 읽어, 폼 제출 시 입력된 이메일로 접수 확인 메일을 보내줘.
+제목은 “[실습용·미래엔 AI 교육] 접수 확인”, 본문에는 성명·희망 과정과 “교육 실습용이며 실제 신청이 아닙니다”를 넣어줘.
+<span class="hl2">내가 지정한 테스트 주소로 한 통 보내는 테스트 함수</span>도 만들고, 코드 저장 → 권한 승인 → 양식 제출 시 트리거 설정 순서로 알려줘.</div>
   </div>
 
   <div class="breath"></div>
 
-  <h3 class="h-lead">4-3 · 권한 승인 — 트리거보다 먼저, 손으로 한 번 실행</h3>
-  <p class="p-lead">자동화가 내 Gmail로 메일을 보내려면 <b>권한 허락이 한 번</b> 필요합니다.
-  트리거를 걸기 전에 <b>테스트 함수를 수동 실행</b>해 승인 절차를 먼저 끝내는 것이 실무 순서입니다.</p>
+  <h3 class="h-lead">4-3 · 테스트 함수 실행과 권한 승인</h3>
+  <p class="p-lead">트리거 연결 전에 <b>테스트 함수를 실행해 필요한 권한을 승인</b>합니다.</p>
 
   <ul class="num-steps">
+    <li>코드의 <b>테스트 주소를 내 이메일로 바꾸고 저장</b>합니다.</li>
     <li>편집기 상단에서 <b>테스트 함수</b>(AI가 만들어 준 것)를 선택 → <b>▶ 실행</b> 클릭</li>
     <li><b>「권한 검토」</b> 창이 뜹니다 → 내 구글 <b>계정 선택</b></li>
-    <li><b>"Google에서 확인하지 않은 앱"</b> 경고가 나옵니다 — 내가 방금 만든 스크립트라서 뜨는 <b>정상 화면</b>입니다
-      → <b>고급</b> → <b>"(프로젝트 이름)(안전하지 않음)으로 이동"</b> 클릭</li>
-    <li>요청 권한을 읽어봅니다 — <b>"내 Gmail로 이메일 보내기"</b>, 이 스크립트가 요구하는 전부입니다 → <b>허용</b>
-      <span style="color:var(--lt); font-size:13px;">(승인은 스크립트마다 처음 한 번뿐입니다 — 무엇을 허용하는지 읽고 누르는 습관이 중요합니다)</span></li>
+    <li>미확인 앱 안내가 나오면 <b>본인이 만든 프로젝트인지 확인</b>합니다. 진행이 허용된 계정에서는 고급 메뉴에서 프로젝트로 이동합니다</li>
+    <li><b>메일 발송 등 요청 권한을 확인</b>하고 승인합니다. 필요한 권한은 AI가 만든 코드에 따라 달라집니다</li>
     <li>받은편지함에 <b>테스트 메일이 도착</b>했으면 권한 완료 — 이제 자동화를 걸 수 있습니다</li>
   </ul>
 
   <div class="breath-sm"></div>
 
   <div class="warn-box">
-    <strong>회사 구글 계정에서 승인이 막히면</strong> — 조직 보안 정책 때문일 수 있습니다.
-    개인 구글 계정으로 전환해 같은 순서로 진행하세요. (오늘 실습은 더미 신청 데이터만 사용합니다)
+    <strong>계정 정책으로 실행이 막히면</strong> 강사가 안내한 실습용 계정과 가상 자료로 진행합니다. 회사 계정의 제한을 임의로 바꾸지 않습니다.
   </div>
 
   <div class="breath"></div>
 
-  <h3 class="h-lead">4-4 · 트리거 연결 — 이 클릭이 오늘의 하이라이트</h3>
+  <h3 class="h-lead">4-4 · 양식 제출 시 트리거 연결</h3>
   <ul class="num-steps">
     <li>편집기 왼쪽 <b>⏰ 트리거</b> 메뉴 → 오른쪽 아래 <b>트리거 추가</b></li>
     <li>실행할 함수 = <b>폼 제출 처리 함수</b>(테스트 함수 아님) → 이벤트 소스 <b>스프레드시트에서</b> → 이벤트 유형 <b>양식 제출 시</b> → 저장</li>
-    <li>저장되면 목록에 트리거 한 줄이 생깁니다 — 이 한 줄이 "신청이 들어오면 실행하라"는 <b>예약</b>입니다</li>
+    <li>목록에서 <b>선택한 함수와 이벤트 유형</b>을 확인합니다</li>
   </ul>
 
   <div class="breath"></div>
 
-  <h3 class="h-lead">4-5 · 실전 테스트 — 그리고 안 될 때의 해결 순서</h3>
+  <h3 class="h-lead">4-5 · 폼 제출로 작동 확인하기</h3>
   <ul class="num-steps">
-    <li>폼 링크를 <b>시크릿 창(로그아웃 상태)</b>에서 열어봅니다 — 로그인 요구 없이 바로 응답 화면이 보여야 정상입니다
-      (로그인을 요구하면 4-1의 설정 세 가지를 다시 확인)</li>
+    <li>폼의 <b>응답자 링크</b>를 열어 테스트 계정으로 응답할 수 있는지 확인합니다</li>
     <li>그 상태로 <b>내 이메일을 입력해 신청</b>을 제출합니다 — 입력한 주소로 메일이 와야 합니다</li>
     <li>받은편지함 확인 — 접수 확인 메일에 <b>내 성명과 희망 과정</b>이 채워져 있는지 봅니다 (안 보이면 <b>스팸함</b>도 확인)</li>
     <li>메일이 안 오면: 편집기 왼쪽 <b>실행 기록</b> 메뉴 → 실패한 실행을 클릭 → <b>오류 메시지를 복사해 AI에게</b> "이 오류 고쳐줘"</li>
-    <li>수정한 코드로 저장 → 다시 폼 제출 → 될 때까지 이 반복이 곧 실무입니다</li>
+    <li>수정 코드를 저장하고 다시 제출해 확인합니다. 실습 후에는 테스트 트리거를 삭제합니다</li>
   </ul>
 
   <div class="breath-sm"></div>
 
   <div class="warn-box">
-    <strong>헷갈리기 쉬운 두 가지.</strong>
-    ① 편집기의 <b>배포(Deploy) 버튼은 누르지 않습니다</b> — 배포는 웹앱 공개용 기능이고, 폼 자동화는 트리거만 있으면 됩니다.
-    ② <b>"실행 완료"는 자동화 완성이 아닙니다</b> — 수동 실행에 성공했다는 뜻일 뿐, ⏰ 트리거 목록에
-    '양식 제출 시' 한 줄이 있어야 스스로 돕니다.
+    <strong>완료 기준은 실제 메일 수신입니다.</strong> 이 실습은 별도 배포 없이 <b>스프레드시트의 '양식 제출 시' 트리거</b>로 동작합니다. 폼을 제출하고 결과를 확인하세요.
+    <a href="https://developers.google.com/apps-script/guides/triggers/installable" target="_blank" rel="noopener">트리거 도움말</a>
   </div>
 
   <div class="breath"></div>
 
   <div class="spotlight">
     <div class="sp-eyebrow">방금 만든 것</div>
-    <div class="sp-headline">지금 이 순간부터, 이 업무는<br><em>내가 없어도</em> 돌아갑니다</div>
-    <div class="sp-detail">메일이 도착했다면 — 여러분은 방금 <b>트리거(자동 실행 조건)</b>가 걸린 시스템을 만들었습니다.
-    누가 언제 신청하든, 여러분이 회의 중이든 퇴근했든, 접수 안내는 나갑니다.
-    "실행 버튼을 누르는 나"까지 사라진 것 — 이것이 자동화의 완성형입니다.</div>
+    <div class="sp-headline">제출이 곧 <em>실행 조건</em></div>
+    <div class="sp-detail">직접 버튼을 누르는 작업에서, 조건이 생기면 자동으로 실행되는 작업으로 바뀌었습니다.</div>
   </div>
 
   <div class="breath-sm"></div>
 
   <div class="note-box">
-    <strong>확장 아이디어.</strong> 같은 방법으로 "매주 월요일 아침, 지난주 접수 현황을 나에게 요약 메일로" 같은
-    <b>시간 기반 트리거</b>도 걸 수 있습니다 — 트리거 유형에서 '시간 기반'을 고르면 됩니다.
+    <strong>확장 아이디어.</strong> '시간 기반' 트리거를 선택하면 접수 현황 요약처럼 정기적으로 실행할 업무도 만들 수 있습니다.
   </div>
 </section>
 
@@ -1113,14 +1017,11 @@ svg { display: block; max-width: 100%; height: auto; }
     <span class="mod-num">CASE 5</span>
     <span class="mod-time">시각화 도구 3종</span>
   </div>
-  <h2 class="mod-title">분석 결과를, 보고 장표로<small>숫자와 글로 가득한 분석 요약을 — 도식·인포그래픽·슬라이드로 바꿉니다. 도구마다 잘하는 것이 다릅니다.</small></h2>
+  <h2 class="mod-title">분석 결과를 보고 장표로<small>같은 분석 요약을 도식·인포그래픽·슬라이드로 바꿉니다.</small></h2>
 
   <div class="breath-lg"></div>
 
-  <p class="p-lead"><b>상황.</b> CASE 2에서 마친 가상 전사 AI 교육 만족도 분석 — 이제 교육 운영 책임자 보고만 남았습니다.
-  줄글 요약을 읽게 하는 것과 장표 한 장을 보여주는 것 — 전달력의 차이는 결재선에서 갈립니다.
-  이번에 넘기는 것은 <b>'그리는 손'</b>입니다: 만들기는 AI가, 구성과 사실 확인은 내가 합니다.
-  <span style="color:var(--lt)">(CASE 2를 건너뛰었어도 아래 시작 파일로 바로 시작할 수 있습니다)</span></p>
+  <p class="p-lead">CASE 2의 분석 요약으로 <b>보고 장표를 만듭니다.</b> AI가 만든 화면의 구성과 수치를 확인합니다. 아래 파일로 바로 시작해도 됩니다.</p>
 
   <div class="resource">
     <div class="resource-icon"><span class="ri-emoji">📝</span><span class="ri-ext">MD</span></div>
@@ -1151,7 +1052,7 @@ svg { display: block; max-width: 100%; height: auto; }
     </thead>
     <tbody>
       <tr><td><b>Napkin AI</b></td><td>텍스트 → 비즈니스 도식 자동 변환</td><td>개선 3대 과제 체계도 (5-1)</td></tr>
-      <tr><td><b>NotebookLM</b></td><td>자료 기반 인포그래픽 — 지어내지 않음</td><td>조사 결과 한 장 요약 (5-2)</td></tr>
+      <tr><td><b>NotebookLM</b></td><td>첨부 자료를 바탕으로 요약·시각화</td><td>조사 결과 한 장 요약 (5-2)</td></tr>
       <tr class="hl"><td><b>Claude</b></td><td>보고 슬라이드를 화면에서 바로 만들고, 대화로 수정</td><td>교육 운영 책임자 보고 슬라이드 5장 (5-3 · 집중)</td></tr>
     </tbody>
   </table>
@@ -1167,11 +1068,11 @@ svg { display: block; max-width: 100%; height: auto; }
 
   <div class="breath"></div>
 
-  <h3 class="h-lead">5-2 · NotebookLM — 자료가 시키는 대로만 그리는 도구</h3>
+  <h3 class="h-lead">5-2 · NotebookLM — 자료 기반 인포그래픽</h3>
   <ul class="num-steps">
     <li><b>notebooklm.google.com</b> → 새 노트북 → 소스 추가 → 분석 요약 파일 <b>업로드</b></li>
     <li><b>인포그래픽</b>(또는 마인드맵) 생성 → 조사 개요·핵심 수치·과제가 한 장으로 정리됩니다</li>
-    <li>다운로드해 보관 — 소스에 없는 내용은 만들지 않는 것이 이 도구의 강점입니다</li>
+    <li>원문과 <b>수치·표현을 대조</b>한 뒤 다운로드합니다</li>
   </ul>
 
   <div class="breath"></div>
@@ -1179,7 +1080,7 @@ svg { display: block; max-width: 100%; height: auto; }
   <h3 class="h-lead">5-3 · Claude — 보고 슬라이드를 대화로 (집중 실습)</h3>
   <ul class="num-steps">
     <li><b>claude.ai</b> 접속 → 새 대화 → 분석 요약 파일 <b>첨부</b></li>
-    <li>아래 프롬프트 입력 → 화면 오른쪽에 슬라이드가 <b>즉시 렌더링</b>됩니다</li>
+    <li>아래 프롬프트 입력 → 생성된 <b>HTML 화면 확인</b></li>
     <li>이어서 수정 요청을 대화로 — 만들고 → 보고 → 고치는 반복</li>
   </ul>
 
@@ -1188,13 +1089,10 @@ svg { display: block; max-width: 100%; height: auto; }
   <div class="prompt-block">
     <div class="prompt-header">
       <span class="prompt-label">PROMPT 14 · 보고 슬라이드 생성 (Claude)</span>
-      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
     </div>
-    <div class="prompt-body">첨부한 미래엔 전사 AI 교육의 가상 만족도 분석 요약으로 <span class="hl2">교육 운영 책임자 보고용 슬라이드 5장</span>을 HTML로 만들어 화면에 보여줘.
-<span class="hl">[구성]</span> ① 표지 ② 조사 개요와 핵심 수치 ③ 자유 의견 분석 ④ 진단 ⑤ 개선 3대 과제
-<span class="hl">[디자인]</span> 차분한 네이비 기조, 회사 보고 문서 톤, 장식보다 가독성.
-숫자는 크게, 문장은 개조식으로 짧게.
-<span class="hl">[제약]</span> 요약에 없는 수치·내용을 추가하지 말 것. 실제 미래엔 조직·교육제도·성과가 아닌 실습용 가상 분석이라는 안내를 표지에 표시할 것.</div>
+    <div class="prompt-body">첨부한 분석 요약으로 <span class="hl2">보고 슬라이드 5장</span>을 HTML로 만들어 보여줘.
+표지 → 조사 개요·핵심 수치 → 자유 의견 → 진단 → 개선 과제 순서야.
+차분한 파란색, 큰 숫자, 짧은 문장으로 구성해줘. 자료에 없는 내용은 추가하지 말고, 표지에 “교육용 가상 분석”을 표시해줘.</div>
   </div>
 
   <div class="breath-sm"></div>
@@ -1202,19 +1100,15 @@ svg { display: block; max-width: 100%; height: auto; }
   <div class="prompt-block">
     <div class="prompt-header">
       <span class="prompt-label">PROMPT 15 · 대화로 수정 (예시)</span>
-      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
     </div>
-    <div class="prompt-body">좋아. 두 가지만 고치자.
-- 2장의 핵심 수치를 문장 대신 <span class="hl2">숫자 카드 4개</span>로 보여줘 (전반 4.0 / 실무 적용 4.3 / 환경 3.1 / 응답 72명)
-- 5장의 개선 과제에 각각 <span class="hl2">담당·시기 한 줄</span>씩 추가해줘 (실제 조직·일정으로 단정하지 말고 실습용 제안임을 표시한다)</div>
+    <div class="prompt-body">2장에 <span class="hl2">전반 4.0·실무 적용 4.3·환경 3.1·응답 72명</span>을 숫자 카드로 보여줘.
+5장에는 과제별 담당·시기를 한 줄씩 제안하고, “실습용 제안”으로 표시해줘.</div>
   </div>
 
   <div class="breath-sm"></div>
 
   <div class="tip-box">
-    <strong>도구 선택의 감.</strong> 급한 도식 한 개는 <b>Napkin</b>, 자료 요약 한 장은 <b>NotebookLM</b>,
-    구성부터 디자인까지 손보는 보고 슬라이드는 <b>Claude</b>.
-    셋 다 원본은 같은 텍스트였습니다 — <b>정리된 글이 모든 시각화의 출발점</b>입니다.
+    <strong>정리된 글이 시각화의 출발점입니다.</strong> 도식은 Napkin, 자료 요약은 NotebookLM, 구성과 디자인을 함께 수정할 때는 Claude를 활용해 봅니다.
   </div>
 </section>
 
@@ -1227,7 +1121,7 @@ svg { display: block; max-width: 100%; height: auto; }
     <span class="mod-num">마무리</span>
     <span class="mod-time">오늘의 정리 · 다음 여정</span>
   </div>
-  <h2 class="mod-title">오늘 만든 다섯 가지, 그리고 한 가지 질문<small>다섯 사례를 완주했습니다. 책상 위에 남은 것을 세어 봅니다.</small></h2>
+  <h2 class="mod-title">내 업무에 적용하기<small>오늘 만든 결과를 돌아보고, 자동화할 업무 하나를 고릅니다.</small></h2>
 
   <div class="breath-lg"></div>
 
@@ -1258,40 +1152,31 @@ svg { display: block; max-width: 100%; height: auto; }
 
   <div class="spotlight">
     <div class="sp-eyebrow">한 가지 질문</div>
-    <div class="sp-headline">다섯 도구 사이를 오가며<br>지휘한 것은 — 아직 <em>나</em>였습니다</div>
-    <div class="sp-detail">파일을 내려받아 옮기고, 결과를 복사해 넘기고, 도구를 바꿔 열었습니다.
-    만약 이 전체 — 명단 정리부터 분석·명세서·메일·보고 화면까지 — 를 <b>한 자리에서 알아서 처리하는 동료</b>가 있다면?
-    다음 여정의 주제는 그 동료, <b>AI 에이전트</b>입니다. 여러분의 실제 업무 하나를 자동화 시스템으로 만들고, 웹에 배포하는 것까지 갑니다.</div>
+    <div class="sp-headline">다음은, 여러 단계를 연결하는<br><em>AI 에이전트</em></div>
+    <div class="sp-detail">오늘은 도구별로 작업을 맡겼습니다. 다음 여정에서는 내 업무의 여러 단계를 연결해 자동화 프로젝트로 만듭니다.</div>
   </div>
 
   <div class="breath"></div>
 
-  <h3 class="h-lead">자동화 과제 카드 — 다음 여정의 내 프로젝트 정하기</h3>
-  <p class="p-lead">오늘 배운 눈으로 <b>내 업무 하나</b>를 고릅니다. 아래 카드를 채워 보세요 —
-  이 카드가 다음 여정에서 <b>여러분이 직접 만들 자동화 프로젝트의 주제</b>가 됩니다.</p>
+  <h3 class="h-lead">자동화 과제 카드</h3>
+  <p class="p-lead"><b>자동화하고 싶은 내 업무 하나</b>를 골라 아래 항목을 적습니다.</p>
 
   <div class="prompt-block">
     <div class="prompt-header">
-      <span class="prompt-label">자동화 과제 카드 (복사해서 작성)</span>
-      <button class="copy-btn" onclick="copyPrompt(this)">복사</button>
+      <span class="prompt-label">내 업무를 떠올리며 작성</span>
     </div>
-    <div class="prompt-body">■ 나의 자동화 과제 카드
-
-1. 업무 이름: <span class="hl2">(예: 교육콘텐츠 검수 의견 취합 / 교사·학부모 문의 분류 / 제작 일정 현황 보고)</span>
-2. 반복 주기: <span class="hl2">(매일 / 매주 / 매월 / 수시)</span>
-3. 들어오는 것(입력): <span class="hl2">(예: 교재별 검수표, 익명 문의 목록, 제작·물류 현황 엑셀 …)</span>
-4. 하는 일(처리): <span class="hl2">(예: 취합 → 형식 통일 → 집계 → 요약)</span>
-5. 나가는 것(출력): <span class="hl2">(예: 검수 요약표, 고객문의 답변 초안, 제작 일정 보고서 …)</span>
-6. 가장 귀찮은 지점: <span class="hl2">(예: 교재마다 검수표 형식이 달라 항목을 다시 맞추는 작업)</span>
-7. 오늘 배운 것 중 써먹을 수 있어 보이는 것: <span class="hl2">(CASE 번호로)</span></div>
+    <div class="prompt-body">업무 이름: <span class="hl2">예) 주간 업무 보고</span>
+반복 주기: <span class="hl2">매일 / 매주 / 매월</span>
+입력 → 처리 → 출력: <span class="hl2">예) 팀별 자료 → 취합·요약 → 보고서</span>
+가장 줄이고 싶은 작업:
+활용할 도구 또는 CASE 번호:</div>
   </div>
 
   <div class="breath-sm"></div>
 
   <div class="info-box">
     <strong>카드를 고르는 기준.</strong>
-    <p>거창할 필요 없습니다 — <b>자주 반복되고 · 규칙이 분명하고 · 입출력이 파일이나 메일인 업무</b>가 최고의 후보입니다.
-    오늘의 다섯 사례가 전부 그랬습니다.</p>
+    <p><b>자주 반복되고, 규칙이 분명하며, 입력과 출력이 있는 업무</b>부터 고릅니다.</p>
   </div>
 
   <div class="breath-lg"></div>
@@ -1317,7 +1202,7 @@ svg { display: block; max-width: 100%; height: auto; }
   <a class="prev-page-btn" href="index.html">
     <div class="prev-page-meta">Page 1 · 프롬프트 엔지니어링</div>
     <div class="prev-page-title">프롬프트 엔지니어링 다시 보기</div>
-    <div class="prev-page-desc">모든 자동화의 출발점은 좋은 프롬프트입니다. 개념이 흐릿해지면 언제든 Page 1로 돌아가세요.</div>
+    <div class="prev-page-desc">지시·맥락·예시를 다시 확인합니다.</div>
   </a>
 </div>
 
@@ -1364,6 +1249,18 @@ if(hamburger){
 if(overlay){
   overlay.addEventListener('click', function(){ sidebar.classList.remove('open'); overlay.classList.remove('show'); });
 }
+sidebar.addEventListener('click', function(event){
+  if(event.target.closest('a')){
+    sidebar.classList.remove('open');
+    overlay.classList.remove('show');
+  }
+});
+document.addEventListener('keydown', function(event){
+  if(event.key === 'Escape'){
+    sidebar.classList.remove('open');
+    overlay.classList.remove('show');
+  }
+});
 
 /* 스크롤 스파이 */
 var sidebarLinks = Array.from(document.querySelectorAll('.sidebar-nav a[href^="#"]'));
@@ -1397,4 +1294,3 @@ onScroll();
 </script>
 </body>
 </html>
-
