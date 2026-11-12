@@ -375,6 +375,26 @@ svg { display: block; max-width: 100%; height: auto; }
   .module { padding: 36px 16px; }
   .hero { padding: 36px 18px; }
 }
+/* ── 페이지 이동 (OT · 1페이지 · 2페이지) ── */
+.page-switch { padding: 14px 14px 13px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.page-switch .ps-top { display: flex; justify-content: space-between; align-items: center; margin: 0 6px 9px; }
+.page-switch .ps-cap { font-size: 10px; font-weight: 700; letter-spacing: 1px; color: var(--p2); text-transform: uppercase; }
+.page-switch .ps-home { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.55); text-decoration: none; }
+.page-switch .ps-home:hover { color: var(--p2); }
+.page-switch .ps-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.ps-btn {
+  display: block; text-align: center; padding: 9px 2px 8px;
+  border: 1px solid rgba(255,255,255,0.16); border-radius: 8px;
+  background: rgba(255,255,255,0.04); text-decoration: none;
+  transition: background .15s, border-color .15s;
+}
+.ps-btn .ps-no { display: block; font-size: 10px; font-weight: 700; letter-spacing: .3px; color: rgba(255,255,255,0.5); }
+.ps-btn .ps-kw { display: block; font-size: 12.5px; font-weight: 700; color: rgba(255,255,255,0.88); margin-top: 3px; letter-spacing: -.01em; }
+.ps-btn:hover { border-color: var(--p2); background: rgba(243,111,33,0.14); }
+.ps-btn.on { background: var(--p); border-color: var(--p); box-shadow: 0 4px 12px rgba(243,111,33,0.35); }
+.ps-btn.on .ps-no { color: #FFE3CC; }
+.ps-btn.on .ps-kw { color: #FFF; }
+/* ── /페이지 이동 ── */
 </style>
 </head>
 <body>
@@ -387,12 +407,22 @@ svg { display: block; max-width: 100%; height: auto; }
     <div class="sidebar-badge">HRD · 기본 교안 · PAGE 2</div>
     <div class="sidebar-title">AI 실무 활용교육<br><em>업무자동화[엑셀편]</em></div>
   </div>
+  <!-- page-switch -->
+  <div class="page-switch" role="navigation" aria-label="페이지 이동">
+    <div class="ps-top"><span class="ps-cap">Pages</span><a class="ps-home" href="index.html">교안 홈</a></div>
+    <div class="ps-row">
+      <a class="ps-btn" href="교안_기본_AI 실무 활용교육_오리엔테이션.html"><span class="ps-no">OT</span><span class="ps-kw">개요</span></a>
+      <a class="ps-btn" href="교안_기본_AI 실무 활용교육_프롬프트 엔지니어링.html"><span class="ps-no">1페이지</span><span class="ps-kw">프롬프트</span></a>
+      <a class="ps-btn on" aria-current="page" href="교안_기본_AI 실무 활용교육_업무자동화_엑셀편.html"><span class="ps-no">2페이지</span><span class="ps-kw">자동화</span></a>
+    </div>
+  </div>
+  <!-- /page-switch -->
   <div class="sidebar-nav">
     <div class="nav-module">Page 1 · 프롬프트 엔지니어링</div>
-    <a href="index.html#p2">PART 02 · 프롬프트 기본</a>
-    <a href="index.html#p3">PART 03 · 심층리서치</a>
-    <a href="index.html#p5">PART 05 · 마스터프롬프트</a>
-    <a href="index.html#p8">PART 08 · GPTs 자산화</a>
+    <a href="교안_기본_AI 실무 활용교육_프롬프트 엔지니어링.html#p2">PART 02 · 프롬프트 기본</a>
+    <a href="교안_기본_AI 실무 활용교육_프롬프트 엔지니어링.html#p3">PART 03 · 심층리서치</a>
+    <a href="교안_기본_AI 실무 활용교육_프롬프트 엔지니어링.html#p5">PART 05 · 마스터프롬프트</a>
+    <a href="교안_기본_AI 실무 활용교육_프롬프트 엔지니어링.html#p8">PART 08 · GPTs 자산화</a>
     <div class="nav-module" style="margin-top:8px;">Page 2 · 업무자동화[엑셀편]</div>
     <a href="#s0">오늘의 지도</a>
     <a href="#s1">CASE 1 · 엑셀 함수</a>
@@ -402,7 +432,7 @@ svg { display: block; max-width: 100%; height: auto; }
     <a href="#s5">CASE 5 · 보고 장표</a>
     <a href="#s6">마무리 · 과제 카드</a>
   </div>
-  <a class="sidebar-back-page" href="index.html">
+  <a class="sidebar-back-page" href="교안_기본_AI 실무 활용교육_프롬프트 엔지니어링.html">
     <div class="sbp-meta">Page 1</div>
     <div class="sbp-label">프롬프트 엔지니어링으로 돌아가기</div>
   </a>
@@ -1314,7 +1344,7 @@ svg { display: block; max-width: 100%; height: auto; }
 
 <!-- 이전 페이지 이동 CTA -->
 <div class="page-nav-bottom">
-  <a class="prev-page-btn" href="index.html">
+  <a class="prev-page-btn" href="교안_기본_AI 실무 활용교육_프롬프트 엔지니어링.html">
     <div class="prev-page-meta">Page 1 · 프롬프트 엔지니어링</div>
     <div class="prev-page-title">프롬프트 엔지니어링 다시 보기</div>
     <div class="prev-page-desc">모든 자동화의 출발점은 좋은 프롬프트입니다. 개념이 흐릿해지면 언제든 Page 1로 돌아가세요.</div>
@@ -1397,4 +1427,3 @@ onScroll();
 </script>
 </body>
 </html>
-
