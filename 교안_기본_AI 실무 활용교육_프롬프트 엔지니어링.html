@@ -453,6 +453,7 @@ svg { display: block; max-width: 100%; height: auto; }
 .prompt-header {
   display: flex; justify-content: space-between;
   align-items: center;
+  gap: 12px;
   padding: 12px 18px;
   background: #1E2433;
   border-bottom: 1px solid #2A3142;
@@ -918,7 +919,7 @@ svg { display: block; max-width: 100%; height: auto; }
 }
 
 /* 인라인 코드 */
-p code, li code, td code {
+p code, li code, td code, .tip-box code, .warn-box code {
   background: #FFF3E6;
   color: var(--p);
   padding: 1px 6px;
@@ -927,6 +928,173 @@ p code, li code, td code {
   font-family: 'Consolas', 'Courier New', monospace;
   font-weight: 600;
 }
+
+/* ── PART 03·04: 근거 카드 (수치 + 출처 줄) ── */
+.evidence {
+  background: var(--w);
+  border: 1px solid var(--bd);
+  border-left: 4px solid var(--p);
+  border-radius: 6px;
+  padding: 26px 30px;
+}
+.evidence .ev-eyebrow {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 1px; color: var(--p);
+  margin-bottom: 16px;
+}
+.evidence .ev-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+  max-width: 760px;
+}
+.evidence .ev-stat {
+  background: var(--bg-2);
+  border: 1px solid var(--bd);
+  border-radius: 4px;
+  padding: 14px 18px;
+}
+.evidence .ev-stat.hi { background: var(--p-soft); border-color: var(--p-soft-2); }
+.evidence .ev-num {
+  display: block;
+  font-size: 30px; font-weight: 700;
+  color: var(--bk); line-height: 1.15;
+  letter-spacing: -.01em;
+}
+.evidence .ev-stat.hi .ev-num { color: var(--p); }
+.evidence .ev-cap { display: block; font-size: 12.5px; color: var(--md); margin-top: 4px; }
+.evidence p { font-size: 14.5px; color: var(--dk); line-height: 1.75; max-width: 760px; }
+.evidence p b { color: var(--bk); }
+.evidence .ev-src { margin-top: 10px; font-size: 12.5px; color: var(--md); line-height: 1.6; }
+.evidence .ev-item + .ev-item { margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--bd); }
+.evidence .ev-head {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 16px; font-weight: 700; color: var(--bk);
+  margin-bottom: 10px;
+}
+.evidence .ev-no {
+  flex: none;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--p); color: var(--w);
+  font-size: 12px; font-weight: 700;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+
+/* ── PART 03: 실행 순서 목록 (장표의 번호와 맞춤) ── */
+.step-list {
+  list-style: none;
+  counter-reset: step;
+  margin: 0; padding: 0;
+  max-width: 760px;
+}
+.step-list li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 14px;
+  font-size: 14.5px; line-height: 1.75; color: var(--dk);
+}
+.step-list li:last-child { margin-bottom: 0; }
+.step-list li::before {
+  content: counter(step);
+  position: absolute; left: 0; top: 1px;
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--bk); color: var(--w);
+  font-size: 13px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.step-list li b { color: var(--bk); }
+
+/* ── PART 03·04: 소단원 끝 질문 (질문 사슬) ── */
+.next-q {
+  margin: 28px 0 0;
+  max-width: 760px;
+  font-size: 15.5px; font-weight: 700;
+  color: var(--pd); line-height: 1.6;
+}
+.next-q::before { content: "\2192\00a0"; color: var(--p); }
+.next-q a { color: var(--p); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ── PART 04: 같은 답, 두 모습 ── */
+.md-pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+.md-pane { display: flex; flex-direction: column; }
+.md-pane-label {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 1px; color: var(--md);
+  margin-bottom: 8px;
+}
+.md-rendered {
+  flex: 1;
+  background: var(--w);
+  border: 1px solid var(--bd);
+  border-radius: 6px;
+  padding: 18px 22px;
+  font-size: 14px; color: var(--dk); line-height: 1.7;
+}
+.md-rendered .r-h1 { font-size: 19px; font-weight: 700; color: var(--bk); margin-bottom: 10px; }
+.md-rendered .r-h2 { font-size: 15.5px; font-weight: 700; color: var(--bk); margin-bottom: 6px; }
+.md-rendered ul { margin: 0; padding-left: 18px; }
+.md-rendered b { color: var(--bk); }
+.md-raw {
+  flex: 1;
+  background: var(--bg-2);
+  border: 1px solid var(--bd-2);
+  border-radius: 6px;
+  padding: 18px 22px;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 13px; color: var(--dk); line-height: 1.85;
+  white-space: pre-wrap; word-break: break-word;
+}
+.md-raw .mk { color: var(--p); font-weight: 700; }
+.table-note { font-size: 13px; color: var(--md); margin: 12px 0 0; max-width: 760px; }
+.mock-doc.research::before { content: '심층 리서치 결과 예시 · 가상 데이터'; }
+/* ── PART 03·04 검토 반영 (2026-11-12) ── */
+.formula-grid.process .fc-no { font-size: 11.5px; letter-spacing: .3px; color: var(--pd); }
+.formula-grid.process .formula-card.fr .fc-no { color: var(--p2); }
+.visual + .step-list { margin-top: 28px; }
+.step-list a { color: var(--p); text-decoration: underline; text-underline-offset: 3px; }
+.prompt-body .hl[data-role]::after {
+  content: "\00a0\00a0\2190\00a0" attr(data-role);
+  color: #8C96AA; font-weight: 400; font-size: 12px;
+  font-family: 'Paperlogy', sans-serif;
+}
+.evidence .ev-unit { font-size: 12.5px; color: var(--md); margin-bottom: 8px; }
+.tip-box .src-line { display: block; margin-top: 8px; font-size: 12.5px; color: #8A6D1F; }
+.md-map code { white-space: nowrap; }
+.md-map td { word-break: keep-all; }
+.info-grid.verbs .info-card h5 { display: flex; align-items: center; gap: 10px; }
+.info-grid.verbs .info-card h5 em {
+  flex: none; margin: 0;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--p); color: var(--w);
+  font-size: 12px; font-weight: 700; letter-spacing: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.visual.cases { background: #FFF8E1; border-color: #FFE082; }
+.visual.cases .visual-title { color: #E65100; margin-bottom: 10px; }
+.case-tag {
+  display: table; margin: 0 auto 18px;
+  font-size: 11px; font-weight: 700; letter-spacing: .5px;
+  color: var(--w); background: var(--pd);
+  padding: 3px 10px; border-radius: 3px;
+}
+.case { background: var(--w); border: 1px solid #FFE082; border-radius: 6px; padding: 18px 20px; }
+.case + .case { margin-top: 14px; }
+.case-title { font-size: 14px; font-weight: 700; color: var(--bk); margin-bottom: 10px; }
+.case-out {
+  background: var(--bg-2); border-radius: 4px;
+  padding: 12px 14px;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 12.5px; line-height: 1.75; color: var(--dk);
+  white-space: pre-wrap; word-break: break-word;
+}
+.case-check { margin-top: 10px; font-size: 13.5px; line-height: 1.7; color: #7A1E1E; }
+.case-check b { color: var(--r); margin-right: 6px; }
 
 /* ── Footer ── */
 .footer {
@@ -1006,6 +1174,11 @@ p code, li code, td code {
   .formula-grid { grid-template-columns: 1fr; }
   .formula-card.fr { grid-column: auto; }
   .visual { padding: 22px; }
+  .evidence { padding: 22px 20px; }
+  .evidence .ev-num { font-size: 26px; }
+  .md-rendered, .md-raw { padding: 14px 16px; }
+  .next-q { font-size: 14.5px; }
+  .h-lead, .module { scroll-margin-top: 72px; }
   .breath-lg { height: 56px; }
   .breath { height: 40px; }
   .footer { padding: 24px 22px; flex-direction: column; align-items: flex-start; gap: 6px; }
@@ -1072,14 +1245,17 @@ p code, li code, td code {
     <a href="#p2-formula" class="sub">&#8226; 3요소 공식</a>
     <a href="#p2-context" class="sub">&#8226; Before / After 라이브</a>
     <a href="#p2-compare" class="sub">&#8226; 회의록·퓨샷 결합</a>
-    <a href="#p3" class="nav-head">PART 03 · 심층리서치</a>
-    <a href="#p3-deep" class="sub">&#8226; Deep Research 활성화</a>
-    <a href="#p3-find" class="sub">&#8226; 후보 거래처 발굴</a>
-    <a href="#p3-museum" class="sub">&#8226; 환각 사례</a>
+    <a href="#p3" class="nav-head">PART 03 · 심층 리서치</a>
+    <a href="#p3-deep" class="sub">&#8226; 조사를 맡기는 기능</a>
+    <a href="#p3-find" class="sub">&#8226; 의뢰서 · 계획 확인</a>
+    <a href="#p3-museum" class="sub">&#8226; 결과를 믿기 전에</a>
+    <a href="#p3-check" class="sub">&#8226; 결과 도착 · 검수</a>
     <a href="#p4" class="nav-head">PART 04 · 자료 통합</a>
-    <a href="#p4-md" class="sub">&#8226; 마크다운 = 입력 장치</a>
-    <a href="#p4-research" class="sub">&#8226; 리서치 결과 정리</a>
-    <a href="#p4-pack" class="sub">&#8226; 자료 패키지 묶기</a>
+    <a href="#p4-md" class="sub">&#8226; 마크다운이란</a>
+    <a href="#p4-why" class="sub">&#8226; 왜 구조를 표시하나</a>
+    <a href="#p4-use" class="sub">&#8226; 읽고 · 시키고 · 고친다</a>
+    <a href="#p4-research" class="sub">&#8226; 실습 · 마크다운 정리</a>
+    <a href="#p4-pack" class="sub">&#8226; 자료 패키지</a>
     <a href="#p5" class="nav-head">PART 05 · 마스터프롬프트</a>
     <a href="#p5-why" class="sub">&#8226; 왜 마스터프롬프트인가</a>
     <a href="#p5-request" class="sub">&#8226; AI에 마스터프롬프트 요청</a>
@@ -1129,8 +1305,8 @@ p code, li code, td code {
   <div class="tt-item"><div class="tt-time">PART 00</div><div class="tt-title">케이스 정렬</div><div class="tt-data">김대리 미션 · 미리보기</div></div>
   <div class="tt-item"><div class="tt-time">PART 01</div><div class="tt-title">첫 시도</div><div class="tt-data">한계 체감</div></div>
   <div class="tt-item"><div class="tt-time">PART 02</div><div class="tt-title">프롬프트 기본</div><div class="tt-data">3요소 공식</div></div>
-  <div class="tt-item"><div class="tt-time">PART 03</div><div class="tt-title">심층리서치</div><div class="tt-data">Deep Research + 환각 사례</div></div>
-  <div class="tt-item"><div class="tt-time">PART 04</div><div class="tt-title">자료 통합</div><div class="tt-data">마크다운 = 입력 장치</div></div>
+  <div class="tt-item"><div class="tt-time">PART 03</div><div class="tt-title">심층 리서치</div><div class="tt-data">조사 맡기고 검수</div></div>
+  <div class="tt-item"><div class="tt-time">PART 04</div><div class="tt-title">자료 통합</div><div class="tt-data">마크다운 읽고 · 정리</div></div>
   <div class="tt-item"><div class="tt-time">PART 05</div><div class="tt-title">마스터프롬프트</div><div class="tt-data">AI 요청 + AI 보강</div></div>
   <div class="tt-item"><div class="tt-time">PART 06</div><div class="tt-title">보고서 작성</div><div class="tt-data">한 섹션씩 호출</div></div>
   <div class="tt-item"><div class="tt-time">PART 07</div><div class="tt-title">내 스타일 마스터</div><div class="tt-data">스타일 추출·재사용</div></div>
@@ -1178,7 +1354,7 @@ p code, li code, td code {
       <g transform="translate(20,220)">
         <rect width="200" height="60" rx="6" fill="#FFF3E6" stroke="#FF8B45" stroke-width="1.5"/>
         <text x="100" y="22" font-family="Paperlogy" font-size="10" font-weight="700" fill="#999" text-anchor="middle" letter-spacing="1">RESOURCE 3</text>
-        <text x="100" y="44" font-family="Paperlogy" font-size="14" font-weight="700" fill="#C24E12" text-anchor="middle">Deep Research (외부)</text>
+        <text x="100" y="44" font-family="Paperlogy" font-size="14" font-weight="700" fill="#C24E12" text-anchor="middle">심층 리서치 (외부)</text>
       </g>
       <!-- 화살표들 -->
       <line x1="230" y1="60" x2="290" y2="155" stroke="#999" stroke-width="2"/>
@@ -1383,7 +1559,7 @@ p code, li code, td code {
     <ul>
       <li><b>WHO · WHAT · WHY · FORM</b> &rarr; <b>지시문</b> 한 문단에 4가지가 압축됩니다 (역할·산업·목적·양식 명시)</li>
       <li><b>회의록 · KPI · 제약 조건</b> &rarr; <b>맥락</b>에 첨부 (회의록 텍스트 그대로 또는 정리해서)</li>
-      <li><b>DATA(후보 거래처)</b> &rarr; 퓨샷이 양식·접근법을 가르치면, 본문 데이터는 다음 PART 심층리서치에서 채웁니다</li>
+      <li><b>DATA(후보 거래처)</b> &rarr; 퓨샷이 양식·접근법을 가르치면, 본문 데이터는 다음 PART 심층 리서치에서 채웁니다</li>
     </ul>
   </div>
 
@@ -1512,7 +1688,7 @@ p code, li code, td code {
     <div class="mock-row">
       <span class="mock-row-label">2. 후보 거래처 개요</span>
       <ul>
-        <li>후보 1 · 2 · 3 &mdash; <span class="src">다음 단계 심층리서치에서 채움 (회사명·산업·매출 규모·우선순위)</span></li>
+        <li>후보 1 · 2 · 3 &mdash; <span class="src">다음 단계 심층 리서치에서 채움 (회사명·산업·매출 규모·우선순위)</span></li>
         <li>표 양식: 사내 양식 보고서와 동일 6행 비교표</li>
       </ul>
     </div>
@@ -1546,104 +1722,201 @@ p code, li code, td code {
   <div class="spotlight">
     <div class="sp-eyebrow">PART 02 정리</div>
     <div class="sp-headline">지시문 + 맥락 + 퓨샷 &mdash;<br>이 공식이 <em>오늘 하루의 뼈대</em>입니다</div>
-    <div class="sp-detail">자료에 맡길 것은 자료에 맡기고, 본인 의도만 명확히 던지면 1차 구성안이 나옵니다. 구성안에 비워둔 <b>후보 거래처 자리</b>는 다음 PART 03의 Deep Research로 채우고, 이후 마크다운 정리(04) &rarr; 마스터프롬프트(05) &rarr; 본문 작성(06) &rarr; 자산화(07·08)로 이어집니다.</div>
+    <div class="sp-detail">자료에 맡길 것은 자료에 맡기고, 본인 의도만 명확히 던지면 1차 구성안이 나옵니다. 구성안에 비워둔 <b>후보 거래처 자리</b>는 다음 PART 03의 심층 리서치로 채우고, 이후 마크다운 정리(04) &rarr; 마스터프롬프트(05) &rarr; 본문 작성(06) &rarr; 자산화(07·08)로 이어집니다.</div>
   </div>
 </section>
 
 
 <!-- ============================================================
-     PART 03 · 심층리서치
+     PART 03 · 심층 리서치 (조사는 맡기고, 검수는 내가)
 ============================================================ -->
 <section class="module" id="p3">
   <div class="mod-head">
     <span class="mod-num">PART 03</span>
-    <span class="mod-time">심층리서치</span>
+    <span class="mod-time">심층 리서치</span>
   </div>
-  <h2 class="mod-title">Deep Research로 후보 거래처 3곳을 발굴한다<small>1차 구성안에서 비워둔 자리를 본문 데이터로 채웁니다</small></h2>
+  <h2 class="mod-title">심층 리서치로 후보 거래처 3곳을 발굴한다<small>1차 구성안에서 비워둔 자리를 본문 데이터로 채웁니다</small></h2>
 
   <div class="breath-lg"></div>
 
-  <p class="p-lead">PART 02에서 만든 1차 구성안에는 <b>후보 거래처 자리가 비어 있었습니다.</b> 이번 PART에서 ChatGPT의 <b>Deep Research</b> 기능으로 실제 후보 3곳을 발굴합니다. 끝부분 <b>환각 사례</b>에서는 AI가 그럴듯하게 거짓말하는 패턴도 함께 봅니다 &mdash; 보고서에 그대로 넣으면 박본부장 회의에서 망신당하는 부분입니다.</p>
+  <p class="p-lead">PART 02에서 만든 1차 구성안에는 <b>후보 거래처 자리가 비어 있었습니다.</b> 하나하나 검색해 채우려면 시간이 꽤 드는 일입니다. 이번 PART에서는 이 조사를 ChatGPT의 <b>심층 리서치(Deep Research)</b>에 맡깁니다. 다만 결과를 확인 없이 보고서에 넣으면 박본부장 회의에서 망신당할 수 있습니다. 그래서 PART 03·04를 꿰는 원칙은 하나입니다 &mdash; <b>맡기되, 쥔다.</b> 이번 PART에서는 <b>조사는 맡기고, 검수는 내가</b> 합니다.</p>
 
   <div class="breath"></div>
 
-  <!-- ▶ 3-1. Deep Research 활성화 -->
-  <h3 class="h-lead" id="p3-deep">3-1. Deep Research 활성화 &mdash; 일반 검색과 무엇이 다른가</h3>
-  <p class="p-lead">ChatGPT에는 두 가지 리서치 방식이 있습니다. <b>일반 웹 검색(Web Search)</b>은 가벼운 검색 + 짧은 요약, <b>심층 리서치(Deep Research)</b>는 자율적으로 수백 개 웹페이지를 차례로 읽고 출처가 다 붙은 보고서 1편을 만들어줍니다. 사람이 한나절~하루 리서치한 결과에 맞먹는 깊이입니다.</p>
-
-  <div class="visual" style="padding:36px 28px;">
-    <div class="formula-grid" style="grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: stretch;">
-      <div class="formula-card f1">
-        <div class="fc-no">일반 웹 검색</div>
-        <div class="fc-name">Web Search</div>
-        <div class="fc-sub">빠르게 짧게</div>
-        <div class="fc-eg" style="line-height:1.85;">
-          ▸ <b>수 초 ~ 1분</b> 응답<br>
-          ▸ 출처 <b>5~30개</b><br>
-          ▸ 분량: 짧은 요약<br>
-          &nbsp;&nbsp;&nbsp;(수백 자 ~ A4 1페이지)
-        </div>
-      </div>
-      <div class="formula-op" style="align-self:center;">vs</div>
-      <div class="formula-card f3">
-        <div class="fc-no">심층 리서치</div>
-        <div class="fc-name">Deep Research</div>
-        <div class="fc-sub">길게 깊게</div>
-        <div class="fc-eg" style="line-height:1.85;">
-          ▸ <b>5~30분</b> (복잡 60분+)<br>
-          ▸ 출처 <b>100~500개</b> 분석<br>
-          ▸ 분량: <b>A4 5페이지+</b><br>
-          &nbsp;&nbsp;&nbsp;구조화된 보고서
-        </div>
-      </div>
-    </div>
-    <div class="visual-caption" style="margin-top:22px;">채팅창 하단 <b>도구 메뉴</b>에서 활성화합니다. <b>리서치 보고서 1편을 통째로 받는 수준의 결과물</b>이 나옵니다.</div>
-  </div>
-
-  <div class="breath"></div>
+  <!-- ▶ 3-1. 조사를 맡기는 기능 -->
+  <h3 class="h-lead" id="p3-deep">3-1. 조사를 '맡기는' 기능 &mdash; 검색과 무엇이 다른가</h3>
+  <p class="p-lead">검색은 질문 하나에 요약 하나를 바로 돌려줍니다. 심층 리서치는 다릅니다 &mdash; <b>조사 담당자에게 보고서를 의뢰하는 것</b>에 가깝습니다. 의뢰를 받으면 아래 순서로 일합니다.</p>
 
   <div class="visual">
-    <img src="교안_자료/장표_딥리서치_활성화.png" alt="Deep Research 활성화와 진행 화면" style="width:100%; border-radius:6px; display:block;">
-    <div class="visual-caption"><b>새 채팅 &rarr; 도구 메뉴 &rarr; Deep Research 활성화 &rarr; PROMPT 3 입력.</b> 결과를 기다리는 동안 강의는 멈추지 않습니다 &mdash; <b>3-3 환각 사례와 PART 04 개념을 먼저 진행</b>하고, 완료 알림이 오면 돌아옵니다.</div>
+    <div class="visual-title">심층 리서치가 일하는 순서</div>
+    <div class="formula-grid process">
+      <div class="formula-card f1">
+        <div class="fc-no">1 &middot; 내가</div>
+        <div class="fc-name">의뢰</div>
+        <div class="fc-sub">무엇을, 어디까지, 어떤 모양으로, 어떤 출처로 조사할지 적어 맡깁니다</div>
+      </div>
+      <div class="formula-op">&rarr;</div>
+      <div class="formula-card f2">
+        <div class="fc-no">2 &middot; AI가 제안 &rarr; 내가 확인</div>
+        <div class="fc-name">계획 확인</div>
+        <div class="fc-sub">조사 범위와 순서를 먼저 보여 줍니다</div>
+      </div>
+      <div class="formula-op">&rarr;</div>
+      <div class="formula-card f2">
+        <div class="fc-no">3 &middot; AI가</div>
+        <div class="fc-name">조사</div>
+        <div class="fc-sub">많은 출처를 찾아 읽고 분석합니다</div>
+      </div>
+      <div class="formula-op">&rarr;</div>
+      <div class="formula-card fr">
+        <div class="fc-no">4 &middot; AI가 납품 &rarr; 내가 검수</div>
+        <div class="fc-name">출처 달린 보고서</div>
+        <div class="fc-sub">목차 &middot; 사용한 출처 &middot; 진행 기록</div>
+      </div>
+    </div>
+    <div class="visual-caption">그래서 검색보다 오래 걸립니다 &mdash; 느린 게 아니라 <b>일하는 중</b>입니다.</div>
   </div>
+
+  <div class="breath"></div>
+
+  <p class="p-lead">맡길 만한지는 '찾기 어렵게 만든 문제'로 잰 시험에서 볼 수 있습니다.</p>
+
+  <div class="evidence">
+    <div class="ev-eyebrow">근거 &middot; 찾기 어렵게 만든 시험(BrowseComp)</div>
+    <div class="ev-stats">
+      <div class="ev-stat"><span class="ev-num">29%</span><span class="ev-cap">사람 (문제당 2시간 제한)</span></div>
+      <div class="ev-stat hi"><span class="ev-num">83~92%</span><span class="ev-cap">최신 AI</span></div>
+    </div>
+    <p>찾기 어렵게 만든 1,266문항에서 사람은 문제당 2시간 안에 <b>29%</b>를 풀었습니다. 최신 AI는 <b>83~92%</b>를 찾아냈습니다.</p>
+    <div class="ev-src">출처: BrowseComp &mdash; 사람: Wei 외(OpenAI), 2025 / AI: OpenAI GPT-5.6&middot;GPT-6 발표, 2026</div>
+  </div>
+
+  <div class="breath"></div>
+
+  <p class="p-lead">무엇을 언제 쓸지는 OpenAI 도움말의 기준이 간단합니다 &mdash; <b>빠른 사실 확인은 검색, 깊이 있고 철저한 조사는 심층 리서치.</b> 영업이라면 후보 거래처 발굴 &middot; 경쟁사 비교 &middot; 업계 동향 조사가 심층 리서치 몫입니다.</p>
+  <p class="next-q">그럼 어떻게 맡겨야 제대로 해 올까요?</p>
 
   <div class="breath-lg"></div>
 
-  <!-- ▶ 3-2. 후보 거래처 발굴 프롬프트 -->
-  <h3 class="h-lead" id="p3-find">3-2. 후보 거래처 발굴 프롬프트</h3>
-  <p class="p-lead">Deep Research는 <b>출력 형식과 비교 항목을 명확히 지정</b>하면 가장 잘 답합니다. 후보 3사를 한눈에 비교할 수 있도록 항목들을 자연어로 나열해주고, 출처 URL과 신뢰도 라벨도 함께 요청합니다.</p>
+  <!-- ▶ 3-2. 의뢰서 · 계획 확인 -->
+  <h3 class="h-lead" id="p3-find">3-2. 의뢰서를 쓰고, 계획을 확인하고, 맡긴다</h3>
+  <p class="p-lead">좋은 의뢰서는 <b>목적 &middot; 범위 &middot; 결과 형식 &middot; 출처 조건</b> 네 가지를 담습니다. PROMPT 3은 이미 그렇게 짜여 있어 칸마다 이름을 붙여 두었습니다. <b>복사해 보내기 전에, 아래 1단계대로 새 채팅에서 심층 리서치부터 켭니다.</b></p>
 
   <div class="prompt-block">
-    <div class="prompt-header"><span class="prompt-label">PROMPT 3 &mdash; 후보 거래처 발굴 (Deep Research)</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
-<div class="prompt-body"><span class="hl">[지시]</span>
+    <div class="prompt-header"><span class="prompt-label">PROMPT 3 &mdash; 후보 거래처 발굴 의뢰서 (심층 리서치)</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
+<div class="prompt-body"><span class="hl" data-role="목적">[지시]</span>
 자사 영업본부 김대리가 다음 분기 신규 거래처 발굴 보고서에 넣을 <b>후보 3곳</b>을 발굴해주세요. 결과는 보고서 형식으로 정리하고, 후보 3사를 한눈에 비교할 수 있는 <b>비교 표</b>를 함께 첨부해주세요.
 
-<span class="hl">[맥락]</span>
+<span class="hl" data-role="범위">[맥락]</span>
 자사 제품군은 산업용 부품·소재 (B2B 중대형 제조사 OEM 대상). 우선 산업군은 자동차 부품 · 정밀 기계 · 디스플레이/반도체 장비 중 1~2곳. 후보 매출 규모는 <b>연 1,500억 이상</b>(최소 발주 규모 충족), 국내 본사 기준. 박본부장이 <b>즉시 의사결정</b> 내릴 수 있도록 우선순위·강약점이 명확해야 함. 내부 매출·거래처 정보는 입력 금지 (학습용 가상 프로젝트).
 
-<span class="hl">[비교 표 항목]</span>
+<span class="hl" data-role="결과 형식">[비교 표 항목]</span>
 회사명 (공개 사명) / 산업군 / 2024~2025 매출 규모 / 본사 위치 / 주요 제품·서비스 / 자사 부품군과의 fit / 의사결정 라인 / 강점 / 약점·리스크 / 출처 URL / 출처 신뢰도 (정부 · 언론 · 공시 · 블로그 중 하나)
 
-<span class="hl">[제약]</span>
+<span class="hl" data-role="출처 조건">[제약]</span>
 모든 데이터는 공개자료(DART 공시, 언론, 산업협회 보고서) 기반. 출처가 불명확하면 "[추가 확인 필요]" 표기. <b>실제 존재하는 공개 회사만</b> 발굴 (회사명 지어내지 말 것). 매출 추정 시 근거 함께 명시.</div>
   </div>
 
   <div class="breath"></div>
 
-  <!-- ▶ Deep Research 결과 예시 -->
-  <div class="mock-doc">
+  <div class="tip-box">
+    <strong>(선택) 출처를 미리 좁히려면.</strong> 프롬프트의 [제약] 말고도, 심층 리서치의 <b>Sites &gt; 사이트 관리</b>에서 볼 사이트를 지정할 수 있습니다.
+  </div>
+
+  <div class="breath"></div>
+
+  <div class="visual">
+    <img src="교안_자료/장표_심층리서치_3단계.png" alt="심층 리서치 실행 3단계 — 도구 메뉴에서 심층 리서치 켜기, 리서치 계획안 확인 후 시작, 진행 화면에서 계획 항목별 진행 상태 확인" style="width:100%; border-radius:6px; display:block;">
+  </div>
+
+  <ol class="step-list">
+    <li><b>켜기</b> &mdash; 새 채팅을 열고, 프롬프트 창의 도구 메뉴(+)에서 <b>심층 리서치</b>를 고릅니다(입력창에 <code>/Deepresearch</code>를 입력해도 됩니다). PROMPT 3을 붙여 넣고 보냅니다.</li>
+    <li><b>계획 확인</b> &mdash; 되묻는 질문이 오면 답합니다. 제안된 <b>리서치 계획안</b>에 의뢰서의 네 가지(후보 3곳 &middot; 대상 산업과 매출 기준 &middot; 비교 표 &middot; 공개 자료 출처)가 들어 있는지 보고, 빠진 것만 고친 뒤 시작합니다.</li>
+    <li><b>진행 화면</b> &mdash; 진행 상황이 뜨면 지켜보지 않고 넘어갑니다. 그동안 <a href="#p3-museum">3-3</a>과 <a href="#p4">PART 04</a>의 4-1~4-3을 먼저 보고, 보고서가 완성되면 <a href="#p3-check">3-4</a>로 돌아옵니다.</li>
+  </ol>
+
+  <p class="next-q">기다리는 동안 &mdash; 이 결과, 그대로 믿어도 될까요?</p>
+
+  <div class="breath-lg"></div>
+
+  <!-- ▶ 3-3. 결과를 믿기 전에 -->
+  <h3 class="h-lead" id="p3-museum">3-3. 기다리는 동안 &mdash; 결과를 믿기 전에</h3>
+  <p class="p-lead">아닙니다. 심층 리서치도 틀립니다. 그래서 <b>검수는 사람 몫</b>입니다.</p>
+
+  <div class="evidence">
+    <div class="ev-eyebrow">근거 &middot; 최신 AI의 빈틈</div>
+    <div class="ev-item">
+      <p>같은 찾기 시험에서 최신 AI도 <b>10문제 중 1~2문제는 정답에 이르지 못했습니다.</b></p>
+      <div class="ev-src">출처: BrowseComp &mdash; OpenAI GPT-5.6&middot;GPT-6 발표, 2026</div>
+    </div>
+    <div class="ev-item">
+      <p>OpenAI가 공개한 자체 시험에서도 최신 모델의 사실 오류는 크게 줄었지만 <b>0이 되지는 않았습니다.</b> OpenAI 도움말도 심층 리서치 결과에 출처를 다는 이유를 '정보를 검증할 수 있도록'이라고 설명합니다.</p>
+      <div class="ev-src">출처: OpenAI GPT-6 시스템 카드 &middot; 도움말 「ChatGPT의 심층 리서치」, 2026</div>
+    </div>
+  </div>
+
+  <div class="breath"></div>
+
+  <p class="p-lead">결과에 섞일 수 있는 대표적인 패턴은 세 가지입니다.</p>
+
+  <div class="visual cases">
+    <div class="visual-title">그럴듯하게 틀리는 3가지 패턴</div>
+    <div class="case-tag">예시 (가상 시나리오)</div>
+    <div class="case">
+      <div class="case-title">1 &middot; 없는 회사를 만들어냄</div>
+      <div class="case-out">후보 1: (주)○○정밀산업
+- 2025년 매출: 4,200억
+- 본사: 경기 평택
+- 출처: ○○정밀산업 공식 홈페이지</div>
+      <div class="case-check"><b>검수 결과</b>출처 링크를 열면 없는 사이트. 회사명도 DART &middot; 신용평가사 자료에서 찾을 수 없음 &rarr; 회사를 통째로 지어냄</div>
+    </div>
+    <div class="case">
+      <div class="case-title">2 &middot; 실제 회사에 다른 수치를 붙임</div>
+      <div class="case-out">후보 2: ○○정공 (실재하는 회사)
+- 2025년 매출: 1,800억 (+8% YoY)
+- 출처: ○○정공 2025 사업보고서 (DART)</div>
+      <div class="case-check"><b>검수 결과</b>회사는 실재하지만 DART 공시 매출은 1,250억 &rarr; 회사는 진짜, 수치는 출처와 다름</div>
+    </div>
+    <div class="case">
+      <div class="case-title">3 &middot; 없는 보고서를 인용함</div>
+      <div class="case-out">○○산업협회 「2025 시장동향 보고서」에 따르면
+국내 정밀 가공 시장은 연 8.2% 성장해 2.4조 원 규모로 추정...</div>
+      <div class="case-check"><b>검수 결과</b>협회는 실재하지만 그런 이름의 보고서는 협회 발간물 목록에 없음 &rarr; 협회는 진짜, 보고서는 가짜</div>
+    </div>
+  </div>
+
+  <div class="breath"></div>
+
+  <p class="p-lead">세 경우 모두 출처를 한 번 열어 보면 드러납니다.</p>
+
+  <div class="warn-box">
+    <strong>검수는 이 한 가지 &mdash; 출처 클릭.</strong> 보고서가 표시한 <b>출처를 클릭해 원문을 확인</b>합니다 &mdash; 사이트가 살아 있는지, 공시&middot;보고서가 실제로 있는지, 수치가 같은지. 전부 볼 필요는 없습니다. <b>핵심 수치 2개</b>만 골라 대조해도 됩니다.
+  </div>
+
+  <p class="next-q">검수하려면 먼저 보고서를 읽을 줄 알아야 합니다. 곧 도착할 보고서는 어떤 모양일까요? &mdash; <a href="#p4">PART 04</a></p>
+
+  <div class="breath-lg"></div>
+
+  <!-- ▶ 3-4. 결과 도착 · 검수 -->
+  <h3 class="h-lead" id="p3-check">3-4. 결과 도착 &mdash; 계획대로 왔는지, 핵심 수치 2개 검수</h3>
+  <p class="p-lead">보고서가 완성되면 화면에서 세 곳을 봅니다. <b>목차</b>로 3-2에서 확인한 리서치 계획안대로 왔는지 보고, <b>사용한 출처</b>에서 핵심 수치 2개를 골라 3-3의 방법대로 원문과 대조합니다. 어떻게 찾았는지 궁금하면 <b>진행 기록</b>을 엽니다. 아래는 보고서 본문 일부를 보여 주는 예시입니다.</p>
+
+  <div class="breath"></div>
+
+  <!-- ▶ 심층 리서치 결과 예시 -->
+  <div class="mock-doc research">
     <div class="mock-doc-head">
-      <h4>Deep Research 결과<br>(약 18분 소요)</h4>
-      <div class="mock-doc-meta">실행 <b>ChatGPT Plus</b><br>도구 <b>Deep Research</b><br>출처 <b>130여 개 웹페이지 검토</b></div>
+      <h4>신규 거래처 후보 3곳<br>발굴 보고서</h4>
+      <div class="mock-doc-meta">도구 <b>심층 리서치</b></div>
     </div>
     <div class="mock-row">
       <span class="mock-row-label">요약</span>
-      <p class="lead">자동차 부품 · 정밀 기계 · 디스플레이 3개 산업군에서 매출 1,500억 이상 중견 OEM 3곳을 발굴. 1순위 엠정공(정밀기계, 화성), 2순위 티엔지니어링(중장비 부품, 천안), 3순위 케이산업(자동차 부품, 창원).</p>
+      <p class="lead">정밀 기계 · 자동차 부품 2개 산업군에서 매출 1,500억 이상 중견 OEM 3곳을 발굴. 1순위 엠정공(정밀 기계, 화성), 2순위 티엔지니어링(정밀 기계 · 중장비 부품, 천안), 3순위 케이산업(자동차 부품, 창원).</p>
     </div>
     <div class="mock-row">
       <span class="mock-row-label">후보 1 &middot; 엠정공</span>
       <ul>
-        <li>2025년 매출 약 <b>2,400억</b> (+11% YoY) <span class="src">[DART 공시, 2025-03]</span></li>
+        <li>2025년 매출 약 <b>2,400억</b> (+11% YoY) <span class="src">[DART 공시, 2026-03]</span></li>
         <li>정밀 절삭 부품·산업용 금형 / 국내 중대형 OEM 다수</li>
         <li>fit 평가: 자사 부품 SKU 7종 활용 가능 (호환성 90% 추정)</li>
         <li>의사결정 라인: 구매팀장 &rarr; 구매본부장 &rarr; 대표이사 (3단계)</li>
@@ -1652,7 +1925,7 @@ p code, li code, td code {
     <div class="mock-row">
       <span class="mock-row-label">후보 2 &middot; 티엔지니어링</span>
       <ul>
-        <li>2025년 매출 약 <b>1,800억</b> (+9% YoY) <span class="src">[NICE신용평가, 2025-04]</span></li>
+        <li>2025년 매출 약 <b>1,800억</b> (+9% YoY) <span class="src">[NICE신용평가, 2026-04]</span></li>
         <li>중장비 핵심 부품 OEM / 국내 중장비 1·2위사 거래</li>
         <li>fit 평가: 정밀 가공·내마모성 부품 SKU 4종 활용 가능</li>
         <li>의사결정 라인: 생산본부장 &rarr; 대표이사 (2단계, 빠름)</li>
@@ -1661,7 +1934,7 @@ p code, li code, td code {
     <div class="mock-row">
       <span class="mock-row-label">후보 3 &middot; 케이산업</span>
       <ul>
-        <li>2025년 매출 약 <b>3,100억</b> (+6% YoY) <span class="src">[DART 공시, 2025-03]</span></li>
+        <li>2025년 매출 약 <b>3,100억</b> (+6% YoY) <span class="src">[DART 공시, 2026-03]</span></li>
         <li>자동차 정밀 가공 부품 / 국내·해외 자동차사 OEM 다수</li>
         <li>fit 평가: 자동차 부품 SKU 6종 활용 가능 (기존 거래선 경쟁 필요)</li>
         <li>의사결정 라인: R&amp;D본부장 &rarr; 구매본부장 &rarr; 대표이사 (4단계)</li>
@@ -1672,7 +1945,7 @@ p code, li code, td code {
   <div class="breath"></div>
 
   <div class="tip-box">
-    <strong>출처 신뢰도 3단계.</strong> Deep Research 결과의 출처는 다음 순서로 신뢰도가 다릅니다.
+    <strong>출처 신뢰도 3단계.</strong> 같은 보고서 안에서도 출처마다 믿을 만한 정도가 다릅니다.
     <ul>
       <li><b>1단계 (가장 높음)</b>: 공시 자료 (DART), 정부·공공기관 보고서, 학회 발표</li>
       <li><b>2단계 (보통)</b>: 주요 언론사 기사, 신용평가사 보고서, 산업협회 정기 발간물</li>
@@ -1680,179 +1953,153 @@ p code, li code, td code {
     </ul>
   </div>
 
-  <div class="breath-lg"></div>
-
-  <!-- ▶ 3-3. 환각 사례 -->
-  <h3 class="h-lead" id="p3-museum">3-3. 환각 사례 &mdash; AI가 그럴듯하게 거짓말하는 3가지 패턴</h3>
-  <p class="p-lead">Deep Research라 해도 AI는 종종 <b>그럴듯한 거짓말(환각, hallucination)</b>을 합니다. 출처를 만들어내거나, 회사를 지어내거나, 매출 수치를 추정해놓고 출처를 붙입니다. 실제로 보고서에 자주 섞이는 3가지 패턴을 봅니다 &mdash; 그대로 넣으면 박본부장 회의에서 망신당하는 부분입니다.</p>
-
-  <div class="visual" style="background:#FFF8E1; border-color:#FFB300;">
-    <div class="visual-title" style="color:#E65100;">환각 사례 1 &mdash; 존재하지 않는 회사를 만들어냄</div>
-    <div class="prompt-block" style="margin-top:14px;">
-      <div class="prompt-header" style="background:#FFF;"><span class="prompt-label">실제 결과 (가상 시나리오)</span></div>
-<div class="prompt-body" style="background:#FFF; color:#1A1A1A; border:1px solid #FFE082;">후보 1: (주)한국정밀산업
-- 2024년 매출: 4,200억
-- 본사: 경기 평택
-- 주요 제품: 산업용 정밀 부품
-- 출처: 한국정밀산업 공식 홈페이지 (https://kpi-industry.co.kr)
-
-[검증 결과] kpi-industry.co.kr 도메인은 등록조차 안 됨. 회사명도 DART·NICE에 존재 X. <b>AI가 그럴듯한 회사를 통째로 지어냄.</b></div>
-    </div>
-  </div>
-
   <div class="breath"></div>
 
-  <div class="visual" style="background:#FFF8E1; border-color:#FFB300;">
-    <div class="visual-title" style="color:#E65100;">환각 사례 2 &mdash; 실제 회사에 가짜 수치를 붙임</div>
-    <div class="prompt-block" style="margin-top:14px;">
-      <div class="prompt-header" style="background:#FFF;"><span class="prompt-label">실제 결과 (가상 시나리오)</span></div>
-<div class="prompt-body" style="background:#FFF; color:#1A1A1A; border:1px solid #FFE082;">후보 2: 에스정공 (실제 존재하는 회사)
-- 2024년 매출: 1,800억 (+8% YoY)
-- 출처: 에스정공 2024 사업보고서 (DART)
-
-[검증 결과] 에스정공은 실재하나, DART 공시 매출은 1,250억 (2024). <b>회사는 진짜지만 매출 수치는 AI가 비슷한 회사들에서 평균치를 가져와 붙임.</b> 출처는 그럴듯하게 표기.</div>
-    </div>
-  </div>
-
-  <div class="breath"></div>
-
-  <div class="visual" style="background:#FFF8E1; border-color:#FFB300;">
-    <div class="visual-title" style="color:#E65100;">환각 사례 3 &mdash; 가짜 협회 보고서를 인용함</div>
-    <div class="prompt-block" style="margin-top:14px;">
-      <div class="prompt-header" style="background:#FFF;"><span class="prompt-label">실제 결과 (가상 시나리오)</span></div>
-<div class="prompt-body" style="background:#FFF; color:#1A1A1A; border:1px solid #FFE082;">한국정밀기계산업협회 2024 시장동향 보고서에 따르면
-국내 정밀 가공 시장은 연 8.2% 성장하며 2025년 2.4조원 규모로 추정...
-
-[검증 결과] 한국정밀기계산업협회는 실재하지만, "2024 시장동향 보고서"라는 발간물은 존재 X. <b>협회는 진짜, 보고서는 가짜.</b> 협회 사이트 발간물 목록에서 확인 가능.</div>
-    </div>
-  </div>
-
-  <div class="breath"></div>
-
-  <div class="warn-box">
-    <strong>검증은 이 한 가지 &mdash; 출처 클릭.</strong> 강의에서는 Deep Research를 1번만 실행하고, 검증도 가장 효율적인 1가지로 끝냅니다. AI가 표시한 <b>출처 URL을 클릭해 원본을 확인</b>하세요 &mdash; 도메인이 살아있는지, 공시·보고서가 실제 존재하는지, 수치가 일치하는지. 시간이 부족하면 <b>핵심 수치 1~2개만 샘플 확인</b>해도 효과가 큽니다. (실무에서 여유가 있다면 다른 AI(Claude·Gemini)에 같은 질문을 던져 교차 비교하는 방법도 있습니다.)
-  </div>
+  <p class="p-lead">검수를 마친 보고서는 <b>Markdown &middot; Word &middot; PDF로 내려받을 수 있습니다.</b></p>
 
   <div class="breath-lg"></div>
 
-  <!-- ▶ 핵심 한 문장 -->
+  <!-- 핵심 한 문장 -->
   <div class="spotlight">
     <div class="sp-eyebrow">PART 03 정리</div>
-    <div class="sp-headline"><em>30분 만에 받는 리서치 보고서 1편</em> &mdash;<br>단, 핵심 수치는 검증 후 사용한다</div>
-    <div class="sp-detail">Deep Research는 수백 개 소스를 자율 분석해 A4 5페이지 분량의 보고서를 만들어줍니다. <b>출처 클릭으로 핵심 수치만 한 번씩 확인</b>하고 다음 단계로 넘어갑니다. 검증을 통과한 후보 3곳 정보가 PART 06 보고서 본문의 데이터가 됩니다.</div>
+    <div class="sp-headline">조사는 맡기고,<br><em>검수는 내가</em></div>
+    <div class="sp-detail">심층 리서치는 계획을 보여 주고, 시간을 들여 조사해 출처 달린 보고서를 납품합니다. 핵심 수치는 출처를 열어 직접 확인합니다. <b>검수한 보고서는 깁니다. 이대로 다음 AI에 넘겨도 될까요?</b></div>
   </div>
+
+  <p class="next-q">검수를 마쳤으면 <a href="#p4-research">4-4 실습</a>으로 갑니다. 4-1~4-3을 아직 보지 않았다면 <a href="#p4">PART 04</a> 처음부터 봅니다.</p>
 </section>
 <!-- ============================================================
-     PART 04 · 자료 통합 (마크다운 = AI 입력 장치)
+     PART 04 · 자료 통합 (작성은 맡기고, 구조는 내가)
 ============================================================ -->
 <section class="module" id="p4">
   <div class="mod-head">
     <span class="mod-num">PART 04</span>
-    <span class="mod-time">자료 통합 — 마크다운 본격 등장</span>
+    <span class="mod-time">자료 통합 — 마크다운</span>
   </div>
-  <h2 class="mod-title">심층리서치 결과를 마크다운으로 정리합니다<small>다음 PART 보고서 작성용 입력 자료로 변환 &mdash; 마크다운이 AI 입력 장치로 등장하는 단계</small></h2>
+  <h2 class="mod-title">도착할 보고서를 읽고, 마크다운으로 정리합니다<small>마크다운은 외우는 문법이 아니라 읽고 &middot; 시키고 &middot; 고치는 문법입니다</small></h2>
 
   <div class="breath-lg"></div>
 
-  <p class="p-lead">PART 03에서 Deep Research로 받은 후보 거래처 3곳 리서치 결과는 그 자체로 A4 5페이지 분량 보고서입니다. 그러나 그대로 보고서 본문 작성 단계(PART 06)에 입력하면, AI가 길고 흐트러진 문장을 다시 해석하느라 핵심을 놓칠 수 있습니다. 이번 PART에서는 그 리서치 결과를 <b>마크다운</b>으로 위계 정리해 다음 단계에 정확하게 넘기는 방법을 익힙니다.</p>
+  <p class="p-lead">심층 리서치 보고서는 길고, 다음 PART들에서 AI에게 다시 넘겨야 합니다. 이번 PART에서는 <b>작성은 맡기고, 구조는 내가</b> 정합니다. 4-1~4-3은 결과가 오기 전에 보는 <b>읽을 준비</b>, 4-4~4-5는 결과가 도착한 뒤 하는 <b>써먹기</b>입니다.</p>
 
   <div class="breath"></div>
 
-  <!-- ▶ 4-1. 마크다운 = 입력 장치 -->
-  <h3 class="h-lead" id="p4-md">4-1. 마크다운은 "예쁜 출력 문법"이 아니라 "AI 입력 표지판"</h3>
-  <p class="p-lead">마크다운을 학교에서 배우면 보통 <code>#</code>·<code>##</code>·<code>-</code> 같은 출력 문법으로 가르칩니다. 그런데 실무자 입장에서 마크다운의 진짜 가치는 다른 곳에 있습니다 &mdash; <b>내가 가진 자료를 AI가 잘 이해하도록 구조화해서 입력하는 표준 장치</b>입니다.</p>
-
-  <div class="breath"></div>
+  <!-- ▶ 4-1. 마크다운이란 -->
+  <h3 class="h-lead" id="p4-md">4-1. 이미 매일 보는 기호 &mdash; 마크다운이란</h3>
+  <p class="p-lead">ChatGPT 답변의 제목 &middot; 굵은 글씨 &middot; 목록 &middot; 표를 떠올려 보세요. 그 답을 복사해 메신저나 메모장에 붙이면 <code>**</code>, <code>##</code> 같은 기호가 따라올 때가 있습니다. 그 기호가 <b>마크다운</b>입니다. 곧 도착할 심층 리서치 보고서도 같은 기호로 짜여 있고, 아예 Markdown 파일로 내려받을 수도 있습니다.</p>
 
   <div class="visual">
-    <img src="교안_자료/장표_마크다운_변환.png" alt="산문 리서치 결과가 마크다운 위계로 변환되는 모습" style="width:100%; border-radius:6px; display:block;">
-    <div class="visual-caption">A4 5페이지 산문 덩어리가 <b>위계가 잡힌 30줄</b>로 바뀝니다. 마크다운은 <b>AI가 읽는 칸막이</b>입니다.</div>
-  </div>
-
-  <div class="breath"></div>
-
-  <div class="visual" style="padding:36px 28px;">
-    <div class="formula-grid" style="grid-template-columns: 1fr auto 1fr auto 1fr; gap: 20px; align-items: stretch;">
-      <div class="formula-card f1">
-        <div class="fc-no">USE 1 · 메인</div>
-        <div class="fc-name">입력 자료 구조화</div>
-        <div class="fc-sub">내가 다루는 자료를 AI에 넘길 때</div>
-        <div class="fc-eg" style="line-height:1.85;">▸ 리서치 결과 정리<br>▸ PDF·보고서 압축<br>▸ 회의록·메모 정리</div>
+    <div class="visual-title">같은 답, 두 모습</div>
+    <div class="md-pair">
+      <div class="md-pane">
+        <div class="md-pane-label">ChatGPT 화면에서</div>
+        <div class="md-rendered">
+          <div class="r-h1">신규 거래처 발굴 &mdash; 후보 3곳</div>
+          <div class="r-h2">후보 1: 엠정공</div>
+          <ul>
+            <li>2025 매출: 약 2,400억 원</li>
+            <li><b>호환성 90% 추정</b></li>
+          </ul>
+        </div>
       </div>
-      <div class="formula-op">+</div>
-      <div class="formula-card f2">
-        <div class="fc-no">USE 2 · PART 05</div>
-        <div class="fc-name">긴 프롬프트 위계</div>
-        <div class="fc-sub">마스터프롬프트가 길어질 때</div>
-        <div class="fc-eg" style="line-height:1.85;">▸ 지시·맥락·퓨샷·제약<br>&nbsp;&nbsp;<code>#</code> 위계로 정리<br>▸ 재사용 가능한 자산</div>
-      </div>
-      <div class="formula-op">+</div>
-      <div class="formula-card f3">
-        <div class="fc-no">USE 3 · 사이클</div>
-        <div class="fc-name">출력 → 다음 입력</div>
-        <div class="fc-sub">AI 결과를 다음 단계 입력으로</div>
-        <div class="fc-eg" style="line-height:1.85;">▸ Deep Research 결과<br>▸ 본문 초안<br>▸ 다음 PART 입력</div>
+      <div class="md-pane">
+        <div class="md-pane-label">md 파일을 메모장으로 열면</div>
+        <div class="md-raw"><span class="mk">#</span> 신규 거래처 발굴 — 후보 3곳
+<span class="mk">##</span> 후보 1: 엠정공
+<span class="mk">-</span> 2025 매출: 약 2,400억 원
+<span class="mk">-</span> <span class="mk">**</span>호환성 90% 추정<span class="mk">**</span></div>
       </div>
     </div>
-    <div class="visual-caption" style="margin-top:22px;">마크다운 = <b>"AI가 잘 알아보게 자료에 칸막이 치는 표준 방법"</b>. 출력 문법 외우기가 아니라 <b>입력 구조화 도구로 익히는 것</b>이 실무 관점입니다.</div>
+    <div class="visual-caption">화면은 기호를 읽어 모양으로 바꿔 보여 줄 뿐, 글 자체는 오른쪽처럼 <b>기호로 적혀 있습니다.</b></div>
   </div>
 
   <div class="breath"></div>
 
-  <h4 style="font-size:17px; font-weight:700; color:var(--bk); margin-bottom:12px; margin-top:30px;">실무에 필요한 마크다운 5개</h4>
-  <p class="p-lead">5개만 알면 입력 구조화 90%는 끝납니다. 외울 필요 없고 필요할 때 확인만 하면 됩니다.</p>
+  <p class="p-lead"><b>마크다운은 <code>#</code>, <code>-</code>, <code>**</code> 같은 기호 몇 개로 '여기는 제목, 여기는 목록, 여기는 강조'를 표시하는 글쓰기 약속입니다.</b> 2004년에 공개된, 특정 회사 것이 아닌 공개 형식입니다. 한글 &middot; 워드에서 마우스로 고르던 <b>'제목 1 &middot; 제목 2 &middot; 글머리표 &middot; 굵게'를 키보드 기호로 적은 것</b>이라고 생각하면 됩니다.</p>
 
-  <table class="comp-table">
-    <thead><tr><th width="16%">문법</th><th width="28%">의미</th><th width="56%">실무 활용 예</th></tr></thead>
+  <table class="comp-table md-map">
+    <thead><tr><th width="18%">기호</th><th width="30%">한글 &middot; 워드에서는</th><th width="52%">예</th></tr></thead>
     <tbody>
-      <tr><td><code>#</code></td><td>큰 제목 (자료 이름)</td><td><code># 신규 거래처 발굴 — 후보 3곳 정리</code></td></tr>
-      <tr><td><code>##</code></td><td>섹션 (안건·항목 단위)</td><td><code>## 후보 1: 엠정공</code></td></tr>
-      <tr><td><code>###</code></td><td>하위 섹션 (세부)</td><td><code>### fit 평가</code></td></tr>
-      <tr><td><code>-</code></td><td>목록 (불릿)</td><td><code>- 자사 SKU 7종 활용 가능</code></td></tr>
-      <tr><td><code>**굵게**</code></td><td>강조 (놓치면 안 되는 부분)</td><td><code>**호환성 90% 추정**</code></td></tr>
+      <tr><td><code>#</code></td><td>제목 1 (문서 제목)</td><td><code># 후보 3곳 비교</code></td></tr>
+      <tr><td><code>##</code></td><td>제목 2 (섹션)</td><td><code>## 후보 2: 티엔지니어링</code></td></tr>
+      <tr><td><code>-</code></td><td>글머리표</td><td><code>- 본사: 충남 천안</code></td></tr>
+      <tr><td><code>1.</code></td><td>번호 매기기</td><td><code>1. 엠정공</code></td></tr>
+      <tr><td><code>**굵게**</code></td><td>굵게</td><td><code>**의사결정 2단계**</code></td></tr>
+      <tr><td><code>| 표 |</code></td><td>표</td><td><code>| 항목 | 엠정공 | 티엔지니어링 |</code></td></tr>
     </tbody>
   </table>
+  <p class="table-note"><code>#</code>을 하나 더 붙이면(<code>###</code>) 한 단계 아래 제목이 됩니다.</p>
+
+  <p class="next-q">줄글로 줘도 AI는 읽는데, 왜 굳이 구조를 표시할까요?</p>
 
   <div class="breath-lg"></div>
 
-  <!-- ▶ 4-2. 리서치 결과 마크다운 정리 -->
-  <h3 class="h-lead" id="p4-research">4-2. 리서치 결과를 마크다운으로 정리 &mdash; 실습</h3>
-  <p class="p-lead">PART 03 Deep Research 결과는 A4 5페이지 분량 보고서 형태입니다. 그대로 이후 단계에 넣으면 AI가 산문 흐름을 다시 따라가야 합니다. <b>핵심 정보만 골라 위계로 정리</b>하면 분량은 1/3 이하로 줄고, AI는 후보 3사를 한눈에 비교할 수 있게 됩니다.</p>
-
-  <div class="split-vis">
-    <div class="split-card bad">
-      <span class="sv-tag">BEFORE · 리서치 결과 그대로 던지기</span>
-      <div class="sv-name">A4 5페이지 보고서 통째로 첨부</div>
-      <div class="sv-prompt">"이 리서치 결과 보고 보고서 본문 써줘"</div>
-      <div class="sv-arrow">▼</div>
-      <div class="sv-result">
-        <ul>
-          <li>후보 3사 정보가 산문으로 흩어져 있음</li>
-          <li>AI가 비교 기준을 다시 찾아야 함</li>
-          <li>fit·접근·리스크 항목 누락 가능</li>
-          <li>출처 인용 형식이 일관되지 않음</li>
-        </ul>
-      </div>
+  <!-- ▶ 4-2. 왜 구조를 표시하나 -->
+  <h3 class="h-lead" id="p4-why">4-2. 왜 구조를 표시하나 &mdash; 세 가지 이유</h3>
+  <div class="evidence">
+    <div class="ev-item">
+      <div class="ev-head"><span class="ev-no">1</span>AI가 이미 이 형식으로 씁니다</div>
+      <p>OpenAI는 최신 모델이 목록 &middot; 표 &middot; 마크다운으로 답하는 경향이 있다고 안내합니다. 읽을 줄 알면 받은 답을 다음 작업의 재료로 바로 씁니다.</p>
+      <div class="ev-src">출처: OpenAI 개발자 문서 「Using GPT-6」, 2026</div>
     </div>
-    <div class="split-card good">
-      <span class="sv-tag">AFTER · 마크다운 정리해서 던지기</span>
-      <div class="sv-name">리서치 결과 → 마크다운 위계</div>
-      <div class="sv-prompt">"# 후보 / ## 회사 / ## fit / ## 접근 / ## 리스크"</div>
-      <div class="sv-arrow">▼</div>
-      <div class="sv-result">
-        <ul>
-          <li>후보 3사가 동일 항목으로 비교 가능</li>
-          <li>박본부장 핵심 3가지가 항목별 명시</li>
-          <li>출처 일괄 정리 (인용 형식 통일)</li>
-          <li>다음 PART 본문 작성 즉시 가능</li>
-        </ul>
+    <div class="ev-item">
+      <div class="ev-head"><span class="ev-no">2</span>구조를 표시하는 형식 중 가장 가볍습니다</div>
+      <div class="ev-unit">AI가 읽는 양(토큰) &middot; 적을수록 가볍습니다</div>
+      <div class="ev-stats">
+        <div class="ev-stat hi"><span class="ev-num">789</span><span class="ev-cap">마크다운</span></div>
+        <div class="ev-stat"><span class="ev-num">871</span><span class="ev-cap">JSON</span></div>
+        <div class="ev-stat"><span class="ev-num">1,016</span><span class="ev-cap">HTML</span></div>
       </div>
+      <p>같은 후보 3사 정보를 형식만 바꿔 쟀습니다. Cloudflare가 자사 블로그 글 한 편을 HTML에서 마크다운으로 바꿨을 때는 태그&middot;스크립트가 빠지면서 토큰이 80% 줄었습니다.</p>
+      <div class="ev-src">출처: 직접 측정 &mdash; GPT-5.6 토크나이저(마크다운 789는 OpenAI 공식 토큰 계산기로도 확인), 2026 / Cloudflare 블로그(웹페이지 1건), 2026</div>
+    </div>
+    <div class="ev-item">
+      <div class="ev-head"><span class="ev-no">3</span>콕 집어 시킬 수 있습니다</div>
+      <p>줄글은 한 후보의 정보가 여러 문장에 섞여 있지만, 마크다운은 후보별 &middot; 항목별로 칸이 나뉩니다. 그래서 섹션 하나만 가리켜 고치게 할 수 있습니다. 4-4에서 직접 해 봅니다.</p>
     </div>
   </div>
 
+  <p class="next-q">그럼 이 기호를 외워서 직접 써야 할까요?</p>
+
   <div class="breath-lg"></div>
 
-  <p class="p-lead">개념을 확인했으니 이제 실습입니다. <b>김대리가 직접 손으로 마크다운을 작성하지 말고, AI에게 PART 03 리서치 결과를 마크다운으로 정리해달라고 요청</b>합니다. 5분짜리 작업이 30초로 줄고, AI가 일관된 위계를 잡아줍니다.</p>
+  <!-- ▶ 4-3. 읽고 · 시키고 · 고친다 -->
+  <h3 class="h-lead" id="p4-use">4-3. 외우지 말고 &mdash; 읽고, 시키고, 고친다</h3>
+  <p class="p-lead"><b>쓰는 건 AI가 하고, 사람은 세 가지만</b> 합니다.</p>
+
+  <div class="info-grid verbs">
+    <div class="info-card">
+      <h5><em>1</em>읽는다</h5>
+      <p>보고서가 오면 <code>#</code> &middot; <code>##</code> 줄부터 훑어 뼈대를 봅니다.</p>
+    </div>
+    <div class="info-card">
+      <h5><em>2</em>시킨다</h5>
+      <p>"후보별로 <code>##</code> 섹션, 비교는 표로"처럼 구조를 정해 요청합니다.</p>
+    </div>
+    <div class="info-card">
+      <h5><em>3</em>고친다</h5>
+      <p><code>##</code> 한 줄을 더하거나 순서를 바꾸고, "<code>## 후보 2</code>만 다시"처럼 부분만 다시 시킵니다.</p>
+    </div>
+  </div>
+
+  <div class="breath"></div>
+
+  <div class="tip-box">
+    <strong>답의 모양은 지정하면 바뀝니다.</strong> 한글에 그대로 붙일 글이라 4-1의 <code>**</code>, <code>##</code>가 거슬린다면 <b>"기호 없이 문단으로 써 줘"</b>라고 요청합니다. OpenAI는 줄글이 필요하면 그렇게 지정하라고 안내하고, Anthropic도 프롬프트의 서식이 답의 서식에 영향을 준다고 설명합니다.
+    <span class="src-line">출처: OpenAI 개발자 문서 「Using GPT-6」 &middot; Anthropic 「Prompting best practices」, 2026</span>
+  </div>
+
+  <p class="next-q">결과가 도착했으면 <a href="#p3-check">3-4</a>에서 검수부터 합니다. 아직이거나 실패했다면 <a href="#p4-research">4-4</a>의 백업 파일로 바로 해 봅니다.</p>
+
+  <div class="breath-lg"></div>
+
+  <!-- ▶ 4-4. 실습 · 마크다운 정리 -->
+  <h3 class="h-lead" id="p4-research">4-4. 실습 &mdash; 검수한 보고서를 마크다운으로 정리</h3>
+  <p class="p-lead">심층 리서치 보고서도 마크다운 기호로 짜여 있지만, 길고 한 후보의 매출 &middot; fit &middot; 리스크가 본문 곳곳에 흩어져 있습니다. 다음 AI에 넘길 것은 <b>후보별로 같은 항목만 골라 짧게 다시 짠 정리물</b>입니다. 직접 쓰지 않고, 보고서가 온 채팅에 이어서 AI에게 시킵니다.</p>
+
+  <div class="visual">
+    <img src="교안_자료/장표_마크다운_정리.png" alt="긴 보고서가 PROMPT 4를 거쳐 후보마다 같은 항목을 가진 마크다운 정리물로 바뀌는 모습" style="width:100%; border-radius:6px; display:block;">
+  </div>
 
   <div class="breath"></div>
 
@@ -1864,7 +2111,7 @@ p code, li code, td code {
     <div class="resource-text">
       <div class="r-meta">▶ 백업 자료 &middot; 리서치가 아직이라면</div>
       <strong>리서치 결과 백업 (후보 3사)</strong>
-      <p>Deep Research가 아직 안 끝났거나 실행이 어려운 경우, 이 파일을 내려받아 <b>같은 흐름 그대로</b> 이어가세요. 채팅에 이 파일을 첨부하고 아래 PROMPT 4를 그대로 입력하면 됩니다.</p>
+      <p>후보 3사 정보가 줄글로 적힌 백업 보고서입니다. 심층 리서치가 아직 안 끝났거나 실행이 어려우면 내려받아 <b>같은 흐름 그대로</b> 이어가세요. 새 채팅에 이 파일을 첨부하고 아래 PROMPT 4를 그대로 입력하면 됩니다.</p>
     </div>
     <a class="resource-btn" href="교안_자료/리서치결과_백업_후보3사.md" download>다운로드</a>
   </div>
@@ -1874,25 +2121,37 @@ p code, li code, td code {
   <div class="prompt-block">
     <div class="prompt-header"><span class="prompt-label">PROMPT 4 &mdash; AI에게 리서치 결과 마크다운 정리 요청</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
 <div class="prompt-body"><span class="hl">[요청사항]</span>
-방금 받은 리서치 결과를 <b>마크다운 형식으로 정리</b>해줘. 정리한 결과는 <b>md 파일로 다운로드할 수 있는 링크</b>로 제공해줘.
+방금 받은(또는 첨부한) 리서치 결과에서 <b>후보 3사 정보만 골라 마크다운 정리물</b>로 다시 짜줘. 정리한 결과는 <b>md 파일로 다운로드할 수 있는 링크</b>로 제공해줘.
 
 <span class="hl">[맥락]</span>
-- 후보 거래처 3곳을 <code>##</code> 섹션으로 분리 (회사명)
+- 후보 3곳을 <code>## 후보 1: 회사명</code> 형태의 섹션으로 분리
+- 섹션마다 같은 항목(회사 개요 · fit · 접근 · 리스크)으로 정리
+- 후보 3사를 비교하는 <b>표 1개</b> 포함
 - 각 항목에는 <b>근거 자료 링크</b>와 <b>명확한 출처</b> 제시</div>
   </div>
 
   <div class="breath"></div>
 
-  <p class="p-lead">AI는 위 요청에 따라 정리 결과를 <b>md 파일 다운로드 링크</b>로 제공합니다. 학습자는 이 md 파일을 다운받아 PART 05·06에서 그대로 입력 자료로 활용합니다.</p>
+  <p class="p-lead">md 파일을 받으면 채팅 화면이나 메모장에서 <code>##</code> 줄만 훑어 후보 3곳이 각각 섹션으로 나뉘었는지 봅니다(4-3의 <b>읽는다</b>). 고칠 곳이 보이면 같은 채팅에서 그 칸만 가리켜 다시 시킵니다(<b>고친다</b>).</p>
+
+  <div class="prompt-block">
+    <div class="prompt-header"><span class="prompt-label">PROMPT 4-1 &mdash; 한 칸만 골라 다시 요청</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
+<div class="prompt-body"><code>## 후보 2</code> 섹션의 <b>리스크만</b> 근거 출처와 함께 보강해줘. 다른 섹션은 그대로 두고, 고친 md 파일을 다시 다운로드 링크로 줘.</div>
+  </div>
+
+  <div class="breath"></div>
+
+  <p class="p-lead">완성한 md 파일은 내려받아 둡니다.</p>
+  <p class="next-q">이렇게 정리한 파일은 어디에 쓰일까요?</p>
 
   <div class="breath-lg"></div>
 
-  <!-- ▶ 4-3. 자료 패키지 -->
-  <h3 class="h-lead" id="p4-pack">4-3. 자료 패키지 만들기 &mdash; PART 05·06으로 넘길 준비</h3>
-  <p class="p-lead">PART 05에서 마스터프롬프트를 만들고, PART 06에서 보고서 본문을 작성합니다. 그때 필요한 자료를 미리 한 묶음으로 만들어둡니다. <b>회의록(원본) + 사내 양식 퓨샷 + 리서치 정리물(마크다운)</b> 3종 세트가 다음 PART의 입력 패키지입니다.</p>
+  <!-- ▶ 4-5. 자료 패키지 -->
+  <h3 class="h-lead" id="p4-pack">4-5. 자료 패키지 &mdash; 한 번 정리해 계속 쓴다</h3>
+  <p class="p-lead">방금 만든 md는 한 번 쓰고 끝나지 않습니다. PART 05에서는 마스터프롬프트의 재료, PART 06에서는 보고서 본문의 재료, PART 08에서는 챗봇의 지식 파일(Knowledge)이 됩니다. 그래서 <b>회의록(원본) + 사내 양식 퓨샷 + 리서치 정리물(마크다운)</b> 3종을 한 폴더에 모아 둡니다.</p>
 
   <div class="visual">
-    <svg viewBox="0 0 880 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="자료 패키지 묶기">
+    <svg viewBox="0 0 880 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="회의록, 사내 양식 퓨샷, 리서치 정리물 3종을 한 묶음으로 모아 PART 05 · 06 · 08에서 계속 쓰는 흐름">
       <g transform="translate(20,30)">
         <rect width="220" height="60" rx="6" fill="#FFF3E6" stroke="#FF8B45" stroke-width="1.5"/>
         <text x="110" y="22" font-family="Paperlogy" font-size="10" font-weight="700" fill="#999" text-anchor="middle" letter-spacing="1">PART 02 원본</text>
@@ -1916,30 +2175,33 @@ p code, li code, td code {
         <rect width="240" height="120" rx="6" fill="#F36F21"/>
         <text x="120" y="30" font-family="Paperlogy" font-size="11" font-weight="700" fill="#FFE0CC" text-anchor="middle" letter-spacing="1">PACKAGE</text>
         <text x="120" y="62" font-family="Paperlogy" font-size="22" font-weight="700" fill="#FFF" text-anchor="middle">자료 3종 묶음</text>
-        <text x="120" y="88" font-family="Paperlogy" font-size="12" fill="#FFE0CC" text-anchor="middle">한 채팅창에 모두 첨부</text>
-        <text x="120" y="106" font-family="Paperlogy" font-size="11" fill="#FFE0CC" text-anchor="middle">+ 마스터프롬프트 (다음 PART)</text>
+        <text x="120" y="92" font-family="Paperlogy" font-size="12" fill="#FFE0CC" text-anchor="middle">한 번 모아 계속 첨부</text>
       </g>
       <line x1="570" y1="145" x2="610" y2="145" stroke="#999" stroke-width="2"/>
       <polygon points="610,145 602,140 602,150" fill="#999"/>
       <g transform="translate(620,85)">
         <rect width="240" height="120" rx="6" fill="#FFF" stroke="#1A1A1A" stroke-width="1.5"/>
         <rect width="240" height="26" fill="#1A1A1A"/>
-        <text x="14" y="18" font-family="Paperlogy" font-size="11" font-weight="700" fill="#FF8B45">PART 05</text>
-        <text x="226" y="18" font-family="Paperlogy" font-size="10" fill="#FFF" text-anchor="end">다음 단계</text>
-        <text x="120" y="56" font-family="Paperlogy" font-size="14" font-weight="700" fill="#1A1A1A" text-anchor="middle">마스터프롬프트</text>
-        <text x="120" y="76" font-family="Paperlogy" font-size="14" font-weight="700" fill="#1A1A1A" text-anchor="middle">만들기</text>
+        <text x="14" y="18" font-family="Paperlogy" font-size="11" font-weight="700" fill="#FF8B45">계속 쓰는 곳</text>
+        <text x="20" y="54" font-family="Paperlogy" font-size="13" font-weight="700" fill="#1A1A1A">05 마스터프롬프트 재료</text>
+        <text x="20" y="78" font-family="Paperlogy" font-size="13" font-weight="700" fill="#1A1A1A">06 보고서 본문 재료</text>
+        <text x="20" y="102" font-family="Paperlogy" font-size="13" font-weight="700" fill="#1A1A1A">08 챗봇 지식 파일</text>
       </g>
     </svg>
-    <div class="visual-caption">자료 패키지가 완성되면 PART 05에서 <b>마스터프롬프트</b>를 만들고, PART 06에서 보고서 본문을 작성합니다.</div>
+    <div class="visual-caption">PART 05는 <b>새 채팅을 열고 세 파일을 함께 첨부</b>해 시작합니다.</div>
   </div>
+
+  <div class="breath"></div>
+
+  <p class="p-lead"><b>최종 문서가 한글 &middot; 워드여도 괜찮습니다.</b> 마크다운은 AI와 주고받는 중간 형식이고, 최종 보고서는 PART 06에서 워드로 옮깁니다. 붙였을 때 <code>**</code>, <code>##</code>가 남으면 4-3처럼 기호 없이 써 달라고 하면 됩니다.</p>
 
   <div class="breath-lg"></div>
 
   <!-- 핵심 한 문장 -->
   <div class="spotlight">
     <div class="sp-eyebrow">PART 04 정리</div>
-    <div class="sp-headline"><em>리서치 결과를 그대로 던지지 말고</em><br>마크다운으로 위계 정리해서 다음 PART에 넘긴다</div>
-    <div class="sp-detail">PART 03 리서치 결과 A4 5페이지를 마크다운 30줄로 압축하면 분량은 1/3 이하로 줄고, AI는 후보 3사를 동일 항목으로 비교할 수 있게 됩니다. PART 06에서 보고서 본문을 한 섹션씩 호출하기 수월해집니다.</div>
+    <div class="sp-headline">작성은 맡기고,<br><em>구조는 내가</em></div>
+    <div class="sp-detail">마크다운은 AI가 쓰는 형식이자 AI에게 넘기는 형식입니다. 구조를 표시해 두면 사람은 뼈대를 바로 훑고, AI에게는 한 칸을 가리켜 시킬 수 있습니다. <b>다음 PART의 마스터프롬프트도 같습니다 &mdash; 작성은 AI에게 맡기고, 구조는 내가 확인합니다.</b></div>
   </div>
 </section>
 <!-- ============================================================
@@ -2524,7 +2786,7 @@ p code, li code, td code {
   <div class="spotlight">
     <div class="sp-eyebrow">PART 08 정리 · 오늘의 마무리</div>
     <div class="sp-headline">오늘 익힌 흐름은 <em>분기마다 절약되는</em><br>평생 자산이 됩니다</div>
-    <div class="sp-detail">PART 00부터 07까지의 모든 흐름(케이스 정렬 → 3요소 → 심층리서치 → 마크다운 정리 → 마스터프롬프트 → 한 섹션씩 본문 작성 → 내 스타일 추출)이 <b>GPTs Instructions + Knowledge로 그대로 저장</b>됩니다. 다음 분기에는 회의록·리서치 결과만 새로 첨부하면 같은 보고서가 나옵니다. <b>부서원 누구나 같은 방식으로 활용</b>하면 본부 전체의 디지털 자산이 됩니다.</div>
+    <div class="sp-detail">PART 00부터 07까지의 모든 흐름(케이스 정렬 → 3요소 → 심층 리서치 → 마크다운 정리 → 마스터프롬프트 → 한 섹션씩 본문 작성 → 내 스타일 추출)이 <b>GPTs Instructions + Knowledge로 그대로 저장</b>됩니다. 다음 분기에는 회의록·리서치 결과만 새로 첨부하면 같은 보고서가 나옵니다. <b>부서원 누구나 같은 방식으로 활용</b>하면 본부 전체의 디지털 자산이 됩니다.</div>
   </div>
 </section>
 
