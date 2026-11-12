@@ -1254,6 +1254,27 @@ p code, li code, td code, .tip-box code, .warn-box code {
 .cmp-table tr.same td:first-child { color: var(--w); }
 .cmp-note { font-size: 12.5px; color: var(--md); margin-top: 14px; line-height: 1.6; }
 
+/* ── 기능 비교표 (무료 · Go · Plus) ── */
+.fx-table { font-size: 15px; }
+.fx-table th, .fx-table td { padding: 9px 14px; }
+.fx-table td:first-child { width: 31%; }
+.fx-table thead th:nth-child(4) { color: var(--pd); }
+.fx-table td.fx-y, .fx-table td.fx-p, .fx-table td.fx-n, .fx-table td.fx-t { width: 23%; white-space: nowrap; }
+.fx-table td.fx-y { color: var(--bk); font-weight: 600; }
+.fx-table td.fx-p { color: var(--pd); font-weight: 600; }
+.fx-table td.fx-n { color: var(--lt); }
+.fx-table td.fx-t { color: var(--dk); }
+.fx-table td.fx-y::before { content: "\25CF"; color: var(--bk); margin-right: 8px; font-size: 11px; vertical-align: 1px; }
+.fx-table td.fx-p::before { content: "\25D0"; color: var(--p); margin-right: 8px; font-size: 13px; }
+.fx-table td.fx-n::before { content: "\2715"; color: var(--lt); margin-right: 8px; font-size: 11px; }
+.fx-table tr.fx-grp td { background: var(--bg); color: var(--bk); font-size: 12.5px; font-weight: 700; letter-spacing: .3px; padding: 6px 14px; white-space: normal; width: auto; }
+.fx-table tr.same td { padding: 10px 14px; }
+.deck-visual > .cmp-wrap .cmp-table.fx-table { font-size: clamp(12px, 1vw, 17px); }
+.deck-visual > .cmp-wrap .cmp-table.fx-table th, .deck-visual > .cmp-wrap .cmp-table.fx-table td { padding: clamp(3px, .5vh, 8px) 16px; line-height: 1.45; }
+.deck-visual > .cmp-wrap .cmp-table.fx-table tr.fx-grp td { padding: clamp(2px, .35vh, 5px) 16px; font-size: .82em; }
+.deck-visual > .cmp-wrap:has(.fx-table) { padding: 14px 24px 10px; }
+.deck-visual > .cmp-wrap:has(.fx-table) .cmp-note { margin-top: 8px; font-size: 11.5px; }
+
 /* ── 실습 카드 ── */
 .practice-card { padding: 28px 30px; }
 .practice-card .step-list { margin: 0 0 22px; }
@@ -1286,6 +1307,10 @@ p code, li code, td code, .tip-box code, .warn-box code {
   .cmp-table th, .cmp-table td { padding: 9px 8px; }
   .cmp-table td:first-child { white-space: normal; width: 28%; }
   .practice-card { padding: 18px 14px; }
+  .fx-table { font-size: 12.5px; }
+  .fx-table th, .fx-table td { padding: 7px 6px; }
+  .fx-table td.fx-y, .fx-table td.fx-p, .fx-table td.fx-n, .fx-table td.fx-t { white-space: normal; }
+  .fx-table td.fx-y::before, .fx-table td.fx-p::before, .fx-table td.fx-n::before { margin-right: 4px; }
 }
 
 /* 차트: 점·막대에 마우스를 올리면 값이 뜬다 (키보드 포커스도 같다) */
@@ -1457,10 +1482,11 @@ p code, li code, td code, .tip-box code, .warn-box code {
     <a href="#i1-4" class="sub">&#8226; 한국 이용자</a>
     <a href="#i1-5" class="sub">&#8226; 유료 이용자</a>
     <a href="#i2" class="nav-head">INTRO 02 · 무료와 유료</a>
-    <a href="#i2-1" class="sub">&#8226; 무엇이 다른가</a>
-    <a href="#i2-2" class="sub">&#8226; 한눈에 보는 차이</a>
-    <a href="#i2-3" class="sub">&#8226; 실습 ① 따질 것이 많은 일</a>
-    <a href="#i2-4" class="sub">&#8226; 실습 ② 시켜 두는 일</a>
+    <a href="#i2-1" class="sub">&#8226; 차이는 할 수 있는 일</a>
+    <a href="#i2-2" class="sub">&#8226; 한눈에 보는 기능 차이</a>
+    <a href="#i2-3" class="sub">&#8226; Codex · 스킬 · 플러그인</a>
+    <a href="#i2-4" class="sub">&#8226; 업무에서 막히는 순간</a>
+    <a href="#i2-5" class="sub">&#8226; 실습 · 내 계정으로 확인</a>
     <a href="#i3" class="nav-head">INTRO 03 · 오늘 배울 것</a>
     <a href="#i3-1" class="sub">&#8226; 개발이 아니라 활용</a>
     <a href="#i3-2" class="sub">&#8226; 사람들이 AI로 하는 일</a>
@@ -1500,7 +1526,7 @@ p code, li code, td code, .tip-box code, .warn-box code {
   </div>
   <div class="hero-meta">
     <div class="hero-meta-item">대상 <span>회사 경력사원</span></div>
-    <div class="hero-meta-item">구성 <span>5개 주제 · 장표 23장</span></div>
+    <div class="hero-meta-item">구성 <span>5개 주제 · 장표 24장</span></div>
     <div class="hero-meta-item">도구 <span>ChatGPT</span></div>
     <div class="hero-meta-item">다음 <span>Page 1 · 프롬프트 엔지니어링</span></div>
   </div>
@@ -1509,7 +1535,7 @@ p code, li code, td code, .tip-box code, .warn-box code {
 <!-- 순서 -->
 <div class="timetable t5" id="timetable">
   <div class="tt-item"><div class="tt-time">INTRO 01</div><div class="tt-title">지금, AI</div><div class="tt-data">기업 · 업종 · 이용자 · 유료</div></div>
-  <div class="tt-item"><div class="tt-time">INTRO 02</div><div class="tt-title">무료와 유료</div><div class="tt-data">차이 · 실습 두 가지</div></div>
+  <div class="tt-item"><div class="tt-time">INTRO 02</div><div class="tt-title">무료와 유료</div><div class="tt-data">기능 차이 · 확인 실습</div></div>
   <div class="tt-item"><div class="tt-time">INTRO 03</div><div class="tt-title">오늘 배울 것</div><div class="tt-data">개발이 아니라 활용</div></div>
   <div class="tt-item"><div class="tt-time">INTRO 04</div><div class="tt-title">배워야 하는 이유</div><div class="tt-data">말 · 맡기기 · 격차</div></div>
   <div class="tt-item"><div class="tt-time">INTRO 05</div><div class="tt-title">꼭 알아야 할 3가지</div><div class="tt-data">확률 · 환각 · 보안</div></div>
@@ -2026,93 +2052,56 @@ p code, li code, td code, .tip-box code, .warn-box code {
   <div class="part-open">
     <div class="po-num">INTRO 02</div>
     <div class="po-title">무료와 유료, <em>무엇이</em> 다른가</div>
-    <div class="po-q">다들 쓰고, 돈까지 냅니다. 무엇이 달라서일까요?</div>
+    <div class="po-q">다들 쓰고, 돈까지 냅니다. 답이 더 똑똑해서일까요? 차이는 기능에 있습니다.</div>
   </div>
 
   <div class="slide" id="i2-1">
     <div class="slide-eyebrow">INTRO 02 · 무료와 유료</div>
-    <h3 class="slide-title">유료는 더 <em>깊이</em>, 더 <em>많이</em> 합니다</h3>
-    <figure class="slide-visual"><img src="교안_자료/도입_장표/21_무료유료_비교.webp" alt="무료와 유료 비교. 생각하는 깊이, 한 번에 읽는 분량, 심층 리서치, 파일·이미지, 응답 속도 다섯 항목에서 유료 쪽 막대가 길다" width="2752" height="1536" decoding="async"></figure>
-    <p class="slide-caption">텍스트 대화는 무료도 횟수 제한이 없습니다. 차이는 <b>오래 생각해야 하는 문제</b>와 <b>긴 자료 · 많은 작업량</b>에서 납니다.</p>
-    <div class="slide-src">출처: ChatGPT 요금제 안내(chatgpt.com/pricing) · 2026-11-12 확인</div>
+    <h3 class="slide-title">차이는 <em>할 수 있는 일</em>에서 납니다</h3>
+    <figure class="slide-visual"><img src="교안_자료/도입_장표/21_기능지도.webp" alt="세 묶음. 무료도 됩니다: 텍스트 대화, 웹 검색, 프로젝트, 스킬. 되지만 한도가 있습니다: 파일 올리기, 데이터 분석, 이미지 만들기, 심층 리서치. 유료부터 됩니다: 작업 예약, 웹·모바일 Work, Sites, 대화형 표·차트" width="2752" height="1536" decoding="async"></figure>
+    <p class="slide-caption">차이는 얼마나 똑똑한가가 아니라 <b>무엇을, 얼마나 할 수 있는가</b>입니다. 텍스트 대화는 무료도 횟수 제한이 없습니다.</p>
+    <div class="slide-src">출처: ChatGPT 요금제 안내의 플랜별 기능 비교(chatgpt.com/pricing) · 2026-11-13 확인 · 오른쪽 묶음은 Plus(월 29,000원) 기준</div>
   </div>
 
   <div class="slide" id="i2-2">
     <div class="slide-eyebrow">INTRO 02 · 무료와 유료</div>
-    <h3 class="slide-title">한눈에 보는 <em>차이</em></h3>
-    <figure class="slide-visual plain"><div class="cmp-wrap"><table class="cmp-table"><thead><tr><th>항목</th><th>무료</th><th>유료 (Plus)</th></tr></thead><tbody><tr><td>월 요금</td><td class="free">0원</td><td class="paid">29,000원</td></tr><tr><td>생각하는 깊이</td><td class="free">기본 모델</td><td class="paid">고급 추론 모델 · 생각 수준 선택</td></tr><tr><td>한 번에 읽는 분량</td><td class="free">약 12쪽</td><td class="paid">약 40쪽 · 깊이 생각할 때 약 320쪽</td></tr><tr><td>심층 리서치</td><td class="free">제한적</td><td class="paid">사용 가능 · 한도 확장</td></tr><tr><td>파일 · 이미지</td><td class="free">제한적</td><td class="paid">한도 확장</td></tr><tr><td>응답 속도</td><td class="free">이용이 몰리면 제한</td><td class="paid">빠름</td></tr><tr><td>작업 예약</td><td class="free">없음</td><td class="paid">있음</td></tr><tr class="same"><td>내 대화의 학습 활용</td><td class="free">기본은 사용 · 설정에서 거부</td><td class="paid">기본은 사용 · 설정에서 거부</td></tr></tbody></table><p class="cmp-note">ChatGPT 요금제 안내(chatgpt.com/pricing) 2026-11-12 확인 · 분량은 안내 페이지의 추정치 · 요금과 한도는 수시로 바뀝니다 · Go(월 13,000원)와 Pro는 생략</p></div></figure>
-    <p class="slide-caption">가격표보다 <b>내 일에 그 차이가 필요한지</b>를 봅니다. 그리고 마지막 줄 &mdash; 유료로 바꿔도 달라지지 않는 것이 하나 있습니다.</p>
+    <h3 class="slide-title">한눈에 보는 <em>기능 차이</em></h3>
+    <figure class="slide-visual plain"><div class="cmp-wrap"><table class="cmp-table fx-table"><thead><tr><th>기능</th><th>무료</th><th>Go</th><th>Plus</th></tr></thead><tbody><tr><td>월 요금</td><td class="fx-t">0원</td><td class="fx-t">13,000원</td><td class="fx-t">29,000원</td></tr><tr class="fx-grp"><td colspan="4">무료도 됩니다</td></tr><tr><td>텍스트 대화</td><td class="fx-y">무제한</td><td class="fx-y">무제한</td><td class="fx-y">무제한</td></tr><tr><td>웹 검색 · 프로젝트 · 스킬</td><td class="fx-y">예</td><td class="fx-y">예</td><td class="fx-y">예</td></tr><tr class="fx-grp"><td colspan="4">되지만 한도가 있습니다</td></tr><tr><td>파일 올리기 · 데이터 분석</td><td class="fx-p">제한적</td><td class="fx-y">예</td><td class="fx-y">예</td></tr><tr><td>이미지 만들기</td><td class="fx-p">제한적</td><td class="fx-y">예</td><td class="fx-y">예</td></tr><tr><td>심층 리서치</td><td class="fx-p">제한적</td><td class="fx-p">제한적</td><td class="fx-y">예</td></tr><tr><td>한 번에 읽는 분량</td><td class="fx-t">약 12쪽</td><td class="fx-t">약 40쪽</td><td class="fx-t">약 40쪽</td></tr><tr><td>Codex</td><td class="fx-p">체험</td><td class="fx-p">체험</td><td class="fx-y">한도 확대</td></tr><tr><td>플러그인</td><td class="fx-p">일부</td><td class="fx-y">예</td><td class="fx-y">예</td></tr><tr><td>Work · 여러 단계 작업</td><td class="fx-p">데스크톱 앱만</td><td class="fx-p">데스크톱 앱만</td><td class="fx-y">웹 · 모바일 포함</td></tr><tr class="fx-grp"><td colspan="4">유료부터 됩니다</td></tr><tr><td>작업 예약</td><td class="fx-n">아니요</td><td class="fx-y">예</td><td class="fx-y">예</td></tr><tr><td>플러그인 만들기 · 공유</td><td class="fx-n">아니요</td><td class="fx-y">예</td><td class="fx-y">예</td></tr><tr><td>Sites · 대화형 표·차트</td><td class="fx-n">아니요</td><td class="fx-n">아니요</td><td class="fx-y">예</td></tr><tr class="same"><td>내 대화의 학습 활용</td><td colspan="3">어느 요금제든 기본은 사용 · 설정에서 거부</td></tr></tbody></table><p class="cmp-note">ChatGPT 요금제 안내의 플랜별 기능 비교(chatgpt.com/pricing) 2026-11-13 확인 · 분량은 안내 페이지의 추정치 · 요금과 한도는 수시로 바뀝니다 · Pro는 생략</p></div></figure>
+    <p class="slide-caption">Go는 올리기 · 분석 · 예약이 풀리고, <b>맡기는 기능</b>은 Plus부터 넓어집니다. 마지막 줄은 어느 요금제든 같습니다.</p>
   </div>
 
   <div class="slide" id="i2-3">
-    <div class="slide-eyebrow">INTRO 02 · 실습 ①</div>
-    <h3 class="slide-title">따질 것이 많은 일을 <em>두 계정</em>에 맡겨 봅니다</h3>
-    <figure class="slide-visual plain"><div class="practice-card">
-      <ol class="step-list">
-        <li><b>화면부터 비교합니다</b> &mdash; 입력창의 모델 이름을 눌러 선택지를 봅니다. 앞 화면(유료 계정)에는 있고 내 화면에는 없는 것을 찾습니다.</li>
-        <li><b>같은 자료를 맡깁니다</b> &mdash; 아래 자료와 질문을 복사해 새 채팅에 그대로 붙여 넣습니다.</li>
-        <li><b>총 지급액을 견줍니다</b> &mdash; 옆 사람, 그리고 앞 화면과 숫자가 같은지 봅니다. 다르면 어느 건에서 갈렸는지 정답 표에서 찾습니다.</li>
-      </ol>
-      <div class="prompt-block">
-        <div class="prompt-header"><span class="prompt-label">PROMPT 0-1 &mdash; 출장비 정산 검토 (규정 8개 · 청구 14건)</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
-<div class="prompt-body">아래는 영업1팀의 10월 출장비 청구 14건과 회사 출장비 규정입니다.
-규정에 맞게 건별 지급액을 다시 계산해 주세요.
-먼저 총 지급액을 한 줄로 답하고, 그 아래에 건별 지급액과 조정 사유를 표로 보여 주세요.
-
-[출장비 규정]
-① 일비: 하루 30,000원. 출발일과 복귀일을 모두 포함한 날짜 수만큼 지급한다(청구액이 달라도 이 기준을 따른다).
-② 당일 출장(출발일과 복귀일이 같음)이고 왕복 이동 거리가 100km 미만이면 일비는 15,000원이다.
-③ 숙박비: 1박당 영수증 금액을 지급하되 상한이 있다. 광역시(부산·대구·인천·광주·대전·울산)는 1박 120,000원, 그 밖의 지역은 1박 90,000원. 상한을 넘는 금액은 지급하지 않는다.
-④ 철도: 영수증 금액을 지급한다. 다만 KTX 특실은 아래 요금표의 일반실 왕복 요금까지만 지급한다.
-⑤ 자가용: 왕복 거리 1km당 300원으로 계산해 지급한다(청구액이 달라도 이 기준을 따른다). 통행료는 영수증이 있을 때만 지급한다.
-⑥ 식비는 일비에 포함되므로 따로 지급하지 않는다.
-⑦ 접대비: 사전 승인을 받은 건만, 건당 200,000원까지 지급한다. 또 한 사람이 한 달에 받는 접대비는 합계 300,000원까지이며, 합계가 넘으면 신청일이 늦은 건의 접대비를 줄여 맞춘다.
-⑧ 신청 기한: 복귀일 다음 날부터 세어 영업일 10일째 되는 날까지 신청한 건만 지급한다(예: 10월 1일 복귀 → 10월 19일까지). 토요일·일요일·공휴일은 영업일이 아니다. 기한을 넘긴 건은 전액 지급하지 않는다.
-
-[달력] 2026년 10월 1일은 목요일이다. 공휴일은 10월 5일(월)과 10월 9일(금)이다.
-
-[KTX 일반실 왕복 요금표] 서울–부산 119,600 · 서울–대구 87,000 · 서울–울산 107,000 · 서울–광주 93,600 · 서울–대전 47,400 · 서울–창원 108,600 · 서울–강릉 55,200
-
-[청구 내역] (모두 2026년, 출발지는 서울 본사, 철도는 왕복 요금)
-1. 박주임 | 대구 | 10/1~10/2 | 신청 10/20 | 일비 60,000 · 숙박 1박 95,000 · KTX 일반실 87,000 · 접대비 120,000(사전 승인 있음)
-2. 김대리 | 부산 | 10/6~10/8 | 신청 10/23 | 일비 90,000 · 숙박 2박 270,000(1박 135,000) · KTX 일반실 119,600
-3. 이과장 | 대전 | 10/7 당일 | 신청 10/12 | 일비 30,000 · 자가용 편도 160km 96,000 · 통행료 16,400(영수증 있음)
-4. 박주임 | 수원 | 10/8 당일 | 신청 10/14 | 일비 30,000 · 자가용 왕복 70km 21,000 · 통행료 4,800(영수증 없음) · 점심 식비 12,000
-5. 최대리 | 광주 | 10/13~10/14 | 신청 10/29 | 일비 60,000 · 숙박 1박 110,000 · KTX 일반실 93,600
-6. 정과장 | 대구 | 10/14~10/15 | 신청 10/29 | 일비 60,000 · 숙박 1박 118,000 · KTX 특실 121,800 · 접대비 240,000(사전 승인 있음)
-7. 한사원 | 창원 | 10/15~10/16 | 신청 10/20 | 일비 90,000 · 숙박 1박 105,000 · KTX 일반실 108,600 · 저녁 식비 18,000
-8. 김대리 | 인천 | 10/20 당일 | 신청 10/21 | 일비 30,000 · 자가용 편도 48km 28,800 · 통행료 5,600(영수증 있음) · 접대비 150,000(사전 승인 없음)
-9. 이과장 | 울산 | 10/20~10/22 | 신청 10/27 | 일비 90,000 · 숙박 2박 236,000(1박 118,000) · KTX 특실 149,800 · 접대비 180,000(사전 승인 있음)
-10. 최대리 | 강릉 | 10/20~10/21 | 신청 11/5 | 일비 60,000 · 숙박 1박 90,000 · KTX 일반실 55,200
-11. 박주임 | 청주 | 10/21~10/22 | 신청 11/5 | 일비 60,000 · 숙박 1박 85,000 · 자가용 왕복 280km 98,000 · 통행료 13,200(영수증 있음)
-12. 정과장 | 대전 | 10/27~10/28 | 신청 10/30 | 일비 60,000 · 숙박 1박 126,000 · KTX 특실 66,400 · 접대비 210,000(사전 승인 있음)
-13. 이과장 | 부산 | 10/28~10/29 | 신청 10/30 | 일비 60,000 · 숙박 1박 120,000 · KTX 특실 167,600 · 접대비 150,000(사전 승인 있음)
-14. 한사원 | 천안 | 10/29 당일 | 신청 10/30 | 일비 30,000 · 자가용 편도 50km 30,000 · 통행료 9,400(영수증 없음) · 저녁 식비 9,000</div>
-      </div>
-      <details class="answer"><summary>정답 보기</summary>
-        <p>총 지급액은 <b>3,425,200원</b>입니다. 14건 가운데 2건은 신청 기한을 넘겨 지급하지 않습니다.</p>
-        <table><thead><tr><th>번호</th><th>신청자 · 출장지</th><th>지급액(원)</th><th>조정 사유</th></tr></thead><tbody><tr><th>1</th><td class="who">박주임 · 대구</td><td class="num">362,000</td><td class="why">조정 없음</td></tr><tr><th>2</th><td class="who">김대리 · 부산</td><td class="num">449,600</td><td class="why">숙박 상한 1박 120,000</td></tr><tr><th>3</th><td class="who">이과장 · 대전</td><td class="num">142,400</td><td class="why">조정 없음</td></tr><tr><th>4</th><td class="who">박주임 · 수원</td><td class="num">36,000</td><td class="why">일비 30,000→15,000 · 통행료 영수증 없음 · 식비 불가</td></tr><tr class="zero"><th>5</th><td class="who">최대리 · 광주</td><td class="num">0</td><td class="why">신청 기한 10/28 초과 → 전액 미지급</td></tr><tr><th>6</th><td class="who">정과장 · 대구</td><td class="num">465,000</td><td class="why">특실→일반실 87,000 · 접대비 건당 한도 200,000</td></tr><tr><th>7</th><td class="who">한사원 · 창원</td><td class="num">258,600</td><td class="why">일비 90,000→60,000 · 숙박 상한 1박 90,000 · 식비 불가</td></tr><tr><th>8</th><td class="who">김대리 · 인천</td><td class="num">49,400</td><td class="why">일비 30,000→15,000 · 접대비 승인 없음</td></tr><tr><th>9</th><td class="who">이과장 · 울산</td><td class="num">613,000</td><td class="why">특실→일반실 107,000</td></tr><tr class="zero"><th>10</th><td class="who">최대리 · 강릉</td><td class="num">0</td><td class="why">신청 기한 11/4 초과 → 전액 미지급</td></tr><tr><th>11</th><td class="who">박주임 · 청주</td><td class="num">242,200</td><td class="why">자가용 98,000→84,000</td></tr><tr><th>12</th><td class="who">정과장 · 대전</td><td class="num">327,400</td><td class="why">숙박 상한 1박 120,000 · 특실→일반실 47,400 · 접대비 월 한도 300,000 → 100,000</td></tr><tr><th>13</th><td class="who">이과장 · 부산</td><td class="num">419,600</td><td class="why">특실→일반실 119,600 · 접대비 월 한도 300,000 → 120,000</td></tr><tr><th>14</th><td class="who">한사원 · 천안</td><td class="num">60,000</td><td class="why">통행료 영수증 없음 · 식비 불가</td></tr><tr class="sum"><th colspan="2">합계</th><td class="num">3,425,200</td><td class="why">청구 합계 4,546,800원에서 1,121,600원 감액</td></tr></tbody></table>
-      </details>
-    </div></figure>
-    <p class="slide-caption">쉬운 질문은 무료도 잘 답합니다. 이렇게 <b>따질 것이 많은 일</b>일수록 계정마다, 실행할 때마다 답이 달라질 수 있습니다. 그래서 숫자는 반드시 대조합니다.</p>
+    <div class="slide-eyebrow">INTRO 02 · 무료와 유료</div>
+    <h3 class="slide-title">Codex · 스킬 · 플러그인, <em>무료에서도</em> 열립니다</h3>
+    <figure class="slide-visual"><img src="교안_자료/도입_장표/22_codex_스킬_플러그인.webp" alt="세 카드. Codex(코드를 짜고 고치는 AI): 무료는 체험만, 유료는 한도 확대. 스킬(자주 하는 일을 저장해 다시 쓰기): 무료와 유료 모두 사용 가능. 플러그인(외부 도구를 연결하기): 무료는 일부만 사용, 유료는 만들기·공유까지" width="2752" height="1536" decoding="async"></figure>
+    <p class="slide-caption">셋 다 무료 계정에서 열립니다. 다만 Codex는 <b>체험 수준</b>이고, 플러그인은 <b>일부만</b> 쓸 수 있으며 만들기와 공유는 유료부터입니다.</p>
+    <div class="slide-src">출처: ChatGPT 요금제 안내 · Codex 가격 안내 · 플러그인 안내(모두 2026-11-13 확인) · 스킬은 요금제 안내 기준 — 사이드바의 플러그인에서 내 계정을 확인</div>
   </div>
 
   <div class="slide" id="i2-4">
-    <div class="slide-eyebrow">INTRO 02 · 실습 ②</div>
-    <h3 class="slide-title"><em>시켜 두는 일</em>은 유료 계정에서만 됩니다</h3>
+    <div class="slide-eyebrow">INTRO 02 · 무료와 유료</div>
+    <h3 class="slide-title">업무에 쓰면 <em>여기서</em> 막힙니다</h3>
+    <figure class="slide-visual"><img src="교안_자료/도입_장표/23_막히는순간.webp" alt="무료 계정이 막히는 네 순간. 자료를 여러 개 올릴 때 — 업로드 한도. 깊게 조사시킬 때 — 심층 리서치 한도. 긴 문서를 통째로 줄 때 — 약 12쪽까지. 정해진 때에 시킬 때 — 작업 예약 없음" width="2752" height="1536" decoding="async"></figure>
+    <p class="slide-caption">무료 계정은 도구마다 한도가 따로 있습니다. 한도에 닿으면 알림이 뜨고, <b>시간이 지나야</b> 다시 쓸 수 있습니다.</p>
+    <div class="slide-src">출처: OpenAI 도움말 「ChatGPT Free Tier FAQ」(2026-11 수정) · ChatGPT 요금제 안내(2026-11-13 확인) · 횟수는 공개되어 있지 않아 화면에 표시되는 남은 횟수를 봅니다</div>
+  </div>
+
+  <div class="slide" id="i2-5">
+    <div class="slide-eyebrow">INTRO 02 · 실습</div>
+    <h3 class="slide-title">기능 차이를 <em>내 계정</em>으로 확인합니다</h3>
     <figure class="slide-visual plain"><div class="practice-card">
       <ol class="step-list">
+        <li><b>메뉴를 견줍니다</b> &mdash; 사이드바의 플러그인과 입력창의 <b>+</b> 메뉴를 엽니다. 앞 화면(유료 계정)에는 있고 내 화면에는 없는 것을 찾습니다.</li>
         <li><b>같은 부탁을 합니다</b> &mdash; 아래 문장을 복사해 새 채팅에 넣습니다.</li>
-        <li><b>화면을 비교합니다</b> &mdash; 앞 화면(유료 계정)에는 예약이 만들어집니다. 내 화면은 어떻게 답했나요?</li>
         <li><b>말이 아니라 목록을 봅니다</b> &mdash; &ldquo;예약했습니다&rdquo;라는 답이 나왔더라도 예약 목록에 실제로 생겼는지 확인합니다. 만들어진 예약은 실습 뒤에 지웁니다.</li>
       </ol>
       <div class="prompt-block">
-        <div class="prompt-header"><span class="prompt-label">PROMPT 0-2 &mdash; 매주 받아 보기</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
+        <div class="prompt-header"><span class="prompt-label">PROMPT 0 &mdash; 매주 받아 보기</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
 <div class="prompt-body">매주 월요일 오전 9시에, 지난 한 주 동안 나온 생성형 AI 업무 활용 소식 3가지를 각각 두 줄로 요약해서 알려 주세요.</div>
       </div>
     </div></figure>
     <p class="slide-caption">무료 계정은 물어볼 때 답합니다. 유료 계정은 <b>시켜 두면 정해진 때에 알아서</b> 합니다.</p>
-    <div class="slide-src">출처: ChatGPT 요금제 안내(chatgpt.com/pricing) · 2026-11-12 확인 · 작업 예약: 무료 &lsquo;아니요&rsquo;, Go · Plus · Pro &lsquo;예&rsquo;</div>
+    <div class="slide-src">출처: ChatGPT 요금제 안내의 플랜별 기능 비교(chatgpt.com/pricing) · 2026-11-13 확인 · 작업 예약: 무료 &lsquo;아니요&rsquo;, Go · Plus · Pro &lsquo;예&rsquo;</div>
   </div>
 </section>
 
