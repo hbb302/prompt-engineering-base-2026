@@ -1,0 +1,2899 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI 실무 활용교육 — 오리엔테이션 (OT · 기본 교안)</title>
+<style>
+@import url("https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/subsets/Paperlogy-dynamic-subset.css");
+:root {
+  --p: #F36F21;
+  --p2: #FF8B45;
+  --pd: #C24E12;
+  --p-soft: #FFF3E6;
+  --p-soft-2: #FFE3CC;
+  --accent: #1A1A1A;
+  --bk: #1A1A1A;
+  --dk: #333;
+  --md: #666;
+  --lt: #999;
+  --bd: #E5E5E5;
+  --bd-2: #CCC;
+  --bg: #F5F5F5;
+  --bg-2: #FAFAFA;
+  --w: #FFF;
+  --g: #2E7D32;
+  --g-bg: #F0F9F0;
+  --g-bd: #BFE3BF;
+  --r: #C62828;
+  --r-bg: #FFEBEE;
+  --y: #F57F17;
+  --y-bg: #FFFDE7;
+  --b: #1565C0;
+  --b-bg: #E3F2FD;
+  --sidebar-w: 250px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Paperlogy', -apple-system, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--dk);
+  line-height: 1.7;
+  font-size: 15px;
+}
+svg { display: block; max-width: 100%; height: auto; }
+
+/* ── Sidebar ── */
+.sidebar {
+  position: fixed; top: 0; left: 0;
+  width: var(--sidebar-w); height: 100vh;
+  background: var(--bk); overflow-y: auto; z-index: 1000;
+  transition: transform 0.3s ease;
+}
+.sidebar-header {
+  padding: 24px 20px 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.sidebar-badge {
+  display: inline-block;
+  border: 1px solid var(--p2);
+  padding: 3px 10px;
+  font-size: 10px; color: var(--p2);
+  letter-spacing: 1.5px; font-weight: 700;
+  margin-bottom: 8px;
+}
+.sidebar-title {
+  font-size: 15px; color: var(--w);
+  font-weight: 700; line-height: 1.4;
+}
+.sidebar-title em { font-style: normal; color: var(--p2); }
+.sidebar-nav { padding: 12px 0; }
+.sidebar-nav .nav-module {
+  padding: 10px 20px 6px;
+  font-size: 10px; font-weight: 700;
+  color: var(--p2); letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.sidebar-nav a {
+  display: block;
+  padding: 7px 20px 7px 28px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  transition: all 0.2s;
+  border-left: 2px solid transparent;
+}
+.sidebar-nav a:hover { color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.05); }
+.sidebar-nav a.active {
+  color: var(--w);
+  background: rgba(243,111,33,0.18);
+  border-left-color: var(--p2);
+  font-weight: 600;
+}
+.sidebar-nav a.sub { padding-left: 40px; font-size: 12px; }
+.sidebar-nav a.nav-head {
+  color: var(--p2); font-weight: 700; font-size: 14px;
+  padding: 14px 20px 8px 22px;
+  margin-top: 4px; letter-spacing: .2px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.sidebar-nav a.nav-head:hover { color: #FFB880; background: transparent; }
+.sidebar-nav a.nav-head.active {
+  color: #FFB880; background: rgba(243,111,33,0.14);
+  border-left-color: var(--p2);
+}
+.sidebar-footer {
+  padding: 16px 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 11px; color: rgba(255,255,255,0.35);
+}
+
+.hamburger {
+  display: none;
+  position: fixed; top: 14px; left: 14px;
+  z-index: 1100; background: var(--bk);
+  color: var(--w); border: none;
+  padding: 10px 12px; font-size: 20px;
+  cursor: pointer; border-radius: 4px;
+}
+
+/* Main */
+.main {
+  margin-left: calc(var(--sidebar-w) + 20px);
+  max-width: 980px;
+  background: var(--w);
+  min-height: 100vh;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #2B1810, #C24E12 60%, #F36F21);
+  padding: 80px 60px; position: relative;
+}
+.hero-badge {
+  display: inline-block;
+  border: 1px solid rgba(255,255,255,.35);
+  padding: 5px 14px;
+  font-size: 11px; color: rgba(255,255,255,.8);
+  letter-spacing: 1px; margin-bottom: 28px;
+}
+.hero h1 {
+  font-size: 44px; color: var(--w);
+  font-weight: 700; line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -.02em;
+}
+.hero-sub {
+  font-size: 17px;
+  color: rgba(255,255,255,.9);
+  line-height: 1.7;
+}
+.hero-sub b { color: var(--w); font-weight: 700; }
+.hero-meta {
+  margin-top: 36px; display: flex;
+  gap: 32px;
+  border-top: 1px solid rgba(255,255,255,.15);
+  padding-top: 22px; flex-wrap: wrap;
+}
+.hero-meta-item { font-size: 13px; color: rgba(255,255,255,.65); }
+.hero-meta-item span { color: var(--w); font-weight: 600; display: block; margin-top: 2px; }
+
+/* Timetable */
+.timetable {
+  display: grid;
+  grid-template-columns: repeat(9,1fr);
+  border: 1px solid var(--bd);
+}
+.tt-item {
+  padding: 18px 8px;
+  text-align: center;
+  border-right: 1px solid var(--bd);
+}
+.tt-item:last-child { border-right: none; }
+.tt-time { font-size: 11px; color: var(--p); font-weight: 700; letter-spacing: .5px; }
+.tt-title { font-size: 12px; font-weight: 700; color: var(--bk); margin-top: 6px; line-height: 1.4; }
+.tt-data { font-size: 11px; color: var(--lt); margin-top: 4px; }
+
+/* ── Module (한 PART = 한 모듈) ── */
+.module {
+  padding: 80px 60px;
+  border-bottom: 1px solid var(--bd);
+}
+.module + .module { padding-top: 80px; }
+.mod-head {
+  display: flex; align-items: center;
+  gap: 16px; margin-bottom: 28px; flex-wrap: wrap;
+}
+.mod-num {
+  background: var(--bk); color: var(--w);
+  font-size: 11px; font-weight: 700;
+  padding: 6px 14px; letter-spacing: 1px;
+}
+.mod-time { font-size: 13px; color: var(--p); font-weight: 600; }
+.mod-title {
+  font-size: 28px; font-weight: 700; color: var(--bk);
+  letter-spacing: -.01em; line-height: 1.3;
+}
+.mod-title small {
+  display: block; font-size: 15px;
+  font-weight: 400; color: var(--lt);
+  margin-top: 8px; line-height: 1.55;
+}
+
+/* ── 세로 호흡 — 한 개념과 다음 개념 사이 큰 여백 ── */
+.breath { height: 64px; }
+.breath-lg { height: 96px; }
+
+/* Objective box */
+
+/* Heading in module body */
+.h-lead {
+  font-size: 19px; font-weight: 700;
+  color: var(--bk);
+  margin: 0 0 16px;
+  padding-left: 12px;
+  border-left: 4px solid var(--accent);
+}
+.p-lead {
+  font-size: 15px; color: var(--dk);
+  margin: 0 0 24px;
+  line-height: 1.75;
+  max-width: 760px;
+}
+.p-lead b { color: var(--bk); }
+
+/* ── 시각 다이어그램 컨테이너 ── */
+.visual {
+  margin: 0;
+  padding: 28px;
+  background: var(--w);
+  border: 1px solid var(--bd);
+  border-radius: 6px;
+}
+.visual-caption {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--md);
+  text-align: center;
+  line-height: 1.6;
+}
+.visual-caption b { color: var(--bk); }
+.visual-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--p);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* ── Big concept callout (한 개념 한 화면) ── */
+.spotlight {
+  margin: 0;
+  padding: 48px 40px;
+  background: linear-gradient(180deg, var(--p-soft) 0%, #FFF 80%);
+  border: 1px solid var(--p-soft-2);
+  border-radius: 8px;
+  text-align: center;
+}
+.spotlight .sp-eyebrow {
+  font-size: 11px; color: var(--p);
+  font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; margin-bottom: 14px;
+}
+.spotlight .sp-headline {
+  font-size: 26px; font-weight: 700;
+  color: var(--bk); line-height: 1.35;
+  letter-spacing: -.01em; margin-bottom: 16px;
+}
+.spotlight .sp-headline em {
+  font-style: normal;
+  background: var(--p);
+  color: var(--w);
+  padding: 0 10px;
+  border-radius: 3px;
+}
+.spotlight .sp-detail {
+  font-size: 14px; color: var(--md);
+  line-height: 1.7; max-width: 620px;
+  margin: 0 auto;
+}
+
+/* ── 3요소 공식 시각화 (PART 02 핵심) ── */
+.formula-grid {
+  display: grid;
+  grid-template-columns: 1fr 28px 1fr 28px 1fr 28px 1.1fr;
+  gap: 0;
+  align-items: stretch;
+  margin: 0;
+}
+.formula-card {
+  background: var(--w);
+  border: 1px solid var(--bd);
+  border-top: 4px solid;
+  border-radius: 4px;
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+}
+.formula-card.f1 { border-top-color: #1A1A1A; }
+.formula-card.f2 { border-top-color: var(--p); }
+.formula-card.f3 { border-top-color: var(--g); }
+.formula-card.fr {
+  background: var(--bk);
+  border-color: var(--bk);
+  color: var(--w);
+}
+.formula-card .fc-no {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 1.2px;
+  color: var(--lt);
+  margin-bottom: 10px;
+}
+.formula-card.fr .fc-no { color: var(--p2); }
+.formula-card .fc-name {
+  font-size: 18px; font-weight: 700;
+  color: var(--bk);
+  margin-bottom: 4px;
+  letter-spacing: -.005em;
+}
+.formula-card.fr .fc-name { color: var(--w); font-size: 19px; }
+.formula-card .fc-sub {
+  font-size: 12px; color: var(--md);
+  margin-bottom: 14px;
+}
+.formula-card.fr .fc-sub { color: rgba(255,255,255,.6); }
+.formula-card .fc-eg {
+  background: var(--bg);
+  border-radius: 3px;
+  padding: 10px 12px;
+  font-size: 12px;
+  color: var(--dk);
+  line-height: 1.55;
+  margin-top: auto;
+}
+.formula-card.fr .fc-eg {
+  background: rgba(255,255,255,.08);
+  color: var(--w);
+  border-left: 2px solid var(--p);
+}
+.formula-card .fc-eg b { color: var(--bk); }
+.formula-card.fr .fc-eg b { color: var(--p2); }
+.formula-op {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px; font-weight: 300;
+  color: var(--lt);
+}
+.formula-op.equal { color: var(--p); font-weight: 700; }
+
+/* ── Before/After 비교 (좌우 분할) ── */
+.split-vis {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin: 0;
+}
+.split-card {
+  background: var(--w);
+  border: 1px solid var(--bd);
+  border-radius: 6px;
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+}
+.split-card.bad { border-top: 3px solid var(--r); }
+.split-card.good { border-top: 3px solid var(--g); }
+.split-card .sv-tag {
+  display: inline-block;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 1px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  margin-bottom: 12px;
+  align-self: flex-start;
+}
+.split-card.bad .sv-tag { background: var(--r-bg); color: var(--r); }
+.split-card.good .sv-tag { background: var(--g-bg); color: var(--g); }
+.split-card .sv-name {
+  font-size: 16px; font-weight: 700;
+  color: var(--bk); margin-bottom: 14px;
+  line-height: 1.4;
+}
+.split-card .sv-prompt {
+  background: var(--bg);
+  padding: 12px 14px;
+  border-radius: 4px;
+  font-size: 12.5px;
+  color: var(--dk);
+  font-family: 'Consolas', monospace;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.split-card .sv-arrow {
+  text-align: center;
+  font-size: 18px;
+  color: var(--lt);
+  margin: 4px 0 10px;
+}
+.split-card .sv-result {
+  background: var(--bg-2);
+  padding: 12px 14px;
+  border-radius: 4px;
+  font-size: 12.5px;
+  color: var(--dk);
+  line-height: 1.6;
+}
+.split-card.bad .sv-result { background: #FFF5F5; color: #7A1E1E; }
+.split-card.good .sv-result { background: var(--g-bg); color: #1B5E20; }
+.split-card .sv-result ul {
+  margin: 0; padding-left: 16px;
+  font-size: 12.5px; line-height: 1.7;
+}
+
+/* Tip / Warn / Info boxes */
+.tip-box, .warn-box {
+  padding: 18px 24px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.75;
+  border-radius: 4px;
+}
+.tip-box { background: #FFF8E1; border-left: 3px solid #FFB300; color: #6D4C00; }
+.tip-box strong { color: #E65100; }
+.warn-box { background: var(--r-bg); border-left: 3px solid #E53935; color: #7A1E1E; }
+.warn-box strong { color: #B71C1C; }
+.info-box {
+  background: #FFF8F2;
+  border: 1px solid #FFD9B3;
+  border-left: 3px solid var(--p);
+  padding: 18px 24px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--dk);
+  border-radius: 4px;
+}
+.info-box strong { color: var(--p); }
+.info-box b { color: var(--bk); }
+.info-box ul { margin: 10px 0 0; padding-left: 18px; }
+.info-box li { margin-bottom: 6px; }
+
+/* Prompt block */
+.prompt-block {
+  position: relative;
+  background: #141822;
+  border-radius: 6px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #252B3A;
+}
+.prompt-header {
+  display: flex; justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  background: #1E2433;
+  border-bottom: 1px solid #2A3142;
+}
+.prompt-label { font-size: 11px; color: var(--p2); font-weight: 700; letter-spacing: .5px; }
+.copy-btn {
+  background: transparent; border: 1px solid #555;
+  color: #aaa; padding: 3px 10px;
+  font-size: 11px; cursor: pointer;
+  border-radius: 3px; font-family: inherit;
+  transition: all 0.2s;
+}
+.copy-btn:hover { border-color: var(--p2); color: var(--p2); }
+.copy-btn.copied { border-color: #4CAF50; color: #4CAF50; }
+.prompt-body {
+  padding: 20px 22px;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 13px; color: #E0E0E0;
+  line-height: 1.85;
+  white-space: pre-wrap; word-break: break-word;
+  overflow-x: auto;
+  max-height: 640px; overflow-y: auto;
+}
+.prompt-body .hl { color: #FFD369; }
+.prompt-body .hl2 { color: #80D8FF; }
+
+/* Info grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin: 0;
+}
+.info-card {
+  background: var(--w);
+  border: 1px solid var(--bd);
+  padding: 24px;
+  border-radius: 6px;
+}
+.info-card h5 { font-size: 15px; font-weight: 700; color: var(--bk); margin-bottom: 10px; line-height: 1.4; }
+.info-card h5 em { font-style: normal; color: var(--p); font-size: 11px; margin-right: 6px; letter-spacing: .5px; }
+.info-card p { font-size: 13.5px; color: var(--md); line-height: 1.7; }
+.info-card p b { color: var(--bk); }
+
+/* Comparison table */
+.comp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+  font-size: 13px;
+}
+.comp-table th, .comp-table td {
+  border: 1px solid var(--bd);
+  padding: 12px 14px;
+  text-align: left; vertical-align: top;
+}
+.comp-table th {
+  background: var(--bg); color: var(--bk);
+  font-weight: 700; font-size: 12px;
+}
+.comp-table td code {
+  background: var(--p-soft); color: var(--p);
+  padding: 1px 5px; border-radius: 3px;
+  font-size: 12px;
+}
+
+/* Resource card */
+.resource {
+  background: #FFF8F2;
+  border: 1px solid #FFD9B3;
+  border-left: 4px solid var(--p);
+  border-radius: 4px;
+  padding: 22px 26px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 60px 1fr auto;
+  gap: 22px;
+  align-items: center;
+}
+.resource-icon {
+  width: 60px; height: 60px;
+  background: var(--w);
+  border: 1px solid #FFD9B3;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 3px; border-radius: 4px;
+}
+.resource-icon .ri-emoji { font-size: 20px; }
+.resource-icon .ri-ext { font-size: 9px; font-weight: 700; color: var(--p); letter-spacing: .8px; }
+.resource-text .r-meta {
+  font-size: 10px; font-weight: 700;
+  color: var(--p); letter-spacing: 1px;
+  margin-bottom: 4px; text-transform: uppercase;
+}
+.resource-text strong { display: block; font-size: 16px; font-weight: 700; color: var(--bk); margin-bottom: 4px; }
+.resource-text p { font-size: 13px; color: var(--md); line-height: 1.65; margin: 0; }
+.resource-btn {
+  background: var(--bk); color: var(--w);
+  font-size: 12px; font-weight: 700;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 3px;
+  letter-spacing: .5px;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.resource-btn:hover { background: var(--p); }
+.resource-btn::after { content: ' ↓'; }
+
+/* Sample card */
+.sample {
+  background: var(--g-bg);
+  border: 1px solid var(--g-bd);
+  border-left: 4px solid var(--g);
+  border-radius: 4px;
+  padding: 22px 26px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 60px 1fr auto;
+  gap: 22px;
+  align-items: center;
+}
+.sample-icon {
+  width: 60px; height: 60px;
+  background: var(--w);
+  border: 1px solid var(--g-bd);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 3px; border-radius: 4px;
+}
+.sample-icon .si-emoji { font-size: 20px; }
+.sample-icon .si-ext { font-size: 9px; font-weight: 700; color: var(--g); letter-spacing: .8px; }
+.sample-text .s-meta {
+  font-size: 10px; font-weight: 700;
+  color: var(--g); letter-spacing: 1px;
+  margin-bottom: 4px; text-transform: uppercase;
+}
+.sample-text strong { display: block; font-size: 16px; font-weight: 700; color: var(--bk); margin-bottom: 4px; }
+.sample-text p { font-size: 13px; color: var(--md); line-height: 1.65; margin: 0; }
+.sample-btn {
+  background: var(--g); color: var(--w);
+  font-size: 12px; font-weight: 700;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 3px;
+  letter-spacing: .5px;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.sample-btn:hover { background: #1B5E20; }
+.sample-btn::after { content: ' ↓'; }
+
+/* Mock artifact preview */
+.mock-doc {
+  background: var(--w);
+  border: 1px solid var(--bd);
+  border-radius: 4px;
+  padding: 32px 36px;
+  margin: 0;
+  position: relative;
+}
+.mock-doc::before {
+  content: 'After · 실제 출력 예시';
+  position: absolute; top: -10px; left: 22px;
+  background: var(--p); color: var(--w);
+  font-size: 10px; font-weight: 700;
+  padding: 4px 12px;
+  letter-spacing: .8px;
+  border-radius: 3px;
+}
+.mock-doc-head {
+  border-bottom: 2px solid var(--bk);
+  padding-bottom: 14px;
+  margin-bottom: 22px;
+  display: flex; justify-content: space-between;
+  align-items: flex-start; gap: 16px;
+}
+.mock-doc-head h4 { font-size: 19px; font-weight: 700; color: var(--bk); line-height: 1.35; }
+.mock-doc-meta { font-size: 11px; color: var(--md); text-align: right; white-space: nowrap; line-height: 1.6; }
+.mock-doc-meta b { color: var(--bk); }
+.mock-row { margin-bottom: 20px; }
+.mock-row:last-child { margin-bottom: 0; }
+.mock-row-label {
+  display: inline-block;
+  font-size: 11px; font-weight: 700;
+  color: var(--p);
+  background: var(--p-soft);
+  padding: 4px 10px; border-radius: 3px;
+  margin-bottom: 10px;
+  letter-spacing: .3px;
+}
+.mock-row p { font-size: 14px; color: var(--dk); margin: 0; line-height: 1.7; }
+.mock-row p.lead { font-weight: 600; color: var(--bk); }
+.mock-row ul, .mock-row ol {
+  padding-left: 20px; font-size: 13.5px;
+  color: var(--dk); margin: 0; line-height: 1.75;
+}
+.mock-row li { margin-bottom: 5px; }
+.mock-row li b { color: var(--bk); }
+.mock-row .src { color: var(--lt); font-size: 11.5px; }
+
+/* Markdown output preview */
+.md-output {
+  background: #141822;
+  border-radius: 6px;
+  padding: 26px 30px;
+  margin: 0;
+  color: #E0E0E0;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.9;
+  border: 1px solid #252B3A;
+  position: relative;
+}
+.md-output::before {
+  content: '📄 마크다운 정리 결과';
+  position: absolute; top: -10px; left: 20px;
+  background: #1E2433; color: var(--p2);
+  font-size: 10px; font-weight: 700;
+  padding: 4px 12px;
+  letter-spacing: .5px;
+  font-family: 'Paperlogy', sans-serif;
+  border-radius: 3px;
+}
+.md-output .h1 {
+  color: var(--w); font-weight: 700;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(255,255,255,.15);
+  padding-bottom: 6px; margin: 6px 0 14px;
+}
+.md-output .h2 { color: var(--p2); font-weight: 700; font-size: 13px; margin: 16px 0 6px; }
+.md-output .ln { color: #CCC; padding-left: 14px; position: relative; }
+.md-output .ln::before { content: '-'; position: absolute; left: 0; color: #888; }
+.md-output .ln em { font-style: normal; color: #888; font-size: 11px; margin-left: 4px; }
+.md-output .ai-add {
+  display: inline-block;
+  background: rgba(243, 111, 33, .22);
+  color: #FFB089;
+  padding: 1px 8px;
+  border-radius: 2px;
+  font-size: 10.5px;
+  font-weight: 700;
+  margin-left: 6px;
+  letter-spacing: .3px;
+}
+.md-output .blank {
+  color: #FFD369;
+  background: rgba(255, 211, 105, .1);
+  padding: 0 4px;
+  border-radius: 2px;
+}
+.md-output.project-prompt::before { content: '📄 생성된 마스터프롬프트'; }
+.md-output.report::before { content: '📄 섹션 1 작성 결과'; }
+.md-output .strong { color: #FFD369; font-weight: 700; }
+
+/* 페이지 이동 — 다음 페이지 CTA */
+.page-nav-bottom {
+  display: flex;
+  justify-content: center;
+  padding: 0 50px 60px;
+}
+.next-page-btn {
+  display: block;
+  background: linear-gradient(135deg, #2B1810 0%, #C24E12 60%, #F36F21 100%);
+  color: var(--w);
+  text-decoration: none;
+  padding: 28px 56px 26px 38px;
+  border-radius: 10px;
+  min-width: 420px;
+  max-width: 520px;
+  text-align: left;
+  box-shadow: 0 12px 32px rgba(243,111,33,.25);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.next-page-btn::after {
+  content: "→";
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  font-size: 28px;
+  color: rgba(255,255,255,.4);
+  transition: transform 0.2s, color 0.2s;
+}
+.next-page-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(243,111,33,.36);
+}
+.next-page-btn:hover::after {
+  transform: translateY(-50%) translateX(4px);
+  color: var(--w);
+}
+.next-page-meta {
+  font-size: 11px;
+  color: #FFD9B3;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.next-page-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: -.01em;
+  padding-right: 40px;
+}
+.next-page-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,.85);
+  line-height: 1.6;
+  padding-right: 40px;
+}
+
+/* 사이드바 하단 Page 2 이동 버튼 */
+.sidebar-next-page {
+  display: block;
+  margin: 18px 14px 8px;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #C24E12, #F36F21);
+  color: var(--w);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 4px 14px rgba(243,111,33,.32);
+  position: relative;
+}
+.sidebar-next-page:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(243,111,33,.45);
+}
+.sidebar-next-page::after {
+  content: "→";
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: rgba(255,255,255,.7);
+}
+.snp-meta {
+  font-size: 10px;
+  color: #FFD9B3;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  margin-bottom: 3px;
+}
+.snp-label {
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: -.005em;
+}
+
+@media (max-width: 900px) {
+  .page-nav-bottom { padding: 0 22px 32px; justify-content: center; }
+  .next-page-btn { min-width: 0; width: 100%; }
+}
+
+/* GPTs 사이드바 미리보기 */
+.gpts-showcase {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 40px;
+  align-items: center;
+  margin: 0;
+}
+.gpts-list {
+  background: var(--w);
+  border: 1px solid var(--bd);
+  border-radius: 14px;
+  padding: 18px 12px;
+  box-shadow: 0 12px 32px rgba(0,0,0,.08);
+}
+.gpts-header {
+  font-size: 12px;
+  color: var(--lt);
+  padding: 4px 10px 10px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.gpts-header::after {
+  content: "▾";
+  font-size: 10px;
+}
+.gpts-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--bk);
+  transition: background 0.15s;
+}
+.gpts-item:hover { background: #F5F5F5; }
+.gpts-icon {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+  color: #fff;
+  font-weight: 700;
+}
+.gpts-icon.i1 { background: radial-gradient(circle at 30% 30%, #8B6F47, #4A2E14); }
+.gpts-icon.i2 { background: linear-gradient(135deg, #8B4513, #3D1F08); }
+.gpts-icon.i3 { background: linear-gradient(135deg, #4A4036, #1F1A14); }
+.gpts-icon.i4 { background: linear-gradient(135deg, #DDA853, #8B5E1E); }
+.gpts-icon.i5, .gpts-icon.i6 {
+  background: var(--w);
+  border: 1.5px solid var(--bd);
+  color: var(--md);
+}
+.gpts-name {
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.gpts-detail h4 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--bk);
+  margin-bottom: 12px;
+}
+.gpts-detail p {
+  font-size: 14px;
+  color: var(--dk);
+  line-height: 1.75;
+  margin: 0 0 14px;
+}
+.gpts-detail .gpts-uses {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 14px;
+}
+.gpts-detail .gpts-uses li {
+  padding: 4px 0 4px 16px;
+  position: relative;
+  font-size: 13px;
+  color: var(--md);
+  line-height: 1.55;
+}
+.gpts-detail .gpts-uses li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--p);
+  font-weight: 700;
+}
+@media (max-width: 900px) {
+  .gpts-showcase { grid-template-columns: 1fr; gap: 28px; }
+  .gpts-list { max-width: 360px; margin: 0 auto; }
+}
+
+/* 인라인 코드 */
+p code, li code, td code, .tip-box code, .warn-box code {
+  background: #FFF3E6;
+  color: var(--p);
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 12.5px;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-weight: 600;
+}
+
+/* ── PART 03·04: 근거 카드 (수치 + 출처 줄) ── */
+.evidence {
+  background: var(--w);
+  border: 1px solid var(--bd);
+  border-left: 4px solid var(--p);
+  border-radius: 6px;
+  padding: 26px 30px;
+}
+.evidence .ev-eyebrow {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 1px; color: var(--p);
+  margin-bottom: 16px;
+}
+.evidence .ev-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+  max-width: 760px;
+}
+.evidence .ev-stat {
+  background: var(--bg-2);
+  border: 1px solid var(--bd);
+  border-radius: 4px;
+  padding: 14px 18px;
+}
+.evidence .ev-stat.hi { background: var(--p-soft); border-color: var(--p-soft-2); }
+.evidence .ev-num {
+  display: block;
+  font-size: 30px; font-weight: 700;
+  color: var(--bk); line-height: 1.15;
+  letter-spacing: -.01em;
+}
+.evidence .ev-stat.hi .ev-num { color: var(--p); }
+.evidence .ev-cap { display: block; font-size: 12.5px; color: var(--md); margin-top: 4px; }
+.evidence p { font-size: 14.5px; color: var(--dk); line-height: 1.75; max-width: 760px; }
+.evidence p b { color: var(--bk); }
+.evidence .ev-src { margin-top: 10px; font-size: 12.5px; color: var(--md); line-height: 1.6; }
+.evidence .ev-item + .ev-item { margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--bd); }
+.evidence .ev-head {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 16px; font-weight: 700; color: var(--bk);
+  margin-bottom: 10px;
+}
+.evidence .ev-no {
+  flex: none;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--p); color: var(--w);
+  font-size: 12px; font-weight: 700;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+
+/* ── PART 03: 실행 순서 목록 (장표의 번호와 맞춤) ── */
+.step-list {
+  list-style: none;
+  counter-reset: step;
+  margin: 0; padding: 0;
+  max-width: 760px;
+}
+.step-list li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 14px;
+  font-size: 14.5px; line-height: 1.75; color: var(--dk);
+}
+.step-list li:last-child { margin-bottom: 0; }
+.step-list li::before {
+  content: counter(step);
+  position: absolute; left: 0; top: 1px;
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--bk); color: var(--w);
+  font-size: 13px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.step-list li b { color: var(--bk); }
+
+/* ── PART 03·04: 소단원 끝 질문 (질문 사슬) ── */
+.next-q {
+  margin: 28px 0 0;
+  max-width: 760px;
+  font-size: 15.5px; font-weight: 700;
+  color: var(--pd); line-height: 1.6;
+}
+.next-q::before { content: "\2192\00a0"; color: var(--p); }
+.next-q a { color: var(--p); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ── PART 04: 같은 답, 두 모습 ── */
+.md-pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+.md-pane { display: flex; flex-direction: column; }
+.md-pane-label {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 1px; color: var(--md);
+  margin-bottom: 8px;
+}
+.md-rendered {
+  flex: 1;
+  background: var(--w);
+  border: 1px solid var(--bd);
+  border-radius: 6px;
+  padding: 18px 22px;
+  font-size: 14px; color: var(--dk); line-height: 1.7;
+}
+.md-rendered .r-h1 { font-size: 19px; font-weight: 700; color: var(--bk); margin-bottom: 10px; }
+.md-rendered .r-h2 { font-size: 15.5px; font-weight: 700; color: var(--bk); margin-bottom: 6px; }
+.md-rendered ul { margin: 0; padding-left: 18px; }
+.md-rendered b { color: var(--bk); }
+.md-raw {
+  flex: 1;
+  background: var(--bg-2);
+  border: 1px solid var(--bd-2);
+  border-radius: 6px;
+  padding: 18px 22px;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 13px; color: var(--dk); line-height: 1.85;
+  white-space: pre-wrap; word-break: break-word;
+}
+.md-raw .mk { color: var(--p); font-weight: 700; }
+.table-note { font-size: 13px; color: var(--md); margin: 12px 0 0; max-width: 760px; }
+.mock-doc.research::before { content: '심층 리서치 결과 예시 · 가상 데이터'; }
+/* ── PART 03·04 검토 반영 (2026-11-12) ── */
+.formula-grid.process .fc-no { font-size: 11.5px; letter-spacing: .3px; color: var(--pd); }
+.formula-grid.process .formula-card.fr .fc-no { color: var(--p2); }
+.visual + .step-list { margin-top: 28px; }
+.step-list a { color: var(--p); text-decoration: underline; text-underline-offset: 3px; }
+.prompt-body .hl[data-role]::after {
+  content: "\00a0\00a0\2190\00a0" attr(data-role);
+  color: #8C96AA; font-weight: 400; font-size: 12px;
+  font-family: 'Paperlogy', sans-serif;
+}
+.evidence .ev-unit { font-size: 12.5px; color: var(--md); margin-bottom: 8px; }
+.tip-box .src-line { display: block; margin-top: 8px; font-size: 12.5px; color: #8A6D1F; }
+.md-map code { white-space: nowrap; }
+.md-map td { word-break: keep-all; }
+.info-grid.verbs .info-card h5 { display: flex; align-items: center; gap: 10px; }
+.info-grid.verbs .info-card h5 em {
+  flex: none; margin: 0;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--p); color: var(--w);
+  font-size: 12px; font-weight: 700; letter-spacing: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.visual.cases { background: #FFF8E1; border-color: #FFE082; }
+.visual.cases .visual-title { color: #E65100; margin-bottom: 10px; }
+.case-tag {
+  display: table; margin: 0 auto 18px;
+  font-size: 11px; font-weight: 700; letter-spacing: .5px;
+  color: var(--w); background: var(--pd);
+  padding: 3px 10px; border-radius: 3px;
+}
+.case { background: var(--w); border: 1px solid #FFE082; border-radius: 6px; padding: 18px 20px; }
+.case + .case { margin-top: 14px; }
+.case-title { font-size: 14px; font-weight: 700; color: var(--bk); margin-bottom: 10px; }
+.case-out {
+  background: var(--bg-2); border-radius: 4px;
+  padding: 12px 14px;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 12.5px; line-height: 1.75; color: var(--dk);
+  white-space: pre-wrap; word-break: break-word;
+}
+.case-check { margin-top: 10px; font-size: 13.5px; line-height: 1.7; color: #7A1E1E; }
+.case-check b { color: var(--r); margin-right: 6px; }
+
+/* ══ 도입 페이지 전용: 장표 한 장 = 한 화면 ══ */
+.module.intro { padding: 0; border-bottom: none; }
+.module.intro + .module.intro { padding-top: 0; }
+
+/* 파트 표지 */
+.part-open {
+  min-height: 62vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 120px 60px 90px;
+  background: linear-gradient(180deg, var(--p-soft) 0%, #FFF 85%);
+  border-top: 1px solid var(--p-soft-2);
+}
+.part-open .po-num {
+  font-size: 13px; font-weight: 700; letter-spacing: 2.5px; color: var(--p);
+}
+.part-open .po-title {
+  font-size: 40px; font-weight: 700; color: var(--bk);
+  line-height: 1.28; letter-spacing: -.015em; margin-top: 16px; max-width: 820px;
+}
+.part-open .po-title em { font-style: normal; color: var(--p); }
+.part-open .po-q { font-size: 17px; color: var(--md); margin-top: 18px; line-height: 1.7; max-width: 720px; }
+
+/* 장표 */
+.slide {
+  min-height: 94vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 96px 60px;
+  border-top: 1px solid var(--bd);
+  scroll-margin-top: 0;
+}
+.slide-eyebrow {
+  font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: var(--p);
+  margin-bottom: 14px;
+}
+.slide-title {
+  font-size: 30px; font-weight: 700; color: var(--bk);
+  line-height: 1.35; letter-spacing: -.01em; margin-bottom: 30px; max-width: 900px;
+}
+.slide-title em {
+  font-style: normal; background: var(--p); color: var(--w);
+  padding: 0 10px; border-radius: 4px;
+}
+.slide-visual {
+  margin: 0; max-width: 1000px; width: 100%;
+  border: 1px solid var(--bd); border-radius: 10px; overflow: hidden;
+  background: var(--w); cursor: zoom-in;
+  box-shadow: 0 6px 24px rgba(0,0,0,.06);
+}
+.slide-visual img { display: block; width: 100%; height: auto; }
+.slide-visual svg { display: block; width: 100%; height: auto; }
+.slide-visual.plain { cursor: default; }
+.slide-caption {
+  font-size: 16.5px; color: var(--dk); line-height: 1.75;
+  margin: 26px 0 0; max-width: 860px;
+}
+.slide-caption b { color: var(--bk); }
+.slide-src { font-size: 12.5px; color: var(--md); line-height: 1.6; margin-top: 12px; max-width: 900px; }
+.slide-extra { margin-top: 34px; max-width: 1000px; width: 100%; }
+.slide-next {
+  margin-top: 30px; font-size: 16px; font-weight: 700; color: var(--pd); line-height: 1.6;
+}
+.slide-next::before { content: "\2192\00a0"; color: var(--p); }
+
+/* 장표 아래 작은 사실 표 (낡기 쉬운 숫자는 그림이 아니라 여기에 둔다) */
+.fact-table { width: 100%; max-width: 1000px; border-collapse: collapse; margin-top: 26px; font-size: 14px; }
+.fact-table th, .fact-table td { border: 1px solid var(--bd); padding: 11px 14px; text-align: left; vertical-align: top; line-height: 1.6; }
+.fact-table th { background: var(--bg); font-size: 12.5px; color: var(--bk); font-weight: 700; }
+.fact-table td.hi { background: var(--p-soft); color: var(--bk); font-weight: 600; }
+.fact-table td:first-child { font-weight: 700; color: var(--bk); white-space: nowrap; }
+
+/* 발표 모드 버튼 */
+.deck-open-btn {
+  position: fixed; right: 22px; bottom: 22px; z-index: 900;
+  background: var(--bk); color: var(--w);
+  border: none; border-radius: 999px;
+  padding: 12px 20px; font-family: inherit; font-size: 13.5px; font-weight: 700;
+  cursor: pointer; box-shadow: 0 6px 20px rgba(0,0,0,.25);
+}
+.deck-open-btn:hover { background: var(--p); }
+.deck-open-btn kbd {
+  font-family: inherit; font-size: 11px; background: rgba(255,255,255,.18);
+  padding: 1px 7px; border-radius: 4px; margin-left: 8px;
+}
+
+/* 발표 모드 */
+.deck {
+  display: none; position: fixed; inset: 0; z-index: 2000;
+  background: #FFF; flex-direction: column;
+}
+.deck.on { display: flex; }
+.deck-top {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 16px 28px; flex: none;
+}
+.deck-eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; color: var(--p); }
+.deck-right { display: flex; align-items: center; gap: 14px; }
+.deck-count { font-size: 13px; color: var(--md); font-variant-numeric: tabular-nums; }
+.deck-btn {
+  background: var(--w); border: 1px solid var(--bd-2); color: var(--dk);
+  border-radius: 6px; padding: 6px 12px; font-family: inherit; font-size: 13px; cursor: pointer;
+}
+.deck-btn:hover { border-color: var(--p); color: var(--p); }
+.deck-body {
+  flex: 1; min-height: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 0 5vw 3vh; text-align: center;
+}
+.deck-title { font-size: clamp(22px, 2.5vw, 40px); font-weight: 700; color: var(--bk); line-height: 1.3; letter-spacing: -.01em; margin-bottom: 2.2vh; flex: none; }
+.deck-title em { font-style: normal; background: var(--p); color: var(--w); padding: 0 12px; border-radius: 5px; }
+.deck-visual { flex: 1; min-height: 0; width: 100%; display: flex; align-items: center; justify-content: center; }
+.deck-visual img, .deck-visual svg { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; border-radius: 8px; }
+.deck-visual svg { width: 100%; height: 100%; }
+.deck-caption { font-size: clamp(14px, 1.35vw, 21px); color: var(--dk); line-height: 1.6; margin-top: 2vh; max-width: 1100px; flex: none; }
+.deck-caption b { color: var(--bk); }
+.deck-src { font-size: clamp(11px, .85vw, 13px); color: var(--lt); margin-top: 8px; flex: none; }
+.deck-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 46px; height: 76px; border: none; background: transparent;
+  font-size: 34px; color: var(--bd-2); cursor: pointer;
+}
+.deck-nav:hover { color: var(--p); }
+.deck-nav.prev { left: 6px; }
+.deck-nav.next { right: 6px; }
+.deck-bar { height: 4px; background: var(--bd); flex: none; }
+.deck-bar i { display: block; height: 100%; background: var(--p); width: 0; transition: width .2s; }
+
+@media (max-width: 900px) {
+  .part-open { padding: 72px 22px 56px; min-height: auto; }
+  .part-open .po-title { font-size: 27px; }
+  .part-open .po-q { font-size: 15px; }
+  .slide { padding: 56px 22px; min-height: auto; }
+  .slide-title { font-size: 22px; margin-bottom: 20px; }
+  .slide-caption { font-size: 15px; margin-top: 18px; }
+  .fact-table { font-size: 12.5px; }
+  .fact-table th, .fact-table td { padding: 9px 9px; }
+  .fact-table td:first-child { white-space: normal; }
+  .deck-open-btn { right: 14px; bottom: 14px; padding: 10px 16px; }
+  .deck-open-btn kbd { display: none; }
+  .deck-nav { display: none; }
+}
+@media print {
+  .deck-open-btn, .deck { display: none !important; }
+  .slide, .part-open { min-height: auto; padding: 28px 30px; }
+}
+
+
+/* ── 비교 표 장표 (무료 vs 유료) ── */
+.cmp-wrap { padding: 26px 30px 22px; }
+.cmp-table { width: 100%; border-collapse: collapse; font-size: 16px; }
+.cmp-table th, .cmp-table td { padding: 13px 16px; text-align: left; border-bottom: 1px solid var(--bd); line-height: 1.5; vertical-align: middle; }
+.cmp-table thead th { font-size: 14px; font-weight: 700; color: var(--bk); border-bottom: 2px solid var(--bk); }
+.cmp-table td:first-child { font-weight: 700; color: var(--bk); width: 25%; white-space: nowrap; }
+.cmp-table td.free { color: var(--md); width: 33%; }
+.cmp-table td.paid { color: var(--bk); font-weight: 600; background: var(--p-soft); }
+.cmp-table tr.same td { background: var(--bk); color: var(--w); font-weight: 600; border-bottom: none; }
+.cmp-table tr.same td:first-child { color: var(--w); }
+.cmp-note { font-size: 12.5px; color: var(--md); margin-top: 14px; line-height: 1.6; }
+
+/* ── 기능 비교표 (무료 · Go · Plus) ── */
+.fx-table { font-size: 15px; }
+.fx-table th, .fx-table td { padding: 9px 14px; }
+.fx-table td:first-child { width: 31%; }
+.fx-table thead th:nth-child(4) { color: var(--pd); }
+.fx-table td.fx-y, .fx-table td.fx-p, .fx-table td.fx-n, .fx-table td.fx-t { width: 23%; white-space: nowrap; }
+.fx-table td.fx-y { color: var(--bk); font-weight: 600; }
+.fx-table td.fx-p { color: var(--pd); font-weight: 600; }
+.fx-table td.fx-n { color: var(--lt); }
+.fx-table td.fx-t { color: var(--dk); }
+.fx-table td.fx-y::before { content: "\25CF"; color: var(--bk); margin-right: 8px; font-size: 11px; vertical-align: 1px; }
+.fx-table td.fx-p::before { content: "\25D0"; color: var(--p); margin-right: 8px; font-size: 13px; }
+.fx-table td.fx-n::before { content: "\2715"; color: var(--lt); margin-right: 8px; font-size: 11px; }
+.fx-table tr.fx-grp td { background: var(--bg); color: var(--bk); font-size: 12.5px; font-weight: 700; letter-spacing: .3px; padding: 6px 14px; white-space: normal; width: auto; }
+.fx-table tr.same td { padding: 10px 14px; }
+.deck-visual > .cmp-wrap .cmp-table.fx-table { font-size: clamp(12px, 1vw, 17px); }
+.deck-visual > .cmp-wrap .cmp-table.fx-table th, .deck-visual > .cmp-wrap .cmp-table.fx-table td { padding: clamp(3px, .5vh, 8px) 16px; line-height: 1.45; }
+.deck-visual > .cmp-wrap .cmp-table.fx-table tr.fx-grp td { padding: clamp(2px, .35vh, 5px) 16px; font-size: .82em; }
+.deck-visual > .cmp-wrap:has(.fx-table) { padding: 14px 24px 10px; }
+.deck-visual > .cmp-wrap:has(.fx-table) .cmp-note { margin-top: 8px; font-size: 11.5px; }
+
+/* ── 실습 카드 ── */
+.practice-card { padding: 28px 30px; }
+.practice-card .step-list { margin: 0 0 22px; }
+.answer { margin-top: 18px; font-size: 14.5px; color: var(--dk); }
+.answer summary { cursor: pointer; font-weight: 700; color: var(--pd); }
+.answer table { border-collapse: collapse; margin-top: 12px; }
+.answer th, .answer td { border: 1px solid var(--bd); padding: 7px 14px; text-align: center; font-size: 14px; }
+.answer th { background: var(--bg); font-weight: 700; color: var(--bk); }
+.answer p { margin-top: 10px; line-height: 1.7; }
+.answer td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.answer td.why { text-align: left; color: var(--md); font-size: 13px; }
+.answer td.who { text-align: left; white-space: nowrap; }
+.answer tr.zero td { background: #FFF5F5; }
+.answer tr.sum th, .answer tr.sum td { background: var(--p-soft); color: var(--bk); font-weight: 700; }
+.practice-card .prompt-body { max-height: 300px; }
+.deck-visual > .practice-card .prompt-body { max-height: 36vh; }
+.deck-visual > .practice-card .step-list li { font-size: clamp(14px, 1.15vw, 18px); }
+
+/* 발표 모드에서 표·실습 카드 */
+.deck-visual > .cmp-wrap, .deck-visual > .practice-card {
+  width: min(1100px, 100%); max-height: 100%; overflow: auto; text-align: left;
+  border: 1px solid var(--bd); border-radius: 10px; background: var(--w);
+}
+.deck-visual > .cmp-wrap .cmp-table { font-size: clamp(15px, 1.3vw, 21px); }
+.deck-visual > .cmp-wrap .cmp-table th, .deck-visual > .cmp-wrap .cmp-table td { padding: clamp(9px, 1.1vh, 15px) 18px; }
+
+@media (max-width: 900px) {
+  .cmp-wrap { padding: 16px 14px; }
+  .cmp-table { font-size: 13px; }
+  .cmp-table th, .cmp-table td { padding: 9px 8px; }
+  .cmp-table td:first-child { white-space: normal; width: 28%; }
+  .practice-card { padding: 18px 14px; }
+  .fx-table { font-size: 12.5px; }
+  .fx-table th, .fx-table td { padding: 7px 6px; }
+  .fx-table td.fx-y, .fx-table td.fx-p, .fx-table td.fx-n, .fx-table td.fx-t { white-space: normal; }
+  .fx-table td.fx-y::before, .fx-table td.fx-p::before, .fx-table td.fx-n::before { margin-right: 4px; }
+}
+
+/* 차트: 점·막대에 마우스를 올리면 값이 뜬다 (키보드 포커스도 같다) */
+.chart text { font-family: 'Paperlogy', -apple-system, 'Segoe UI', sans-serif; }
+.chart .tip { opacity: 0; pointer-events: none; transition: opacity .12s; }
+.chart .pt:hover .tip, .chart .pt:focus .tip { opacity: 1; }
+.chart .pt { outline: none; cursor: default; }
+.chart .pt:focus-visible circle:nth-of-type(2) { stroke: #1A1A1A; }
+.chart-table { margin-top: 14px; max-width: 1000px; font-size: 13px; color: var(--md); }
+.chart-table summary { cursor: pointer; font-weight: 600; color: var(--dk); }
+.chart-table table { border-collapse: collapse; margin-top: 10px; width: 100%; }
+.chart-table th, .chart-table td { border: 1px solid var(--bd); padding: 7px 10px; text-align: left; line-height: 1.5; }
+.chart-table th { background: var(--bg); color: var(--bk); font-size: 12px; }
+
+/* 예시 화면(SVG) 속 코드 글꼴 */
+.mock text.mono, .mock .mono tspan { font-family: Consolas, 'D2Coding', 'Courier New', monospace; }
+
+/* 도입 페이지 순서 띠 (5칸) */
+.timetable.t5 { grid-template-columns: repeat(5, 1fr); }
+@media (min-width: 901px) and (max-width: 1100px) {
+  .timetable.t5 { grid-template-columns: repeat(5, 1fr); }
+  .timetable.t5 .tt-item:nth-child(4n) { border-right: 1px solid var(--bd); }
+  .timetable.t5 .tt-item:nth-child(n+5) { border-top: none; }
+  .timetable.t5 .tt-item:last-child { border-right: none; }
+}
+
+/* ── Footer ── */
+.footer {
+  background: var(--bk);
+  padding: 36px 60px;
+  display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 12px;
+}
+.footer p { font-size: 12px; color: rgba(255,255,255,.5); }
+.footer span { color: var(--w); font-weight: 500; }
+
+/* Sidebar overlay (mobile) */
+.sidebar-overlay {
+  display: none;
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 999;
+}
+.sidebar-overlay.show { display: block; }
+
+/* Print */
+@media print {
+  .sidebar, .hamburger { display: none !important; }
+  .main { margin-left: 0 !important; max-width: 100%; }
+  .hero, .module { padding: 32px 30px; }
+  .module { page-break-inside: avoid; }
+  .prompt-block { border: 1px solid #ccc; break-inside: avoid; }
+  .copy-btn, .resource-btn, .sample-btn { display: none; }
+  .breath, .breath-lg { height: 24px; }
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .main { max-width: 100%; margin-left: calc(var(--sidebar-w) + 0px); }
+  .hero { padding: 60px 40px; }
+  .hero h1 { font-size: 36px; }
+  .module { padding: 60px 40px; }
+  .timetable { grid-template-columns: repeat(4, 1fr); }
+  .timetable .tt-item:nth-child(4n) { border-right: none; }
+  .timetable .tt-item:nth-child(n+5) { border-top: 1px solid var(--bd); }
+  .formula-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+  }
+  .formula-op { display: none; }
+  .formula-card.fr { grid-column: 1 / -1; }
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .sidebar { transform: translateX(-100%); width: 86%; max-width: 320px; }
+  .sidebar.open { transform: translateX(0); }
+  .hamburger { display: block; }
+  .main { margin-left: 0 !important; max-width: 100%; }
+  .hero { padding: 48px 24px; }
+  .hero h1 { font-size: 28px; line-height: 1.3; }
+  .hero-sub { font-size: 15px; }
+  .hero-meta { flex-direction: column; gap: 10px; padding-top: 18px; }
+  .module { padding: 48px 22px; }
+  .mod-title { font-size: 22px; }
+  .mod-title small { font-size: 13.5px; }
+  .h-lead { font-size: 17px; }
+  .timetable { grid-template-columns: repeat(2, 1fr); }
+  .timetable .tt-item { border-right: 1px solid var(--bd); border-bottom: 1px solid var(--bd); }
+  .info-grid { grid-template-columns: 1fr; }
+  .comp-table { font-size: 12px; }
+  .comp-table th, .comp-table td { padding: 10px 10px; }
+  .prompt-body { font-size: 12px; padding: 14px; line-height: 1.7; }
+  .resource, .sample { grid-template-columns: 48px 1fr; row-gap: 14px; }
+  .resource-icon, .sample-icon { width: 48px; height: 48px; }
+  .resource-btn, .sample-btn { grid-column: 1 / -1; justify-self: stretch; text-align: center; }
+  .mock-doc { padding: 22px 24px; }
+  .mock-doc-head { flex-direction: column; gap: 8px; }
+  .spotlight { padding: 36px 24px; }
+  .spotlight .sp-headline { font-size: 20px; }
+  .split-vis { grid-template-columns: 1fr; }
+  .formula-grid { grid-template-columns: 1fr; }
+  .formula-card.fr { grid-column: auto; }
+  .visual { padding: 22px; }
+  .evidence { padding: 22px 20px; }
+  .evidence .ev-num { font-size: 26px; }
+  .md-rendered, .md-raw { padding: 14px 16px; }
+  .next-q { font-size: 14.5px; }
+  .h-lead, .module { scroll-margin-top: 72px; }
+  .breath-lg { height: 56px; }
+  .breath { height: 40px; }
+  .footer { padding: 24px 22px; flex-direction: column; align-items: flex-start; gap: 6px; }
+}
+@media (max-width: 480px) {
+  .hero h1 { font-size: 24px; }
+  .mod-title { font-size: 20px; }
+  .module { padding: 36px 16px; }
+  .hero { padding: 36px 18px; }
+}
+/* ══ 2026-11-16 개선안 — 회의 정리 카드 · 네 빈칸 · 기본원칙 입력창 · 결과 예시 (두산 교안에서 옮김) ══ */
+/* ── PART 00: 회의 정리 카드 ── */
+.brief {
+  border: 1px solid var(--bd-2);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--w);
+}
+.brief-head {
+  background: var(--bk); color: var(--w);
+  padding: 22px 28px;
+  display: flex; justify-content: space-between;
+  align-items: flex-end; gap: 20px; flex-wrap: wrap;
+}
+.brief-kicker {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 1.5px; color: var(--p2);
+  margin-bottom: 4px;
+}
+.brief-title { font-size: 21px; font-weight: 700; line-height: 1.3; }
+.brief-meta { display: grid; gap: 4px; font-size: 12.5px; color: rgba(255,255,255,.8); }
+.brief-meta div { display: flex; gap: 10px; }
+.brief-meta dt { flex: none; width: 30px; color: rgba(255,255,255,.5); }
+.brief-row {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  border-top: 1px solid var(--bd);
+}
+.brief-label {
+  padding: 22px 16px 22px 28px;
+  font-size: 12.5px; font-weight: 700;
+  color: var(--pd); background: var(--p-soft);
+  line-height: 1.5;
+}
+.brief-body { padding: 22px 28px; min-width: 0; }
+.brief-agenda { font-size: 17px; color: var(--bk); line-height: 1.5; }
+.brief-keys {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.brief-key {
+  border: 1px solid var(--p-soft-2);
+  border-top: 3px solid var(--p);
+  border-radius: 6px;
+  padding: 16px 16px 14px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.bk-no {
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--p); color: var(--w);
+  font-size: 13px; font-weight: 700;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.brief-key strong {
+  font-size: 15px; color: var(--bk);
+  line-height: 1.45; word-break: keep-all;
+}
+.bk-tag { font-size: 12px; color: var(--md); }
+.brief-quote {
+  margin-top: 14px;
+  padding-left: 14px;
+  border-left: 3px solid var(--p-soft-2);
+  font-size: 14px; color: var(--dk);
+}
+.brief-quote span { color: var(--md); font-size: 12.5px; margin-left: 6px; }
+.brief-facts { list-style: none; display: grid; gap: 8px; font-size: 14.5px; color: var(--dk); }
+.brief-facts li { display: flex; gap: 14px; line-height: 1.6; }
+.brief-facts li span { flex: none; width: 34px; font-weight: 700; color: var(--bk); }
+.brief-timeline {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.brief-timeline li { position: relative; padding: 22px 12px 0 0; }
+.brief-timeline li::before {
+  content: ''; position: absolute;
+  top: 5px; left: 0; right: 0; height: 2px;
+  background: var(--p-soft-2);
+}
+.brief-timeline li:last-child::before { display: none; }
+.brief-timeline li::after {
+  content: ''; position: absolute; top: 0; left: 0;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--w); border: 3px solid var(--p);
+}
+.brief-timeline li.goal::after { background: var(--p); }
+.bt-date {
+  display: block; font-size: 13px; font-weight: 700;
+  color: var(--p); font-variant-numeric: tabular-nums;
+}
+.bt-what {
+  display: block; margin-top: 2px;
+  font-size: 13.5px; color: var(--dk);
+  line-height: 1.5; word-break: keep-all;
+}
+.brief-note { margin-top: 12px; font-size: 12.5px; color: var(--md); }
+
+/* ── 자료 → 작업 → 산출물 3단 흐름 ── */
+.flow3 {
+  display: grid;
+  grid-template-columns: 1.2fr 34px 1fr 34px 1.2fr;
+  align-items: stretch;
+}
+.flow3-arrow {
+  display: flex; align-items: center; justify-content: center;
+  color: var(--lt); font-size: 20px;
+}
+.flow3-col { border-radius: 6px; padding: 18px; min-width: 0; }
+.flow3-in { background: var(--p-soft); border: 1px solid var(--p-soft-2); }
+.flow3-core {
+  background: var(--p); color: var(--w);
+  display: flex; flex-direction: column;
+  justify-content: center; text-align: center;
+}
+.flow3-out { background: var(--w); border: 1px solid var(--bk); padding: 0; overflow: hidden; }
+.flow3-cap {
+  font-size: 10.5px; font-weight: 700;
+  letter-spacing: 1px; color: var(--pd);
+  margin-bottom: 10px;
+}
+.flow3-core .flow3-cap { color: rgba(255,255,255,.75); }
+.flow3-big { font-size: 20px; font-weight: 700; line-height: 1.35; }
+.flow3-small { font-size: 12.5px; color: rgba(255,255,255,.85); margin-top: 8px; line-height: 1.5; }
+.flow3-list { list-style: none; display: grid; gap: 6px; }
+.flow3-list li {
+  background: var(--w);
+  border: 1px solid var(--p-soft-2);
+  border-radius: 4px;
+  padding: 7px 10px;
+  font-size: 12.5px; line-height: 1.45; color: var(--md);
+}
+.flow3-list li b { display: block; color: var(--pd); font-size: 13.5px; }
+.flow3-out-head {
+  background: var(--bk); color: var(--w);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .5px; padding: 8px 14px;
+}
+.flow3-out-body { padding: 14px 16px; }
+.flow3-out-body strong {
+  display: block; font-size: 15px; color: var(--bk);
+  line-height: 1.4; margin-bottom: 8px;
+}
+.flow3-out-body ul { list-style: none; font-size: 12.5px; color: var(--md); line-height: 1.75; }
+.flow3-out-body ul b { color: var(--bk); }
+
+/* ── PART 01: 빈칸 네 가지 ── */
+.visual.gaps { background: #FFF5F5; border-color: #F5B5B5; }
+.visual.gaps .visual-title { color: #B71C1C; }
+.gaps-quote {
+  background: var(--w);
+  border: 1px dashed #F5B5B5;
+  border-radius: 4px;
+  padding: 16px 20px;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 14px; color: var(--bk);
+  margin-bottom: 20px;
+}
+.visual.gaps .info-card { border-left: 3px solid #E53935; }
+.visual.gaps .info-card h5 em { color: #B71C1C; }
+
+/* ── PART 02: 기본원칙 네 가지 ── */
+.principles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.formula-card.f4 { border-top-color: #4A5A75; }
+.principles .formula-card.f2 { border-top-color: var(--pd); }
+.principles .formula-card.f3 { border-top-color: var(--p); }
+
+/* ── PART 02: ChatGPT 입력창 목업 ── */
+.chat-mock {
+  max-width: 760px; margin: 0 auto;
+  background: var(--w);
+  border: 1px solid var(--bd-2);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(11,31,58,.08);
+  overflow: hidden;
+}
+.cm-bar {
+  padding: 12px 22px;
+  font-size: 13px; color: var(--md);
+  border-bottom: 1px solid var(--bd);
+}
+.cm-body { padding: 22px 22px 8px; display: grid; gap: 14px; }
+.cm-line {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 16px; align-items: center;
+}
+.cm-tag {
+  text-align: center; color: var(--w);
+  font-size: 14px; font-weight: 700;
+  padding: 7px 0; border-radius: 999px;
+}
+.cm-tag.t1 { background: #2B1810; }
+.cm-tag.t2 { background: var(--pd); }
+.cm-tag.t3 { background: var(--p); }
+.cm-tag.t4 { background: #4A5A75; }
+.cm-text {
+  font-size: 16px; font-weight: 600;
+  color: var(--bk); line-height: 1.5;
+  word-break: keep-all;
+}
+.cm-foot {
+  display: flex; align-items: center;
+  gap: 8px; flex-wrap: wrap;
+  padding: 14px 22px 18px;
+}
+.cm-file {
+  font-size: 12.5px; color: var(--dk);
+  background: var(--bg);
+  border: 1px solid var(--bd);
+  border-radius: 999px;
+  padding: 5px 12px;
+}
+.cm-send {
+  margin-left: auto;
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--p); color: var(--w);
+  font-weight: 700;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+
+/* ── 결과 예시 라벨 · 빈자리 표시 ── */
+.mock-doc.draft::before { content: '결과 예시 · 1차 구성안'; }
+.need {
+  display: inline-block;
+  color: var(--pd); background: var(--p-soft);
+  border: 1px dashed #FFB880;
+  border-radius: 3px;
+  padding: 0 7px;
+  font-size: 12.5px; font-weight: 600;
+}
+.md-output.report-s3::before { content: '📄 작성 결과 (일부)'; }
+.md-output.style-prompt::before { content: '📄 추출된 내 스타일 마스터프롬프트'; }
+.split-card .sv-result + .sv-arrow { margin-top: 10px; }
+
+@media (max-width: 1100px) {
+  .principles { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+  .brief-head { padding: 18px 20px; }
+  .brief-row { grid-template-columns: 1fr; }
+  .brief-label { padding: 10px 20px; }
+  .brief-label br { display: none; }
+  .brief-body { padding: 18px 20px; }
+  .brief-keys { grid-template-columns: 1fr; }
+  .brief-timeline { grid-template-columns: 1fr; gap: 14px; }
+  .brief-timeline li { padding: 0 0 0 24px; }
+  .brief-timeline li::before {
+    top: 12px; bottom: -14px; left: 5px; right: auto;
+    width: 2px; height: auto;
+  }
+  .brief-timeline li::after { top: 4px; }
+  .flow3 { grid-template-columns: 1fr; }
+  .flow3-arrow { transform: rotate(90deg); padding: 4px 0; }
+}
+@media (max-width: 600px) {
+  .principles { grid-template-columns: 1fr; }
+  .cm-line { grid-template-columns: 1fr; gap: 6px; }
+  .cm-tag { justify-self: start; padding: 5px 16px; }
+  .cm-text { font-size: 14.5px; }
+}
+
+/* ── 페이지 이동 (OT · 1페이지 · 2페이지) ── */
+.page-switch { padding: 14px 14px 13px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.page-switch .ps-top { display: flex; justify-content: space-between; align-items: center; margin: 0 6px 9px; }
+.page-switch .ps-cap { font-size: 10px; font-weight: 700; letter-spacing: 1px; color: var(--p2); text-transform: uppercase; }
+.page-switch .ps-home { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.55); text-decoration: none; }
+.page-switch .ps-home:hover { color: var(--p2); }
+.page-switch .ps-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.ps-btn {
+  display: block; text-align: center; padding: 9px 2px 8px;
+  border: 1px solid rgba(255,255,255,0.16); border-radius: 8px;
+  background: rgba(255,255,255,0.04); text-decoration: none;
+  transition: background .15s, border-color .15s;
+}
+.ps-btn .ps-no { display: block; font-size: 10px; font-weight: 700; letter-spacing: .3px; color: rgba(255,255,255,0.5); }
+.ps-btn .ps-kw { display: block; font-size: 12.5px; font-weight: 700; color: rgba(255,255,255,0.88); margin-top: 3px; letter-spacing: -.01em; }
+.ps-btn:hover { border-color: var(--p2); background: rgba(243,111,33,0.14); }
+.ps-btn.on { background: var(--p); border-color: var(--p); box-shadow: 0 4px 12px rgba(243,111,33,0.35); }
+.ps-btn.on .ps-no { color: #FFE3CC; }
+.ps-btn.on .ps-kw { color: #FFF; }
+/* ── /페이지 이동 ── */
+</style>
+</head>
+<body>
+
+<button class="hamburger" id="hamburgerBtn" aria-label="메뉴">&#9776;</button>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-badge">HRD · 기본 교안 · OT</div>
+    <div class="sidebar-title">AI 실무 활용교육<br><em>오리엔테이션</em></div>
+  </div>
+  <!-- page-switch -->
+  <div class="page-switch" role="navigation" aria-label="페이지 이동">
+    <div class="ps-top"><span class="ps-cap">Pages</span><a class="ps-home" href="index.html">교안 홈</a></div>
+    <div class="ps-row">
+      <a class="ps-btn on" aria-current="page" href="orientation.html"><span class="ps-no">OT</span><span class="ps-kw">개요</span></a>
+      <a class="ps-btn" href="prompt.html"><span class="ps-no">1페이지</span><span class="ps-kw">프롬프트</span></a>
+      <a class="ps-btn" href="excel.html"><span class="ps-no">2페이지</span><span class="ps-kw">자동화</span></a>
+    </div>
+  </div>
+  <!-- /page-switch -->
+  <div class="sidebar-nav">
+    <div class="nav-module">Overview</div>
+    <a href="#hero">시작하기 전에</a>
+    <a href="#i1" class="nav-head">INTRO 01 · 지금, AI</a>
+    <a href="#i1-1" class="sub">&#8226; 기업 10곳 중 9곳</a>
+    <a href="#i1-2" class="sub">&#8226; 모든 업종에서</a>
+    <a href="#i1-3" class="sub">&#8226; 전 세계 이용자</a>
+    <a href="#i1-4" class="sub">&#8226; 한국 이용자</a>
+    <a href="#i1-5" class="sub">&#8226; 유료 이용자</a>
+    <a href="#i2" class="nav-head">INTRO 02 · 무료와 유료</a>
+    <a href="#i2-1" class="sub">&#8226; 차이는 할 수 있는 일</a>
+    <a href="#i2-2" class="sub">&#8226; 한눈에 보는 기능 차이</a>
+    <a href="#i2-3" class="sub">&#8226; Codex · 스킬 · 플러그인</a>
+    <a href="#i2-4" class="sub">&#8226; 업무에서 막히는 순간</a>
+    <a href="#i2-5" class="sub">&#8226; 실습 · 내 계정으로 확인</a>
+    <a href="#i3" class="nav-head">INTRO 03 · 오늘 배울 것</a>
+    <a href="#i3-1" class="sub">&#8226; 개발이 아니라 활용</a>
+    <a href="#i3-2" class="sub">&#8226; 사람들이 AI로 하는 일</a>
+    <a href="#i3-3" class="sub">&#8226; 프롬프트 엔지니어링</a>
+    <a href="#i4" class="nav-head">INTRO 04 · 배워야 하는 이유</a>
+    <a href="#i4-1" class="sub">&#8226; 말로 시킨다</a>
+    <a href="#i4-2" class="sub">&#8226; 찾는 일에서 맡기는 일로</a>
+    <a href="#i4-3" class="sub">&#8226; 같은 도구, 다른 결과</a>
+    <a href="#i4-4" class="sub">&#8226; 시장이 매기는 값</a>
+    <a href="#i5" class="nav-head">INTRO 05 · 꼭 알아야 할 3가지</a>
+    <a href="#i5-1" class="sub">&#8226; 확률로 답한다</a>
+    <a href="#i5-2" class="sub">&#8226; 조건을 주면 좁혀진다</a>
+    <a href="#i5-3" class="sub">&#8226; 그럴듯하게 틀린다</a>
+    <a href="#i5-4" class="sub">&#8226; 내 자료는 어디로 가나</a>
+    <a href="#i5-5" class="sub">&#8226; 보안은 세 겹</a>
+    <a href="#i5-6" class="sub">&#8226; 세 가지 습관</a>
+  </div>
+  <a class="sidebar-next-page" href="prompt.html">
+    <div class="snp-meta">Page 1</div>
+    <div class="snp-label">프롬프트 엔지니어링으로 이동</div>
+  </a>
+  <div class="sidebar-footer">
+    <div style="font-size:15px; color:#fff; font-weight:700; margin-bottom:8px;">&copy; 한국GPT협회</div>
+    <div>02-562-1552</div>
+    <div>GPT@Rnbdp.com</div>
+  </div>
+</nav>
+
+<div class="main">
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-badge">AI 실무 활용교육 · OT (기본 교안)</div>
+  <h1>오리엔테이션</h1>
+  <div class="hero-sub">
+    본론에 들어가기 전에 <b>지금 AI가 어디까지 왔는지</b>, <b>오늘 무엇을 배우는지</b>, <b>쓰기 전에 꼭 알아야 할 세 가지</b>를 장표로 짚습니다.
+  </div>
+  <div class="hero-meta">
+    <div class="hero-meta-item">대상 <span>회사 경력사원</span></div>
+    <div class="hero-meta-item">구성 <span>5개 주제 · 장표 24장</span></div>
+    <div class="hero-meta-item">도구 <span>ChatGPT</span></div>
+    <div class="hero-meta-item">다음 <span>Page 1 · 프롬프트 엔지니어링</span></div>
+  </div>
+</section>
+
+<!-- 순서 -->
+<div class="timetable t5" id="timetable">
+  <div class="tt-item"><div class="tt-time">INTRO 01</div><div class="tt-title">지금, AI</div><div class="tt-data">기업 · 업종 · 이용자 · 유료</div></div>
+  <div class="tt-item"><div class="tt-time">INTRO 02</div><div class="tt-title">무료와 유료</div><div class="tt-data">기능 차이 · 확인 실습</div></div>
+  <div class="tt-item"><div class="tt-time">INTRO 03</div><div class="tt-title">오늘 배울 것</div><div class="tt-data">개발이 아니라 활용</div></div>
+  <div class="tt-item"><div class="tt-time">INTRO 04</div><div class="tt-title">배워야 하는 이유</div><div class="tt-data">말 · 맡기기 · 격차</div></div>
+  <div class="tt-item"><div class="tt-time">INTRO 05</div><div class="tt-title">꼭 알아야 할 3가지</div><div class="tt-data">확률 · 환각 · 보안</div></div>
+</div>
+
+<!-- 시작 질문 -->
+<section class="slide" id="i0">
+  <div class="slide-eyebrow">시작하기 전에</div>
+  <h3 class="slide-title">지난 일주일, AI에게 <em>몇 번</em> 물어보셨나요?</h3>
+  <figure class="slide-visual"><img src="교안_자료/도입_장표/00_시작질문.webp" alt="세 가지 보기 카드 — 0번, 1~5번, 거의 매일" width="2752" height="1536"></figure>
+  <p class="slide-caption">해당하는 곳에 손을 들어 주세요. 하나 더 &mdash; 지금 쓰는 계정은 <b>무료</b>인가요, <b>유료</b>인가요?</p>
+</section>
+
+<!-- ══════════ INTRO 01 ══════════ -->
+<section class="module intro" id="i1">
+  <div class="part-open">
+    <div class="po-num">INTRO 01</div>
+    <div class="po-title">AI는 더 이상 <em>트렌드</em>가 아닙니다</div>
+    <div class="po-q">지나가는 유행인지, 기본이 되는 중인지. 숫자로 먼저 봅니다.</div>
+  </div>
+
+  <div class="slide" id="i1-1">
+    <div class="slide-eyebrow">INTRO 01 · 지금, AI</div>
+    <h3 class="slide-title">기업 10곳 중 <em>9곳</em>이 AI를 씁니다</h3>
+    <figure class="slide-visual"><img src="교안_자료/도입_장표/11_기업10곳중9곳.webp" alt="건물 열 채 중 아홉 채가 주황색. 2023년 55%, 2024년 78%, 2025년 88%" width="2752" height="1536" decoding="async"></figure>
+    <p class="slide-caption">업무 하나 이상에 AI를 쓴다고 답한 조직의 비율입니다. <b>2년 만에 55%에서 88%</b>가 됐습니다.</p>
+    <div class="slide-src">출처: McKinsey 「The State of AI」 2025년 조사 · Stanford HAI 「AI Index Report 2026」 4장 수록 · 전 세계 기업 응답자 설문</div>
+  </div>
+
+  <div class="slide" id="i1-2">
+    <div class="slide-eyebrow">INTRO 01 · 지금, AI</div>
+    <h3 class="slide-title">IT 업종만의 이야기가 <em>아닙니다</em></h3>
+    <figure class="slide-visual"><svg viewBox="0 0 1000 562" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="업종별 AI 사용 사업체 비율 막대그래프. 정보 46.4%부터 숙박·음식 10.7%까지 15개 업종" class="chart">
+<rect width="1000" height="562" fill="#FFFFFF"/>
+<text x="232" y="34" font-size="14" fill="#666666">지난 2주 동안 업무에 AI를 쓴 사업체 비율 · 미국 · 2026년 10월</text>
+<line x1="232" y1="56" x2="232" y2="532" stroke="#CCCCCC" stroke-width="1"/>
+<line x1="543.3" y1="56" x2="543.3" y2="532" stroke="#1A1A1A" stroke-width="1" stroke-dasharray="2 4"/>
+<text x="551.3" y="526" font-size="13.5" font-weight="600" fill="#1A1A1A">전체 평균 24.6%</text>
+<g class="pt" tabindex="0">
+<rect x="0" y="64.0" width="1000" height="31.2" fill="transparent"/>
+<text x="216" y="85.0" text-anchor="end" font-size="16" font-weight="600" fill="#1A1A1A">정보(IT·미디어)</text>
+<path d="M232,72.1 h583.1 a4,4 0 0 1 4,4 v7.0 a4,4 0 0 1 -4,4 h-583.1 Z" fill="#F36F21"/>
+<text x="831.1" y="85.2" font-size="16" font-weight="700" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="5" paint-order="stroke" stroke-linejoin="round" style="font-variant-numeric:tabular-nums">46.4%</text>
+<title>정보(IT·미디어) · 46.4%</title>
+</g>
+<g class="pt" tabindex="0">
+<rect x="0" y="95.2" width="1000" height="31.2" fill="transparent"/>
+<text x="216" y="116.2" text-anchor="end" font-size="16" font-weight="600" fill="#1A1A1A">전문·과학·기술 서비스</text>
+<path d="M232,103.3 h550.2 a4,4 0 0 1 4,4 v7.0 a4,4 0 0 1 -4,4 h-550.2 Z" fill="#F36F21"/>
+<text x="798.2" y="116.4" font-size="16" font-weight="700" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="5" paint-order="stroke" stroke-linejoin="round" style="font-variant-numeric:tabular-nums">43.8%</text>
+<title>전문·과학·기술 서비스 · 43.8%</title>
+</g>
+<g class="pt" tabindex="0">
+<rect x="0" y="126.4" width="1000" height="31.2" fill="transparent"/>
+<text x="216" y="147.4" text-anchor="end" font-size="16" font-weight="600" fill="#1A1A1A">금융·보험</text>
+<path d="M232,134.5 h508.5 a4,4 0 0 1 4,4 v7.0 a4,4 0 0 1 -4,4 h-508.5 Z" fill="#F36F21"/>
+<text x="756.5" y="147.6" font-size="16" font-weight="700" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="5" paint-order="stroke" stroke-linejoin="round" style="font-variant-numeric:tabular-nums">40.5%</text>
+<title>금융·보험 · 40.5%</title>
+</g>
+<g class="pt" tabindex="0">
+<rect x="0" y="157.6" width="1000" height="31.2" fill="transparent"/>
+<text x="216" y="178.6" text-anchor="end" font-size="16" font-weight="600" fill="#1A1A1A">교육</text>
+<path d="M232,165.7 h418.6 a4,4 0 0 1 4,4 v7.0 a4,4 0 0 1 -4,4 h-418.6 Z" fill="#F36F21"/>
+<text x="666.6" y="178.8" font-size="16" font-weight="700" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="5" paint-order="stroke" stroke-linejoin="round" style="font-variant-numeric:tabular-nums">33.4%</text>
+<title>교육 · 33.4%</title>
+</g>
+<g class="pt" tabindex="0">
+<rect x="0" y="188.8" width="1000" height="31.2" fill="transparent"/>
+<text x="216" y="209.8" text-anchor="end" font-size="16" font-weight="600" fill="#1A1A1A">부동산·임대</text>
+<path d="M232,196.9 h363.0 a4,4 0 0 1 4,4 v7.0 a4,4 0 0 1 -4,4 h-363.0 Z" fill="#F36F21"/>
+<text x="611.0" y="210.0" font-size="16" font-weight="700" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="5" paint-order="stroke" stroke-linejoin="round" style="font-variant-numeric:tabular-nums">29.0%</text>
+<title>부동산·임대 · 29.0%</title>
+</g>
+<g class="pt" tabindex="0">
+<rect x="0" y="220.0" width="1000" height="31.2" fill="transparent"/>
+<text x="216" y="241.0" text-anchor="end" font-size="16" font-weight="600" fill="#1A1A1A">보건·사회복지</text>
+<path d="M232,228.1 h345.2 a4,4 0 0 1 4,4 v7.0 a4,4 0 0 1 -4,4 h-345.2 Z" fill="#F36F21"/>
+<text x="593.2" y="241.2" font-size="16" font-weight="700" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="5" paint-order="stroke" stroke-linejoin="round" style="font-variant-numeric:tabular-nums">27.6%</text>
+<title>보건·사회복지 · 27.6%</title>
+</g>
+<g class="pt" tabindex="0">
+<rect x="0" y="251.2" width="1000" height="31.2" fill="transparent"/>
+<text x="216" y="272.2" text-anchor="end" font-size="16" font-weight="600" fill="#1A1A1A">제조</text>
+<path d="M232,259.3 h285.8 a4,4 0 0 1 4,4 v7.0 a4,4 0 0 1 -4,4 h-285.8 Z" fill="#F36F21"/>
+<text x="533.8" y="272.4" font-size="16" font-weight="700" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="5" paint-order="stroke" stroke-linejoin="round" style="font-variant-numeric:tabular-nums">22.9%</text>
+<title>제조 · 22.9%</title>
+</g>
+<g class="pt" tabindex="0">
+<rect x="0" y="282.4" width="1000" height="31.2" fill="transparent"/>
+<text x="216" y="303.4" text-anchor="end" font-size="16" font-weight="600" fill="#1A1A1A">사업지원 서비스</text>
+<path d="M232,290.5 h283.2 a4,4 0 0 1 4,4 v7.0 a4,4 0 0 1 -4,4 h-283.2 Z" fill="#F36F21"/>
+<text x="531.2" y="303.6" font-size="16" font-weight="700" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="5" paint-order="stroke" stroke-linejoin="round" style="font-variant-numeric:tabular-nums">22.7%</text>
+<title>사업지원 서비스 · 22.7%</title>
+</g>
+<g class="pt" tabindex="0">
+<rect x="0" y="313.6" width="1000" height="31.2" fill="transparent"/>
+<text x="216" y="334.6" text-anchor="end" font-size="16" font-weight="600" fill="#1A1A1A">도매</text>
+<path d="M232,321.7 h266.8 a4,4 0 0 1 4,4 v7.0 a4,4 0 0 1 -4,4 h-266.8 Z" fill="#F36F21"/>
+<text x="514.8" y="334.8" font-size="16" font-weight="700" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="5" paint-order="stroke" stroke-linejoin="round" style="font-variant-numeric:tabular-nums">21.4%</text>
+<title>도매 · 21.4%</title>
+</g>
+<g class="pt" tabindex="0">
+<rect x="0" y="344.8" width="1000" height="31.2" fill="transparent"/>
+<text x="216" y="365.8" text-anchor="end" font-size="16" font-weight="600" fill="#1A1A1A">예술·여가</text>
+<path d="M232,352.9 h266.8 a4,4 0 0 1 4,4 v7.0 a4,4 0 0 1 -4,4 h-266.8 Z" fill="#F36F21"/>
+<text x="514.8" y="366.0" font-size="16" font-weight="700" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="5" paint-order="stroke" stroke-linejoin="round" style="font-variant-numeric:tabular-nums">21.4%</text>
+<title>예술·여가 · 21.4%</title>
+</g>
+<g class="pt" tabindex="0">
+<rect x="0" y="376.0" width="1000" height="31.2" fill="transparent"/>
+<text x="216" y="397.0" text-anchor="end" font-size="16" font-weight="600" fill="#1A1A1A">소매</text>
+<path d="M232,384.1 h230.1 a4,4 0 0 1 4,4 v7.0 a4,4 0 0 1 -4,4 h-230.1 Z" fill="#F36F21"/>
+<text x="478.1" y="397.2" font-size="16" font-weight="700" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="5" paint-order="stroke" stroke-linejoin="round" style="font-variant-numeric:tabular-nums">18.5%</text>
+<title>소매 · 18.5%</title>
+</g>
+<g class="pt" tabindex="0">
+<rect x="0" y="407.2" width="1000" height="31.2" fill="transparent"/>
+<text x="216" y="428.2" text-anchor="end" font-size="16" font-weight="600" fill="#1A1A1A">건설</text>
+<path d="M232,415.3 h199.7 a4,4 0 0 1 4,4 v7.0 a4,4 0 0 1 -4,4 h-199.7 Z" fill="#F36F21"/>
+<text x="447.7" y="428.4" font-size="16" font-weight="700" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="5" paint-order="stroke" stroke-linejoin="round" style="font-variant-numeric:tabular-nums">16.1%</text>
+<title>건설 · 16.1%</title>
+</g>
+<g class="pt" tabindex="0">
+<rect x="0" y="438.4" width="1000" height="31.2" fill="transparent"/>
+<text x="216" y="459.4" text-anchor="end" font-size="16" font-weight="600" fill="#1A1A1A">기타 서비스</text>
+<path d="M232,446.5 h180.7 a4,4 0 0 1 4,4 v7.0 a4,4 0 0 1 -4,4 h-180.7 Z" fill="#F36F21"/>
+<text x="428.7" y="459.6" font-size="16" font-weight="700" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="5" paint-order="stroke" stroke-linejoin="round" style="font-variant-numeric:tabular-nums">14.6%</text>
+<title>기타 서비스 · 14.6%</title>
+</g>
+<g class="pt" tabindex="0">
+<rect x="0" y="469.6" width="1000" height="31.2" fill="transparent"/>
+<text x="216" y="490.6" text-anchor="end" font-size="16" font-weight="600" fill="#1A1A1A">운수·창고</text>
+<path d="M232,477.7 h166.8 a4,4 0 0 1 4,4 v7.0 a4,4 0 0 1 -4,4 h-166.8 Z" fill="#F36F21"/>
+<text x="414.8" y="490.8" font-size="16" font-weight="700" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="5" paint-order="stroke" stroke-linejoin="round" style="font-variant-numeric:tabular-nums">13.5%</text>
+<title>운수·창고 · 13.5%</title>
+</g>
+<g class="pt" tabindex="0">
+<rect x="0" y="500.8" width="1000" height="31.2" fill="transparent"/>
+<text x="216" y="521.8" text-anchor="end" font-size="16" font-weight="600" fill="#1A1A1A">숙박·음식</text>
+<path d="M232,508.9 h131.4 a4,4 0 0 1 4,4 v7.0 a4,4 0 0 1 -4,4 h-131.4 Z" fill="#F36F21"/>
+<text x="379.4" y="522.0" font-size="16" font-weight="700" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="5" paint-order="stroke" stroke-linejoin="round" style="font-variant-numeric:tabular-nums">10.7%</text>
+<title>숙박·음식 · 10.7%</title>
+</g>
+</svg></figure>
+    <p class="slide-caption">미국 사업체 조사에서 가장 낮은 숙박·음식업도 <b>10곳 중 1곳</b>이 AI를 씁니다. 전체 평균은 11개월 만에 17.3%에서 24.6%로 올랐습니다.</p>
+    <div class="slide-src">출처: 미국 통계국(U.S. Census Bureau) 사업체 동향 조사(BTOS) · 2026년 10월 5~18일 조사 · 표준오차가 큰 4개 업종은 제외</div>
+    <div class="slide-extra"><details class="chart-table"><summary>표로 보기</summary><table><thead><tr><th>업종</th><th>AI를 쓴 사업체 비율</th></tr></thead><tbody><tr><td>정보(IT·미디어)</td><td>46.4%</td></tr><tr><td>전문·과학·기술 서비스</td><td>43.8%</td></tr><tr><td>금융·보험</td><td>40.5%</td></tr><tr><td>교육</td><td>33.4%</td></tr><tr><td>부동산·임대</td><td>29.0%</td></tr><tr><td>보건·사회복지</td><td>27.6%</td></tr><tr><td>제조</td><td>22.9%</td></tr><tr><td>사업지원 서비스</td><td>22.7%</td></tr><tr><td>도매</td><td>21.4%</td></tr><tr><td>예술·여가</td><td>21.4%</td></tr><tr><td>소매</td><td>18.5%</td></tr><tr><td>건설</td><td>16.1%</td></tr><tr><td>기타 서비스</td><td>14.6%</td></tr><tr><td>운수·창고</td><td>13.5%</td></tr><tr><td>숙박·음식</td><td>10.7%</td></tr><tr><td>전체 평균</td><td>24.6%</td></tr></tbody></table></details></div>
+  </div>
+
+  <div class="slide" id="i1-3">
+    <div class="slide-eyebrow">INTRO 01 · 지금, AI</div>
+    <h3 class="slide-title"><em>3년</em> 만에 1억 명에서 12억 명으로</h3>
+    <figure class="slide-visual"><svg viewBox="0 0 1000 562" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ChatGPT 주간 이용자 수 추이. 2023년 11월 1억 명에서 2026년 10월 12억 명" class="chart">
+<rect width="1000" height="562" fill="#FFFFFF"/>
+<text x="84" y="34" font-size="14" fill="#666666">ChatGPT를 매주 쓰는 사람 수 · 전 세계</text>
+<line x1="84" y1="484.0" x2="904" y2="484.0" stroke="#E5E5E5" stroke-width="1"/>
+<text x="72" y="489.0" text-anchor="end" font-size="15" fill="#666666" style="font-variant-numeric:tabular-nums">0</text>
+<line x1="84" y1="385.2" x2="904" y2="385.2" stroke="#E5E5E5" stroke-width="1"/>
+<text x="72" y="390.2" text-anchor="end" font-size="15" fill="#666666" style="font-variant-numeric:tabular-nums">3억</text>
+<line x1="84" y1="286.5" x2="904" y2="286.5" stroke="#E5E5E5" stroke-width="1"/>
+<text x="72" y="291.5" text-anchor="end" font-size="15" fill="#666666" style="font-variant-numeric:tabular-nums">6억</text>
+<line x1="84" y1="187.7" x2="904" y2="187.7" stroke="#E5E5E5" stroke-width="1"/>
+<text x="72" y="192.7" text-anchor="end" font-size="15" fill="#666666" style="font-variant-numeric:tabular-nums">9억</text>
+<line x1="84" y1="88.9" x2="904" y2="88.9" stroke="#E5E5E5" stroke-width="1"/>
+<text x="72" y="93.9" text-anchor="end" font-size="15" fill="#666666" style="font-variant-numeric:tabular-nums">12억</text>
+<line x1="84" y1="484" x2="904" y2="484" stroke="#CCCCCC" stroke-width="1"/>
+<line x1="202.0" y1="484" x2="202.0" y2="491" stroke="#CCCCCC" stroke-width="1"/>
+<text x="202.0" y="512" text-anchor="middle" font-size="16" fill="#666666" style="font-variant-numeric:tabular-nums">2024</text>
+<line x1="436.6" y1="484" x2="436.6" y2="491" stroke="#CCCCCC" stroke-width="1"/>
+<text x="436.6" y="512" text-anchor="middle" font-size="16" fill="#666666" style="font-variant-numeric:tabular-nums">2025</text>
+<line x1="670.6" y1="484" x2="670.6" y2="491" stroke="#CCCCCC" stroke-width="1"/>
+<text x="670.6" y="512" text-anchor="middle" font-size="16" fill="#666666" style="font-variant-numeric:tabular-nums">2026</text>
+<path d="M166.1,451.1 L356.5,418.2 L378.3,401.7 L418.7,385.2 L468.7,352.3 L493.7,319.4 L574.5,253.5 L614.9,220.6 L707.2,187.7 L809.8,154.8 L849.5,88.9 L849.5,484 L166.1,484 Z" fill="#F36F21" opacity="0.10"/>
+<path d="M166.1,451.1 L356.5,418.2 L378.3,401.7 L418.7,385.2 L468.7,352.3 L493.7,319.4 L574.5,253.5 L614.9,220.6 L707.2,187.7 L809.8,154.8 L849.5,88.9" fill="none" stroke="#F36F21" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<g class="pt" tabindex="0">
+<circle cx="166.1" cy="451.1" r="20" fill="transparent"/>
+<circle cx="166.1" cy="451.1" r="6" fill="#F36F21" stroke="#FFFFFF" stroke-width="2"/>
+<text x="166.1" y="435.1" text-anchor="middle" font-size="19" font-weight="700" fill="#1A1A1A">1억</text>
+<g class="tip"><rect x="75.3" y="393.1" width="181.4" height="34" rx="6" fill="#1A1A1A"/><text x="166.1" y="415.1" text-anchor="middle" font-size="14" fill="#FFFFFF">2023년 11월 · 1억 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="356.5" cy="418.2" r="20" fill="transparent"/>
+<circle cx="356.5" cy="418.2" r="6" fill="#F36F21" stroke="#FFFFFF" stroke-width="2"/>
+<g class="tip"><rect x="269.8" y="360.2" width="173.3" height="34" rx="6" fill="#1A1A1A"/><text x="356.5" y="382.2" text-anchor="middle" font-size="14" fill="#FFFFFF">2024년 8월 · 2억 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="378.3" cy="401.7" r="20" fill="transparent"/>
+<circle cx="378.3" cy="401.7" r="6" fill="#F36F21" stroke="#FFFFFF" stroke-width="2"/>
+<g class="tip"><rect x="279.4" y="343.7" width="197.7" height="34" rx="6" fill="#1A1A1A"/><text x="378.3" y="365.7" text-anchor="middle" font-size="14" fill="#FFFFFF">2024년 10월 · 2.5억 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="418.7" cy="385.2" r="20" fill="transparent"/>
+<circle cx="418.7" cy="385.2" r="6" fill="#F36F21" stroke="#FFFFFF" stroke-width="2"/>
+<text x="412.7" y="369.2" text-anchor="end" font-size="19" font-weight="700" fill="#1A1A1A">3억</text>
+<g class="tip"><rect x="327.9" y="327.2" width="181.4" height="34" rx="6" fill="#1A1A1A"/><text x="418.7" y="349.2" text-anchor="middle" font-size="14" fill="#FFFFFF">2024년 12월 · 3억 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="468.7" cy="352.3" r="20" fill="transparent"/>
+<circle cx="468.7" cy="352.3" r="6" fill="#F36F21" stroke="#FFFFFF" stroke-width="2"/>
+<g class="tip"><rect x="382.0" y="294.3" width="173.3" height="34" rx="6" fill="#1A1A1A"/><text x="468.7" y="316.3" text-anchor="middle" font-size="14" fill="#FFFFFF">2025년 2월 · 4억 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="493.7" cy="319.4" r="20" fill="transparent"/>
+<circle cx="493.7" cy="319.4" r="6" fill="#F36F21" stroke="#FFFFFF" stroke-width="2"/>
+<g class="tip"><rect x="407.0" y="261.4" width="173.3" height="34" rx="6" fill="#1A1A1A"/><text x="493.7" y="283.4" text-anchor="middle" font-size="14" fill="#FFFFFF">2025년 3월 · 5억 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="574.5" cy="253.5" r="20" fill="transparent"/>
+<circle cx="574.5" cy="253.5" r="6" fill="#F36F21" stroke="#FFFFFF" stroke-width="2"/>
+<g class="tip"><rect x="487.8" y="195.5" width="173.3" height="34" rx="6" fill="#1A1A1A"/><text x="574.5" y="217.5" text-anchor="middle" font-size="14" fill="#FFFFFF">2025년 8월 · 7억 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="614.9" cy="220.6" r="20" fill="transparent"/>
+<circle cx="614.9" cy="220.6" r="6" fill="#F36F21" stroke="#FFFFFF" stroke-width="2"/>
+<text x="606.9" y="204.6" text-anchor="end" font-size="19" font-weight="700" fill="#1A1A1A">8억</text>
+<g class="tip"><rect x="524.1" y="162.6" width="181.4" height="34" rx="6" fill="#1A1A1A"/><text x="614.9" y="184.6" text-anchor="middle" font-size="14" fill="#FFFFFF">2025년 10월 · 8억 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="707.2" cy="187.7" r="20" fill="transparent"/>
+<circle cx="707.2" cy="187.7" r="6" fill="#F36F21" stroke="#FFFFFF" stroke-width="2"/>
+<g class="tip"><rect x="620.5" y="129.7" width="173.3" height="34" rx="6" fill="#1A1A1A"/><text x="707.2" y="151.7" text-anchor="middle" font-size="14" fill="#FFFFFF">2026년 2월 · 9억 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="809.8" cy="154.8" r="20" fill="transparent"/>
+<circle cx="809.8" cy="154.8" r="6" fill="#F36F21" stroke="#FFFFFF" stroke-width="2"/>
+<g class="tip"><rect x="719.0" y="96.8" width="181.4" height="34" rx="6" fill="#1A1A1A"/><text x="809.8" y="118.8" text-anchor="middle" font-size="14" fill="#FFFFFF">2026년 8월 · 10억 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="849.5" cy="88.9" r="20" fill="transparent"/>
+<circle cx="849.5" cy="88.9" r="7" fill="#F36F21" stroke="#FFFFFF" stroke-width="2"/>
+<text x="843.5" y="68.9" text-anchor="end" font-size="30" font-weight="700" fill="#1A1A1A">12억</text>
+<g class="tip"><rect x="754.7" y="106.9" width="189.6" height="34" rx="6" fill="#1A1A1A"/><text x="849.5" y="128.9" text-anchor="middle" font-size="14" fill="#FFFFFF">2026년 10월 · 12억 명</text></g>
+</g>
+</svg></figure>
+    <p class="slide-caption">매주 ChatGPT를 쓰는 사람 수입니다. 2023년 11월 1억 명에서 <b>2026년 10월 12억 명</b>을 넘었습니다.</p>
+    <div class="slide-src">출처: OpenAI 공식 발표 11건(2023년 11월 ~ 2026년 10월) · 날짜는 달성일이 아니라 발표일</div>
+    <div class="slide-extra"><details class="chart-table"><summary>표로 보기</summary><table><thead><tr><th>발표 시점</th><th>주간 이용자</th></tr></thead><tbody><tr><td>2023년 11월</td><td>1억 명</td></tr><tr><td>2024년 8월</td><td>2억 명 이상</td></tr><tr><td>2024년 10월</td><td>2.5억 명 이상</td></tr><tr><td>2024년 12월</td><td>3억 명 이상</td></tr><tr><td>2025년 2월</td><td>4억 명 이상</td></tr><tr><td>2025년 3월</td><td>5억 명 이상</td></tr><tr><td>2025년 8월</td><td>7억 명 이상</td></tr><tr><td>2025년 10월</td><td>8억 명 이상</td></tr><tr><td>2026년 2월</td><td>9억 명 이상</td></tr><tr><td>2026년 8월</td><td>10억 명 이상</td></tr><tr><td>2026년 10월</td><td>12억 명 이상</td></tr></tbody></table></details></div>
+  </div>
+
+  <div class="slide" id="i1-4">
+    <div class="slide-eyebrow">INTRO 01 · 지금, AI</div>
+    <h3 class="slide-title">한국은 스마트폰 이용자 <em>2명 중 1명</em></h3>
+    <figure class="slide-visual"><svg viewBox="0 0 1000 562" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="한국 ChatGPT 앱 월간 사용자 추이. 2023년 8월 47만 명에서 2026년 10월 2,551만 명" class="chart">
+<rect width="1000" height="562" fill="#FFFFFF"/>
+<text x="84" y="34" font-size="14" fill="#666666">ChatGPT 앱 월간 사용자 수 · 한국 · 추정치</text>
+<line x1="84" y1="484.0" x2="904" y2="484.0" stroke="#E5E5E5" stroke-width="1"/>
+<text x="72" y="489.0" text-anchor="end" font-size="15" fill="#666666" style="font-variant-numeric:tabular-nums">0</text>
+<line x1="84" y1="407.6" x2="904" y2="407.6" stroke="#E5E5E5" stroke-width="1"/>
+<text x="72" y="412.6" text-anchor="end" font-size="15" fill="#666666" style="font-variant-numeric:tabular-nums">500만</text>
+<line x1="84" y1="331.1" x2="904" y2="331.1" stroke="#E5E5E5" stroke-width="1"/>
+<text x="72" y="336.1" text-anchor="end" font-size="15" fill="#666666" style="font-variant-numeric:tabular-nums">1,000만</text>
+<line x1="84" y1="254.7" x2="904" y2="254.7" stroke="#E5E5E5" stroke-width="1"/>
+<text x="72" y="259.7" text-anchor="end" font-size="15" fill="#666666" style="font-variant-numeric:tabular-nums">1,500만</text>
+<line x1="84" y1="178.3" x2="904" y2="178.3" stroke="#E5E5E5" stroke-width="1"/>
+<text x="72" y="183.3" text-anchor="end" font-size="15" fill="#666666" style="font-variant-numeric:tabular-nums">2,000만</text>
+<line x1="84" y1="101.9" x2="904" y2="101.9" stroke="#E5E5E5" stroke-width="1"/>
+<text x="72" y="106.9" text-anchor="end" font-size="15" fill="#666666" style="font-variant-numeric:tabular-nums">2,500만</text>
+<line x1="84" y1="484" x2="904" y2="484" stroke="#CCCCCC" stroke-width="1"/>
+<line x1="218.1" y1="484" x2="218.1" y2="491" stroke="#CCCCCC" stroke-width="1"/>
+<text x="218.1" y="512" text-anchor="middle" font-size="16" fill="#666666" style="font-variant-numeric:tabular-nums">2024</text>
+<line x1="447.3" y1="484" x2="447.3" y2="491" stroke="#CCCCCC" stroke-width="1"/>
+<text x="447.3" y="512" text-anchor="middle" font-size="16" fill="#666666" style="font-variant-numeric:tabular-nums">2025</text>
+<line x1="676.0" y1="484" x2="676.0" y2="491" stroke="#CCCCCC" stroke-width="1"/>
+<text x="676.0" y="512" text-anchor="middle" font-size="16" fill="#666666" style="font-variant-numeric:tabular-nums">2026</text>
+<path d="M131.0,476.8 L169.2,473.0 L207.4,461.5 L283.8,448.1 L340.8,423.5 L360.3,421.8 L398.5,403.6 L436.7,379.8 L456.1,372.6 L475.5,354.4 L493.1,317.1 L512.5,216.8 L531.3,213.3 L550.7,202.1 L569.5,190.7 L588.9,173.5 L608.3,160.2 L627.1,159.2 L646.5,153.5 L665.3,144.0 L684.7,141.6 L704.2,133.5 L721.7,128.0 L741.1,125.6 L798.1,122.2 L837.0,106.4 L855.8,94.1 L855.8,484 L131.0,484 Z" fill="#F36F21" opacity="0.10"/>
+<path d="M131.0,476.8 L169.2,473.0 L207.4,461.5 L283.8,448.1 L340.8,423.5 L360.3,421.8 L398.5,403.6 L436.7,379.8 L456.1,372.6 L475.5,354.4 L493.1,317.1 L512.5,216.8 L531.3,213.3 L550.7,202.1 L569.5,190.7 L588.9,173.5 L608.3,160.2 L627.1,159.2 L646.5,153.5 L665.3,144.0 L684.7,141.6 L704.2,133.5 L721.7,128.0 L741.1,125.6 L798.1,122.2 L837.0,106.4 L855.8,94.1" fill="none" stroke="#F36F21" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<g class="pt" tabindex="0">
+<circle cx="131.0" cy="476.8" r="11" fill="transparent"/>
+<circle cx="131.0" cy="476.8" r="6" fill="#F36F21" stroke="#FFFFFF" stroke-width="2"/>
+<text x="131.0" y="458.8" text-anchor="middle" font-size="19" font-weight="700" fill="#1A1A1A">47만</text>
+<g class="tip"><rect x="40.3" y="418.8" width="181.4" height="34" rx="6" fill="#1A1A1A"/><text x="131.0" y="440.8" text-anchor="middle" font-size="14" fill="#FFFFFF">2023년 8월 · 47만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="169.2" cy="473.0" r="11" fill="transparent"/>
+<circle cx="169.2" cy="473.0" r="4" fill="#F36F21" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="tip"><rect x="74.4" y="415.0" width="189.6" height="34" rx="6" fill="#1A1A1A"/><text x="169.2" y="437.0" text-anchor="middle" font-size="14" fill="#FFFFFF">2023년 10월 · 72만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="207.4" cy="461.5" r="11" fill="transparent"/>
+<circle cx="207.4" cy="461.5" r="4" fill="#F36F21" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="tip"><rect x="108.6" y="403.5" width="197.7" height="34" rx="6" fill="#1A1A1A"/><text x="207.4" y="425.5" text-anchor="middle" font-size="14" fill="#FFFFFF">2023년 12월 · 147만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="283.8" cy="448.1" r="11" fill="transparent"/>
+<circle cx="283.8" cy="448.1" r="4" fill="#F36F21" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="tip"><rect x="189.1" y="390.1" width="189.6" height="34" rx="6" fill="#1A1A1A"/><text x="283.8" y="412.1" text-anchor="middle" font-size="14" fill="#FFFFFF">2024년 4월 · 235만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="340.8" cy="423.5" r="11" fill="transparent"/>
+<circle cx="340.8" cy="423.5" r="4" fill="#F36F21" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="tip"><rect x="246.1" y="365.5" width="189.6" height="34" rx="6" fill="#1A1A1A"/><text x="340.8" y="387.5" text-anchor="middle" font-size="14" fill="#FFFFFF">2024년 7월 · 396만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="360.3" cy="421.8" r="11" fill="transparent"/>
+<circle cx="360.3" cy="421.8" r="4" fill="#F36F21" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="tip"><rect x="265.5" y="363.8" width="189.6" height="34" rx="6" fill="#1A1A1A"/><text x="360.3" y="385.8" text-anchor="middle" font-size="14" fill="#FFFFFF">2024년 8월 · 407만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="398.5" cy="403.6" r="11" fill="transparent"/>
+<circle cx="398.5" cy="403.6" r="4" fill="#F36F21" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="tip"><rect x="299.6" y="345.6" width="197.7" height="34" rx="6" fill="#1A1A1A"/><text x="398.5" y="367.6" text-anchor="middle" font-size="14" fill="#FFFFFF">2024년 10월 · 526만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="436.7" cy="379.8" r="11" fill="transparent"/>
+<circle cx="436.7" cy="379.8" r="6" fill="#F36F21" stroke="#FFFFFF" stroke-width="2"/>
+<text x="428.7" y="363.8" text-anchor="end" font-size="19" font-weight="700" fill="#1A1A1A">682만</text>
+<g class="tip"><rect x="337.8" y="321.8" width="197.7" height="34" rx="6" fill="#1A1A1A"/><text x="436.7" y="343.8" text-anchor="middle" font-size="14" fill="#FFFFFF">2024년 12월 · 682만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="456.1" cy="372.6" r="11" fill="transparent"/>
+<circle cx="456.1" cy="372.6" r="4" fill="#F36F21" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="tip"><rect x="361.3" y="314.6" width="189.6" height="34" rx="6" fill="#1A1A1A"/><text x="456.1" y="336.6" text-anchor="middle" font-size="14" fill="#FFFFFF">2025년 1월 · 729만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="475.5" cy="354.4" r="11" fill="transparent"/>
+<circle cx="475.5" cy="354.4" r="4" fill="#F36F21" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="tip"><rect x="380.7" y="296.4" width="189.6" height="34" rx="6" fill="#1A1A1A"/><text x="475.5" y="318.4" text-anchor="middle" font-size="14" fill="#FFFFFF">2025년 2월 · 848만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="493.1" cy="317.1" r="11" fill="transparent"/>
+<circle cx="493.1" cy="317.1" r="4" fill="#F36F21" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="tip"><rect x="390.2" y="259.1" width="205.8" height="34" rx="6" fill="#1A1A1A"/><text x="493.1" y="281.1" text-anchor="middle" font-size="14" fill="#FFFFFF">2025년 3월 · 1,092만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="512.5" cy="216.8" r="11" fill="transparent"/>
+<circle cx="512.5" cy="216.8" r="6" fill="#F36F21" stroke="#FFFFFF" stroke-width="2"/>
+<text x="502.5" y="200.8" text-anchor="end" font-size="19" font-weight="700" fill="#1A1A1A">1,748만</text>
+<g class="tip"><rect x="409.6" y="158.8" width="205.8" height="34" rx="6" fill="#1A1A1A"/><text x="512.5" y="180.8" text-anchor="middle" font-size="14" fill="#FFFFFF">2025년 4월 · 1,748만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="531.3" cy="213.3" r="11" fill="transparent"/>
+<circle cx="531.3" cy="213.3" r="4" fill="#F36F21" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="tip"><rect x="428.4" y="155.3" width="205.8" height="34" rx="6" fill="#1A1A1A"/><text x="531.3" y="177.3" text-anchor="middle" font-size="14" fill="#FFFFFF">2025년 5월 · 1,771만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="550.7" cy="202.1" r="11" fill="transparent"/>
+<circle cx="550.7" cy="202.1" r="4" fill="#F36F21" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="tip"><rect x="447.8" y="144.1" width="205.8" height="34" rx="6" fill="#1A1A1A"/><text x="550.7" y="166.1" text-anchor="middle" font-size="14" fill="#FFFFFF">2025년 6월 · 1,844만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="569.5" cy="190.7" r="11" fill="transparent"/>
+<circle cx="569.5" cy="190.7" r="4" fill="#F36F21" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="tip"><rect x="466.6" y="132.7" width="205.8" height="34" rx="6" fill="#1A1A1A"/><text x="569.5" y="154.7" text-anchor="middle" font-size="14" fill="#FFFFFF">2025년 7월 · 1,919만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="588.9" cy="173.5" r="11" fill="transparent"/>
+<circle cx="588.9" cy="173.5" r="4" fill="#F36F21" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="tip"><rect x="486.0" y="115.5" width="205.8" height="34" rx="6" fill="#1A1A1A"/><text x="588.9" y="137.5" text-anchor="middle" font-size="14" fill="#FFFFFF">2025년 8월 · 2,031만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="608.3" cy="160.2" r="11" fill="transparent"/>
+<circle cx="608.3" cy="160.2" r="4" fill="#F36F21" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="tip"><rect x="505.4" y="102.2" width="205.8" height="34" rx="6" fill="#1A1A1A"/><text x="608.3" y="124.2" text-anchor="middle" font-size="14" fill="#FFFFFF">2025년 9월 · 2,118만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="627.1" cy="159.2" r="11" fill="transparent"/>
+<circle cx="627.1" cy="159.2" r="4" fill="#F36F21" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="tip"><rect x="520.2" y="101.2" width="213.9" height="34" rx="6" fill="#1A1A1A"/><text x="627.1" y="123.2" text-anchor="middle" font-size="14" fill="#FFFFFF">2025년 10월 · 2,125만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="646.5" cy="153.5" r="11" fill="transparent"/>
+<circle cx="646.5" cy="153.5" r="4" fill="#F36F21" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="tip"><rect x="539.6" y="95.5" width="213.9" height="34" rx="6" fill="#1A1A1A"/><text x="646.5" y="117.5" text-anchor="middle" font-size="14" fill="#FFFFFF">2025년 11월 · 2,162만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="665.3" cy="144.0" r="11" fill="transparent"/>
+<circle cx="665.3" cy="144.0" r="4" fill="#F36F21" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="tip"><rect x="558.4" y="86.0" width="213.9" height="34" rx="6" fill="#1A1A1A"/><text x="665.3" y="108.0" text-anchor="middle" font-size="14" fill="#FFFFFF">2025년 12월 · 2,224만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="684.7" cy="141.6" r="11" fill="transparent"/>
+<circle cx="684.7" cy="141.6" r="4" fill="#F36F21" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="tip"><rect x="581.8" y="83.6" width="205.8" height="34" rx="6" fill="#1A1A1A"/><text x="684.7" y="105.6" text-anchor="middle" font-size="14" fill="#FFFFFF">2026년 1월 · 2,240만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="704.2" cy="133.5" r="11" fill="transparent"/>
+<circle cx="704.2" cy="133.5" r="4" fill="#F36F21" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="tip"><rect x="601.3" y="75.5" width="205.8" height="34" rx="6" fill="#1A1A1A"/><text x="704.2" y="97.5" text-anchor="middle" font-size="14" fill="#FFFFFF">2026년 2월 · 2,293만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="721.7" cy="128.0" r="11" fill="transparent"/>
+<circle cx="721.7" cy="128.0" r="4" fill="#F36F21" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="tip"><rect x="618.8" y="146.0" width="205.8" height="34" rx="6" fill="#1A1A1A"/><text x="721.7" y="168.0" text-anchor="middle" font-size="14" fill="#FFFFFF">2026년 3월 · 2,329만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="741.1" cy="125.6" r="11" fill="transparent"/>
+<circle cx="741.1" cy="125.6" r="4" fill="#F36F21" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="tip"><rect x="638.2" y="143.6" width="205.8" height="34" rx="6" fill="#1A1A1A"/><text x="741.1" y="165.6" text-anchor="middle" font-size="14" fill="#FFFFFF">2026년 4월 · 2,345만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="798.1" cy="122.2" r="11" fill="transparent"/>
+<circle cx="798.1" cy="122.2" r="4" fill="#F36F21" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="tip"><rect x="695.2" y="140.2" width="205.8" height="34" rx="6" fill="#1A1A1A"/><text x="798.1" y="162.2" text-anchor="middle" font-size="14" fill="#FFFFFF">2026년 7월 · 2,367만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="837.0" cy="106.4" r="11" fill="transparent"/>
+<circle cx="837.0" cy="106.4" r="4" fill="#F36F21" stroke="#FFFFFF" stroke-width="1.5"/>
+<g class="tip"><rect x="734.1" y="124.4" width="205.8" height="34" rx="6" fill="#1A1A1A"/><text x="837.0" y="146.4" text-anchor="middle" font-size="14" fill="#FFFFFF">2026년 9월 · 2,470만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="855.8" cy="94.1" r="11" fill="transparent"/>
+<circle cx="855.8" cy="94.1" r="7" fill="#F36F21" stroke="#FFFFFF" stroke-width="2"/>
+<text x="855.8" y="74.1" text-anchor="end" font-size="30" font-weight="700" fill="#1A1A1A">2,551만</text>
+<g class="tip"><rect x="748.8" y="112.1" width="213.9" height="34" rx="6" fill="#1A1A1A"/><text x="855.8" y="134.1" text-anchor="middle" font-size="14" fill="#FFFFFF">2026년 10월 · 2,551만 명</text></g>
+</g>
+</svg></figure>
+    <p class="slide-caption">국내 ChatGPT 앱 월간 사용자는 2023년 8월 47만 명에서 <b>2026년 10월 2,551만 명</b>이 됐습니다.</p>
+    <div class="slide-src">출처: 와이즈앱·리테일(2026-11-10 발표 등) · 한국인 스마트폰 사용자 표본 추정 · 앱 사용자만 집계(PC 웹·회사 계정 제외) · &lsquo;2명 중 1명&rsquo;은 조사 모집단 5,139만 명으로 나눈 값(49.6%)</div>
+    <div class="slide-extra"><details class="chart-table"><summary>표로 보기</summary><table><thead><tr><th>기준 월</th><th>월간 사용자(추정)</th></tr></thead><tbody><tr><td>2023년 8월</td><td>47만 명</td></tr><tr><td>2023년 12월</td><td>147만 명</td></tr><tr><td>2024년 4월</td><td>235만 명</td></tr><tr><td>2024년 8월</td><td>407만 명</td></tr><tr><td>2024년 12월</td><td>682만 명</td></tr><tr><td>2025년 4월</td><td>1,748만 명</td></tr><tr><td>2025년 8월</td><td>2,031만 명</td></tr><tr><td>2025년 12월</td><td>2,224만 명</td></tr><tr><td>2026년 4월</td><td>2,345만 명</td></tr><tr><td>2026년 10월</td><td>2,551만 명</td></tr></tbody></table></details></div>
+  </div>
+
+  <div class="slide" id="i1-5">
+    <div class="slide-eyebrow">INTRO 01 · 지금, AI</div>
+    <h3 class="slide-title"><em>돈을 내고</em> 쓰는 사람도 늘었습니다</h3>
+    <figure class="slide-visual"><svg viewBox="0 0 1000 562" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="왼쪽: 개인 유료 구독자 1,550만 명에서 5,000만 명 이상으로. 오른쪽: 업무용 유료 사용자 100만 명에서 900만 명 이상으로" class="chart">
+<rect width="1000" height="562" fill="#FFFFFF"/>
+<text x="24" y="44" font-size="21" font-weight="700" fill="#1A1A1A">개인 유료 구독자</text>
+<text x="24" y="70" font-size="14" fill="#666666">개인 요금제 · 전 세계</text>
+<line x1="78" y1="470.0" x2="468" y2="470.0" stroke="#E5E5E5" stroke-width="1"/>
+<text x="66" y="475.0" text-anchor="end" font-size="14" fill="#666666" style="font-variant-numeric:tabular-nums">0</text>
+<line x1="78" y1="359.7" x2="468" y2="359.7" stroke="#E5E5E5" stroke-width="1"/>
+<text x="66" y="364.7" text-anchor="end" font-size="14" fill="#666666" style="font-variant-numeric:tabular-nums">2,000만</text>
+<line x1="78" y1="249.4" x2="468" y2="249.4" stroke="#E5E5E5" stroke-width="1"/>
+<text x="66" y="254.4" text-anchor="end" font-size="14" fill="#666666" style="font-variant-numeric:tabular-nums">4,000만</text>
+<line x1="78" y1="139.0" x2="468" y2="139.0" stroke="#E5E5E5" stroke-width="1"/>
+<text x="66" y="144.0" text-anchor="end" font-size="14" fill="#666666" style="font-variant-numeric:tabular-nums">6,000만</text>
+<line x1="78" y1="470" x2="468" y2="470" stroke="#CCCCCC" stroke-width="1"/>
+<line x1="176.4" y1="470" x2="176.4" y2="477" stroke="#CCCCCC" stroke-width="1"/>
+<text x="176.4" y="498" text-anchor="middle" font-size="15" fill="#666666" style="font-variant-numeric:tabular-nums">2025</text>
+<line x1="371.7" y1="470" x2="371.7" y2="477" stroke="#CCCCCC" stroke-width="1"/>
+<text x="371.7" y="498" text-anchor="middle" font-size="15" fill="#666666" style="font-variant-numeric:tabular-nums">2026</text>
+<path d="M175.9,384.5 L224.6,359.7 L280.8,276.9 L402.2,194.2 L402.2,470 L175.9,470 Z" fill="#F36F21" opacity="0.10"/>
+<path d="M175.9,384.5 L224.6,359.7 L280.8,276.9 L402.2,194.2" fill="none" stroke="#F36F21" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<g class="pt" tabindex="0">
+<circle cx="175.9" cy="384.5" r="20" fill="transparent"/>
+<circle cx="175.9" cy="384.5" r="6" fill="#FFFFFF" stroke="#F36F21" stroke-width="3"/>
+<text x="169.9" y="368.5" text-anchor="middle" font-size="17" font-weight="700" fill="#1A1A1A">1,550만</text>
+<g class="tip"><rect x="68.9" y="326.5" width="213.9" height="34" rx="6" fill="#1A1A1A"/><text x="175.9" y="348.5" text-anchor="middle" font-size="14" fill="#FFFFFF">2024년 12월 · 1,550만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="224.6" cy="359.7" r="20" fill="transparent"/>
+<circle cx="224.6" cy="359.7" r="6" fill="#FFFFFF" stroke="#F36F21" stroke-width="3"/>
+<g class="tip"><rect x="121.7" y="301.7" width="205.8" height="34" rx="6" fill="#1A1A1A"/><text x="224.6" y="323.7" text-anchor="middle" font-size="14" fill="#FFFFFF">2025년 4월 · 2,000만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="280.8" cy="276.9" r="20" fill="transparent"/>
+<circle cx="280.8" cy="276.9" r="6" fill="#FFFFFF" stroke="#F36F21" stroke-width="3"/>
+<g class="tip"><rect x="177.9" y="218.9" width="205.8" height="34" rx="6" fill="#1A1A1A"/><text x="280.8" y="240.9" text-anchor="middle" font-size="14" fill="#FFFFFF">2025년 7월 · 3,500만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="402.2" cy="194.2" r="20" fill="transparent"/>
+<circle cx="402.2" cy="194.2" r="7" fill="#F36F21" stroke="#FFFFFF" stroke-width="2"/>
+<text x="398.2" y="174.2" text-anchor="end" font-size="28" font-weight="700" fill="#1A1A1A">5,000만+</text>
+<g class="tip"><rect x="281.2" y="136.2" width="241.9" height="34" rx="6" fill="#1A1A1A"/><text x="402.2" y="158.2" text-anchor="middle" font-size="14" fill="#FFFFFF">2026년 2월 · 5,000만 명 이상</text></g>
+</g>
+<text x="540" y="44" font-size="21" font-weight="700" fill="#1A1A1A">업무용 유료 사용자</text>
+<text x="540" y="70" font-size="14" fill="#666666">기업 · 팀 · 교육 요금제 · 전 세계</text>
+<line x1="594" y1="470.0" x2="984" y2="470.0" stroke="#E5E5E5" stroke-width="1"/>
+<text x="582" y="475.0" text-anchor="end" font-size="14" fill="#666666" style="font-variant-numeric:tabular-nums">0</text>
+<line x1="594" y1="378.4" x2="984" y2="378.4" stroke="#E5E5E5" stroke-width="1"/>
+<text x="582" y="383.4" text-anchor="end" font-size="14" fill="#666666" style="font-variant-numeric:tabular-nums">300만</text>
+<line x1="594" y1="286.8" x2="984" y2="286.8" stroke="#E5E5E5" stroke-width="1"/>
+<text x="582" y="291.8" text-anchor="end" font-size="14" fill="#666666" style="font-variant-numeric:tabular-nums">600만</text>
+<line x1="594" y1="195.2" x2="984" y2="195.2" stroke="#E5E5E5" stroke-width="1"/>
+<text x="582" y="200.2" text-anchor="end" font-size="14" fill="#666666" style="font-variant-numeric:tabular-nums">900만</text>
+<line x1="594" y1="470" x2="984" y2="470" stroke="#CCCCCC" stroke-width="1"/>
+<line x1="692.4" y1="470" x2="692.4" y2="477" stroke="#CCCCCC" stroke-width="1"/>
+<text x="692.4" y="498" text-anchor="middle" font-size="15" fill="#666666" style="font-variant-numeric:tabular-nums">2025</text>
+<line x1="887.7" y1="470" x2="887.7" y2="477" stroke="#CCCCCC" stroke-width="1"/>
+<text x="887.7" y="498" text-anchor="middle" font-size="15" fill="#666666" style="font-variant-numeric:tabular-nums">2026</text>
+<path d="M629.3,439.5 L719.2,408.9 L774.8,378.4 L807.5,317.3 L918.2,195.2 L918.2,470 L629.3,470 Z" fill="#F36F21" opacity="0.10"/>
+<path d="M629.3,439.5 L719.2,408.9 L774.8,378.4 L807.5,317.3 L918.2,195.2" fill="none" stroke="#F36F21" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<g class="pt" tabindex="0">
+<circle cx="629.3" cy="439.5" r="20" fill="transparent"/>
+<circle cx="629.3" cy="439.5" r="6" fill="#F36F21" stroke="#FFFFFF" stroke-width="2"/>
+<text x="631.3" y="423.5" text-anchor="middle" font-size="17" font-weight="700" fill="#1A1A1A">100만</text>
+<g class="tip"><rect x="534.5" y="381.5" width="189.6" height="34" rx="6" fill="#1A1A1A"/><text x="629.3" y="403.5" text-anchor="middle" font-size="14" fill="#FFFFFF">2024년 9월 · 100만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="719.2" cy="408.9" r="20" fill="transparent"/>
+<circle cx="719.2" cy="408.9" r="6" fill="#F36F21" stroke="#FFFFFF" stroke-width="2"/>
+<g class="tip"><rect x="624.4" y="350.9" width="189.6" height="34" rx="6" fill="#1A1A1A"/><text x="719.2" y="372.9" text-anchor="middle" font-size="14" fill="#FFFFFF">2025년 2월 · 200만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="774.8" cy="378.4" r="20" fill="transparent"/>
+<circle cx="774.8" cy="378.4" r="6" fill="#F36F21" stroke="#FFFFFF" stroke-width="2"/>
+<g class="tip"><rect x="680.0" y="320.4" width="189.6" height="34" rx="6" fill="#1A1A1A"/><text x="774.8" y="342.4" text-anchor="middle" font-size="14" fill="#FFFFFF">2025년 6월 · 300만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="807.5" cy="317.3" r="20" fill="transparent"/>
+<circle cx="807.5" cy="317.3" r="6" fill="#F36F21" stroke="#FFFFFF" stroke-width="2"/>
+<g class="tip"><rect x="712.7" y="259.3" width="189.6" height="34" rx="6" fill="#1A1A1A"/><text x="807.5" y="281.3" text-anchor="middle" font-size="14" fill="#FFFFFF">2025년 8월 · 500만 명</text></g>
+</g>
+<g class="pt" tabindex="0">
+<circle cx="918.2" cy="195.2" r="20" fill="transparent"/>
+<circle cx="918.2" cy="195.2" r="7" fill="#F36F21" stroke="#FFFFFF" stroke-width="2"/>
+<text x="914.2" y="175.2" text-anchor="end" font-size="28" font-weight="700" fill="#1A1A1A">900만+</text>
+<g class="tip"><rect x="768.3" y="137.2" width="225.7" height="34" rx="6" fill="#1A1A1A"/><text x="881.2" y="159.2" text-anchor="middle" font-size="14" fill="#FFFFFF">2026년 2월 · 900만 명 이상</text></g>
+</g>
+<line x1="512" y1="24" x2="512" y2="538" stroke="#E5E5E5" stroke-width="1"/>
+<circle cx="31" cy="531" r="6" fill="#F36F21" stroke="#FFFFFF" stroke-width="2"/>
+<text x="46" y="536" font-size="13.5" fill="#666666">OpenAI 공식 발표</text>
+<circle cx="193.48000000000002" cy="531" r="6" fill="#FFFFFF" stroke="#F36F21" stroke-width="3"/>
+<text x="208.48000000000002" y="536" font-size="13.5" fill="#666666">언론 보도 (The Information)</text>
+</svg></figure>
+    <p class="slide-caption">개인 유료 구독자는 1,550만 명에서 <b>5,000만 명 이상</b>으로, 업무용 유료 사용자는 100만 명에서 <b>900만 명 이상</b>으로 늘었습니다.</p>
+    <div class="slide-src">출처: OpenAI 공식 글(2026-02-27) · 업무용은 OpenAI 발표(2024년 9월 ~ 2026년 2월) · 개인 구독자의 2025년까지 수치는 The Information 보도 · 2026년 3월 이후 수치는 공개되지 않음</div>
+    <div class="slide-extra"><details class="chart-table"><summary>표로 보기</summary><table><thead><tr><th>구분</th><th>시점</th><th>수치</th><th>근거</th></tr></thead><tbody><tr><td>개인 유료 구독자</td><td>2024년 12월</td><td>1,550만 명</td><td>언론 보도</td></tr><tr><td>개인 유료 구독자</td><td>2025년 4월</td><td>2,000만 명</td><td>언론 보도</td></tr><tr><td>개인 유료 구독자</td><td>2025년 7월</td><td>3,500만 명</td><td>언론 보도</td></tr><tr><td>개인 유료 구독자</td><td>2026년 2월</td><td>5,000만 이상 명</td><td>OpenAI 공식 발표</td></tr><tr><td>업무용 유료 사용자</td><td>2024년 9월</td><td>100만 명</td><td>OpenAI 발표</td></tr><tr><td>업무용 유료 사용자</td><td>2025년 2월</td><td>200만 명</td><td>OpenAI 발표</td></tr><tr><td>업무용 유료 사용자</td><td>2025년 6월</td><td>300만 명</td><td>OpenAI 발표</td></tr><tr><td>업무용 유료 사용자</td><td>2025년 8월</td><td>500만 명</td><td>OpenAI 발표</td></tr><tr><td>업무용 유료 사용자</td><td>2026년 2월</td><td>900만 이상 명</td><td>OpenAI 발표</td></tr></tbody></table></details></div>
+  </div>
+</section>
+
+<!-- ══════════ INTRO 02 ══════════ -->
+<section class="module intro" id="i2">
+  <div class="part-open">
+    <div class="po-num">INTRO 02</div>
+    <div class="po-title">무료와 유료, <em>무엇이</em> 다른가</div>
+    <div class="po-q">다들 쓰고, 돈까지 냅니다. 답이 더 똑똑해서일까요? 차이는 기능에 있습니다.</div>
+  </div>
+
+  <div class="slide" id="i2-1">
+    <div class="slide-eyebrow">INTRO 02 · 무료와 유료</div>
+    <h3 class="slide-title">차이는 <em>할 수 있는 일</em>에서 납니다</h3>
+    <figure class="slide-visual"><img src="교안_자료/도입_장표/21_기능지도.webp" alt="세 묶음. 무료도 됩니다: 텍스트 대화, 웹 검색, 프로젝트, 스킬. 되지만 한도가 있습니다: 파일 올리기, 데이터 분석, 이미지 만들기, 심층 리서치. 유료부터 됩니다: 작업 예약, 웹·모바일 Work, Sites, 대화형 표·차트" width="2752" height="1536" decoding="async"></figure>
+    <p class="slide-caption">차이는 얼마나 똑똑한가가 아니라 <b>무엇을, 얼마나 할 수 있는가</b>입니다. 텍스트 대화는 무료도 횟수 제한이 없습니다.</p>
+    <div class="slide-src">출처: ChatGPT 요금제 안내의 플랜별 기능 비교(chatgpt.com/pricing) · 2026-11-13 확인 · 오른쪽 묶음은 Plus(월 29,000원) 기준</div>
+  </div>
+
+  <div class="slide" id="i2-2">
+    <div class="slide-eyebrow">INTRO 02 · 무료와 유료</div>
+    <h3 class="slide-title">한눈에 보는 <em>기능 차이</em></h3>
+    <figure class="slide-visual plain"><div class="cmp-wrap"><table class="cmp-table fx-table"><thead><tr><th>기능</th><th>무료</th><th>Go</th><th>Plus</th></tr></thead><tbody><tr><td>월 요금</td><td class="fx-t">0원</td><td class="fx-t">13,000원</td><td class="fx-t">29,000원</td></tr><tr class="fx-grp"><td colspan="4">무료도 됩니다</td></tr><tr><td>텍스트 대화</td><td class="fx-y">무제한</td><td class="fx-y">무제한</td><td class="fx-y">무제한</td></tr><tr><td>웹 검색 · 프로젝트 · 스킬</td><td class="fx-y">예</td><td class="fx-y">예</td><td class="fx-y">예</td></tr><tr class="fx-grp"><td colspan="4">되지만 한도가 있습니다</td></tr><tr><td>파일 올리기 · 데이터 분석</td><td class="fx-p">제한적</td><td class="fx-y">예</td><td class="fx-y">예</td></tr><tr><td>이미지 만들기</td><td class="fx-p">제한적</td><td class="fx-y">예</td><td class="fx-y">예</td></tr><tr><td>심층 리서치</td><td class="fx-p">제한적</td><td class="fx-p">제한적</td><td class="fx-y">예</td></tr><tr><td>한 번에 읽는 분량</td><td class="fx-t">약 12쪽</td><td class="fx-t">약 40쪽</td><td class="fx-t">약 40쪽</td></tr><tr><td>Codex</td><td class="fx-p">체험</td><td class="fx-p">체험</td><td class="fx-y">한도 확대</td></tr><tr><td>플러그인</td><td class="fx-p">일부</td><td class="fx-y">예</td><td class="fx-y">예</td></tr><tr><td>Work · 여러 단계 작업</td><td class="fx-p">데스크톱 앱만</td><td class="fx-p">데스크톱 앱만</td><td class="fx-y">웹 · 모바일 포함</td></tr><tr class="fx-grp"><td colspan="4">유료부터 됩니다</td></tr><tr><td>작업 예약</td><td class="fx-n">아니요</td><td class="fx-y">예</td><td class="fx-y">예</td></tr><tr><td>플러그인 만들기 · 공유</td><td class="fx-n">아니요</td><td class="fx-y">예</td><td class="fx-y">예</td></tr><tr><td>Sites · 대화형 표·차트</td><td class="fx-n">아니요</td><td class="fx-n">아니요</td><td class="fx-y">예</td></tr><tr class="same"><td>내 대화의 학습 활용</td><td colspan="3">어느 요금제든 기본은 사용 · 설정에서 거부</td></tr></tbody></table><p class="cmp-note">ChatGPT 요금제 안내의 플랜별 기능 비교(chatgpt.com/pricing) 2026-11-13 확인 · 분량은 안내 페이지의 추정치 · 요금과 한도는 수시로 바뀝니다 · Pro는 생략</p></div></figure>
+    <p class="slide-caption">Go는 올리기 · 분석 · 예약이 풀리고, <b>맡기는 기능</b>은 Plus부터 넓어집니다. 마지막 줄은 어느 요금제든 같습니다.</p>
+  </div>
+
+  <div class="slide" id="i2-3">
+    <div class="slide-eyebrow">INTRO 02 · 무료와 유료</div>
+    <h3 class="slide-title">Codex · 스킬 · 플러그인, <em>무료에서도</em> 열립니다</h3>
+    <figure class="slide-visual"><img src="교안_자료/도입_장표/22_codex_스킬_플러그인.webp" alt="세 카드. Codex(코드를 짜고 고치는 AI): 무료는 체험만, 유료는 한도 확대. 스킬(자주 하는 일을 저장해 다시 쓰기): 무료와 유료 모두 사용 가능. 플러그인(외부 도구를 연결하기): 무료는 일부만 사용, 유료는 만들기·공유까지" width="2752" height="1536" decoding="async"></figure>
+    <p class="slide-caption">셋 다 무료 계정에서 열립니다. 다만 Codex는 <b>체험 수준</b>이고, 플러그인은 <b>일부만</b> 쓸 수 있으며 만들기와 공유는 유료부터입니다.</p>
+    <div class="slide-src">출처: ChatGPT 요금제 안내 · Codex 가격 안내 · 플러그인 안내(모두 2026-11-13 확인) · 스킬은 요금제 안내 기준 — 사이드바의 플러그인에서 내 계정을 확인</div>
+  </div>
+
+  <div class="slide" id="i2-4">
+    <div class="slide-eyebrow">INTRO 02 · 무료와 유료</div>
+    <h3 class="slide-title">업무에 쓰면 <em>여기서</em> 막힙니다</h3>
+    <figure class="slide-visual"><img src="교안_자료/도입_장표/23_막히는순간.webp" alt="무료 계정이 막히는 네 순간. 자료를 여러 개 올릴 때 — 업로드 한도. 깊게 조사시킬 때 — 심층 리서치 한도. 긴 문서를 통째로 줄 때 — 약 12쪽까지. 정해진 때에 시킬 때 — 작업 예약 없음" width="2752" height="1536" decoding="async"></figure>
+    <p class="slide-caption">무료 계정은 도구마다 한도가 따로 있습니다. 한도에 닿으면 알림이 뜨고, <b>시간이 지나야</b> 다시 쓸 수 있습니다.</p>
+    <div class="slide-src">출처: OpenAI 도움말 「ChatGPT Free Tier FAQ」(2026-11 수정) · ChatGPT 요금제 안내(2026-11-13 확인) · 횟수는 공개되어 있지 않아 화면에 표시되는 남은 횟수를 봅니다</div>
+  </div>
+
+  <div class="slide" id="i2-5">
+    <div class="slide-eyebrow">INTRO 02 · 실습</div>
+    <h3 class="slide-title">기능 차이를 <em>내 계정</em>으로 확인합니다</h3>
+    <figure class="slide-visual plain"><div class="practice-card">
+      <ol class="step-list">
+        <li><b>메뉴를 견줍니다</b> &mdash; 사이드바의 플러그인과 입력창의 <b>+</b> 메뉴를 엽니다. 앞 화면(유료 계정)에는 있고 내 화면에는 없는 것을 찾습니다.</li>
+        <li><b>같은 부탁을 합니다</b> &mdash; 아래 문장을 복사해 새 채팅에 넣습니다.</li>
+        <li><b>말이 아니라 목록을 봅니다</b> &mdash; &ldquo;예약했습니다&rdquo;라는 답이 나왔더라도 예약 목록에 실제로 생겼는지 확인합니다. 만들어진 예약은 실습 뒤에 지웁니다.</li>
+      </ol>
+      <div class="prompt-block">
+        <div class="prompt-header"><span class="prompt-label">PROMPT 0 &mdash; 매주 받아 보기</span><button class="copy-btn" onclick="copyPrompt(this)">복사</button></div>
+<div class="prompt-body">매주 월요일 오전 9시에, 지난 한 주 동안 나온 생성형 AI 업무 활용 소식 3가지를 각각 두 줄로 요약해서 알려 주세요.</div>
+      </div>
+    </div></figure>
+    <p class="slide-caption">무료 계정은 물어볼 때 답합니다. 유료 계정은 <b>시켜 두면 정해진 때에 알아서</b> 합니다.</p>
+    <div class="slide-src">출처: ChatGPT 요금제 안내의 플랜별 기능 비교(chatgpt.com/pricing) · 2026-11-13 확인 · 작업 예약: 무료 &lsquo;아니요&rsquo;, Go · Plus · Pro &lsquo;예&rsquo;</div>
+  </div>
+</section>
+
+<!-- ══════════ INTRO 03 ══════════ -->
+<section class="module intro" id="i3">
+  <div class="part-open">
+    <div class="po-num">INTRO 03</div>
+    <div class="po-title">오늘 <em>무엇을</em> 배우나</div>
+    <div class="po-q">유료 계정만 있으면 잘 쓰게 될까요? 차이는 계정보다 쓰는 법에서 납니다.</div>
+  </div>
+
+  <div class="slide" id="i3-1">
+    <div class="slide-eyebrow">INTRO 03 · 오늘 배울 것</div>
+    <h3 class="slide-title">개발이 아니라 <em>활용</em>을 배웁니다</h3>
+    <figure class="slide-visual"><img src="교안_자료/도입_장표/31_배우는것.webp" alt="오늘 안 배우는 것: 머신러닝, 딥러닝, 코딩. 오늘 배우는 것: 내 업무에 AI 쓰는 법 — 자료 넣기, 시키기, 검수하기" width="2752" height="1536" decoding="async"></figure>
+    <p class="slide-caption">머신러닝 · 딥러닝 · 코딩은 다루지 않습니다. <b>내 자료를 넣고, 시키고, 검수하는 법</b>을 다룹니다.</p>
+  </div>
+
+  <div class="slide" id="i3-2">
+    <div class="slide-eyebrow">INTRO 03 · 오늘 배울 것</div>
+    <h3 class="slide-title">사람들은 AI를 <em>매일 하는 일</em>에 씁니다</h3>
+    <figure class="slide-visual"><svg viewBox="0 0 1000 562" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="한국 직장인이 AI 도움을 받은 업무. 정보 검색·요약 62.2%, 문서 작성·검수 38.6%, 코딩 10.6% 등 9개 항목" class="chart">
+<rect width="1000" height="562" fill="#FFFFFF"/>
+<text x="240" y="34" font-size="14" fill="#666666">AI가 도움이 된 업무 · 한국 취업자 · 1·2순위 응답 합</text>
+<line x1="240" y1="56" x2="240" y2="532" stroke="#CCCCCC" stroke-width="1"/>
+<g class="pt" tabindex="0">
+<rect x="0" y="64.0" width="1000" height="52.0" fill="transparent"/>
+<text x="224" y="96.1" text-anchor="end" font-size="18" font-weight="600" fill="#1A1A1A">정보 검색·요약</text>
+<path d="M240,79.0 h557.5 a4,4 0 0 1 4,4 v14.0 a4,4 0 0 1 -4,4 h-557.5 Z" fill="#F36F21"/>
+<text x="813.5" y="96.7" font-size="19" font-weight="700" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="5" paint-order="stroke" stroke-linejoin="round" style="font-variant-numeric:tabular-nums">62.2%</text>
+<title>정보 검색·요약 · 62.2%</title>
+</g>
+<g class="pt" tabindex="0">
+<rect x="0" y="116.0" width="1000" height="52.0" fill="transparent"/>
+<text x="224" y="148.1" text-anchor="end" font-size="18" font-weight="600" fill="#1A1A1A">문서 작성·검수</text>
+<path d="M240,131.0 h344.5 a4,4 0 0 1 4,4 v14.0 a4,4 0 0 1 -4,4 h-344.5 Z" fill="#F36F21"/>
+<text x="600.5" y="148.7" font-size="19" font-weight="700" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="5" paint-order="stroke" stroke-linejoin="round" style="font-variant-numeric:tabular-nums">38.6%</text>
+<title>문서 작성·검수 · 38.6%</title>
+</g>
+<g class="pt" tabindex="0">
+<rect x="0" y="168.0" width="1000" height="52.0" fill="transparent"/>
+<text x="224" y="200.1" text-anchor="end" font-size="18" font-weight="600" fill="#1A1A1A">아이디어 생성</text>
+<path d="M240,183.0 h224.4 a4,4 0 0 1 4,4 v14.0 a4,4 0 0 1 -4,4 h-224.4 Z" fill="#F36F21"/>
+<text x="480.4" y="200.7" font-size="19" font-weight="700" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="5" paint-order="stroke" stroke-linejoin="round" style="font-variant-numeric:tabular-nums">25.3%</text>
+<title>아이디어 생성 · 25.3%</title>
+</g>
+<g class="pt" tabindex="0">
+<rect x="0" y="220.0" width="1000" height="52.0" fill="transparent"/>
+<text x="224" y="252.1" text-anchor="end" font-size="18" font-weight="600" fill="#1A1A1A">데이터 분석·시각화</text>
+<path d="M240,235.0 h212.7 a4,4 0 0 1 4,4 v14.0 a4,4 0 0 1 -4,4 h-212.7 Z" fill="#F36F21"/>
+<text x="468.7" y="252.7" font-size="19" font-weight="700" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="5" paint-order="stroke" stroke-linejoin="round" style="font-variant-numeric:tabular-nums">24.0%</text>
+<title>데이터 분석·시각화 · 24.0%</title>
+</g>
+<g class="pt" tabindex="0">
+<rect x="0" y="272.0" width="1000" height="52.0" fill="transparent"/>
+<text x="224" y="304.1" text-anchor="end" font-size="18" font-weight="600" fill="#1A1A1A">통역·번역</text>
+<path d="M240,287.0 h191.9 a4,4 0 0 1 4,4 v14.0 a4,4 0 0 1 -4,4 h-191.9 Z" fill="#F36F21"/>
+<text x="447.9" y="304.6" font-size="19" font-weight="700" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="5" paint-order="stroke" stroke-linejoin="round" style="font-variant-numeric:tabular-nums">21.7%</text>
+<title>통역·번역 · 21.7%</title>
+</g>
+<g class="pt" tabindex="0">
+<rect x="0" y="324.0" width="1000" height="52.0" fill="transparent"/>
+<text x="224" y="356.1" text-anchor="end" font-size="18" font-weight="600" fill="#1A1A1A">멀티미디어 제작·편집</text>
+<path d="M240,339.0 h135.0 a4,4 0 0 1 4,4 v14.0 a4,4 0 0 1 -4,4 h-135.0 Z" fill="#F36F21"/>
+<text x="391.0" y="356.6" font-size="19" font-weight="700" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="5" paint-order="stroke" stroke-linejoin="round" style="font-variant-numeric:tabular-nums">15.4%</text>
+<title>멀티미디어 제작·편집 · 15.4%</title>
+</g>
+<g class="pt" tabindex="0">
+<rect x="0" y="376.0" width="1000" height="52.0" fill="transparent"/>
+<text x="224" y="408.1" text-anchor="end" font-size="18" font-weight="600" fill="#1A1A1A">코딩</text>
+<path d="M240,391.0 h91.7 a4,4 0 0 1 4,4 v14.0 a4,4 0 0 1 -4,4 h-91.7 Z" fill="#3A3A3A"/>
+<text x="347.7" y="408.6" font-size="19" font-weight="700" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="5" paint-order="stroke" stroke-linejoin="round" style="font-variant-numeric:tabular-nums">10.6%</text>
+<title>코딩 · 10.6%</title>
+</g>
+<g class="pt" tabindex="0">
+<rect x="0" y="428.0" width="1000" height="52.0" fill="transparent"/>
+<text x="224" y="460.1" text-anchor="end" font-size="18" font-weight="600" fill="#1A1A1A">외국어 학습</text>
+<path d="M240,443.0 h87.2 a4,4 0 0 1 4,4 v14.0 a4,4 0 0 1 -4,4 h-87.2 Z" fill="#F36F21"/>
+<text x="343.2" y="460.6" font-size="19" font-weight="700" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="5" paint-order="stroke" stroke-linejoin="round" style="font-variant-numeric:tabular-nums">10.1%</text>
+<title>외국어 학습 · 10.1%</title>
+</g>
+<g class="pt" tabindex="0">
+<rect x="0" y="480.0" width="1000" height="52.0" fill="transparent"/>
+<text x="224" y="512.1" text-anchor="end" font-size="18" font-weight="600" fill="#1A1A1A">고객 응대</text>
+<path d="M240,495.0 h75.4 a4,4 0 0 1 4,4 v14.0 a4,4 0 0 1 -4,4 h-75.4 Z" fill="#F36F21"/>
+<text x="331.4" y="512.6" font-size="19" font-weight="700" fill="#1A1A1A" stroke="#FFFFFF" stroke-width="5" paint-order="stroke" stroke-linejoin="round" style="font-variant-numeric:tabular-nums">8.8%</text>
+<title>고객 응대 · 8.8%</title>
+</g>
+</svg></figure>
+    <p class="slide-caption">한국 직장인이 AI 도움을 받는 일 1위는 <b>정보 검색·요약</b>, 2위는 <b>문서 작성</b>입니다. 코딩은 10명 중 1명이고, 쓰임새는 계속 넓어지고 있습니다.</p>
+    <div class="slide-src">출처: 한국은행 BOK 이슈노트 제2025-22호(2025-08) · 2025년 5~6월 취업자 5,512명 조사 중 업무에 AI를 쓴 사람 / 쓰임새 확대: OpenAI Signals(2026-10) · ChatGPT 업무 메시지에서 상위 10개 업무의 비중 56.0%(2025년 1분기) → 51.1%(2026년 3분기)</div>
+    <div class="slide-extra"><details class="chart-table"><summary>표로 보기</summary><table><thead><tr><th>업무</th><th>응답 비율(1·2순위 합)</th></tr></thead><tbody><tr><td>정보 검색·요약</td><td>62.2%</td></tr><tr><td>문서 작성·검수</td><td>38.6%</td></tr><tr><td>아이디어 생성</td><td>25.3%</td></tr><tr><td>데이터 분석·시각화</td><td>24.0%</td></tr><tr><td>통역·번역</td><td>21.7%</td></tr><tr><td>멀티미디어 제작·편집</td><td>15.4%</td></tr><tr><td>코딩</td><td>10.6%</td></tr><tr><td>외국어 학습</td><td>10.1%</td></tr><tr><td>고객 응대</td><td>8.8%</td></tr></tbody></table></details></div>
+  </div>
+
+  <div class="slide" id="i3-3">
+    <div class="slide-eyebrow">INTRO 03 · 오늘 배울 것</div>
+    <h3 class="slide-title">입력이 좋아지면 <em>결과</em>가 좋아집니다</h3>
+    <figure class="slide-visual"><img src="교안_자료/도입_장표/33_입력과결과.webp" alt="자료와 지시를 합친 입력이 AI를 거쳐 결과가 되는 흐름" width="2752" height="1536" decoding="async"></figure>
+    <p class="slide-caption">AI에게 줄 <b>자료와 지시를 설계하는 일</b>, 이것을 프롬프트 엔지니어링이라고 합니다.</p>
+  </div>
+</section>
+
+<!-- ══════════ INTRO 04 ══════════ -->
+<section class="module intro" id="i4">
+  <div class="part-open">
+    <div class="po-num">INTRO 04</div>
+    <div class="po-title">왜 <em>지금</em> 배워야 하나</div>
+    <div class="po-q">쉬워서도, 유행이라서도 아닙니다. 일하는 방식이 바뀌고 있기 때문입니다.</div>
+  </div>
+
+  <div class="slide" id="i4-1">
+    <div class="slide-eyebrow">INTRO 04 · 배워야 하는 이유 ①</div>
+    <h3 class="slide-title">코드가 아니라 <em>말</em>로 시킵니다</h3>
+    <figure class="slide-visual"><svg viewBox="0 0 1000 562" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="왼쪽: 지난달 지점별 실적을 뽑는 파이썬 코드 열 줄. 오른쪽: 같은 결과를 한 문장으로 요청한 채팅 화면과 지점별 실적 표" class="chart mock">
+<defs><filter id="mkShadow-a" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#000" flood-opacity="0.12"/></filter></defs>
+<rect width="1000" height="562" fill="#FFFFFF"/>
+<rect x="34" y="42" width="440" height="372" rx="12" fill="#141822" filter="url(#mkShadow-a)"/>
+<path d="M34,80 v-26 a12,12 0 0 1 12,-12 h416 a12,12 0 0 1 12,12 v26 z" fill="#1E2433"/>
+<circle cx="54" cy="61" r="4.5" fill="#5A6275"/>
+<circle cx="70" cy="61" r="4.5" fill="#5A6275"/>
+<circle cx="86" cy="61" r="4.5" fill="#5A6275"/>
+<text x="112" y="66" font-size="12.5" font-weight="500" fill="#AAB2C5" text-anchor="start" class="mono">monthly_report.py</text>
+<rect x="410" y="51" width="48" height="21" rx="10.5" fill="#5A6275"/><text x="434.0" y="65.82" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">예전</text>
+<text x="64" y="112" font-size="11.5" font-weight="400" fill="#4E5670" text-anchor="end" class="mono">1</text>
+<text x="78" y="112" font-size="12.6" class="mono" xml:space="preserve"><tspan fill="#FF8B45">import</tspan><tspan fill="#E0E0E0">&#160;pandas&#160;</tspan><tspan fill="#FF8B45">as</tspan><tspan fill="#E0E0E0">&#160;pd</tspan></text>
+<text x="64" y="138.5" font-size="11.5" font-weight="400" fill="#4E5670" text-anchor="end" class="mono">2</text>
+<text x="64" y="165.0" font-size="11.5" font-weight="400" fill="#4E5670" text-anchor="end" class="mono">3</text>
+<text x="78" y="165.0" font-size="12.6" class="mono" xml:space="preserve"><tspan fill="#E0E0E0">df&#160;=&#160;pd.</tspan><tspan fill="#80D8FF">read_excel</tspan><tspan fill="#E0E0E0">(</tspan><tspan fill="#FFD369">&quot;sales_2026.xlsx&quot;</tspan><tspan fill="#E0E0E0">)</tspan></text>
+<text x="64" y="191.5" font-size="11.5" font-weight="400" fill="#4E5670" text-anchor="end" class="mono">4</text>
+<text x="78" y="191.5" font-size="12.6" class="mono" xml:space="preserve"><tspan fill="#E0E0E0">df[</tspan><tspan fill="#FFD369">&quot;월&quot;</tspan><tspan fill="#E0E0E0">]&#160;=&#160;pd.</tspan><tspan fill="#80D8FF">to_datetime</tspan><tspan fill="#E0E0E0">(df[</tspan><tspan fill="#FFD369">&quot;거래일&quot;</tspan><tspan fill="#E0E0E0">]).dt.month</tspan></text>
+<text x="64" y="218.0" font-size="11.5" font-weight="400" fill="#4E5670" text-anchor="end" class="mono">5</text>
+<text x="78" y="218.0" font-size="12.6" class="mono" xml:space="preserve"><tspan fill="#E0E0E0">last&#160;=&#160;df[df[</tspan><tspan fill="#FFD369">&quot;월&quot;</tspan><tspan fill="#E0E0E0">]&#160;==&#160;</tspan><tspan fill="#C3A6FF">10</tspan><tspan fill="#E0E0E0">]</tspan></text>
+<text x="64" y="244.5" font-size="11.5" font-weight="400" fill="#4E5670" text-anchor="end" class="mono">6</text>
+<text x="64" y="271.0" font-size="11.5" font-weight="400" fill="#4E5670" text-anchor="end" class="mono">7</text>
+<text x="78" y="271.0" font-size="12.6" class="mono" xml:space="preserve"><tspan fill="#E0E0E0">report&#160;=&#160;(last.</tspan><tspan fill="#80D8FF">groupby</tspan><tspan fill="#E0E0E0">(</tspan><tspan fill="#FFD369">&quot;지점&quot;</tspan><tspan fill="#E0E0E0">)[</tspan><tspan fill="#FFD369">&quot;매출액&quot;</tspan><tspan fill="#E0E0E0">]</tspan></text>
+<text x="64" y="297.5" font-size="11.5" font-weight="400" fill="#4E5670" text-anchor="end" class="mono">8</text>
+<text x="78" y="297.5" font-size="12.6" class="mono" xml:space="preserve"><tspan fill="#E0E0E0">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.</tspan><tspan fill="#80D8FF">agg</tspan><tspan fill="#E0E0E0">([</tspan><tspan fill="#FFD369">&quot;sum&quot;</tspan><tspan fill="#E0E0E0">,&#160;</tspan><tspan fill="#FFD369">&quot;count&quot;</tspan><tspan fill="#E0E0E0">])</tspan></text>
+<text x="64" y="324.0" font-size="11.5" font-weight="400" fill="#4E5670" text-anchor="end" class="mono">9</text>
+<text x="78" y="324.0" font-size="12.6" class="mono" xml:space="preserve"><tspan fill="#E0E0E0">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.</tspan><tspan fill="#80D8FF">sort_values</tspan><tspan fill="#E0E0E0">(</tspan><tspan fill="#FFD369">&quot;sum&quot;</tspan><tspan fill="#E0E0E0">,&#160;ascending=</tspan><tspan fill="#FF8B45">False</tspan><tspan fill="#E0E0E0">))</tspan></text>
+<text x="64" y="350.5" font-size="11.5" font-weight="400" fill="#4E5670" text-anchor="end" class="mono">10</text>
+<text x="64" y="377.0" font-size="11.5" font-weight="400" fill="#4E5670" text-anchor="end" class="mono">11</text>
+<text x="78" y="377.0" font-size="12.6" class="mono" xml:space="preserve"><tspan fill="#E0E0E0">report.</tspan><tspan fill="#80D8FF">to_excel</tspan><tspan fill="#E0E0E0">(</tspan><tspan fill="#FFD369">&quot;10월_지점별_실적.xlsx&quot;</tspan><tspan fill="#E0E0E0">)</tspan></text>
+<rect x="526" y="42" width="440" height="372" rx="12" fill="#FFFFFF" stroke="#D9D9D9" filter="url(#mkShadow-a)"/><line x1="526" y1="80" x2="966" y2="80" stroke="#E5E5E5"/><text x="544" y="67" font-size="13.5" font-weight="700" fill="#1A1A1A" text-anchor="start">ChatGPT</text><rect x="902" y="51" width="48" height="21" rx="10.5" fill="#F36F21"/><text x="926.0" y="65.82" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">지금</text>
+<rect x="788" y="96" width="160" height="28" rx="7" fill="#FFFFFF" stroke="#D9D9D9"/>
+<rect x="796" y="102" width="14" height="16" rx="2.5" fill="#2E7D32"/>
+<text x="816" y="115" font-size="12.5" font-weight="500" fill="#333333" text-anchor="start">sales_2026.xlsx</text>
+<rect x="602" y="134" width="346" height="62" rx="14" fill="#F1F1F1"/>
+<text x="620" y="160" font-size="15" font-weight="600" fill="#1A1A1A" text-anchor="start">지난달 실적을 지점별로 정리해 줘.</text>
+<text x="620" y="183" font-size="15" font-weight="600" fill="#1A1A1A" text-anchor="start">매출이 큰 순서로.</text>
+<circle cx="556" cy="226" r="11" fill="#1A1A1A"/>
+<text x="556" y="230.5" font-size="9.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">AI</text>
+<text x="576" y="231" font-size="13.5" font-weight="500" fill="#333333" text-anchor="start">10월 지점별 실적입니다.</text>
+<rect x="548" y="246" width="396" height="145" rx="6" fill="#FFFFFF" stroke="#E5E5E5"/><path d="M548,275 h396 v-23 a6,6 0 0 0 -6,-6 h-384 a6,6 0 0 0 -6,6 z" fill="#F5F5F5"/><line x1="548" y1="275" x2="944" y2="275" stroke="#E5E5E5"/><line x1="548" y1="304" x2="944" y2="304" stroke="#E5E5E5"/><line x1="548" y1="333" x2="944" y2="333" stroke="#E5E5E5"/><line x1="548" y1="362" x2="944" y2="362" stroke="#E5E5E5"/><text x="558" y="265.36" font-size="12.5" font-weight="700" fill="#666666" text-anchor="start">지점</text><text x="558" y="294.36" font-size="13.5" font-weight="700" fill="#1A1A1A" text-anchor="start">서울</text><text x="558" y="323.36" font-size="13.5" font-weight="700" fill="#1A1A1A" text-anchor="start">부산</text><text x="558" y="352.36" font-size="13.5" font-weight="700" fill="#1A1A1A" text-anchor="start">대구</text><text x="558" y="381.36" font-size="13.5" font-weight="700" fill="#1A1A1A" text-anchor="start">광주</text><text x="816" y="265.36" font-size="12.5" font-weight="700" fill="#666666" text-anchor="end">매출액</text><text x="816" y="294.36" font-size="13.5" font-weight="500" fill="#333333" text-anchor="end">4억 2,300만 원</text><text x="816" y="323.36" font-size="13.5" font-weight="500" fill="#333333" text-anchor="end">2억 8,750만 원</text><text x="816" y="352.36" font-size="13.5" font-weight="500" fill="#333333" text-anchor="end">1억 9,400만 원</text><text x="816" y="381.36" font-size="13.5" font-weight="500" fill="#333333" text-anchor="end">1억 2,100만 원</text><text x="934" y="265.36" font-size="12.5" font-weight="700" fill="#666666" text-anchor="end">거래 건수</text><text x="934" y="294.36" font-size="13.5" font-weight="500" fill="#333333" text-anchor="end">128건</text><text x="934" y="323.36" font-size="13.5" font-weight="500" fill="#333333" text-anchor="end">94건</text><text x="934" y="352.36" font-size="13.5" font-weight="500" fill="#333333" text-anchor="end">71건</text><text x="934" y="381.36" font-size="13.5" font-weight="500" fill="#333333" text-anchor="end">52건</text>
+<path d="M476,217 h26 v-13 l24,24 l-24,24 v-13 h-26 z" fill="#F36F21"/>
+<text x="254.0" y="468" font-size="27" font-weight="700" fill="#1A1A1A" text-anchor="middle">코드로 시킨다</text>
+<text x="254.0" y="500" font-size="15" font-weight="500" fill="#666666" text-anchor="middle">만드는 법을 아는 사람만 할 수 있었다</text>
+<text x="746.0" y="468" font-size="27" font-weight="700" fill="#1A1A1A" text-anchor="middle">말로 시킨다</text>
+<text x="746.0" y="500" font-size="15" font-weight="700" fill="#C24E12" text-anchor="middle">무엇이 필요한지 아는 사람이면 된다</text>
+<text x="500.0" y="544" font-size="12" font-weight="400" fill="#999999" text-anchor="middle">예시 화면 · 같은 결과를 얻는 두 가지 방법</text>
+</svg></figure>
+    <p class="slide-caption">예전에는 이 표 하나를 얻으려면 코드를 알아야 했습니다. 지금은 한 문장이면 됩니다. 그래서 유리한 사람은 <b>무엇이 필요한지 아는 사람</b>, 곧 내 업무를 아는 사람입니다.</p>
+    <div class="slide-src">참고: 개인용 ChatGPT 메시지 가운데 코딩을 포함한 기술 도움은 4.6% · OpenAI Signals(2026-10-26 게시, 2026년 9월 메시지 기준) · 그림은 예시 화면</div>
+  </div>
+
+  <div class="slide" id="i4-2">
+    <div class="slide-eyebrow">INTRO 04 · 배워야 하는 이유 ②</div>
+    <h3 class="slide-title"><em>찾는</em> 일에서 <em>맡기는</em> 일로</h3>
+    <figure class="slide-visual"><svg viewBox="0 0 1000 562" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="내일 거래처 미팅 준비. 왼쪽: 검색으로 기사 탭을 여러 개 열고 직접 읽어 메모하는 화면. 오른쪽: AI에 맡겨 소식 세 가지와 출처가 표로 정리된 화면" class="chart mock">
+<defs><filter id="mkShadow-b" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#000" flood-opacity="0.12"/></filter></defs>
+<rect width="1000" height="562" fill="#FFFFFF"/>
+<rect x="350.0" y="14" width="300" height="28" rx="14.0" fill="#1A1A1A"/><text x="500.0" y="32.86" font-size="13.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">상황 · 내일 거래처 ‘엠정공’ 미팅 준비</text>
+<rect x="34" y="56" width="440" height="366" rx="12" fill="#FFFFFF" stroke="#D9D9D9" filter="url(#mkShadow-b)"/>
+<path d="M34,90 v-22 a12,12 0 0 1 12,-12 h416 a12,12 0 0 1 12,12 v22 z" fill="#ECECEC"/>
+<path d="M44,90 v-18 a6,6 0 0 1 6,-6 h60 a6,6 0 0 1 6,6 v18 z" fill="#FFFFFF"/>
+<text x="80.0" y="83" font-size="9.6" font-weight="600" fill="#1A1A1A" text-anchor="middle">엠정공 - 검색</text>
+<path d="M119,90 v-18 a6,6 0 0 1 6,-6 h60 a6,6 0 0 1 6,6 v18 z" fill="#DDDDDD"/>
+<text x="155.0" y="83" font-size="9.6" font-weight="500" fill="#555555" text-anchor="middle">2공장 증설…</text>
+<path d="M194,90 v-18 a6,6 0 0 1 6,-6 h60 a6,6 0 0 1 6,6 v18 z" fill="#DDDDDD"/>
+<text x="230.0" y="83" font-size="9.6" font-weight="500" fill="#555555" text-anchor="middle">[공시] 사업보고…</text>
+<path d="M269,90 v-18 a6,6 0 0 1 6,-6 h60 a6,6 0 0 1 6,6 v18 z" fill="#DDDDDD"/>
+<text x="305.0" y="83" font-size="9.6" font-weight="500" fill="#555555" text-anchor="middle">업계 동향…</text>
+<path d="M344,90 v-18 a6,6 0 0 1 6,-6 h60 a6,6 0 0 1 6,6 v18 z" fill="#DDDDDD"/>
+<text x="380.0" y="83" font-size="9.6" font-weight="500" fill="#555555" text-anchor="middle">채용 공고…</text>
+<path d="M419,90 v-18 a6,6 0 0 1 6,-6 h22 a6,6 0 0 1 6,6 v18 z" fill="#DDDDDD"/>
+<text x="436.0" y="83" font-size="9.6" font-weight="500" fill="#555555" text-anchor="middle">+3</text>
+<rect x="414" y="102" width="46" height="21" rx="10.5" fill="#7A7A7A"/><text x="437.0" y="116.82" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">검색</text>
+<rect x="50" y="100" width="350" height="26" rx="13" fill="#FFFFFF" stroke="#CFCFCF"/>
+<circle cx="65" cy="112" r="5" fill="none" stroke="#888" stroke-width="1.6"/><line x1="69" y1="116" x2="73" y2="120" stroke="#888" stroke-width="1.6"/>
+<text x="80" y="117.5" font-size="12.5" font-weight="500" fill="#1A1A1A" text-anchor="start">엠정공 최근 소식</text>
+<text x="52" y="148" font-size="10.2" font-weight="400" fill="#777777" text-anchor="start">산업일보 · 3주 전</text>
+<text x="52" y="165" font-size="13.2" font-weight="600" fill="#1A4FA3" text-anchor="start">엠정공, 화성 2공장 정밀 가공 라인 증설 착수</text>
+<text x="52" y="182" font-size="10.8" font-weight="400" fill="#666666" text-anchor="start">화성 2공장에 정밀 가공 라인을 추가로 들이며 생산 능력을…</text>
+<text x="52" y="208" font-size="10.2" font-weight="400" fill="#777777" text-anchor="start">경제신문 · 2개월 전</text>
+<text x="52" y="225" font-size="13.2" font-weight="600" fill="#1A4FA3" text-anchor="start">엠정공 2025년 매출 2,400억 원… 전년 대비 11% 늘어</text>
+<text x="52" y="242" font-size="10.8" font-weight="400" fill="#666666" text-anchor="start">정밀 절삭 부품 수주가 늘면서 매출이 두 자릿수 성장을…</text>
+<text x="52" y="268" font-size="10.2" font-weight="400" fill="#777777" text-anchor="start">제조뉴스 · 1개월 전</text>
+<text x="52" y="285" font-size="13.2" font-weight="600" fill="#1A4FA3" text-anchor="start">엠정공, 신규 협력사 품질 인증 기준 강화한다</text>
+<text x="52" y="302" font-size="10.8" font-weight="400" fill="#666666" text-anchor="start">내년부터 신규 협력사에 강화된 품질 인증 서류를 요구…</text>
+<rect x="50" y="334" width="408" height="74" rx="8" fill="#FFFBEA" stroke="#EAD98A"/>
+<text x="62" y="354" font-size="11" font-weight="700" fill="#8A6D00" text-anchor="start">내 메모장 · 직접 읽고 옮겨 적는 중</text>
+<text x="62" y="374" font-size="11.4" font-weight="400" fill="#5C5330" text-anchor="start">- 2공장 증설 → 우리 부품 수요? (기사 더 읽어 보기)</text>
+<text x="62" y="392" font-size="11.4" font-weight="400" fill="#5C5330" text-anchor="start">- 매출 11% 증가 … 품질 인증은 아직 못 읽음</text>
+<rect x="526" y="56" width="440" height="366" rx="12" fill="#FFFFFF" stroke="#D9D9D9" filter="url(#mkShadow-b)"/><line x1="526" y1="94" x2="966" y2="94" stroke="#E5E5E5"/><text x="544" y="81" font-size="13.5" font-weight="700" fill="#1A1A1A" text-anchor="start">ChatGPT</text><rect x="902" y="65" width="48" height="21" rx="10.5" fill="#F36F21"/><text x="926.0" y="79.82" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">AI</text>
+<rect x="566" y="106" width="382" height="84" rx="14" fill="#F1F1F1"/>
+<text x="582" y="130" font-size="14" font-weight="600" fill="#1A1A1A" text-anchor="start">내일 엠정공 미팅이 있어. 최근 3개월 소식 중</text>
+<text x="582" y="152" font-size="14" font-weight="600" fill="#1A1A1A" text-anchor="start">우리 부품 영업과 관련된 것 3가지를</text>
+<text x="582" y="174" font-size="14" font-weight="600" fill="#1A1A1A" text-anchor="start">표로 정리하고 출처를 붙여 줘.</text>
+<circle cx="554" cy="216" r="11" fill="#1A1A1A"/>
+<text x="554" y="220.5" font-size="9.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">AI</text>
+<text x="574" y="221" font-size="13" font-weight="500" fill="#333333" text-anchor="start">관련 소식 3가지를 정리했습니다.</text>
+<rect x="542" y="234" width="408" height="112" rx="6" fill="#FFFFFF" stroke="#E5E5E5"/><path d="M542,262 h408 v-22 a6,6 0 0 0 -6,-6 h-396 a6,6 0 0 0 -6,6 z" fill="#F5F5F5"/><line x1="542" y1="262" x2="950" y2="262" stroke="#E5E5E5"/><line x1="542" y1="290" x2="950" y2="290" stroke="#E5E5E5"/><line x1="542" y1="318" x2="950" y2="318" stroke="#E5E5E5"/><text x="552" y="252.464" font-size="11.4" font-weight="700" fill="#666666" text-anchor="start">최근 소식</text><text x="552" y="280.464" font-size="12.4" font-weight="700" fill="#1A1A1A" text-anchor="start">화성 2공장 가공 라인 증설</text><text x="552" y="308.464" font-size="12.4" font-weight="700" fill="#1A1A1A" text-anchor="start">2025년 매출 2,400억(+11%)</text><text x="552" y="336.464" font-size="12.4" font-weight="700" fill="#1A1A1A" text-anchor="start">협력사 품질 인증 기준 강화</text><text x="736" y="252.464" font-size="11.4" font-weight="700" fill="#666666" text-anchor="start">우리와의 관련</text><text x="736" y="280.464" font-size="12.4" font-weight="500" fill="#333333" text-anchor="start">부품 수요 증가 예상</text><text x="736" y="308.464" font-size="12.4" font-weight="500" fill="#333333" text-anchor="start">구매 규모 확대</text><text x="736" y="336.464" font-size="12.4" font-weight="500" fill="#333333" text-anchor="start">인증 서류 미리 준비</text><text x="922.0" y="252.464" font-size="11.4" font-weight="700" fill="#666666" text-anchor="middle">출처</text><text x="922.0" y="280.464" font-size="12.4" font-weight="500" fill="#333333" text-anchor="middle">[1]</text><text x="922.0" y="308.464" font-size="12.4" font-weight="500" fill="#333333" text-anchor="middle">[2]</text><text x="922.0" y="336.464" font-size="12.4" font-weight="500" fill="#333333" text-anchor="middle">[3]</text>
+<rect x="542" y="358" width="408" height="46" rx="8" fill="#FFF3E6" stroke="#FFD2B0"/>
+<circle cx="564" cy="381" r="10" fill="#F36F21"/><path d="M559,381 l4,4 l7,-8" fill="none" stroke="#FFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="582" y="386" font-size="13" font-weight="700" fill="#C24E12" text-anchor="start">나는 출처 [1]~[3]을 열어 맞는지 확인한다</text>
+<path d="M476,227 h26 v-13 l24,24 l-24,24 v-13 h-26 z" fill="#F36F21"/>
+<text x="254.0" y="470" font-size="27" font-weight="700" fill="#1A1A1A" text-anchor="middle">찾아 준다</text>
+<text x="254.0" y="502" font-size="15" font-weight="500" fill="#666666" text-anchor="middle">읽고 정리하는 일은 내가</text>
+<text x="746.0" y="470" font-size="27" font-weight="700" fill="#1A1A1A" text-anchor="middle">찾고 · 읽고 · 정리한다</text>
+<text x="746.0" y="502" font-size="15" font-weight="700" fill="#C24E12" text-anchor="middle">나는 맡기고, 검수한다</text>
+<text x="500.0" y="546" font-size="12" font-weight="400" fill="#999999" text-anchor="middle">예시 화면 · 가상의 회사와 기사</text>
+</svg></figure>
+    <p class="slide-caption">검색은 기사 링크를 찾아 주고, 읽고 정리하는 일은 내 몫이었습니다. AI에는 그 일까지 맡기고, 나는 <b>출처를 확인</b>합니다.</p>
+    <div class="slide-src">출처: 오픈서베이 「AI 검색 트렌드 리포트 2026 하반기」(2026년 7월 조사, 검색 서비스 이용자 981명) · 업무·학습 정보를 찾을 때 생성형 AI를 가장 먼저 여는 사람 36.5% · 전체 이용률 1위는 여전히 네이버(77.7%) · 그림은 가상의 회사와 기사로 만든 예시 화면</div>
+  </div>
+
+  <div class="slide" id="i4-3">
+    <div class="slide-eyebrow">INTRO 04 · 배워야 하는 이유 ③</div>
+    <h3 class="slide-title">같은 도구, <em>다른 결과</em></h3>
+    <figure class="slide-visual"><svg viewBox="0 0 1000 562" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="1년 전에는 못 하던 일을 지금은 해낸다고 답한 비율. AI를 쓰는 직장인 전체 58%, 상위 활용자 80%" class="chart">
+<rect width="1000" height="562" fill="#FFFFFF"/>
+<text x="90" y="62" font-size="15" fill="#666666">“1년 전에는 못 하던 일을 지금은 해낸다”고 답한 비율</text>
+<g class="pt" tabindex="0">
+<text x="90" y="152.0" font-size="23" font-weight="700" fill="#1A1A1A">AI를 쓰는 직장인 전체</text>
+<text x="90" y="178.0" font-size="14.5" fill="#666666">10개국 20,000명</text>
+<path d="M90,196.0 h376.8 a6,6 0 0 1 6,6 v34 a6,6 0 0 1 -6,6 h-376.8 Z" fill="#B5B5B5"/>
+<text x="490.8" y="236.0" font-size="46" font-weight="700" fill="#1A1A1A" style="font-variant-numeric:tabular-nums">58%</text>
+<title>AI를 쓰는 직장인 전체 · 58%</title>
+</g>
+<g class="pt" tabindex="0">
+<text x="90" y="357.0" font-size="23" font-weight="700" fill="#1A1A1A">그중 상위 활용자</text>
+<text x="90" y="383.0" font-size="14.5" fill="#666666">전체의 16%</text>
+<path d="M90,401.0 h522.0 a6,6 0 0 1 6,6 v34 a6,6 0 0 1 -6,6 h-522.0 Z" fill="#F36F21"/>
+<text x="636.0" y="441.0" font-size="60" font-weight="700" fill="#1A1A1A" style="font-variant-numeric:tabular-nums">80%</text>
+<title>그중 상위 활용자 · 80%</title>
+</g>
+</svg></figure>
+    <p class="slide-caption">똑같이 AI를 써도 결과는 갈립니다. 잘 쓰는 사람들의 습관은 <b>시작하기 전에 AI가 할 일과 내가 할 일을 먼저 나누는 것</b>입니다(53%, 그 외 33%).</p>
+    <div class="slide-src">출처: Microsoft 「2026 Work Trend Index」(2026-05 발표) · 10개국 AI 사용 지식근로자 20,000명 설문 · 자기 보고 · 한국 미포함</div>
+  </div>
+
+  <div class="slide" id="i4-4">
+    <div class="slide-eyebrow">INTRO 04 · 배워야 하는 이유 ④</div>
+    <h3 class="slide-title">시장은 이 차이에 <em>값</em>을 매깁니다</h3>
+    <figure class="slide-visual"><svg viewBox="0 0 1000 562" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="일자리 증가율. 전체 일자리 9%, AI 스킬을 요구하는 일자리 69%" class="chart">
+<rect width="1000" height="562" fill="#FFFFFF"/>
+<text x="90" y="62" font-size="15" fill="#666666">채용공고로 본 일자리 증가율 · 27개 국가·지역</text>
+<g class="pt" tabindex="0">
+<text x="90" y="152.0" font-size="23" font-weight="700" fill="#1A1A1A">전체 일자리</text>
+<path d="M90,176.0 h61.5 a6,6 0 0 1 6,6 v34 a6,6 0 0 1 -6,6 h-61.5 Z" fill="#B5B5B5"/>
+<text x="175.5" y="216.0" font-size="46" font-weight="700" fill="#1A1A1A" style="font-variant-numeric:tabular-nums">+9%</text>
+<title>전체 일자리 · +9%</title>
+</g>
+<g class="pt" tabindex="0">
+<text x="90" y="357.0" font-size="23" font-weight="700" fill="#1A1A1A">AI 스킬을 요구하는 일자리</text>
+<path d="M90,381.0 h511.5 a6,6 0 0 1 6,6 v34 a6,6 0 0 1 -6,6 h-511.5 Z" fill="#F36F21"/>
+<text x="625.5" y="421.0" font-size="60" font-weight="700" fill="#1A1A1A" style="font-variant-numeric:tabular-nums">+69%</text>
+<title>AI 스킬을 요구하는 일자리 · +69%</title>
+</g>
+</svg></figure>
+    <p class="slide-caption">AI 스킬을 요구하는 일자리는 전체보다 <b>약 8배 빠르게</b> 늘고 있고, 그런 일자리의 임금은 평균 62% 높았습니다.</p>
+    <div class="slide-src">출처: PwC 「2026 Global AI Jobs Barometer」(2026-06-15) · 채용공고 10억 건 이상 분석 · 임금 차이는 채용공고 기준이며 개발 직무 포함 / 국내: AI 활용 역량을 요구하는 채용공고 비중 0.37%(2024년) → 1.92%(2026년 1~9월) · 잡코리아(2026-10 보도)</div>
+  </div>
+</section>
+
+<!-- ══════════ INTRO 05 ══════════ -->
+<section class="module intro" id="i5">
+  <div class="part-open">
+    <div class="po-num">INTRO 05</div>
+    <div class="po-title">쓰기 전에 꼭 알아야 할 <em>세 가지</em></div>
+    <div class="po-q">AI가 답을 어떻게 만드는지, 어디서 틀리는지, 내 자료가 어디로 가는지.</div>
+  </div>
+
+  <div class="slide" id="i5-1">
+    <div class="slide-eyebrow">INTRO 05 · 꼭 알아야 할 3가지 ① 확률</div>
+    <h3 class="slide-title">AI는 답을 꺼내지 않고, <em>다음 말을 고릅니다</em></h3>
+    <figure class="slide-visual"><img src="교안_자료/도입_장표/51_확률.webp" alt="'오늘 점심은' 뒤에 올 말의 확률 예시 — 김치찌개 32%, 돈가스 21%, 국밥 14%, 샐러드 6%" width="2752" height="1536" decoding="async"></figure>
+    <p class="slide-caption">저장된 답을 찾아 꺼내는 것이 아니라, 다음에 올 말을 확률로 하나씩 골라 문장을 만듭니다. 그래서 <b>같은 질문에도 답이 달라질 수 있습니다.</b></p>
+    <div class="slide-src">출처: OpenAI 도움말 「ChatGPT 및 파운데이션 모델 개발 방법」(2026-10 수정) · 그림의 확률은 설명용 예시</div>
+  </div>
+
+  <div class="slide" id="i5-2">
+    <div class="slide-eyebrow">INTRO 05 · 꼭 알아야 할 3가지 ① 확률</div>
+    <h3 class="slide-title">조건을 주면 답이 <em>좁혀집니다</em></h3>
+    <figure class="slide-visual"><img src="교안_자료/도입_장표/51b_조건.webp" alt="막연한 질문 '점심 추천해 줘'는 김치찌개 28%, 돈가스 26%, 국밥 24%로 답이 흩어진다. 조건을 준 질문 '비 오는 날, 만 원 이하 점심 추천해 줘'는 칼국수 74%로 답이 좁혀진다" width="2752" height="1536" decoding="async"></figure>
+    <p class="slide-caption">질문이 막연하면 가장 흔한 답이 나옵니다. <b>상황과 조건을 줄수록</b> 내가 원하는 답에 가까워집니다.</p>
+    <div class="slide-src">그림의 확률은 설명용 예시</div>
+  </div>
+
+  <div class="slide" id="i5-3">
+    <div class="slide-eyebrow">INTRO 05 · 꼭 알아야 할 3가지 ② 환각</div>
+    <h3 class="slide-title">AI는 <em>그럴듯하게</em> 틀립니다</h3>
+    <figure class="slide-visual"><img src="교안_자료/도입_장표/52_환각.webp" alt="'2025년 매출은 4,200억 원입니다. 출처: A사 사업보고서'라는 답. 출처를 열어 보니 없는 문서(404)" width="2752" height="1536" decoding="async"></figure>
+    <p class="slide-caption">자료를 주고 요약만 시켜도, 최신 모델의 요약 100건 중 <b>6~12건</b>에는 원문과 어긋난 내용이 섞였습니다. 숫자 · 인용 · 출처는 원문을 확인합니다.</p>
+    <div class="slide-src">출처: Vectara Hallucination Leaderboard(2026-10-22 갱신) · GPT-6, Claude Opus 5.5, Gemini 4, GPT-5.6 측정 · 기사 7,700여 건 요약을 자동 판정 / 대법원 법관 설문(2026-11-02 발표, 360명 응답): 민사·가사·행정 담당 법관의 약 80%가 AI가 지어낸 판례가 인용된 서면을 받아 봄 · 법률신문 보도</div>
+  </div>
+
+  <div class="slide" id="i5-4">
+    <div class="slide-eyebrow">INTRO 05 · 꼭 알아야 할 3가지 ③ 보안</div>
+    <h3 class="slide-title">내가 넣은 자료는 <em>어디로</em> 갈까</h3>
+    <figure class="slide-visual"><img src="교안_자료/도입_장표/53_내자료.webp" alt="내가 넣은 자료의 두 갈래. 개인 계정(무료·유료 모두): 학습에 쓰일 수 있음, 설정에서 끌 수 있음. 회사 계정(회사가 관리): 학습에 쓰지 않음이 기본 설정" width="2752" height="1536" decoding="async"></figure>
+    <p class="slide-caption">개인 계정은 무료든 유료든 <b>기본 설정에서 대화가 학습에 쓰일 수 있고</b>, 설정에서 끌 수 있습니다. 회사용 계정은 기본적으로 학습에 쓰지 않습니다.</p>
+    <div class="slide-src">출처: OpenAI 도움말 「ChatGPT의 데이터 제어」(2026-11 수정) · 「엔터프라이즈 개인정보 보호」(2026-01-08) · 끄는 길: 설정 → 데이터 제어 → &lsquo;모두를 위한 모델 개선&rsquo;</div>
+  </div>
+
+  <div class="slide" id="i5-5">
+    <div class="slide-eyebrow">INTRO 05 · 꼭 알아야 할 3가지 ③ 보안</div>
+    <h3 class="slide-title">보안은 <em>세 겹</em>으로 지킵니다</h3>
+    <figure class="slide-visual"><img src="교안_자료/도입_장표/54_보안세겹.webp" alt="보안 세 겹. 서비스: 학습 끄기 설정, 임시 채팅, 회사용은 학습 제외. 회사: 사내 AI 가이드, 허용된 계정 사용, 민감 정보 입력 차단. 나: 개인정보는 넣지 않기, 미공개 자료는 가리기, 내 설정 확인하기" width="2752" height="1536" decoding="async"></figure>
+    <p class="slide-caption">서비스와 회사가 장치를 두지만, 마지막 한 겹은 <b>입력하는 나</b>입니다. 주민번호 · 계좌 · 비밀번호와 미공개 자료는 처음부터 넣지 않습니다.</p>
+    <div class="slide-src">출처: 개인정보보호위원회 「생성형 AI 서비스 이용자를 위한 개인정보 보호 가이드」(2026-05-19) · Netskope 「Cloud and Threat Report 2026」: 기업 한 곳당 생성형 AI 데이터 정책 위반 월평균 223건(소스코드 42% · 규제 대상 데이터 32% · 지식재산 16%)</div>
+  </div>
+
+  <div class="slide" id="i5-6">
+    <div class="slide-eyebrow">INTRO 05 · 정리</div>
+    <h3 class="slide-title">그래서, <em>세 가지 습관</em></h3>
+    <figure class="slide-visual"><img src="교안_자료/도입_장표/55_세가지습관.webp" alt="확률로 답한다 → 방향을 준다. 그럴듯하게 틀린다 → 근거를 확인한다. 입력은 남는다 → 가려서 넣는다" width="2752" height="1536" decoding="async"></figure>
+    <p class="slide-caption">확률로 답하니 <b>방향을 주고</b>, 그럴듯하게 틀리니 <b>근거를 확인하고</b>, 입력은 남으니 <b>가려서 넣습니다.</b></p>
+  </div>
+</section>
+
+
+<div class="page-nav-bottom">
+  <a class="next-page-btn" href="prompt.html">
+    <div class="next-page-meta">Page 1 · 프롬프트 엔지니어링</div>
+    <div class="next-page-title">본 교육으로 이어가기</div>
+    <div class="next-page-desc">세 가지 습관을 들고, 김대리의 미션 하나를 처음부터 끝까지 함께 완성합니다.</div>
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p><span>한국GPT협회</span> &nbsp; AI 실무 활용교육 · 오리엔테이션 (기본 교안) &nbsp;|&nbsp; 발행 2026</p>
+  <p>대표전화 02-562-1552 &nbsp;|&nbsp; 이메일 GPT@Rnbdp.com</p>
+</footer>
+
+</div><!-- /.main -->
+
+
+<button class="deck-open-btn" id="deckOpenBtn" type="button">발표 모드 <kbd>F</kbd></button>
+<div class="deck" id="deck" aria-hidden="true" role="dialog" aria-label="발표 모드">
+  <div class="deck-bar"><i></i></div>
+  <div class="deck-top">
+    <span class="deck-eyebrow"></span>
+    <span class="deck-right"><span class="deck-count"></span><button class="deck-btn deck-close" type="button">닫기 (Esc)</button></span>
+  </div>
+  <div class="deck-body">
+    <h2 class="deck-title"></h2>
+    <div class="deck-visual"></div>
+    <p class="deck-caption"></p>
+    <div class="deck-src"></div>
+  </div>
+  <button class="deck-nav prev" type="button" aria-label="이전 장표">&#8249;</button>
+  <button class="deck-nav next" type="button" aria-label="다음 장표">&#8250;</button>
+</div>
+
+<script>
+function copyPrompt(btn){
+  var block = btn.closest('.prompt-block');
+  if(!block) return;
+  var body = block.querySelector('.prompt-body');
+  if(!body) return;
+  var text = body.innerText;
+  var done = function(){
+    var prev = btn.textContent;
+    btn.textContent = '복사됨';
+    btn.classList.add('copied');
+    setTimeout(function(){ btn.textContent = prev; btn.classList.remove('copied'); }, 1300);
+  };
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(text).then(done).catch(function(){fallback(text, done);});
+  } else { fallback(text, done); }
+}
+function fallback(text, done){
+  var ta = document.createElement('textarea');
+  ta.value = text; ta.setAttribute('readonly','');
+  ta.style.position='fixed'; ta.style.left='-9999px';
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); done(); } finally { document.body.removeChild(ta); }
+}
+
+var hamburger = document.getElementById('hamburgerBtn');
+var sidebar = document.getElementById('sidebar');
+var overlay = document.getElementById('sidebarOverlay');
+if(hamburger){
+  hamburger.addEventListener('click', function(){ sidebar.classList.toggle('open'); overlay.classList.toggle('show'); });
+}
+if(overlay){
+  overlay.addEventListener('click', function(){ sidebar.classList.remove('open'); overlay.classList.remove('show'); });
+}
+
+// 스크롤 스파이 — 현재 보고 있는 PART(nav-head)와 sub 항목을 동시에 하이라이트
+var sidebarLinks = Array.from(document.querySelectorAll('.sidebar-nav a[href^="#"]'));
+var linkMeta = [];
+var lastHead = null;
+sidebarLinks.forEach(function(a){
+  var isHead = a.classList.contains('nav-head');
+  if(isHead) lastHead = a;
+  var sel = a.getAttribute('href');
+  var el = document.querySelector(sel);
+  if(el){
+    linkMeta.push({
+      link: a,
+      el: el,
+      parent: a.classList.contains('sub') ? lastHead : null
+    });
+  }
+});
+function onScroll(){
+  var y = window.scrollY + 140;
+  var current = null;
+  for(var i=0; i<linkMeta.length; i++){
+    if(linkMeta[i].el.offsetTop <= y) current = linkMeta[i];
+  }
+  sidebarLinks.forEach(function(a){ a.classList.remove('active'); });
+  if(current){
+    current.link.classList.add('active');
+    if(current.parent) current.parent.classList.add('active');
+    // 활성 sub가 사이드바 뷰포트 밖이면 스크롤
+    var sidebar = document.getElementById('sidebar');
+    if(sidebar){
+      var lr = current.link.getBoundingClientRect();
+      var sr = sidebar.getBoundingClientRect();
+      if(lr.top < sr.top + 80 || lr.bottom > sr.bottom - 80){
+        current.link.scrollIntoView({block: 'nearest', behavior: 'smooth'});
+      }
+    }
+  }
+}
+document.addEventListener('scroll', onScroll, {passive:true});
+window.addEventListener('resize', onScroll);
+onScroll();
+</script>
+
+<script>
+// ── 발표 모드: 장표를 한 장씩 전체 화면으로 (←/→ 이동, Esc 닫기, F 열기) ──
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var deck = document.getElementById('deck');
+  if(!deck || !slides.length) return;
+  var elEyebrow = deck.querySelector('.deck-eyebrow');
+  var elCount = deck.querySelector('.deck-count');
+  var elTitle = deck.querySelector('.deck-title');
+  var elVisual = deck.querySelector('.deck-visual');
+  var elCaption = deck.querySelector('.deck-caption');
+  var elSrc = deck.querySelector('.deck-src');
+  var elBar = deck.querySelector('.deck-bar i');
+  var cur = 0;
+
+  function show(i){
+    cur = Math.max(0, Math.min(slides.length - 1, i));
+    var s = slides[cur];
+    var q = function(sel){ var e = s.querySelector(sel); return e ? e.innerHTML : ''; };
+    elEyebrow.innerHTML = q('.slide-eyebrow');
+    elTitle.innerHTML = q('.slide-title');
+    elCaption.innerHTML = q('.slide-caption');
+    elSrc.innerHTML = q('.slide-src');
+    elVisual.innerHTML = '';
+    var v = s.querySelector('.slide-visual');
+    if(v){
+      var node = v.firstElementChild ? v.firstElementChild.cloneNode(true) : null;
+      if(node){
+        if(node.tagName === 'IMG'){ node.removeAttribute('loading'); node.removeAttribute('style'); }
+        elVisual.appendChild(node);
+      }
+    }
+    elCount.textContent = (cur + 1) + ' / ' + slides.length;
+    elBar.style.width = ((cur + 1) / slides.length * 100) + '%';
+  }
+  function nearest(){
+    var y = window.scrollY + window.innerHeight * 0.4, best = 0;
+    for(var i = 0; i < slides.length; i++){ if(slides[i].offsetTop <= y) best = i; }
+    return best;
+  }
+  function open(i){
+    show(typeof i === 'number' ? i : nearest());
+    deck.classList.add('on');
+    deck.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if(deck.requestFullscreen){ deck.requestFullscreen().catch(function(){}); }
+  }
+  function close(){
+    deck.classList.remove('on');
+    deck.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if(document.fullscreenElement && document.exitFullscreen){ document.exitFullscreen().catch(function(){}); }
+    slides[cur].scrollIntoView({block: 'start'});
+  }
+  window.openDeck = open;
+
+  slides.forEach(function(s, i){
+    var v = s.querySelector('.slide-visual');
+    if(v && !v.classList.contains('plain')){ v.addEventListener('click', function(){ open(i); }); }
+  });
+  var btn = document.getElementById('deckOpenBtn');
+  if(btn) btn.addEventListener('click', function(){ open(); });
+  deck.querySelector('.deck-close').addEventListener('click', close);
+  deck.querySelector('.deck-nav.prev').addEventListener('click', function(){ show(cur - 1); });
+  deck.querySelector('.deck-nav.next').addEventListener('click', function(){ show(cur + 1); });
+  document.addEventListener('fullscreenchange', function(){
+    if(!document.fullscreenElement && deck.classList.contains('on')) close();
+  });
+  document.addEventListener('keydown', function(e){
+    var tag = (e.target && e.target.tagName) || '';
+    if(tag === 'INPUT' || tag === 'TEXTAREA') return;
+    if(!deck.classList.contains('on')){
+      if(e.key === 'f' || e.key === 'F'){ e.preventDefault(); open(); }
+      return;
+    }
+    if(e.key === 'Escape'){ close(); }
+    else if(e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ' || e.key === 'Enter'){ e.preventDefault(); show(cur + 1); }
+    else if(e.key === 'ArrowLeft' || e.key === 'PageUp' || e.key === 'Backspace'){ e.preventDefault(); show(cur - 1); }
+    else if(e.key === 'Home'){ show(0); }
+    else if(e.key === 'End'){ show(slides.length - 1); }
+  });
+})();
+</script>
+
+</body>
+</html>
